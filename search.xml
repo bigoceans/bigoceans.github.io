@@ -97,7 +97,7 @@ BlinkerButton <span class="token function">Button1</span><span class="token punc
   <entry>
     <title>我的动漫相册</title>
     <url>/2020/03/10/14.%E5%8A%A8%E6%BC%AB%E7%9B%B8%E5%86%8C/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">欢迎来的我的博客，请输入密码后阅读</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1+gjP/OkmrCWVHHMryIopwSceKxQR49SZhVS/bWbO/KxNj1J66fGuYfHI+MJ6DsPKpFu1emPkFl5Y4GgChwyu4BX4L13dqfWsBfgR6Qc4Tb0qlwXfevmwf9UthxSBovWq8qPpqlIFX++8ntvj6oyNIoV1hi+I7wcjL6RTsCNH783wpe77vHmhH4Q76C9OWflBl4KSzz/CfeX9j6hCoT5gVI7DydopLHfaqtwCouL5hHwyZYne8GTxrxr/g9Zi1Ew/mXr6HyFreQw/E3GYG2ZN/pMYYexDD1EIIv4GQnBnqokSesWnk8Kd29epu8TXi3RzLl2O6xE9J/sh6hNUPRFw9vjzjrJBBbJ9Qnpe6HKB1Yv4NltnYU+9YMoJLDZScWCxsoprA3jx5K/wAo8dpOgmQ2qmxnDv8Rqy8QHoc2UQSjFXx6eGZ5NursdbmItLn7QFZA4pcuYQZiAbeXYCl9XpKEGjGQY0qwJzDV4h4uaJ1xqDWB0oHo7DOldkfKVbmE/R1bg7NnMszlwz5F4Nx7ykUG9ruUiyX+nyGWnXp4D9Gtpe6Q3LYLghxCHz5ckv2c6zvopcIhemrP5sBZLZ+Iu5DWweYv84IEx6LS+neiMglxdRVMfk3FL0rII1MFL3kF7NazhSBGvG44IgVQJiWhMtwo6X4wwL7yL7sCK9N+CBTMWPcCM3FBDmY3SEc3zqlzKQ7z9zFiqiY2Jzh41S2CC4ArCECHUnW6ugk4+A1ZAQZs63437L2L26VV6KfLu+kcOnS74NPv/L2W1ATP/ZXDFusDFq/sOT95L8kRo4+KgHRcVXzmCj+x0LOJaIrS0S/jT5mkIQIe9ygUKPjXtFs9DQ6PTtsJH/WU5vLkxoW80O+bCpaPaeih7qm1cxJYT5soOCyoJgt7VjXJgXfCUz3dNmdov2inOFOpttk= </div>]]></content>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">欢迎来的我的博客，请输入密码后阅读</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1+XNilXOopLDORS6aT9XdpCmFfLVCkANAwYNwqrJfC8BvmZzZw8Ag3gt3dLdZRUhYTa+2NcK+pl+YyWxpc0fF0UpI5R4JSmtY8t9FwbChnNLILalnWBxJyeRhC3QM75qu1nDpMjynm/G5SJgr2jPTJ/IO7OvpLNK+cWDZiSI4ykE+x+oVxPnhSMGg9P9tJZ7up4y4QpsjBZ1pAUfnpMie7804Sd59rv5hfLXaCIvAYgRKCGrtqIn1gyL6B2a7oKJJS4GcKEkCcnwTnh/Q6RfBqeXPe2rc02+Pyz0kjdqvVeKsz654iDX/ridbgUNHHkhXH/7enWA9MRuotE3z1zqiDiozc/ZbHpTNS3GXs2+aKKqHJmn78I0JI53KM89VaVPe1QNggVeMgaRp1WhRbizIY2iBEMwlpAclV+KBhQv+Mr/WDwe1jt1A7S5u+72TnsgJ3j5C2BvX6FnpETvMjC5f1TL2BLCsEdGjubCemwAPs3BTFVE18bSDbSbTgheuP//ariuKvNMaT3gpOxmuOB48ZHfxV+cQKIEC4RMZ2Qkd7xcfNsKlkAp/nvs6FnITNz2NQxa2wWI5GG3Mg+uM9T5vmpCJ3Ab/Ff1ANmChqlgMVQQ0fFluT+W0iZZE/UGjjW9q1KhAWcM2WrSAjhCAr1kIcQb6zuRzouvTjOuupRJh+LLQQjyDrf8wc3mnWsqR6T+9JGjLxL0nDK3gsbepXsZ/uiyX7CtKJdqr/y4cRDUcnnFXRNw0onto1bBJrGO6hekWXTJ+2TgFR+lzImTLi4qmvG3Fah/Gd2pXaBJ3JF9UbTbJPysk2fCOIVftDTeXagV/YM7nwD9shwUYAWafSTCbo82w5/9N8Czvym44ob6VZkvQE0X0Pvv9NwhFgn9RoGT9bWNgsQacDoCzI1ikwep/JM56/PVySLRmU= </div>]]></content>
       <categories>
         <category>生活</category>
       </categories>
@@ -234,6 +234,38 @@ description：描述
       <tags>
         <tag>前端</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>手机屏幕投屏到电脑</title>
+    <url>/2020/02/20/15.%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p>有时候我们需要将手机屏幕上的内容，投屏到电脑上，然后可以在电脑上通过鼠标来控制手机，省去了一边看手机一边看电脑的麻烦，大大的提高了工作的效率，但是现在在百度上下载的软件，好多都比较麻烦不是下载这个就是安装那个的，广告还挺多，影响人的使用心。今天我给大家推荐一个投屏的软件，是某大神写到代码，非常的简单好用<br><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311205520.png" alt=""></p>
+<h2 id="二-下载"><a href="#二-下载" class="headerlink" title="二.下载"></a>二.下载</h2><p><a href="https://www.lanzous.com/ia5ip1e" target="_blank" rel="noopener">点击此处下载文件</a></p>
+<h2 id="三-使用教程"><a href="#三-使用教程" class="headerlink" title="三.使用教程"></a>三.使用教程</h2><p><strong>有线连接</strong></p>
+<ol>
+<li>开启开发者模式，打开手机设置-关于手机（找到手机的全部参数-连续点击版本来开启开发者模式，不同的手机操作可能存在差异，不会的可以百度</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311203619.png" alt=""></p>
+<ol start="2">
+<li>在手机设置里面找到更多设置-开发者模式，打开开发者模式,往下拉找到 usb调试<blockquote>
+<p>上面的开关是保证可以正常连接，下面的是保证电脑的鼠标可以点击控制</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311204154.png" alt=""></p>
+<ol start="3">
+<li>解压下载好的 scrcpy压缩包，然后让手机和电脑连接，点击 scrcpy.exe 运行程序,我们就可以看到效果了</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311205325.png" alt=""></p>
+<p><strong>无线连接</strong></p>
+<ol>
+<li>有线连接成功后可以尝试无线连接。</li>
+<li>首先还是要用数据线把手机和电脑连接起来，按windows+r键，然后输入cmd，打开「命令提示符」，切换到scrcpy目录下（输入E: 就会切换到E盘，通过cd + 文件夹名 切换到相应的目录）</li>
+<li>在「命令提示符」中输入 .\adb tcpip 5555，然后拔下手机。继续输入 .\adb connect 手机IP地址:5555 。你手机的IP地址可以在，设置– 关于手机 – 状态中查看。输入完成后打开 scrcpy.exe  即可无线连接手机了。 比收费还好用哦</li>
+</ol>
+]]></content>
+      <categories>
+        <category>资源</category>
+      </categories>
   </entry>
   <entry>
     <title>hexo+sakura主题美化合集</title>
@@ -439,41 +471,9 @@ live2d:
       </tags>
   </entry>
   <entry>
-    <title>手机屏幕投屏到电脑</title>
-    <url>/2020/02/20/15.%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p>有时候我们需要将手机屏幕上的内容，投屏到电脑上，然后可以在电脑上通过鼠标来控制手机，省去了一边看手机一边看电脑的麻烦，大大的提高了工作的效率，但是现在在百度上下载的软件，好多都比较麻烦不是下载这个就是安装那个的，广告还挺多，影响人的使用心。今天我给大家推荐一个投屏的软件，是某大神写到代码，非常的简单好用<br><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311205520.png" alt=""></p>
-<h2 id="二-下载"><a href="#二-下载" class="headerlink" title="二.下载"></a>二.下载</h2><p><a href="https://www.lanzous.com/ia5ip1e" target="_blank" rel="noopener">点击此处下载文件</a></p>
-<h2 id="三-使用教程"><a href="#三-使用教程" class="headerlink" title="三.使用教程"></a>三.使用教程</h2><p><strong>有线连接</strong></p>
-<ol>
-<li>开启开发者模式，打开手机设置-关于手机（找到手机的全部参数-连续点击版本来开启开发者模式，不同的手机操作可能存在差异，不会的可以百度</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311203619.png" alt=""></p>
-<ol start="2">
-<li>在手机设置里面找到更多设置-开发者模式，打开开发者模式,往下拉找到 usb调试<blockquote>
-<p>上面的开关是保证可以正常连接，下面的是保证电脑的鼠标可以点击控制</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311204154.png" alt=""></p>
-<ol start="3">
-<li>解压下载好的 scrcpy压缩包，然后让手机和电脑连接，点击 scrcpy.exe 运行程序,我们就可以看到效果了</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311205325.png" alt=""></p>
-<p><strong>无线连接</strong></p>
-<ol>
-<li>有线连接成功后可以尝试无线连接。</li>
-<li>首先还是要用数据线把手机和电脑连接起来，按windows+r键，然后输入cmd，打开「命令提示符」，切换到scrcpy目录下（输入E: 就会切换到E盘，通过cd + 文件夹名 切换到相应的目录）</li>
-<li>在「命令提示符」中输入 .\adb tcpip 5555，然后拔下手机。继续输入 .\adb connect 手机IP地址:5555 。你手机的IP地址可以在，设置– 关于手机 – 状态中查看。输入完成后打开 scrcpy.exe  即可无线连接手机了。 比收费还好用哦</li>
-</ol>
-]]></content>
-      <categories>
-        <category>资源</category>
-      </categories>
-  </entry>
-  <entry>
     <title>西理工跑酷</title>
     <url>/2020/02/20/17.%E8%B7%91%E9%85%B7%E8%A7%86%E9%A2%91/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">输入密码后才可以观看哟！</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1+j9BktK+8P4ubyTcZq8SwBZU8e3KtXTtBpKinSKpNFZTRN8Hkdv/eb3hx+/83ejsZ77LL/GubKLEiBo+Lyaorq+0phJb9/j1P+xPrhcWRBKGgXxYcPnmCJQO1gQazp+/gZNAR577AZ9VunMi3+o9w6necU9hw9QT932GklmORfRqXlfRtGgiXdHQvyE3fF0m8/6VWWDxD7obkvCD0YMd66PQx/1qNhX8BanqKdM3e3VD3cHH2d6MecFpHAIbzLQSpnRMnvwj4yIqEIa/P0Z/dFrlwK/aPOaSzok71RsWzkRy5kluaob+3renh0um3MkB2N6xtLV+lH4Xrp7r902rMXgTGLEYDgIglNbq27ehpCzNnbudaAI3mojvhPNIrVZSMMuUItH21a6z0Lf+XBhq9qXr0Rog55sqdmIWaiFQmA2h8+V3SOTPS/ZLQ9dTrgoYaO5Jhjm5Ypn2CE+O8bH4HHAuK4AJ4aew5sAQWpO6XIpIyLDSyld2M3Jg9+ZwtJUAPlCG4lpXJUpWnoZZSDNFfPWt8254QCGMpJtL4+Vd98ivNDXi4G/6/ccszvgvlH7sJyzXEpCgY/p9ChTgl3M6fbgnN0h8+0nf2+DCMw0TCk/Vgcbr00o8PIkImz+3bSj/QZkEsWRuBSacxo53be3UTJanHKJfVIygP9DWrtZz7T5B6iemPEeY5Z+BLp2zifGQ97IGtWVmonH0l4zdhR0Czd4O8fl0CS0fIyg7+j3bPDpYX7M7Pg/fNxnQTbURPVCujYODi5uCAtJLa5aFzt2J27oPXooET8vZNiCvNV3i9c5uZhIKXAVisusWqS4rQghrATswXKZS4aDg== </div>]]></content>
+    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">输入密码后才可以观看哟！</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1/FJXqYR4DtDlHBUaVkUsS+7XD9SSbxeK1Kpc3vCAPWF6bEu9bJBY8Zq1mGnslmeEglOScImKOyTL6SkFuplYVoH15cl91FwzkRiuo+j8t8jrMzPefqZeSnjo/HgYIp4ZdM7vQPeRxseFPowML4ofIen77uZKkQFMmtNy4ttzhgGSiNXvR8zYg+sx8gHNp2GMY9rk0vE7wz6HPEj2oPXBBgQefuymJqvmOUWWQXUaJny3Ocf6cFa9oDeRG+dwKPmmiK6iy7oQk8csme+cPkIc6yj6E98yg49aycaOEoNGAvVAhmE1osAfIZsU04GC5F3W6Mt5qBgYAFT017zrRSv0HfOWPRSEfKn8aeJfrbIIBFmxifELDUT1P8Li6N5/tkJMBwU6slYIfIGquYJ1uVDwROuaaoReqLjY8XqDJWadL6XiPU97k1E0yp/HNYj7dvQ4C98AYcEoq3xmmT0Ych/edPOCKjcr9hFqabWYfPjFj1HgIbmbeOxH0tM616OqTBchI4x7gwmKZZdYuKDBRkCTr+R4DpAicOwV2SO6Dz+aBCE3oR32VkvERIZComabGw9ihEudYAc7cDgrCOyO/IeKRnGswTkhZrl3aWFve79OXY+HbyZTf24CDM/HZNFfWZuGsqW0OHuize09tTFvB1PKEutsr3Z6Ae1r2Rk2IY5wfT7/8uWJ4dreFtst/ewaPlPPHOS8KGX3sh822ljUuNnCxVOiq3y5mzYm9Qn5YQAtIDhGpBNvm+SMvuTj1jQHHgqmmkZUrpoMo0Jx2N4EJz7oBj0Oww9wbjctTPZndqu4X2BnTAkIzpXbEgv/MYNB0e0Eo4SHzw7MZjVw== </div>]]></content>
       <categories>
         <category>生活</category>
       </categories>
