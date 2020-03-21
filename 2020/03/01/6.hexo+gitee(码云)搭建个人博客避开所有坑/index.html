@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">hexo+gitee搭建私人博客成功避开所有坑 | 断桥烟雨の博客</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  
+
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "🦋断桥の烟雨";
+  mashiro_option.author_name = "断桥の烟雨";
+  mashiro_option.site_url = "https://zfq0620.gitee.io";
+  mashiro_option.v_appId = "OWbP4V9XAS1W0cOBkvYyuAIz-gzGzoHsz";
+  mashiro_option.v_appKey = "TyFb4EOA6yox4atRLJpH0MHe";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/yremp/cdn@2.1.5/img/cover/(1).jpg.webp,https://cdn.jsdelivr.net/gh/yremp/cdn@2.1.5/img/cover/(2).jpg.webp,https://cdn.jsdelivr.net/gh/yremp/cdn@2.1.5/img/cover/(3).jpg.webp,https://cdn.jsdelivr.net/gh/yremp/cdn@2.1.5/img/cover/(4).jpg.webp,https://cdn.jsdelivr.net/gh/yremp/cdn@2.1.5/img/cover/(5).jpg.webp,https://cdn.jsdelivr.net/gh/yremp/cdn@2.1.5/img/cover/(6).jpg.webp,https://cdn.jsdelivr.net/gh/yremp/cdn@2.1.5/img/cover/(8).jpg.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="断桥烟雨の博客" type="application/atom+xml">
+</head>
+
+
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://zfq0620.gitee.io" target="_blank" rel="noopener">
+          <img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/custom/avatar.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>一万年太久之争朝夕！</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="https://gitee.com/zfq0620" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://gitee.com/zfq0620" target="_blank" class="social-github" title="sina">
+                    <img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/social/sina.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://gitee.com/zfq0620" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://www.zhihu.com/people/zfq0620" target="_blank" class="social-github" title="zhihu">
+                    <img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://gitee.com/zfq0620" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/custom/weixing.png">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">🦋</span>
+            <span class="shironeko">断桥の烟雨</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-vertical" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E7%94%9F%E6%B4%BB/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E8%B5%84%E6%BA%90/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E9%9A%8F%E6%83%B3/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-graduation-cap faa-shake" aria-hidden="true"></i>
+                    学习
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                          <i class="fa fa-television" aria-hidden="true"></i>
+                          前端
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                          <i class="fa fa-edit" aria-hidden="true"></i>
+                          C语言
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
+                          <i class="fa fa-microchip" aria-hidden="true"></i>
+                          嵌入式
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/">
+                          <i class="fa fa-bank" aria-hidden="true"></i>
+                          物联网
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/%E6%82%A6%E8%AF%BB/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones faa-bounce" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/%E5%9B%BE%E9%9B%86/">
+                          <i class="fa fa-photo faa-vertical" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/%E8%A7%86%E9%A2%91/">
+                          <i class="fa fa-play-circle faa-bounce" aria-hidden="true"></i>
+                          视频
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heartbeat faa-tada" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-vcard faa-tada" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-user faa-tada" aria-hidden="true"></i>
+                          我的
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/android/">
+                          <i class="fa fa-android faa-pulse" aria-hidden="true"></i>
+                          软件
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-vertical" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://pic2.zhimg.com/v2-f9654b817205f6af3e472af284ecc2b2_1200x500.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic2.zhimg.com/v2-f9654b817205f6af3e472af284ecc2b2_1200x500.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      hexo+gitee搭建私人博客成功避开所有坑</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://zfq0620.gitee.io/" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/img/DestCropImage.png">
+          </a>
+        </span>
+        <span>
+          <a href="https://zfq0620.gitee.io/" target="_blank" rel="noopener">Mr Zhai</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-1<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><ul>
+<li><p>为什么要搭建博客，因为某天突然看到好多大神级别的人物在发自己搭建的博客，效果特别的好，作为小白的我看了之后，蠢蠢欲动，于是乎一下走上了不归的试坑道路</p>
+</li>
+<li><p>搭建个人博客，一方面可以记录我们生活的方方面面，按照自己的需求设计自己的模块，可以说是私人订制了，另一方面就是给别人提供了一种了解你自己的渠道，可以说是自己的一个名片，因为我们需要的是让更多的人认识我们，而不是我们认识更多的人</p>
+</li>
+</ul>
+<blockquote>
+<p>在此请允许我秀一下成功后的喜悦，<a href="https://zfq0620.gitee.io/" target="_blank" rel="noopener">我的博客</a></p>
+</blockquote>
+<h2 id="二-为什么使用hexo-码云搭建"><a href="#二-为什么使用hexo-码云搭建" class="headerlink" title="二.为什么使用hexo+码云搭建"></a>二.为什么使用hexo+码云搭建</h2><ol>
+<li><p>我感觉搭建博客最简单的方法就是，在一个服务器上面去搭建，比如说阿里云，腾讯云等等，我们只需要在服务器的文件系统上传压缩包并解压，用测试域名就可以看到效果了，但是现在服务器都是收费的，从理想的角度来考虑，当然要选择一个可以长期使用而且不收费的服务器</p>
+</li>
+<li><p>所有我们选择码云，因为码云上有gitee pages(免费的静态网页托管服务)，目前码云支持Jekyll、Hugo、Hexo编译静态资源，不知道什么是<a href="https://gitee.com/help/articles/4136#article-header0" target="_blank" rel="noopener">Jekyll、Hugo、Hexo</a> 可以打开链接看看<br><img src="https://img-blog.csdnimg.cn/20200307165045742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>选择hexo的原因是，hexo基于Node.js实现的，而且目前主流的vue前端一般都是使用npm或者yarn来跑项目，因此使用hexo搭建博客比较简单</p>
+</li>
+</ol>
+<h2 id="三-hexo-本地博客搭建"><a href="#三-hexo-本地博客搭建" class="headerlink" title="三.hexo 本地博客搭建"></a>三.hexo 本地博客搭建</h2><p><strong>这里我以windows系统为例，因为我条件限制，希望理解</strong></p>
+<h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h3><p>这里我们需要下载安装两个软件，我们就去官网下载一下<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a>和 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a><br>如果git 下载比较慢的话，我给大家分享一下我的下载链接</p>
+<blockquote>
+<ol>
+<li><a href="https://www.lanzous.com/ia8ufcf" target="_blank" rel="noopener">node.js</a></li>
+<li><a href="https://www.lanzous.com/i9iqtvi" target="_blank" rel="noopener">git</a></li>
+</ol>
+</blockquote>
+<h3 id="2-Node-js-的安装配置"><a href="#2-Node-js-的安装配置" class="headerlink" title="2.Node.js 的安装配置"></a>2.Node.js 的安装配置</h3><p>我们下载完 node.js 进行安装就可以了。</p>
+<blockquote>
+<p>关于配置可以参考这两篇文章</p>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU3MDI4NTM5Mg==&mid=2247484485&idx=2&sn=643a205068a006fb162c2c1397d42d47&chksm=fcf0887acb87016ca195976dbedb279c1c7f4c579016cca11143f21a6dffbb89080d0cabf44d&scene=21#wechat_redirect" target="_blank" rel="noopener">node.js的安装</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU3MDI4NTM5Mg==&mid=2247484485&idx=3&sn=9f7895c0f5ba0e29b93afdc140bda9e6&chksm=fcf0887acb87016cca4e902de7a501c52368ea52bebbe6e75cb10ea8b784c13f5dcabf042ca3&scene=21#wechat_redirect" target="_blank" rel="noopener">node.js的环境配置</a></li>
+</ol>
+</blockquote>
+<h3 id="3-hexo-的安装"><a href="#3-hexo-的安装" class="headerlink" title="3.hexo 的安装"></a>3.hexo 的安装</h3><pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//接下来我们安装hexo，打开git 命令行，执行如下命令</span>
+$ npm install hexo<span class="token operator">-</span>cli <span class="token operator">-</span>g</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200307170441173.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>注意：输入hexo 按回车，出现下面help 就说明安装成功</p>
+</blockquote>
+<h3 id="4-初始化项目文件"><a href="#4-初始化项目文件" class="headerlink" title="4.初始化项目文件"></a>4.初始化项目文件</h3><p>在准备放项目文件的目录，可以通过windows的cmd终端或者git bash 执行如下的命令</p>
+<pre class=" language-c"><code class="language-c">hexo init blog   <span class="token comment" spellcheck="true">//注意：blog为项目的文件夹名可自定义</span></code></pre>
+<p>执行命令就会开始下载文件<br><img src="https://img-blog.csdnimg.cn/20200307171000690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>下载成功之后的目录是这样的<br><img src="https://img-blog.csdnimg.cn/2020030719010916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200307191025235.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="5-本地测试项目"><a href="#5-本地测试项目" class="headerlink" title="5.本地测试项目"></a>5.本地测试项目</h3><p>输入常用的hexo 命令进行本地的测试</p>
+<pre class=" language-c"><code class="language-c">hexo clean <span class="token comment" spellcheck="true">//清空已经存在的hexo网站文件</span>
+hexo <span class="token function">generate</span><span class="token punctuation">(</span>可简写g<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//依据网页文件和新的css样式生成新的网站文件</span>
+hexo <span class="token function">server</span><span class="token punctuation">(</span>可简写为s<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//启动本地服务器，可以在localhost：4000查看网站修改效果</span></code></pre>
+<p>我们先 输入 hexo g 生成网站文件<br><img src="https://img-blog.csdnimg.cn/20200307194109630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后再启动本地服务器，我在在浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 就能看到样式内容了<br><img src="https://img-blog.csdnimg.cn/20200307194337111.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200307194654587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>到这里本地测试就结束了，关键我们要放在服务器上面，本地测试适用于我们，一边修改代码，一边刷新网页查看修改好的样子</p>
+<h2 id="四-主题模块"><a href="#四-主题模块" class="headerlink" title="四.主题模块"></a>四.主题模块</h2><ol>
+<li><p>一般默认安装的主题是一个 landscape 主题，但是我感觉不是很花哨，而且hexo的主题特别多，都挺漂亮的，我们可以选择更改</p>
+<blockquote>
+<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo官方主题：https://hexo.io/themes/</a></p>
+</blockquote>
+</li>
+<li><p>给大家推荐一个主题 sakura，我搭建的主题就是这个，效果还是挺不错的,<a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" rel="noopener">sakura下载链接</a><br><img src="https://img-blog.csdnimg.cn/20200307223006950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>下载之后，我们将hexo-theme-sakura-master中的主题样式复制到 根目录下的 theme 目录下<br><img src="https://img-blog.csdnimg.cn/20200307222330953.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020030722243065.png" alt="在这里插入图片描述"></p>
+</li>
+<li><p>修改更目录下的配置文件 _config.yml</p>
+</li>
+</ol>
+<blockquote>
+<p>注意<br>theme： sakura    //此处的主题名字要和theme文件夹下主题名一致</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200307222845632.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>5. 重新运行测试,查看效果</p>
+<pre class=" language-c"><code class="language-c">hexo clean
+hexo g
+hexo s</code></pre>
+<h2 id="五-码云部署"><a href="#五-码云部署" class="headerlink" title="五.码云部署"></a>五.码云部署</h2><ol>
+<li>首先我们需要注册码云的账号，然后在创建一个仓库，这里初次使用码云的话可以，先看一下<a href="https://blog.csdn.net/weixin_45631738/article/details/104414876" target="_blank" rel="noopener">码云入门</a></li>
+<li>当然注册账号我们可以直接进入码云官网：<a href="https://gitee.com/" target="_blank" rel="noopener">https://gitee.com/</a>都是中文一看就会的那种</li>
+<li>创建仓库<br> 特别要注意这里有个大坑：<code>仓库名称，使用语言(JavaScript)，访问权限(公开)</code><br> <img src="https://img-blog.csdnimg.cn/20200307201109990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200307201826785.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><blockquote>
+<p>作为小白的我，成功的掉进这个坑里爬了好几天，没爬出来，最终请教大神帮忙，才发现是此处的原因。<br>当时，写的仓库名不是我的用户名，导致码云pages部署的路径有问题，导致相对路径不对，读不到css样式和js运行文件，所有进去后就是这个样子，所以依次告警大家不要入坑</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200307224725494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol start="4">
+<li><p>获取仓库地址<br> <img src="https://img-blog.csdnimg.cn/20200307202408310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>修改配置文件 在blog主目录下找到 _config.yml 打开进行配置，在代码的最底下找到此处<br> <img src="https://img-blog.csdnimg.cn/20200307202747687.png" alt="在这里插入图片描述"><br> 修改之后的样子，<br> <strong>特别注意这里还有个坑</strong>：<code>修改代码时候注意空格</code>，例如 repo： 后面都是有空格的，删除空格之后，后面运行的时候就会报错，这是编码的规定<br><img src="https://img-blog.csdnimg.cn/20200307203008590.png" alt="在这里插入图片描述"></p>
+</li>
+<li><p>开始部署，我们需要属于以下命令</p>
+</li>
+</ol>
+<pre class=" language-C"><code class="language-C">npm install hexo-deployer-git --save
+hexo g  //生成网站文件
+hexo d  //上传到远程在码云上新建的仓库
+
+//也可以采用一键部署
+hexo g --d</code></pre>
+<p>此时会弹出对话框让我们输入码云的用户名和密码，我们输完以后，就会开始上传，在本地文件夹中会多出来.deploy_git文件夹（上传的是此外文件夹下的内容，也就是生成的网站文件）<br><img src="https://img-blog.csdnimg.cn/20200307205213501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>登录码云账户，打开和自己用户名相同的仓库观察，如果出现和.deploy_git或者public文件夹下的文件就证明文件上传成功<br><img src="https://img-blog.csdnimg.cn/20200307205625309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>7. 开启pages功能<br><img src="https://img-blog.csdnimg.cn/20200307210149690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200307210929528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>    这样我们就可以点击生成的域名来看我们搭建的效果了<a href="https://zfq0620.gitee.io" target="_blank" rel="noopener">https://zfq0620.gitee.io</a></p>
+<h2 id="六-博客使用"><a href="#六-博客使用" class="headerlink" title="六.博客使用"></a>六.博客使用</h2><h3 id="1-编写文章"><a href="#1-编写文章" class="headerlink" title="1.编写文章"></a>1.编写文章</h3><blockquote>
+<p>首先我给大家推荐一个软件 vsCode,这个软件占用空间很小，插件很多，功能特别强大，我们可以打开我们整个文件夹，进行修改代码，写文章，对我们提高效率很有帮助<br>下载：<a href="https://www.lanzous.com/ia2kt9a" target="_blank" rel="noopener">vsCode.exe</a><br><img src="https://img-blog.csdnimg.cn/20200309100627872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+<p><strong>方法一</strong><br>通过命令来实现</p>
+<pre class=" language-c"><code class="language-c">hexo new hello  <span class="token comment" spellcheck="true">//hello 为博客的文件名</span></code></pre>
+<p>同时会在 根目录下 /source/_posts 目录下生成hello.md<br><img src="https://img-blog.csdnimg.cn/20200307213138179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>方法二</strong><br>手动到根目录下 /source/_posts 目录下，创建一个makedown 文件进行编写就可以了</p>
+<p>文件开头可以参考这里来写</p>
+<pre class=" language-c"><code class="language-c"><span class="token operator">--</span><span class="token operator">-</span>
+title： file_name
+tag： 标签名
+categories： 分类
+comment： 是否允许评论<span class="token punctuation">(</span>true or false<span class="token punctuation">)</span>
+description：描述
+<span class="token operator">--</span><span class="token operator">-</span>
+文章的正文部分，可以参考markdown 语法格式来写</code></pre>
+<h3 id="2-发布文章"><a href="#2-发布文章" class="headerlink" title="2.发布文章"></a>2.发布文章</h3><p>我们还是使用命令，推送到gitee上</p>
+<pre class=" language-c"><code class="language-c">hexo g <span class="token operator">--</span>d</code></pre>
+<p>推送成功之后，我们观察码云的远程仓库，我们的md格式的文件会自动生成到对应的目录，并且转化成html格式</p>
+<p>我们在去浏览我们的网站，如何发现和之前一样没有找到我们发布的文章，我们就到码云的page服务，去更新<br><img src="https://img-blog.csdnimg.cn/20200307215838546.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTYzMTczOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<hr>
+<p>将 csdn 博客导出在我们自己新建的博客中的方法<br><img src="https://img-blog.csdnimg.cn/20200307220217873.png" alt="在这里插入图片描述"><br>点击导出，格式为makedown，复制到 /source/_posts 目录下，并加以修改添加一下部分，进行分类</p>
+<pre class=" language-c"><code class="language-c"><span class="token operator">--</span><span class="token operator">-</span>
+title： file_name
+tag： 标签名
+categories： 分类
+comment： 是否允许评论<span class="token punctuation">(</span>true or false<span class="token punctuation">)</span>
+description：描述
+<span class="token operator">--</span><span class="token operator">-</span></code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/custom/alipay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/custom/wechat.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/03/10/14.%E5%8A%A8%E6%BC%AB%E7%9B%B8%E5%86%8C/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1360912587,180969427&fm=11&gp=0.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1360912587,180969427&fm=11&gp=0.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                我的动漫相册</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/02/20/13.hexo+sakura%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E5%90%88%E9%9B%86/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://img.mp.itc.cn/upload/20170112/ca122ef14888451e9c0388619b5877f2_th.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://img.mp.itc.cn/upload/20170112/ca122ef14888451e9c0388619b5877f2_th.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                hexo+sakura主题美化合集</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "OWbP4V9XAS1W0cOBkvYyuAIz-gzGzoHsz",
+        appKey: "TyFb4EOA6yox4atRLJpH0MHe",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://zfq0620.gitee.io/" target="_blank" rel="noopener" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/img/DestCropImage.png" itemprop="image" alt="Mr Zhai" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://zfq0620.gitee.io/" target="_blank" itemprop="url" rel="author noopener">Mr Zhai</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>学习中...</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Mr Zhai<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+	 </div>
+      <p style="color: #666666;">&copy 2020</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
+        </span>
+      </p>
+    </div>
+     <!-- <i class="fa fa-fire" aria-hidden="true"></i> -->
+	 <span style="color: #ccc;padding-left: 20px;">
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+       <span id="time" align="center">载入时间中...</span>
+        <script>
+          var now = new Date(); 
+          function createtime() { 
+          var grt= new Date("2020-02-11 17:20:00");//在此处修改你的建站时间
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("time").innerHTML = "小站已经苟活 "+ dnum +" 天 "+hnum + " 小时 " + mnum + " 分 " + snum + " 秒";      
+       } 
+       setInterval("createtime()",250);
+       </script> 
+      <!--不蒜子网页计数器-->
+      <span style="color:#ccc;padding-left: 20px;"><i class="fa fa-eye" aria-hidden="true"></i>访问量: <span id="busuanzi_value_site_pv"></span>次</span>
+    </span>
+	</div><!-- .site-info -->
+</footer>
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+
+<!-- 🌸飘落 -->
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
+<!--浏览器搞笑标题-->
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/hititle.js"></script>
+
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+  <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/f07007f7.js","daovoice")
+    daovoice('init', {
+      app_id: "f07007f7"
+    });
+    daovoice('update');
+  </script>
+  
+  
+<!-- // 烟花 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/Yafine/cdn@2.5/source/js/fireworks.js"></script>
+
+<!-- // 文字 -->
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/shehuizhuyi.js"></script>
+
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <!-- 实现换肤功能 -->
+  <div class="skin-menu no-select" id="mainskin" style="position: fixed">
+ <div class="theme-controls row-container">
+  <ul class="menu-list">
+   <li id="white-bg"> <i class="fa fa-television" aria-hidden="true"></i></li>
+   <li id="sakura-bg"> <i class="iconfont icon-sakura"></i></li>
+   <li id="gribs-bg"> <i class="fa fa-slack" aria-hidden="true"></i></li>
+   <li id="KAdots-bg"> <i class="iconfont icon-dots"></i></li>
+   <li id="totem-bg"> <i class="fa fa-optin-monster" aria-hidden="true"></i></li>
+   <li id="pixiv-bg"> <i class="iconfont icon-pixiv"></i></li>
+   <li id="bing-bg"> <i class="iconfont icon-bing"></i></li>
+   <li id="dark-bg"> <i class="fa fa-moon-o" aria-hidden="true"></i></li>
+  </ul>
+ </div>
+</div>
+<canvas id="night-mode-cover"></canvas> 
+  <div class="changeSkin-gear no-select">
+  <div class="keys" id="setbtn"> 
+   <span id="open-skinMenu"> 切换主题 | SCHEME TOOL  
+     <i class="iconfont icon-gear inline-block rotating"></i> 
+   </span>
+  </div>
+</div>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/zfq0620/cdn@v1.1/img/custom/avatar.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">🦋断桥の烟雨</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="https://gitee.com/zfq0620" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="https://weibo.com/u/6381711951/home?leftnav=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=18391763855&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-vertical" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E7%94%9F%E6%B4%BB/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E8%B5%84%E6%BA%90/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E9%9A%8F%E6%83%B3/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-graduation-cap faa-shake" aria-hidden="true"></i>
+            学习
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                  <i class="fa fa-television" aria-hidden="true"></i>
+                  前端
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                  <i class="fa fa-edit" aria-hidden="true"></i>
+                  C语言
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
+                  <i class="fa fa-microchip" aria-hidden="true"></i>
+                  嵌入式
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/">
+                  <i class="fa fa-bank" aria-hidden="true"></i>
+                  物联网
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/%E6%82%A6%E8%AF%BB/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones faa-bounce" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/%E5%9B%BE%E9%9B%86/">
+                  <i class="fa fa-photo faa-vertical" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/%E8%A7%86%E9%A2%91/">
+                  <i class="fa fa-play-circle faa-bounce" aria-hidden="true"></i>
+                  视频
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heartbeat faa-tada" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-vcard faa-tada" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-user faa-tada" aria-hidden="true"></i>
+                  我的
+                </a>
+              </li>
+            
+              <li>
+                <a href="/android/">
+                  <i class="fa fa-android faa-pulse" aria-hidden="true"></i>
+                  软件
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-vertical" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="4887733040"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="none"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<!-- 2d看板板娘 -->
+<script src="/live2d-widget/autoload.js"></script>
