@@ -40,29 +40,6 @@
   </entry>
   
   <entry>
-    <title>我的动漫相册</title>
-    <link href="http://yoursite.com/2020/03/10/14.%E5%8A%A8%E6%BC%AB%E7%9B%B8%E5%86%8C/"/>
-    <id>http://yoursite.com/2020/03/10/14.%E5%8A%A8%E6%BC%AB%E7%9B%B8%E5%86%8C/</id>
-    <published>2020-03-10T15:05:28.000Z</published>
-    <updated>2020-03-15T12:19:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">欢迎来的我的博客，请输入密码后阅读</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1+WUvmHrvb2EImUZ5ZNNpe/O9gqfU5w5SSqW479QXLJnTE93Ey+7IvxJEwbaca0aG/4ybj76ChNwXSMuXEWfWE4hl7vo7jUdaqZn70DzkeElKL8QOf12kRbqyZdJygTyyo1luWOSbOS8aYavxBG9oL35L3UOwM8ihIQb/RlI2seKgGuT4+Xwi6KmbMkWQuDeUi8reDkPEh44b8FM319Q74ZhpkOwrT2xte1sTondYq6GMEjI+KrkAbUXw9lHAjk52TOzXGBoHe5toHRkp3I5HGzTovcMhvhC/GRJnEE03ALqi+WhCGDZJbyFrQ1LMN2jb+7/JAU8Nf61jdGZrVNzJushJwSq+R1I9x3KuOUS4Yn9pkJUu+77Ze29/0TkslyeB0IeZzuu7UJewi3/aW+av6R5bIZ/wVrI/Us/EHeO+48x3XS2TasybuK+rYqCLDUMDA3a1Mky/5oKt2g2F5DC6mIDEjC1ryO3ZRo8SHTCmZMUaZC26WJQnchb2I3SoMcRJe1QsBPZ7xOMT1TXraDX2696RPXBt5tWbnX0EJVKfRytVD4SRW+uqeP8TRTNFcfMLk6ClPmZ7fkB4QYiQafe3a2PILG8LbDN9axwT3nFHmCqqkGay0HB1G3KxtZIxnPwX+Ml9ipz+c2y0qbHXs9XWel9cyVZsBwHO1015IwubRkmYwcuzsc7k04KzJqLZ8u0qq02sA6hG0J/18W7RKtp5Jx/GK9/zrj+fwsAg6R9dD8T0oNmhI7qx6xDzPD2iCNt2jnopcaQTROudTayNvKJP7rxIkF9fXkddgMHODcdKTjnhbY75mz0D6GGhBEOT3giikJuYc6fMyzHzXR7lrszVCtt/cnJrdMTRDKJTGOmgSAYvZiWrOICgTcXjeZ019TDU/Ri1GzqSb/6mxNStAvzd74UJ8x7vWOg8o= </div>]]></content>
-    
-    <summary type="html">
-    
-      我的动漫相册
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="图集" scheme="http://yoursite.com/tags/%E5%9B%BE%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
     <title>hexo+gitee搭建私人博客成功避开所有坑</title>
     <link href="http://yoursite.com/2020/03/01/6.hexo+gitee(%E7%A0%81%E4%BA%91)%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%81%BF%E5%BC%80%E6%89%80%E6%9C%89%E5%9D%91/"/>
     <id>http://yoursite.com/2020/03/01/6.hexo+gitee(%E7%A0%81%E4%BA%91)%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%81%BF%E5%BC%80%E6%89%80%E6%9C%89%E5%9D%91/</id>
@@ -82,27 +59,6 @@
     
     
       <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>手机屏幕投屏到电脑</title>
-    <link href="http://yoursite.com/2020/02/20/15.%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6/"/>
-    <id>http://yoursite.com/2020/02/20/15.%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6/</id>
-    <published>2020-02-20T08:18:01.000Z</published>
-    <updated>2020-03-15T12:19:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p>有时候我们需要将手机屏幕上的内容，投屏到电脑上，然后可以在电脑上通过鼠标来控制手机，省去了一边看手机一边看电脑的麻烦，大大的提高了工作的效率，但是现在在百度上下载的软件，好多都比较麻烦不是下载这个就是安装那个的，广告还挺多，影响人的使用心。今天我给大家推荐一个投屏的软件，是某大神写到代码，非常的简单好用<br><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311205520.png" alt=""></p><h2 id="二-下载"><a href="#二-下载" class="headerlink" title="二.下载"></a>二.下载</h2><p><a href="https://www.lanzous.com/ia5ip1e" target="_blank" rel="noopener">点击此处下载文件</a></p><h2 id="三-使用教程"><a href="#三-使用教程" class="headerlink" title="三.使用教程"></a>三.使用教程</h2><p><strong>有线连接</strong></p><ol><li>开启开发者模式，打开手机设置-关于手机（找到手机的全部参数-连续点击版本来开启开发者模式，不同的手机操作可能存在差异，不会的可以百度</li></ol><p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311203619.png" alt=""></p><ol start="2"><li>在手机设置里面找到更多设置-开发者模式，打开开发者模式,往下拉找到 usb调试<blockquote><p>上面的开关是保证可以正常连接，下面的是保证电脑的鼠标可以点击控制</p></blockquote></li></ol><p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311204154.png" alt=""></p><ol start="3"><li>解压下载好的 scrcpy压缩包，然后让手机和电脑连接，点击 scrcpy.exe 运行程序,我们就可以看到效果了</li></ol><p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311205325.png" alt=""></p><p><strong>无线连接</strong></p><ol><li>有线连接成功后可以尝试无线连接。</li><li>首先还是要用数据线把手机和电脑连接起来，按windows+r键，然后输入cmd，打开「命令提示符」，切换到scrcpy目录下（输入E: 就会切换到E盘，通过cd + 文件夹名 切换到相应的目录）</li><li>在「命令提示符」中输入 .\adb tcpip 5555，然后拔下手机。继续输入 .\adb connect 手机IP地址:5555 。你手机的IP地址可以在，设置– 关于手机 – 状态中查看。输入完成后打开 scrcpy.exe  即可无线连接手机了。 比收费还好用哦</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      电脑可以控制手机
-    
-    </summary>
-    
-    
-      <category term="资源" scheme="http://yoursite.com/categories/%E8%B5%84%E6%BA%90/"/>
-    
     
   </entry>
   
@@ -136,7 +92,7 @@
     <published>2020-02-20T08:18:01.000Z</published>
     <updated>2020-03-15T12:19:27.000Z</updated>
     
-    <content type="html"><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">输入密码后才可以观看哟！</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1+7+NgZaT3wfojFHv0alJbK6sNp3vBzve0azaLtBsaLvD0UisQ1w1VbM0YOpBMae3K3W30KEKjNj0f/SiHknts9WdIrVq2EpIdBbaT/VSuqBRtSlvEylaroGEIsUR0WVvXwmxxNg3DJX260EKx+UQfJcDhn76pPNHWd3R2My9HVN2UoTFkUrqJGx6EXwI7fNhr3SZoL9mm0+yXImXfou4tcV7TIgXJA2ejA2lX2blu6vwuVDhe7d4vtBbzazBTVh+zoLEXqWx/L3tPIqkC6iV8prnPlERoV/zsznYrCXuoACLKoIHu0HtklwaMqF02G/VSwQP01kN6Tb+WWzFrhJ5dWoePdlUU+INnRa3pP/PKTnZHt16D9+cYOXGvlYJKN1vMC1bJP7Adibwjemqgc5H+XzP457ck2KLWgVQAIr7ElJYe3RfB9K1E26uq6u2wU/V75hWIUaPW3GwjzEA6BWSWky9dDrPE/SGbTzZkqrCMV+SoY70/8+/GVMJP1ww0cfrEAlkd7YpkKKsuDWAySUWsBHWuyNxt0KfR6Swsf30hcRgWXc8WACLrDZMsapBttNJ89ZNS+Mkmj055u9ey2Jbmu8h6Fx47HM4rcKU6OqCaTK2mkRQEdCj/VUP/mPykRMjmz/iYXMR+eMKxCRdocZ0laPn5thnpol7Zb0nXizLxdklTpK9CpHu5Q6KmSBaz/8Mqrc5lHxy6X1EICa/GHLotBtaNVJIOXd9wz8hm+HogD/JwLLaD678+Z04pjTPW7voiIzAxC289XLGdUSZC5nA2b0iP6Z4sZCeC6TvV7VSqBGCI2zuP9nyu3ny61TBRRQku0nbjczWCCLg== </div>]]></content>
+    <content type="html"><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">输入密码后才可以观看哟！</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1+bMfRXnehugv10zN00NQQ3thL128l6nBIBbWxzgI4ly0DT84lpuV1MZpKv91iLWj2iAqd9qJAhMVghrfJxx66oQAfyGOhuQmxJdSn5XRfzs8EClf10HojYZ9Y+yVlLmYkWBe5qRzia9feJIRgKnYS+w8AMNlfmoFg7j6fobEHSQZjxr4r/D3l4+EjixiWh9ETNRFRP8TR4A729PgJykQm30uIEz+BWSLk3VYx5M4F3lFpGOPgFCx/g1dEdVchs20VXU1sTzyIzrUD1NmMuUl6+qG9069dkB2oeinzhjv2TbhjNQPZE8D1L8QjbuMhFs79kS22eT5XGGLP89kMQBS5aUQc4ByGqY5hXvN49qLy14NAMUt4Loebi+6ujuaALbTqkO/iGtvGN8/MoT14+L6xjgJcF9OVORioimBMgtk+67OevzG5RwKGgFuFXZIi95M0n21YJpOu9txIG0Ehhrhfi6hkUhI4m+fU5e4z0xhzv4bHzu+aXCZMy9gkVTz47I1dmEChGXpBfHRGOrlqNpaess9dYZGgu85RDsVEHYNsLu53MKEdyeVVbfLY/g1TRN7NG+2I1rVIRIIxyk4vJ//Oqcx50J/i/hz+6YSTl5PAL47nD8zf7p2cth+AHwUK0nLHtDWvz4XP8R3clqAwzWvPcye3OgigXbFw/fHP6O1WYGBROMP56CYsdoH8EOq3B1bv5MhYn3v2x1vbgVs0ta5hnGogeo3RK7Il9kDuGLjjlpptAZUqunSPMy6LU78wD2iRzvUGswB966WFlyIPCjeT/IRhH9SPvueMa3hsafiyTqecOecKX9VJ0t0UZoqF0Q8EtiwN8m1SEiQ== </div>]]></content>
     
     <summary type="html">
     
@@ -149,6 +105,27 @@
     
     
       <category term="视频" scheme="http://yoursite.com/tags/%E8%A7%86%E9%A2%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手机屏幕投屏到电脑</title>
+    <link href="http://yoursite.com/2020/02/20/15.%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6/"/>
+    <id>http://yoursite.com/2020/02/20/15.%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6/</id>
+    <published>2020-02-20T08:18:01.000Z</published>
+    <updated>2020-03-15T12:19:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p>有时候我们需要将手机屏幕上的内容，投屏到电脑上，然后可以在电脑上通过鼠标来控制手机，省去了一边看手机一边看电脑的麻烦，大大的提高了工作的效率，但是现在在百度上下载的软件，好多都比较麻烦不是下载这个就是安装那个的，广告还挺多，影响人的使用心。今天我给大家推荐一个投屏的软件，是某大神写到代码，非常的简单好用<br><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311205520.png" alt=""></p><h2 id="二-下载"><a href="#二-下载" class="headerlink" title="二.下载"></a>二.下载</h2><p><a href="https://www.lanzous.com/ia5ip1e" target="_blank" rel="noopener">点击此处下载文件</a></p><h2 id="三-使用教程"><a href="#三-使用教程" class="headerlink" title="三.使用教程"></a>三.使用教程</h2><p><strong>有线连接</strong></p><ol><li>开启开发者模式，打开手机设置-关于手机（找到手机的全部参数-连续点击版本来开启开发者模式，不同的手机操作可能存在差异，不会的可以百度</li></ol><p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311203619.png" alt=""></p><ol start="2"><li>在手机设置里面找到更多设置-开发者模式，打开开发者模式,往下拉找到 usb调试<blockquote><p>上面的开关是保证可以正常连接，下面的是保证电脑的鼠标可以点击控制</p></blockquote></li></ol><p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311204154.png" alt=""></p><ol start="3"><li>解压下载好的 scrcpy压缩包，然后让手机和电脑连接，点击 scrcpy.exe 运行程序,我们就可以看到效果了</li></ol><p><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311205325.png" alt=""></p><p><strong>无线连接</strong></p><ol><li>有线连接成功后可以尝试无线连接。</li><li>首先还是要用数据线把手机和电脑连接起来，按windows+r键，然后输入cmd，打开「命令提示符」，切换到scrcpy目录下（输入E: 就会切换到E盘，通过cd + 文件夹名 切换到相应的目录）</li><li>在「命令提示符」中输入 .\adb tcpip 5555，然后拔下手机。继续输入 .\adb connect 手机IP地址:5555 。你手机的IP地址可以在，设置– 关于手机 – 状态中查看。输入完成后打开 scrcpy.exe  即可无线连接手机了。 比收费还好用哦</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      电脑可以控制手机
+    
+    </summary>
+    
+    
+      <category term="资源" scheme="http://yoursite.com/categories/%E8%B5%84%E6%BA%90/"/>
+    
     
   </entry>
   
