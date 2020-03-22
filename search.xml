@@ -428,17 +428,6 @@ live2d:
       </tags>
   </entry>
   <entry>
-    <title>西理工跑酷</title>
-    <url>/2020/02/20/17.%E8%B7%91%E9%85%B7%E8%A7%86%E9%A2%91/</url>
-    <content><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">输入密码后才可以观看哟！</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1+bMfRXnehugv10zN00NQQ3thL128l6nBIBbWxzgI4ly0DT84lpuV1MZpKv91iLWj2iAqd9qJAhMVghrfJxx66oQAfyGOhuQmxJdSn5XRfzs8EClf10HojYZ9Y+yVlLmYkWBe5qRzia9feJIRgKnYS+w8AMNlfmoFg7j6fobEHSQZjxr4r/D3l4+EjixiWh9ETNRFRP8TR4A729PgJykQm30uIEz+BWSLk3VYx5M4F3lFpGOPgFCx/g1dEdVchs20VXU1sTzyIzrUD1NmMuUl6+qG9069dkB2oeinzhjv2TbhjNQPZE8D1L8QjbuMhFs79kS22eT5XGGLP89kMQBS5aUQc4ByGqY5hXvN49qLy14NAMUt4Loebi+6ujuaALbTqkO/iGtvGN8/MoT14+L6xjgJcF9OVORioimBMgtk+67OevzG5RwKGgFuFXZIi95M0n21YJpOu9txIG0Ehhrhfi6hkUhI4m+fU5e4z0xhzv4bHzu+aXCZMy9gkVTz47I1dmEChGXpBfHRGOrlqNpaess9dYZGgu85RDsVEHYNsLu53MKEdyeVVbfLY/g1TRN7NG+2I1rVIRIIxyk4vJ//Oqcx50J/i/hz+6YSTl5PAL47nD8zf7p2cth+AHwUK0nLHtDWvz4XP8R3clqAwzWvPcye3OgigXbFw/fHP6O1WYGBROMP56CYsdoH8EOq3B1bv5MhYn3v2x1vbgVs0ta5hnGogeo3RK7Il9kDuGLjjlpptAZUqunSPMy6LU78wD2iRzvUGswB966WFlyIPCjeT/IRhH9SPvueMa3hsafiyTqecOecKX9VJ0t0UZoqF0Q8EtiwN8m1SEiQ== </div>]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>视频</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>手机屏幕投屏到电脑</title>
     <url>/2020/02/20/15.%E6%8A%95%E5%B1%8F%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p>有时候我们需要将手机屏幕上的内容，投屏到电脑上，然后可以在电脑上通过鼠标来控制手机，省去了一边看手机一边看电脑的麻烦，大大的提高了工作的效率，但是现在在百度上下载的软件，好多都比较麻烦不是下载这个就是安装那个的，广告还挺多，影响人的使用心。今天我给大家推荐一个投屏的软件，是某大神写到代码，非常的简单好用<br><img src="https://cdn.jsdelivr.net/gh/zfq0620/PicGo/mode/20200311205520.png" alt=""></p>
