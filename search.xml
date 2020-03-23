@@ -3545,7 +3545,7 @@ cd /opt
   <entry>
     <title>hexo命令速查小册</title>
     <url>/2019/10/27/23.hexo%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E5%B0%8F%E5%86%8C/</url>
-    <content><![CDATA[<p>最近都在搭建自己的博客，不断的调整显示效果，以及添加一些初始功能，总算大体框架完成，细枝末节还有待商榷。我的博客地址为: <a href="http://www.8868866.xyz/" target="_blank" rel="noopener">http://www.8868866.xyz/</a>  ，希望大家多多捧场 ~ 当然也希望大家多多关注公众号『大海的BLOG』</p>
+    <content><![CDATA[<p>最近都在搭建自己的博客，不断的调整显示效果，以及添加一些初始功能，总算大体框架完成，细枝末节还有待商榷。我的博客地址为: <a href="http://www.8868866.xyz/">http://www.8868866.xyz/</a>  ，希望大家多多捧场 ~ 当然也希望大家多多关注公众号『大海的BLOG』</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>搭建博客的过程中使用到了框架 Node.js、HEXO 以及 GitHub 。</p>
 <p>下面就经常使用到的 hexo 的命令做一个总结，方便在使用过程中快速查阅。</p>
