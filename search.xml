@@ -584,8 +584,8 @@ int compDec(const void *a, const void *b) {
         <category>技术</category>
       </categories>
       <tags>
-        <tag>语言类</tag>
         <tag>算法类</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
@@ -798,8 +798,8 @@ int compDec(const void *a, const void *b) {
         <category>技术</category>
       </categories>
       <tags>
-        <tag>语言类</tag>
         <tag>算法类</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
