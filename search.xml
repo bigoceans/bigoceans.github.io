@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>model</title>
+    <url>/2020/03/23/model/</url>
+    <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>PICNIC-V.2.0.0_一款给天空加滤镜的APP</title>
     <url>/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/</url>
     <content><![CDATA[<p>虽然我是一个不拍照片的直男，但当我第一次透过picnic看我头顶的天空时，我就决定把它留在我的手机里！（大概也有近两年时间了）</p>
@@ -25,13 +32,6 @@
       <categories>
         <category>安卓</category>
       </categories>
-  </entry>
-  <entry>
-    <title>model</title>
-    <url>/2020/03/23/model/</url>
-    <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-]]></content>
   </entry>
   <entry>
     <title>重装系统&amp;激活系统</title>
@@ -589,6 +589,612 @@ int compDec(const void *a, const void *b) {
       </tags>
   </entry>
   <entry>
+    <title>多线程如何获取结果</title>
+    <url>/2020/03/18/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C/</url>
+    <content><![CDATA[<center>Author：BIGOcean</center>
+
+<p>多线程如何获取结果？</p>
+<a id="more"></a>
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="1-场景"><a href="#1-场景" class="headerlink" title="1.场景"></a>1.场景</h2><p>大家一般都会开启多线程去处理任务，如果需要获取线程处理结果怎么办？</p>
+<p>有人会说『全局变量』，但是又会引出共享全局变量后资源竞争导致数据错误的问题。只能通过添加互斥锁进行解决，互斥锁又不能发挥多线程的优势，很是头大。</p>
+<p>那么该如何解决呢？</p>
+<h2 id="2-解决办法"><a href="#2-解决办法" class="headerlink" title="2.解决办法"></a>2.解决办法</h2><p>老哥教我可以自定义一个类解决：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> threading
+
+
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span>threading<span class="token punctuation">.</span>Thread<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> func<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span>MyThread<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>func <span class="token operator">=</span> func
+        self<span class="token punctuation">.</span>args <span class="token operator">=</span> args
+        self<span class="token punctuation">.</span>result <span class="token operator">=</span> self<span class="token punctuation">.</span>func<span class="token punctuation">(</span><span class="token operator">*</span>self<span class="token punctuation">.</span>args<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_result</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        threading<span class="token punctuation">.</span>Thread<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>result
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None</code></pre>
+<p><strong>使用方式</strong>：直接创建一个对象 <code>thread</code>，在使用方法 <code>thread.start()</code> 后，再调用 <code>get_result()</code> 方法即可获取。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复用Django应用，使其可以通过pip安装</title>
+    <url>/2020/03/13/%E5%A4%8D%E7%94%A8Django%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87pip%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<center>Author：BIGOcean</center>
+
+<p>想自己打包一个应用，可以像其他模块一样通过 <code>pip install</code> 安装吗？在 <code>Django</code> 项目中，一个应用如果通过此方式随用随安装是不是很帅气？快来看一下如何操作吧！</p>
+<a id="more"></a>
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h1 id="1-前提"><a href="#1-前提" class="headerlink" title="1.前提"></a>1.前提</h1><h2 id="1-1应用规范"><a href="#1-1应用规范" class="headerlink" title="1.1应用规范"></a>1.1应用规范</h2><p>为了方便打包，你的应用应该解耦合，并且所有文件都规范放置。其中需要注意：按照 <code>Django3.0</code> 官方文档描述，每个应用中的模板文件 <code>templates</code> 应与主项目中通用模板文件 <code>templates</code> 分离，最主要目的是为了创建可复用应用。</p>
+<blockquote>
+<p>官方文档原文：Just like the static files, we could have all our templates together, in one big templates directory, and it would work perfectly well. However, templates that belong to a particular application should be placed in that application’s template directory.</p>
+</blockquote>
+<p><strong>保证应用所需文件全部包含在应用目录中</strong>即可开始操作。</p>
+<h2 id="1-2-环境"><a href="#1-2-环境" class="headerlink" title="1.2 环境"></a>1.2 环境</h2><p>安装模块：</p>
+<pre class=" language-shell"><code class="language-shell"> pip install setuptools 
+ pip install wheel</code></pre>
+<h1 id="2-操作"><a href="#2-操作" class="headerlink" title="2.操作"></a>2.操作</h1><h2 id="2-1-准备文件"><a href="#2-1-准备文件" class="headerlink" title="2.1 准备文件"></a>2.1 准备文件</h2><p>比如我要打包应用 <code>polls</code> ：</p>
+<pre class=" language-shell"><code class="language-shell">polls
+├── __init__.py
+├── __pycache__
+│   ├── __init__.cpython-37.pyc
+│   ├── admin.cpython-37.pyc
+│   ├── apps.cpython-37.pyc
+│   ├── models.cpython-37.pyc
+│   ├── tests.cpython-37.pyc
+│   ├── urls.cpython-37.pyc
+│   ├── views.cpython-37.pyc
+│   └── views_bak.cpython-37.pyc
+├── admin.py
+├── apps.py
+├── migrations
+│   ├── 0001_initial.py
+│   ├── __init__.py
+│   └── __pycache__
+│       ├── 0001_initial.cpython-37.pyc
+│       └── __init__.cpython-37.pyc
+├── models.py
+├── static
+│   └── polls
+│       ├── images
+│       │   └── 1574779118421.jpg
+│       └── style.css
+├── templates
+│   └── polls
+│       ├── details.html
+│       ├── index.html
+│       └── results.html
+├── tests.py
+├── urls.py
+├── views.py
+└── views_bak.py # 视图备份文件</code></pre>
+<h3 id="2-1-1-步骤"><a href="#2-1-1-步骤" class="headerlink" title="2.1.1 步骤"></a>2.1.1 步骤</h3><h4 id="2-1-1-1-创建总目录"><a href="#2-1-1-1-创建总目录" class="headerlink" title="2.1.1.1 创建总目录"></a>2.1.1.1 创建总目录</h4><p>1) 创建总目录，比如创建目录 <code>django-polls</code></p>
+<p>2) 然后将应用 <code>polls</code> 移入上方总目录，此时它的目录结构应该是：</p>
+<pre class=" language-shell"><code class="language-shell">django-polls/polls</code></pre>
+<h4 id="2-1-1-2-创建说明文档"><a href="#2-1-1-2-创建说明文档" class="headerlink" title="2.1.1.2 创建说明文档"></a>2.1.1.2 创建说明文档</h4><p>创建说明文档 <code>django-polls/README.rst</code></p>
+<pre class=" language-txt"><code class="language-txt">=====
+Polls
+=====
+
+Polls is a Django app to conduct Web-based polls. For each question,
+visitors can choose between a fixed number of answers.
+
+Detailed documentation is in the "docs" directory.
+
+Quick start
+-----------
+
+1. Add "polls" to your INSTALLED_APPS setting like this::
+
+    INSTALLED_APPS = [
+        ...
+        'polls',
+    ]
+
+2. Include the polls URLconf in your project urls.py like this::
+
+    path('polls/', include('polls.urls')),
+
+3. Run ``python manage.py migrate`` to create the polls models.
+
+4. Start the development server and visit http://127.0.0.1:8000/admin/
+   to create a poll (you'll need the Admin app enabled).
+
+5. Visit http://127.0.0.1:8000/polls/ to participate in the poll.</code></pre>
+<h4 id="2-1-1-3-创建授权协议文件"><a href="#2-1-1-3-创建授权协议文件" class="headerlink" title="2.1.1.3 创建授权协议文件"></a>2.1.1.3 创建授权协议文件</h4><p>创建一个 <code>django-polls/LICENSE</code> 文件</p>
+<pre class=" language-txt"><code class="language-txt">Copyright (c) 2018 The Python Packaging Authority
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre>
+<blockquote>
+<p>协议文件自己可以从网上寻找生成方式</p>
+</blockquote>
+<h4 id="2-1-1-4-创建安装文件"><a href="#2-1-1-4-创建安装文件" class="headerlink" title="2.1.1.4 创建安装文件"></a>2.1.1.4 创建安装文件</h4><p>1) 创建文件 <code>django-polls/setup.cfg</code> （此文件为模块的配置信息，比如作者的姓名、联系方式等）</p>
+<pre class=" language-txt"><code class="language-txt">[metadata]
+name = django-polls
+version = 0.1
+description = A Django app to conduct Web-based polls.
+long_description = file: README.rst
+url = https://www.pythonnote.cn
+author = Ethan Yan
+author_email = yanyuliang6@163.com
+license = MIT  # Example license
+classifiers =
+    Environment :: Web Environment
+    Framework :: Django
+    Framework :: Django :: X.Y  # Replace "X.Y" as appropriate
+    Intended Audience :: Developers
+    License :: OSI Approved :: BSD License
+    Operating System :: OS Independent
+    Programming Language :: Python
+    Programming Language :: Python :: 3
+    Programming Language :: Python :: 3 :: Only
+    Programming Language :: Python :: 3.6
+    Programming Language :: Python :: 3.7
+    Programming Language :: Python :: 3.8
+    Topic :: Internet :: WWW/HTTP
+    Topic :: Internet :: WWW/HTTP :: Dynamic Content
+
+[options]
+include_package_data = true
+packages = find:</code></pre>
+<p>2) 创建文件 <code>django-polls/setup.py</code> （此文件是为了构建和安装应用）</p>
+<pre class=" language-txt"><code class="language-txt">from setuptools import setup
+
+setup()</code></pre>
+<h4 id="2-1-1-5-创建引用文件"><a href="#2-1-1-5-创建引用文件" class="headerlink" title="2.1.1.5 创建引用文件"></a>2.1.1.5 创建引用文件</h4><p>默认包中只包含 <code>Python</code> 模块和包。为了包含额外文件，我们需要创建一个名为 <code>MANIFEST.in</code> 的文件。为了包含模板、<code>README.rst</code> 和我们的 <code>LICENSE</code> 文件，创建文件 <code>django-polls/MANIFEST.in</code> 包含以下内容：</p>
+<pre class=" language-shell"><code class="language-shell">include LICENSE
+include README.rst
+recursive-include polls/static *
+recursive-include polls/templates *
+recursive-include docs *</code></pre>
+<blockquote>
+<p><code>docs</code> 目录为文档存放目录，可有可无，视情况而定。如果需要引入其他文件，按照格式在上述文件中补充即可。</p>
+</blockquote>
+<p>最终的目录结构如下：</p>
+<pre class=" language-shell"><code class="language-shell">django-polls
+├── LICENSE
+├── MANIFEST.in
+├── README.rst
+├── doc
+├── polls
+├── setup.cfg
+└── setup.py</code></pre>
+<h2 id="2-2-打包"><a href="#2-2-打包" class="headerlink" title="2.2 打包"></a>2.2 打包</h2><p>接下来快看一下如何打包吧！</p>
+<p>1) 进入总目录 <code>django-polls</code> 中</p>
+<p>2) 执行如下命令：</p>
+<pre class=" language-shell"><code class="language-shell">python setup.py sdist bdist_wheel</code></pre>
+<p>3) 最终的模块在如下位置：</p>
+<pre class=" language-shell"><code class="language-shell">dist
+├── django-polls-0.1.tar.gz
+└── django_polls-0.1-py3-none-any.whl</code></pre>
+<p><code>django-polls-0.1.tar.gz</code> 即打包好的应用。</p>
+<h2 id="2-3-安装使用"><a href="#2-3-安装使用" class="headerlink" title="2.3 安装使用"></a>2.3 安装使用</h2><p>在应用包所在目录执行如下命令即可安装：</p>
+<pre class=" language-shell"><code class="language-shell">python -m pip install django-polls-0.1.tar.gz </code></pre>
+<p>安装后如何在 <code>Django</code> 项目中使用呢？</p>
+<p>1) 在 <code>settings</code> 文件中添加如下应用：</p>
+<pre class=" language-shell"><code class="language-shell">INSTALLED_APPS = [
+        ...
+        'polls',
+    ]</code></pre>
+<p>2) 在 <code>urls</code> 文件中添加如下代码：</p>
+<pre class=" language-shell"><code class="language-shell">path('polls/', include('polls.urls')),</code></pre>
+<p>3) 迁移数据库文件，创建 <code>models</code>：</p>
+<pre class=" language-shell"><code class="language-shell">python manage.py migrate</code></pre>
+<p>然后即可使用。如果想要使用我打包好的应用体验一把，可以在微信公众号「全栈技术精选」后台回复关键字「polls应用包」获取模块。</p>
+<h2 id="2-4-卸载"><a href="#2-4-卸载" class="headerlink" title="2.4 卸载"></a>2.4 卸载</h2><p>卸载：</p>
+<pre class=" language-shell"><code class="language-shell">python -m pip uninstall django-polls</code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>django</category>
+      </categories>
+      <tags>
+        <tag>django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django迁移数据库报错解决</title>
+    <url>/2020/03/12/15.Django%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<p><code>Django</code> 最新版本创建应用后，迁移数据库报错怎么办？</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p><code>Django3.0.2</code>：</p>
+<pre class=" language-shell"><code class="language-shell">(django_dev) > python -m django --version
+3.0.2</code></pre>
+<p><code>MySQl8.0.19</code>：</p>
+<pre class=" language-shell"><code class="language-shell">Server version: 8.0.19 MySQL Community Server - GPL</code></pre>
+<p><code>Python3.7.6</code>：</p>
+<pre class=" language-shell"><code class="language-shell">(django_dev) > python --version
+Python 3.7.6</code></pre>
+<h2 id="2-报错"><a href="#2-报错" class="headerlink" title="2.报错"></a>2.报错</h2><p>执行命令：</p>
+<pre class=" language-shell"><code class="language-shell">(django_dev) > python manage.py makemigrations polls</code></pre>
+<p>报错信息如下：</p>
+<pre class=" language-shell"><code class="language-shell">django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3.</code></pre>
+<p>根据提示，是数据库 <code>MySQL</code> 与 <code>Django</code> 版本不匹配，建议我们升级 <code>mysqlclient</code>。</p>
+<p>首先要说明的是，数据库 <code>MySQL</code> 与 <code>Django</code> 都是最新版本，不存在需要升级的问题。那么问题就应该出现在连接数据库的模块  <code>PyMySQL</code> 上了，但它也是安装的最新版：</p>
+<pre class=" language-shell"><code class="language-shell">(django_dev) > pip install --upgrade PyMySQL
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already up-to-date: PyMySQL in /Users/ethanyan/pyenv/django_dev/lib/python3.7/site-packages (0.9.3)</code></pre>
+<blockquote>
+<p>根据提示，该模块并无任何更新可用。</p>
+</blockquote>
+<h2 id="3-解决"><a href="#3-解决" class="headerlink" title="3.解决"></a>3.解决</h2><p>既然外部组件并无问题，接下来核查代码层面。可以根据报错提示，进入底层代码逐个文件查找原因，最终定位到如下文件：</p>
+<pre class=" language-shell"><code class="language-shell">django_dev/lib/python3.7/site-packages/django/db/backends/mysql/base.py</code></pre>
+<blockquote>
+<p><code>django_dev</code> 为项目的虚拟环境。</p>
+</blockquote>
+<p>此文件从第 35 行开始，有如下代码在作怪：</p>
+<pre class=" language-shell"><code class="language-shell">version = Database.version_info
+if version < (1, 3, 13):
+    raise ImproperlyConfigured('mysqlclient 1.3.13 or newer is required; you have %s.' % Database.__version__)</code></pre>
+<p>原来是底层有版本校验！查看其他文件，发现此校验并无关联内容，即可以注释掉，我们进行尝试：</p>
+<pre class=" language-shell"><code class="language-shell"># version = Database.version_info
+# if version < (1, 3, 13):
+#     raise ImproperlyConfigured('mysqlclient 1.3.13 or newer is required; you have %s.' % Database.__version__)</code></pre>
+<p>然后再次执行命令：</p>
+<pre class=" language-shell"><code class="language-shell">(django_dev) > python manage.py makemigrations polls
+Migrations for 'polls':
+  polls/migrations/0001_initial.py
+    - Create model Question
+    - Create model Choice</code></pre>
+<p>执行成功。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python的这些小知识你注意到了吗？</title>
+    <url>/2020/03/10/25.python%E7%9A%84%E8%BF%99%E4%BA%9B%E5%B0%8F%E7%9F%A5%E8%AF%86%E4%BD%A0%E6%B3%A8%E6%84%8F%E5%88%B0%E4%BA%86%E5%90%97%EF%BC%9F/</url>
+    <content><![CDATA[<center>Author：BIGOcean</center>
+
+<p>本文将对一些小知识进行汇总，这些知识也许你用了 <code>python</code> 很久，但仍然没注意到。</p>
+<a id="more"></a>
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="1-操作文件的-x-模式"><a href="#1-操作文件的-x-模式" class="headerlink" title="1.操作文件的 x 模式"></a>1.操作文件的 x 模式</h2><p>对文件进行操作的 <code>opend</code> 函数大家都很熟悉，但是你注意到它还有一种模式为 <code>x</code> 吗？</p>
+<p>今天闲的无聊，翻了翻 <code>python</code> 的文档（电脑保存的 <code>python</code> 文档为3.8.2版本），然后发现：不光有 <code>a</code> 、<code>w</code>、<code>b</code> 、<code>r</code> 、<code>+</code> 模式，竟然还有一种模式为 <code>x</code>，下面讲一下吧。</p>
+<p>官方文档称：在 3.3 版本中，增加了 <code>x</code> 模式，它表示创建一个文件，如果文件已经存在，会报错 <code>FileExistsError</code> 。还需要注意一点，在 3.3 版本以后，曾经的 <code>IOError</code> 被别名为 <code>OSError</code>。</p>
+<h2 id="2-协程库-asyncio"><a href="#2-协程库-asyncio" class="headerlink" title="2.协程库 asyncio"></a>2.协程库 asyncio</h2><p>之前常用第三方库 <code>greentlet</code> 和 <code>gevent</code> 来创建协程，后来在 3.4 版本后，<code>python</code> 自身引入了一个协程库 <code>asyncio</code> 。它用来实现异步 <code>I/O</code>。下面看一下示例代码： </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> asyncio
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main_one</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'hello ...'</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'... main_one!'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main_two</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'hello ...'</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'... main_two!'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 创建 task 列表。ensure_future() 函数会返回 task 对象</span>
+tasks <span class="token operator">=</span> <span class="token punctuation">[</span>asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>main_one<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>main_two<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 使用 get_event_loop() 方法创建一个事件循环</span>
+loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 多个任务（即 task 列表）使用 wait() 方法执行</span>
+<span class="token comment" spellcheck="true"># 然后再调用 run_until_complete() 函数将协程注册到事件循环中</span>
+loop<span class="token punctuation">.</span>run_until_complete<span class="token punctuation">(</span>asyncio<span class="token punctuation">.</span>wait<span class="token punctuation">(</span>tasks<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>结果为：</p>
+<pre class=" language-python"><code class="language-python">hello <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+hello <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> main_one!
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> main_two!</code></pre>
+<h2 id="3-装饰器-wraps"><a href="#3-装饰器-wraps" class="headerlink" title="3.装饰器 wraps"></a>3.装饰器 wraps</h2><p>模块 <code>functools</code> 中的 <code>wraps</code> ，会让使用了装饰器的函数伪装的更像原函数，也就是将原函数的属性赋值给使用了装饰器后的原函数。这句话可能比较难理解，我们先来回顾一下什么是装饰器？<strong>装饰器就是在不改变现有函数基础上，为函数增加功能的一个函数，它使用闭包来实现。闭包的规则为在函数内部定义了一个函数，内部函数使用了外部函数的变量，外部函数返回了内部函数的引用。</strong>有一点需要注意：虽然被装饰器装饰的函数仍然可以使用原名称调用，但是其实质上指向了装饰器的内函数。通过以下示例进行说明：</p>
+<p>1) 先来一个普通的装饰器使用示例</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 定义一个装饰器</span>
+<span class="token keyword">def</span> <span class="token function">eg_decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwds<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'我是装饰器啊...'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwds<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> wrapper
+
+<span class="token comment" spellcheck="true"># 使用定义的装饰器装饰函数</span>
+@eg_decorator
+<span class="token keyword">def</span> <span class="token function">noname</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'我是示例函数噻...'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 调用函数</span>
+noname<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 打印函数的 __name__ 属性</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>noname<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""
+结果是：
+我是装饰器啊...
+我是示例函数噻...
+wrapper
+"""</span></code></pre>
+<p>可以看到函数 <code>noname()</code> 的属性 <code>__name__</code> 的值为 <code>wrapper</code> ，即函数 <code>noname()</code> 指向的是装饰器的内函数。</p>
+<p>2) 接下来请出今天的主角 <code>wraps</code>：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps  <span class="token comment" spellcheck="true"># &lt;-- 导入模块</span>
+
+<span class="token comment" spellcheck="true"># 定义一个装饰器</span>
+<span class="token keyword">def</span> <span class="token function">eg_decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    @wraps<span class="token punctuation">(</span>func<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># &lt;-- 使用装饰器</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwds<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'我是装饰器啊...'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwds<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> wrapper
+
+<span class="token comment" spellcheck="true"># 使用定义的装饰器装饰函数</span>
+@eg_decorator
+<span class="token keyword">def</span> <span class="token function">noname</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'我是示例函数噻...'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 调用函数</span>
+noname<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 打印函数的 __name__ 属性</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>noname<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""
+结果是：
+我是装饰器啊...
+我是示例函数噻...
+noname
+"""</span></code></pre>
+<p>可以看到 <code>__name__</code> 属性的值被修改为函数 <code>noname</code> 自己。</p>
+<p>也许大家会问这有什么用？很久很久以前，在一个 <code>Flask</code> 项目中曾经出现过一个 <code>bug</code> ：给视图函数添加了自定义的装饰器之后（该装饰器会验证用户是否登录），再用 <code>@app.route(&quot;/index&quot;)</code> 绑定路径，会报错「你添加路径的视图函数已经绑定了其他路径」。这是因为路径会绑定自定义装饰器的内函数，之前其他视图绑定的其实并不是视图本身，而是自定义装饰器的内函数，这次实质上也去绑定内函数，所以会报错。通过查看底层代码是因为 <code>Flask</code> 的路由地址根据属性 <code>__name__</code> 绑定视图名称。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker容器网桥连接</title>
+    <url>/2020/03/07/17.docker%E5%AE%B9%E5%99%A8%E7%BD%91%E6%A1%A5%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<p>容器之间如何互相通讯？具体的命令有哪些？</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h1 id="网桥"><a href="#网桥" class="headerlink" title="网桥"></a>网桥</h1><p>网桥可以简单的理解为「局域网」，使加入网桥的容器之间可以互相通讯、暴露全部链接，同时与外界又保证了相对隔离的运行环境。</p>
+<h2 id="1-创建网桥"><a href="#1-创建网桥" class="headerlink" title="1.创建网桥"></a>1.创建网桥</h2><p>命令：</p>
+<pre class=" language-shell"><code class="language-shell">docker network create --driver bridge [网桥名称]</code></pre>
+<blockquote>
+<p>参数 <code>--driver bridge</code> 是默认配置，可写可不写</p>
+</blockquote>
+<h2 id="2-连接网桥"><a href="#2-连接网桥" class="headerlink" title="2.连接网桥"></a>2.连接网桥</h2><p>连接网桥分为两种方式，一种是在创建容器时链接网桥，一种是在容器运行时链接网桥。</p>
+<p>1) 创建容器时：</p>
+<pre class=" language-shell"><code class="language-shell">docker create --name [容器名称] --network [网桥名称] [镜像名称]</code></pre>
+<p>2) 容器运行状态时：</p>
+<pre class=" language-shell"><code class="language-shell">docker network connect [网桥名称] [容器名称]</code></pre>
+<h2 id="3-查看所有网桥"><a href="#3-查看所有网桥" class="headerlink" title="3.查看所有网桥"></a>3.查看所有网桥</h2><p>命令：</p>
+<pre class=" language-shell"><code class="language-shell">docker network ls</code></pre>
+<h2 id="4-查看某网桥的配置信息"><a href="#4-查看某网桥的配置信息" class="headerlink" title="4.查看某网桥的配置信息"></a>4.查看某网桥的配置信息</h2><p>命令：</p>
+<pre class=" language-shell"><code class="language-shell">docker network inspect [网桥id或者名称]</code></pre>
+<h2 id="5-删除自定义网桥"><a href="#5-删除自定义网桥" class="headerlink" title="5.删除自定义网桥"></a>5.删除自定义网桥</h2><p>命令：</p>
+<pre class=" language-shell"><code class="language-shell">docker network rm [网桥id或者名称]</code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>docker容器数据持久化</title>
+    <url>/2020/03/06/16.docker%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</url>
+    <content><![CDATA[<p><code>docker</code> 容器内的数据是独立于镜像之外的，那么如何将其持久化到宿主机呢？答案便是利用「数据卷」，那什么又是「数据卷」呢？</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h1 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h1><p><strong>数据卷其实就是一个目录或者一个文件</strong>，该目录（或文件）可以存在于宿主机上。将此目录（或文件）映射到容器中，便可以持久化容器内的数据到宿主机。如果目录不存在于宿主机上，而是存在于一个容器内部，那么此容器便可以被称为「<strong>数据卷容器</strong>」</p>
+<p>下面讲解一下具体的操作方式。</p>
+<h2 id="1-持久化到目录"><a href="#1-持久化到目录" class="headerlink" title="1.持久化到目录"></a>1.持久化到目录</h2><p>数据卷如果是宿主机的一个目录，可以进行如下操作将容器内的数据持久化：</p>
+<h3 id="1-1-命令介绍"><a href="#1-1-命令介绍" class="headerlink" title="1.1 命令介绍"></a>1.1 命令介绍</h3><pre class=" language-shell"><code class="language-shell">docker run -itd --name [容器名字] -v [宿主机目录]:[容器目录] [镜像名称] [命令(可选)]</code></pre>
+<p>该命令<strong>解读</strong>：通过一个镜像启动一个容器。利用 <code>--name</code> 指定容器的名称；利用 <code>-v</code> 指定宿主机的某目录作为数据卷挂载到容器中，使该容器与宿主机共享此目录 。</p>
+<blockquote>
+<p><strong>注意</strong>：1.如果本地路径不存在，<code>docker</code> 会贴心的自动创建。2.宿主机的目录请使用<strong>绝对路径</strong>。</p>
+</blockquote>
+<h3 id="1-2-操作"><a href="#1-2-操作" class="headerlink" title="1.2 操作"></a>1.2 操作</h3><p>1) 执行如下命令，将宿主机的 <code>/Users/ethanyan/dockerdata/</code> 目录映射到新创建的 <code>nginx</code> 容器中的 <code>/data</code> 目录：</p>
+<pre class=" language-shell"><code class="language-shell">docker run -itd --name nginx -v /Users/ethanyan/dockerdata:/data nginx</code></pre>
+<p>2) 接下来验证是否生效，先在本地共享目录下创建一个新目录 <code>NG</code>：</p>
+<pre class=" language-shell"><code class="language-shell">cd /Users/ethanyan/dockerdata
+mkdir NG</code></pre>
+<p>3) 进入容器 <code>nginx</code> 中看是否存在 <code>NG</code> 目录：</p>
+<pre class=" language-shell"><code class="language-shell">docker exec -it nginx /bin/bash
+
+root@81bbc2c2bf5c:/# cd /data/
+root@81bbc2c2bf5c:/data# ls
+NG</code></pre>
+<blockquote>
+<p>可发现在本地创建目录后，容器内的确实也出现了新建的目录。</p>
+</blockquote>
+<p>4) 反向进行操作。在容器的 <code>/data/NG</code> 目录中创建一个文件 <code>testdata.txt</code> ，退出容器后发现本地也出现了该文件。从而得出<strong>使用此方法可以让容器和宿主机共享目录，并将容器内的数据持久化到本地</strong>。</p>
+<h2 id="2-持久化到文件"><a href="#2-持久化到文件" class="headerlink" title="2.持久化到文件"></a>2.持久化到文件</h2><h3 id="2-1-命令介绍"><a href="#2-1-命令介绍" class="headerlink" title="2.1 命令介绍"></a>2.1 命令介绍</h3><pre class=" language-shell"><code class="language-shell">docker run -itd --name [容器名字] -v [宿主机文件]:[容器文件] [镜像名称] [命令(可选)]</code></pre>
+<blockquote>
+<p><code>-d</code> 是创建容器后，使其在后台持续运行。</p>
+</blockquote>
+<h3 id="2-2-操作"><a href="#2-2-操作" class="headerlink" title="2.2 操作"></a>2.2 操作</h3><p>1) 执行如下命令，将本地的 <code>testdata.txt</code> 文件映射到容器的 <code>testdata.txt</code> 文件：</p>
+<pre class=" language-shell"><code class="language-shell">docker run -itd --name nginx_test -v /Users/ethanyan/dockerdata/NG/testdata.txt:/data/testdata.txt nginx</code></pre>
+<blockquote>
+<p>同样是创建了一个容器，此容器基于镜像 <code>nginx</code> ，并命名为 <code>nginx_test</code> 。</p>
+</blockquote>
+<p><strong>注意：</strong>宿主机要映射的文件与容器内的文件名称可以不同，但是文件类型必须相同！</p>
+<p>2) 接下来同样验证一下此操作。在本地的文件 <code>/Users/ethanyan/dockerdata/NG/testdata.txt</code> 中写入 <code>hello world</code></p>
+<pre class=" language-shell"><code class="language-shell">cd /Users/ethanyan/dockerdata/NG/
+echo 'hello world' > testdata.txt</code></pre>
+<p>3) 进入容器内，执行下列操作：</p>
+<pre class=" language-shell"><code class="language-shell">root@8694fd7cba10:/# cd /data
+root@8694fd7cba10:/data# ls
+testdata.txt
+root@8694fd7cba10:/data# cat testdata.txt
+hello world</code></pre>
+<p>4) 验证了宿主机修改文件后容器内文件也被修改。接下来我们在容器内修改一下内容，看本地是否也被修改：</p>
+<pre class=" language-shell"><code class="language-shell">docker exec -it nginx /bin/bash
+
+root@8694fd7cba10:/# cd /data
+root@8694fd7cba10:/data# ls
+testdata.txt
+root@8694fd7cba10:/data# echo 'xxx测试用' >> testdata.txt
+root@8694fd7cba10:/data# cat testdata.txt
+hello world
+xxx测试用
+root@8694fd7cba10:/data# exit
+exit</code></pre>
+<p>) 然后在本地查看发现内容也被更改。<strong>说明可以使用文件持久化数据</strong>。</p>
+<h2 id="3-持久化到容器"><a href="#3-持久化到容器" class="headerlink" title="3.持久化到容器"></a>3.持久化到容器</h2><p>如果不想这些数据直接暴露在宿主机，可以使用数据卷容器的方式。将数据卷容器挂载到其他容器，就可以多个容器之间共享数据了，而且还可以持久化的保存数据（后面会讲解如何备份和恢复数据卷容器）</p>
+<p><strong>注意：数据卷容器不启动</strong></p>
+<h3 id="3-1-步骤"><a href="#3-1-步骤" class="headerlink" title="3.1 步骤"></a>3.1 步骤</h3><p>1) 创建数据卷容器</p>
+<p>2) 将数据卷容器挂载到其他容器 </p>
+<p><strong>注意：使用数据卷容器是容器之间共享数据，不涉及宿主机，因此数据没有在宿主机上。</strong></p>
+<h3 id="3-2-示例"><a href="#3-2-示例" class="headerlink" title="3.2 示例"></a>3.2 示例</h3><p>1) 创建一个数据卷容器：</p>
+<pre class=" language-shell"><code class="language-shell"># 命令
+docker create -v [容器数据卷目录] --name [容器名字] [镜像名称] [命令(可选)]
+# 示例
+docker create -v /data/ --name data nginx</code></pre>
+<blockquote>
+<p>既然需要创建一个数据卷容器，那么就需要使用镜像，因为我电脑只有一个 <code>nginx</code> 镜像，那么使用它即可。一般大家都习惯使用 <code>centos</code> 或者 <code>Ubuntu</code> 作为基础镜像</p>
+</blockquote>
+<p>2) 创建两个容器（为了测试是否可以在容器间共享数据），并都挂载数据卷容器：</p>
+<pre class=" language-shell"><code class="language-shell"># 创建容器并挂载数据卷命令
+docker run --volumes-from [数据卷容器 id/name] -itd --name [容器名字] [镜像名称] [命令(可选)]
+# 示例 
+docker run  --volumes-from db847d3fc055 -itd --name nginx_test1 nginx /bin/bash
+docker run  --volumes-from db847d3fc055 -itd --name nginx_test2 nginx /bin/bash
+# 注意：db847d3fc055 为数据卷容器id</code></pre>
+<p>3) <strong>验证操作</strong></p>
+<p>先进入容器 <code>nginx_test1</code> 中进行操作，创建一个文件：</p>
+<pre class=" language-shell"><code class="language-shell">docker exec -it nginx_test1 /bin/bash
+
+root@72abfcc9e2e9:/# ls /data/
+root@72abfcc9e2e9:/# touch /data/file.txt
+root@72abfcc9e2e9:/# ls /data/
+file.txt
+root@72abfcc9e2e9:/# exit
+exit</code></pre>
+<p>进入容器 <code>nginx_test2</code> 验证，并修改文件内容进行反向验证：</p>
+<pre class=" language-shell"><code class="language-shell">docker exec -it nginx_test2 /bin/bash
+
+root@c5f2c2463640:/# ls /data/
+file.txt
+root@c5f2c2463640:/# echo 'hello world' > /data/file.txt
+root@c5f2c2463640:/# exit
+exit</code></pre>
+<p>然后再进入容器 <code>nginx_test1</code> 验证：</p>
+<pre class=" language-shell"><code class="language-shell">docker exec -it nginx_test1 /bin/bash
+
+root@72abfcc9e2e9:/# ls /data/
+file.txt
+root@72abfcc9e2e9:/# cat /data/file.txt
+hello world
+root@72abfcc9e2e9:/# exit
+exit</code></pre>
+<h3 id="3-3-备份与恢复"><a href="#3-3-备份与恢复" class="headerlink" title="3.3 备份与恢复"></a>3.3 备份与恢复</h3><p><strong>数据卷容器</strong>的备份与恢复并不是<strong>容器</strong>的备份与恢复，实质上是<strong>数据</strong>的备份与恢复。</p>
+<blockquote>
+<p>这句话你品，你细品！</p>
+</blockquote>
+<h4 id="3-3-1-备份"><a href="#3-3-1-备份" class="headerlink" title="3.3.1 备份"></a>3.3.1 备份</h4><p>命令：</p>
+<pre class=" language-shell"><code class="language-shell">docker run -it --volumes-from [数据卷容器id或者name] -v [宿主机存放备份文件的目录]:[容器内存放备份文件目录] [镜像] tar cvf [备份文件路径] [要备份的目录]</code></pre>
+<p>我们执行示例命令：</p>
+<pre class=" language-shell"><code class="language-shell">docker run -it --volumes-from data -v /Users/ethanyan/dockerdata/:/backup nginx tar cvf /backup/backup.tar /data
+tar: Removing leading `/' from member names
+/data/
+/data/file.txt</code></pre>
+<p>该命令是加载数据卷容器并将容器内的 <code>/data</code> 目录打包，然后把压缩包保存到 映射到容器内 的新数据卷，本地目录为 <code>/Users/ethanyan/dockerdata/</code> 。执行完后，会在本地该目录出现压缩包 <code>backup.tar</code>。</p>
+<p><strong>注意：</strong></p>
+<p>1) 备份的命令执行完后会创建出一个临时容器，删除即可。重要的是压缩包。</p>
+<blockquote>
+<p>之所以会出现一个临时容器，是因为备份的原理是：创建一个新的容器挂载数据卷容器，而且此容器还与宿主机共享了一个目录（新数据卷），执行打包命令将数据卷容器内的数据打包保存到共享目录中，所以本地会出现一个压缩包。</p>
+</blockquote>
+<h4 id="3-3-2-恢复"><a href="#3-3-2-恢复" class="headerlink" title="3.3.2 恢复"></a>3.3.2 恢复</h4><p>请保存好备份的压缩包文件，恢复时用得到。</p>
+<p><strong>步骤：</strong></p>
+<p>1) 创建一个新的数据卷容器 <code>data_new</code></p>
+<pre class=" language-shell"><code class="language-shell">docker create -v /data/ --name data_new nginx</code></pre>
+<p>2) 恢复之前的备份文件</p>
+<pre class=" language-shell"><code class="language-shell"># 命令
+docker run --volumes-from [新创建的数据卷容器id或者name] -v [宿主机存放备份文件的目录]:[容器内存放备份文件目录] [镜像] tar xvf [备份文件]
+
+# 执行示例命令
+docker run --volumes-from data_new -v /Users/ethanyan/dockerdata/:/backup nginx tar xvf /backup/backup.tar
+data/
+data/file.txt</code></pre>
+<p>3) 为了验证是否恢复，我们可以新创建一个容器并挂载新的数据卷容器：</p>
+<pre class=" language-shell"><code class="language-shell">docker run  --volumes-from data_new -itd --name nginx_test6 nginx /bin/bash
+
+docker exec -it nginx_test6 /bin/bash
+
+root@2b54f0bfefbe:/# ls /data
+file.txt
+root@2b54f0bfefbe:/# cat /data/file.txt
+hello world</code></pre>
+<p>可看到数据卷容器已经恢复。</p>
+<h4 id="3-3-3-备份与恢复的原理"><a href="#3-3-3-备份与恢复的原理" class="headerlink" title="3.3.3 备份与恢复的原理"></a>3.3.3 备份与恢复的原理</h4><p>不管是备份还是恢复，我们都使用了一个中间介质，此介质便是一个容器。因为数据卷容器是不启动的，为了备份数据，我们就需要使用一个挂载了此数据卷容器的中间介质（容器）。此介质不光要能连接数据卷容器，还需要连接本地，因此我们又将本地的一个目录映射到了中间介质中。</p>
+<p>备份就是中间介质将数据卷容器的目录打包后，再通过映射的目录共享给本地，所以本地会出现一个压缩包。容器列表多了一个新的容器，此容器便是中间介质。</p>
+<p>恢复就是中间介质通过映射到容器的共享目录，读取到本地的备份文件（压缩包），然后在容器内部解压缩，数据就恢复到了挂载的数据卷容器中。</p>
+<blockquote>
+<p>当然，此中间介质也可以使用 <code>--name</code> 参数命名，便于删除。</p>
+</blockquote>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>分享一份全国行政区划sql数据库表</title>
+    <url>/2020/03/04/%E5%88%86%E4%BA%AB%E4%B8%80%E4%BB%BD%E5%85%A8%E5%9B%BD%E8%A1%8C%E6%94%BF%E5%8C%BA%E5%88%92sql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8/</url>
+    <content><![CDATA[<center>Author：BIGOcean</center>
+
+<p>还在为寻找全国行政区划的数据而烦恼吗？还在因为一个 <code>Excel</code> 表格无法确定信息是否全面而惆怅吗？快来看看为你准备好的东西吧！</p>
+<a id="more"></a>
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>在软件开发的过程中，最基础最重要但是又最不容易寻找的一份数据便是「全国行政区划信息」。为了解决大家的烦恼，此处提供一份 <code>sql</code> 数据库文件，直接导入即可使用，省时省力，快来实践一下吧。</p>
+<h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p>关系数据库（本人使用的数据库为 <code>MySQL8.0.19</code>）</p>
+<h2 id="2-文件"><a href="#2-文件" class="headerlink" title="2.文件"></a>2.文件</h2><p>数据库文件为 <code>AREAS.sql</code>，数据条数为 3487 ，十分全面的涵盖了全国的省市县等信息。</p>
+<blockquote>
+<p> 此文件包括建表以及准备的数据</p>
+</blockquote>
+<p><strong>获取方式：</strong>关注公众号「全栈技术精选」，后台回复关键字「全国行政区划信息」即可获取。</p>
+<h2 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h2><p>1) 先将获取到的文件 <code>AREAS.sql</code> 放到任意目录下（比如目录 <code>sqlfile</code> ），然后进入此目录：</p>
+<pre class=" language-shell"><code class="language-shell">cd sqlfile</code></pre>
+<p>2) 先进入数据库（以 <code>mysql</code> 为例）：</p>
+<pre class=" language-shell"><code class="language-shell">mysql -u root -p</code></pre>
+<p>3) 创建数据库：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> area<span class="token punctuation">;</span></code></pre>
+<p>4) 使用此数据库：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">use</span> area<span class="token punctuation">;</span></code></pre>
+<p>5) 导入行政区划数据表：</p>
+<pre class=" language-sql"><code class="language-sql">source AREAS<span class="token punctuation">.</span>sql<span class="token punctuation">;</span></code></pre>
+<h3 id="3-1-注意"><a href="#3-1-注意" class="headerlink" title="3.1 注意"></a>3.1 注意</h3><p>1) 获取到的数据库文件 <code>AREAS.sql</code> 为表结构以及表数据，因此需要先有一个数据库（此数据库可以新建或者使用已存在的数据库）</p>
+<p>2) 导入数据库文件时，如果没有执行刚开始切换到 <code>AREAS.sql</code> 文件所在目录的步骤，可以通过写文件的绝对路径方式解决</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>sql</category>
+      </categories>
+      <tags>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一起来看看火爆的手机号码一键登录</title>
     <url>/2020/03/03/9.%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%9C%8B%E7%9C%8B%E7%81%AB%E7%88%86%E7%9A%84%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81%E4%B8%80%E9%94%AE%E7%99%BB%E5%BD%95/</url>
     <content><![CDATA[<p>不知你是否发现：大批手机 <code>app</code> 登录页面，突然之间变成了一键登录。之前大火的 <code>通过手机号码获取短信验证码</code> 登录模式正悄悄退去。这神奇的操作是如何实现的呢？</p>
@@ -623,6 +1229,315 @@ int compDec(const void *a, const void *b) {
       </categories>
       <tags>
         <tag>网络类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关系数据库之存储过程</title>
+    <url>/2020/02/25/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<center>Editor：BIGOcean</center>
+
+<p>很多人在上学期间，也许并未学习过关系数据库中「存储过程」的相关内容，那今天就来学习一下吧。</p>
+<a id="more"></a>
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>无论是 <code>MySQL</code> 还是 <code>SQL Server</code> 数据库，最新版本都已支持『存储过程』。但是为了通用性，本文章以 <code>MySQL</code> 为例。</p>
+<blockquote>
+<p>因为 <code>SQL Server</code> 数据库为商业软件，所以其使用率较开源的 <code>MySQL</code> 来说要低一些。对于大数据处理来说， <code>MySQL</code> 更有优势，这就更使得很多中型、大型网站都使用 <code>MySQL</code> 。二者语法上也有些许差别，考虑到学习之后的应用情况，特选 <code>MySQL</code>。</p>
+</blockquote>
+<h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>存储过程『<code>Stored Procedure</code>』是一种在数据库中存储复杂程序，以便外部程序调用的一种数据库对象，即面向对象的思想。它通过编译后存储在数据库中，用户可以像调用函数一样通过特定的方式执行存储过程。</p>
+<p>简单来讲，存储过程就是封装了一堆 <code>SQL</code> 语句，方便复用。如此直白，应该不会不理解了。</p>
+<h3 id="1-1-优点"><a href="#1-1-优点" class="headerlink" title="1.1 优点"></a>1.1 优点</h3><p>1) 通过封装，隐藏执行的 <code>SQL</code> 语句，以及逻辑操作。</p>
+<p>2) 可以像函数一样传递参数，并回传值。</p>
+<h3 id="1-2-缺点"><a href="#1-2-缺点" class="headerlink" title="1.2 缺点"></a>1.2 缺点</h3><p>1) 存储过程根据数据库的不同而不同，<strong>移植性弱</strong>。比如切换不同厂商的数据库，由于编程语言的差别，需要重新编译。</p>
+<p>2) 无法使用 <code>select</code> 指令来执行，它属于子程序，区别于用户定义的函数。</p>
+<h2 id="2-创建和调用"><a href="#2-创建和调用" class="headerlink" title="2.创建和调用"></a>2.创建和调用</h2><p>1) 自定义结束符号。一般在 <code>mysql</code> 中，我们使用封号来结束语句，可以临时修改为其他符号：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 将语句的结束符号从分号;临时改为两个$$或//(可以是自定义)</span>
+<span class="token keyword">DELIMITER</span> $$
+或
+<span class="token keyword">DELIMITER</span> <span class="token comment" spellcheck="true">//</span></code></pre>
+<p>2) 创建存储过程</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> 存储过程名称<span class="token punctuation">(</span>参数<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> </code></pre>
+<p>3) 一个存储过程开始与结束符号</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">BEGIN</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">END</span> </code></pre>
+<p>4) 创建存储函数</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">function</span> 存储函数名称<span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<p>5) 调用存储过程</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">call</span> 存储过程名称<span class="token punctuation">(</span>参数<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>6) 存储过程体以 <code>begin</code> 开始，以 <code>end</code> 结束，当然，这是可以嵌套的。</p>
+<blockquote>
+<p>注意：每个嵌套块以及其中的每条语句，都必须以封号结尾，最外层（表示过程体结束的 <code>begin-end</code> 块不需要写）</p>
+</blockquote>
+<p>7) 为每一个语句块打标签，可以增强可读性，并不易丢掉过多嵌套块中的某个结尾。</p>
+<pre class=" language-sql"><code class="language-sql">label1: <span class="token keyword">BEGIN</span>
+　　label2: <span class="token keyword">BEGIN</span>
+　　　　label3: <span class="token keyword">BEGIN</span>
+　　　　　　statements<span class="token punctuation">;</span> 
+　　　　<span class="token keyword">END</span> label3 <span class="token punctuation">;</span>
+　　<span class="token keyword">END</span> label2<span class="token punctuation">;</span>
+<span class="token keyword">END</span> label1</code></pre>
+<h3 id="2-1-示例"><a href="#2-1-示例" class="headerlink" title="2.1 示例"></a>2.1 示例</h3><pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">delimiter</span> $$　　<span class="token comment" spellcheck="true">-- 将语句的结束符号从分号;临时改为两个$$(可以是自定义)</span>
+mysql<span class="token operator">></span> <span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> delete_matches<span class="token punctuation">(</span><span class="token operator">IN</span> p_playerno <span class="token keyword">INTEGER</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">BEGIN</span>
+    <span class="token operator">-</span><span class="token operator">></span> 　　<span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> MATCHES
+    <span class="token operator">-</span><span class="token operator">></span>    <span class="token keyword">WHERE</span> playerno <span class="token operator">=</span> p_playerno<span class="token punctuation">;</span>
+    <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">END</span>$$
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.01</span> sec<span class="token punctuation">)</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">delimiter</span><span class="token punctuation">;</span>　　<span class="token comment" spellcheck="true">-- 将语句的结束符号恢复为分号</span></code></pre>
+<p>上面的存储过程解读：存储过程名为「<code>delete_matches</code>」；存储过程需要传入的参数为 <code>INTEGER</code> 类型的 <code>p_playerno</code> （球员编号）；由 <code>BEGIN</code> 表示过程体开始，执行的语句为删除 <code>MATCHES</code> 表中字段 <code>playerno</code> 的值等于传入参数值的记录。以 <code>END</code> 表示过程体结束。</p>
+<p>调用这一存储过程时：</p>
+<pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">call</span> delete_matches<span class="token punctuation">(</span><span class="token number">57</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">row</span> affected <span class="token punctuation">(</span><span class="token number">0.03</span> sec<span class="token punctuation">)</span></code></pre>
+<h2 id="3-参数"><a href="#3-参数" class="headerlink" title="3.参数"></a>3.参数</h2><p>从示例中我们可以看到传入参数表示为：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> delete_matches<span class="token punctuation">(</span><span class="token operator">IN</span> p_playerno <span class="token keyword">INTEGER</span><span class="token punctuation">)</span></code></pre>
+<p>已知参数名称与参数类型，那么括号中 <code>IN</code> 代表什么意思呢？</p>
+<p>答： <code>IN</code> 代表传入参数，也就是调用存储过程时，向存储过程内传入值。</p>
+<p>除此之外还有另外两个参数：<code>OUT</code> 和 <code>INOUT</code></p>
+<p><code>OUT</code> ：传出参数，也就是存储过程向调用者传出值。类似于程序中的 <code>return</code></p>
+<p><code>INOUT</code>：传入传出参数，比如传入一个值，存储过程中引用后再修改，向调用者传出新值。</p>
+<p><strong>变量赋值：</strong></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SET</span> @变量<span class="token operator">=</span>值</code></pre>
+<h3 id="3-1-in"><a href="#3-1-in" class="headerlink" title="3.1 in"></a>3.1 in</h3><pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">delimiter</span> $$ <span class="token comment" spellcheck="true">-- 将语句的结束符号从分号;临时改为两个$$(可以是自定义)</span>
+mysql<span class="token operator">></span> <span class="token keyword">create</span> <span class="token keyword">procedure</span> in_param<span class="token punctuation">(</span><span class="token operator">in</span> p_in <span class="token keyword">int</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">begin</span>
+    <span class="token operator">-</span><span class="token operator">></span> 　　<span class="token keyword">select</span> p_in<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">-- 查询传入的变量</span>
+    <span class="token operator">-</span><span class="token operator">></span> 　　<span class="token keyword">set</span> p_in<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">-- 重新设置变量</span>
+    <span class="token operator">-</span><span class="token operator">></span>    <span class="token keyword">select</span> P_in<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">-- 查询修改后的变量</span>
+    <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span>$$
+mysql<span class="token operator">></span> <span class="token keyword">delimiter</span> <span class="token punctuation">;</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">set</span> <span class="token variable">@p_in</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">--设置全局变量</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">call</span> in_param<span class="token punctuation">(</span><span class="token variable">@p_in</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">-- 调用存储过程，传入设置的变量值</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------+</span>
+<span class="token operator">|</span> p_in <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------+</span>
+<span class="token operator">|</span>    <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------+</span>
+
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------+</span>
+<span class="token operator">|</span> P_in <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------+</span>
+<span class="token operator">|</span>    <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------+</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">select</span> <span class="token variable">@p_in</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">-- 查询全局变量</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-------+</span>
+<span class="token operator">|</span> <span class="token variable">@p_in</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-------+</span>
+<span class="token operator">|</span>     <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-------+</span></code></pre>
+<blockquote>
+<p>以上可以看出，<code>p_in</code> 在存储过程中被修改，但并不影响 <code>@p_in</code> 的值，因为前者为局部变量、后者为全局变量。</p>
+</blockquote>
+<h3 id="3-2-out"><a href="#3-2-out" class="headerlink" title="3.2 out"></a>3.2 out</h3><pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">delimiter</span> <span class="token comment" spellcheck="true">//</span>
+mysql<span class="token operator">></span> <span class="token keyword">create</span> <span class="token keyword">procedure</span> out_param<span class="token punctuation">(</span><span class="token keyword">out</span> p_out <span class="token keyword">int</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">></span>   <span class="token keyword">begin</span>
+    <span class="token operator">-</span><span class="token operator">></span>     <span class="token keyword">select</span> p_out<span class="token punctuation">;</span>
+    <span class="token operator">-</span><span class="token operator">></span>     <span class="token keyword">set</span> p_out<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token operator">-</span><span class="token operator">></span>     <span class="token keyword">select</span> p_out<span class="token punctuation">;</span>
+    <span class="token operator">-</span><span class="token operator">></span>   <span class="token keyword">end</span>
+    <span class="token operator">-</span><span class="token operator">></span> <span class="token comment" spellcheck="true">//</span>
+mysql<span class="token operator">></span> <span class="token keyword">delimiter</span> <span class="token punctuation">;</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">set</span> <span class="token variable">@p_out</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">call</span> out_param<span class="token punctuation">(</span><span class="token variable">@p_out</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-------+</span>
+<span class="token operator">|</span> p_out <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-------+</span>
+<span class="token operator">|</span>  <span class="token boolean">NULL</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-------+</span>
+<span class="token comment" spellcheck="true">-- 因为out是向调用者输出参数，不接收输入的参数，所以存储过程里的p_out为null</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-------+</span>
+<span class="token operator">|</span> p_out <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-------+</span>
+<span class="token operator">|</span>     <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-------+</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">select</span> <span class="token variable">@p_out</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">--------+</span>
+<span class="token operator">|</span> <span class="token variable">@p_out</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">--------+</span>
+<span class="token operator">|</span>      <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">--------+</span>
+<span class="token comment" spellcheck="true">-- 调用了out_param存储过程，输出参数，改变了p_out变量的值</span></code></pre>
+<h3 id="3-3-inout"><a href="#3-3-inout" class="headerlink" title="3.3 inout"></a>3.3 inout</h3><pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">delimiter</span> $$
+mysql<span class="token operator">></span> <span class="token keyword">create</span> <span class="token keyword">procedure</span> inout_param<span class="token punctuation">(</span><span class="token keyword">inout</span> p_inout <span class="token keyword">int</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">></span>   <span class="token keyword">begin</span>
+    <span class="token operator">-</span><span class="token operator">></span>     <span class="token keyword">select</span> p_inout<span class="token punctuation">;</span>
+    <span class="token operator">-</span><span class="token operator">></span>     <span class="token keyword">set</span> p_inout<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token operator">-</span><span class="token operator">></span>     <span class="token keyword">select</span> p_inout<span class="token punctuation">;</span>
+    <span class="token operator">-</span><span class="token operator">></span>   <span class="token keyword">end</span>
+    <span class="token operator">-</span><span class="token operator">></span> $$
+mysql<span class="token operator">></span> <span class="token keyword">delimiter</span> <span class="token punctuation">;</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">set</span> <span class="token variable">@p_inout</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">call</span> inout_param<span class="token punctuation">(</span><span class="token variable">@p_inout</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------+</span>
+<span class="token operator">|</span> p_inout <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------+</span>
+<span class="token operator">|</span>       <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------+</span>
+
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------+</span>
+<span class="token operator">|</span> p_inout <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------+</span>
+<span class="token operator">|</span>       <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------+</span>
+
+mysql<span class="token operator">></span> <span class="token keyword">select</span> <span class="token variable">@p_inout</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------+</span>
+<span class="token operator">|</span> <span class="token variable">@p_inout</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------+</span>
+<span class="token operator">|</span>        <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------+</span>
+<span class="token comment" spellcheck="true">-- 调用了inout_param存储过程，接受了输入的参数，也输出参数，改变了变量</span></code></pre>
+<h2 id="4-变量"><a href="#4-变量" class="headerlink" title="4.变量"></a>4.变量</h2><h3 id="4-1-变量声明"><a href="#4-1-变量声明" class="headerlink" title="4.1 变量声明"></a>4.1 变量声明</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> variable_name <span class="token punctuation">[</span><span class="token punctuation">,</span>variable_name<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> datatype <span class="token punctuation">[</span><span class="token keyword">DEFAULT</span> <span class="token keyword">value</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>注意：局部变量声明一定要放置在存储过程体的开始。</p>
+<p><code>datatype</code> 为 <code>MySQL</code> 的数据类型，如： <code>int</code>，<code>float</code>， <code>date</code>，<code>varchar(length)</code></p>
+</blockquote>
+<p><strong>示例：</strong></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> l_int <span class="token keyword">int</span> unsigned <span class="token keyword">default</span> <span class="token number">4000000</span><span class="token punctuation">;</span>  
+<span class="token keyword">DECLARE</span> l_numeric number<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token number">9.95</span><span class="token punctuation">;</span>  
+<span class="token keyword">DECLARE</span> l_date <span class="token keyword">date</span> <span class="token keyword">DEFAULT</span> <span class="token string">'1999-12-31'</span><span class="token punctuation">;</span>  
+<span class="token keyword">DECLARE</span> l_datetime <span class="token keyword">datetime</span> <span class="token keyword">DEFAULT</span> <span class="token string">'1999-12-31 23:59:59'</span><span class="token punctuation">;</span>  
+<span class="token keyword">DECLARE</span> l_varchar <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token string">'This will not be padded'</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p><code>unsigned</code> 就是将数字类型无符号化</p>
+</blockquote>
+<h3 id="4-2-变量赋值"><a href="#4-2-变量赋值" class="headerlink" title="4.2 变量赋值"></a>4.2 变量赋值</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">SET</span> 变量名 <span class="token operator">=</span> 表达式值 <span class="token punctuation">[</span><span class="token punctuation">,</span>variable_name <span class="token operator">=</span> expression <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span></code></pre>
+<h3 id="4-3-用户变量"><a href="#4-3-用户变量" class="headerlink" title="4.3 用户变量"></a>4.3 用户变量</h3><p>大家一定会有些迷惑，为什么有些变量是直接为变量名赋值，而有些变量则需要在变量名前加 <code>@</code> 呢？那是因为添加后，变为了用户变量名。</p>
+<pre class=" language-sql"><code class="language-sql">mysql <span class="token operator">></span> <span class="token keyword">SET</span> <span class="token variable">@name</span><span class="token operator">=</span><span class="token string">'Ethan Yan'</span><span class="token punctuation">;</span>  
+mysql <span class="token operator">></span> <span class="token keyword">SELECT</span> <span class="token variable">@name</span><span class="token punctuation">;</span>  
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------------------+  </span>
+<span class="token operator">|</span>      <span class="token variable">@name</span>          <span class="token operator">|</span>  
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------------------+  </span>
+<span class="token operator">|</span>      Ethan Yan      <span class="token operator">|</span>  
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------------------+  </span></code></pre>
+<p>在存储过程中使用用户变量：</p>
+<pre class=" language-sql"><code class="language-sql">mysql <span class="token operator">></span> <span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> GreetWorld<span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token keyword">SELECT</span> CONCAT<span class="token punctuation">(</span><span class="token variable">@greeting</span><span class="token punctuation">,</span><span class="token string">' World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+mysql <span class="token operator">></span> <span class="token keyword">SET</span> <span class="token variable">@greeting</span><span class="token operator">=</span><span class="token string">'Hello'</span><span class="token punctuation">;</span>  
+mysql <span class="token operator">></span> <span class="token keyword">CALL</span> GreetWorld<span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------------------------+  </span>
+<span class="token operator">|</span> CONCAT<span class="token punctuation">(</span><span class="token variable">@greeting</span><span class="token punctuation">,</span><span class="token string">' World'</span><span class="token punctuation">)</span> <span class="token operator">|</span>  
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------------------------+  </span>
+<span class="token operator">|</span>  Hello World               <span class="token operator">|</span>  
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------------------------+</span></code></pre>
+<h2 id="5-注释"><a href="#5-注释" class="headerlink" title="5.注释"></a>5.注释</h2><p>单行注视：<code>--</code></p>
+<p>多行注视：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">/* 
+此处为多行注释
+*/</span></code></pre>
+<h2 id="6-常用操作"><a href="#6-常用操作" class="headerlink" title="6.常用操作"></a>6.常用操作</h2><h3 id="6-1-MySQL-存储过程的查询"><a href="#6-1-MySQL-存储过程的查询" class="headerlink" title="6.1 MySQL 存储过程的查询"></a>6.1 MySQL 存储过程的查询</h3><p>1) 查询数据库中的所有存储过程</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> name <span class="token keyword">from</span> mysql<span class="token punctuation">.</span><span class="token keyword">proc</span> <span class="token keyword">where</span> <span class="token number">db</span><span class="token operator">=</span><span class="token string">'数据库名'</span><span class="token punctuation">;</span>
+
+或者
+
+<span class="token keyword">select</span> routine_name <span class="token keyword">from</span> information_schema<span class="token punctuation">.</span>routines <span class="token keyword">where</span> routine_schema<span class="token operator">=</span><span class="token string">'数据库名'</span><span class="token punctuation">;</span>
+
+或者
+
+<span class="token keyword">show</span> <span class="token keyword">procedure</span> <span class="token keyword">status</span> <span class="token keyword">where</span> <span class="token number">db</span><span class="token operator">=</span><span class="token string">'数据库名'</span><span class="token punctuation">;</span></code></pre>
+<p>2) 查询某个存储过程详细内容</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> 数据库<span class="token punctuation">.</span>存储过程名<span class="token punctuation">;</span></code></pre>
+<h3 id="6-2-MySQL-存储过程的修改"><a href="#6-2-MySQL-存储过程的修改" class="headerlink" title="6.2 MySQL 存储过程的修改"></a>6.2 MySQL 存储过程的修改</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">PROCEDURE</span></code></pre>
+<h3 id="6-3-MySQL-存储过程的删除"><a href="#6-3-MySQL-存储过程的删除" class="headerlink" title="6.3 MySQL 存储过程的删除"></a>6.3 MySQL 存储过程的删除</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">PROCEDURE</span></code></pre>
+<h3 id="6-4-MySQL-存储过程的控制语句"><a href="#6-4-MySQL-存储过程的控制语句" class="headerlink" title="6.4 MySQL 存储过程的控制语句"></a>6.4 MySQL 存储过程的控制语句</h3><p>1) <strong>变量作用域：</strong>局部变量在存储过程内优先级高，当执行到 <code>END</code> 时，局部变量消失。如果不想消失，可以通过参数 <code>OUT</code> 将其传出给调用者。</p>
+<p>2) <strong>条件语句1：</strong> <code>if-then-else</code></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">if</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">then</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">;</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span> <span class="token keyword">if</span><span class="token punctuation">;</span></code></pre>
+<p>3) <strong>条件语句2：</strong> <code>case</code> </p>
+<pre class=" language-sql"><code class="language-sql">mysql <span class="token operator">></span> <span class="token keyword">DELIMITER</span> <span class="token comment" spellcheck="true">//  </span>
+mysql <span class="token operator">></span> <span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> proc3 <span class="token punctuation">(</span><span class="token operator">in</span> parameter <span class="token keyword">int</span><span class="token punctuation">)</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">begin</span> 
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">declare</span> var <span class="token keyword">int</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">set</span> var<span class="token operator">=</span>parameter<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">case</span> var  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">when</span> <span class="token number">0</span> <span class="token keyword">then</span>   
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">insert</span> <span class="token keyword">into</span> t <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">17</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">when</span> <span class="token number">1</span> <span class="token keyword">then</span>   
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">insert</span> <span class="token keyword">into</span> t <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">else</span>   
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">insert</span> <span class="token keyword">into</span> t <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span> <span class="token keyword">case</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token comment" spellcheck="true">//  </span>
+mysql <span class="token operator">></span> <span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span> 
+<span class="token keyword">case</span>
+    <span class="token keyword">when</span> var<span class="token operator">=</span><span class="token number">0</span> <span class="token keyword">then</span>
+        <span class="token keyword">insert</span> <span class="token keyword">into</span> t <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">when</span> var<span class="token operator">></span><span class="token number">0</span> <span class="token keyword">then</span>
+    <span class="token keyword">when</span> var<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token keyword">then</span>
+    <span class="token keyword">else</span>
+<span class="token keyword">end</span> <span class="token keyword">case</span></code></pre>
+<p>4) 循环语句1 <code>while ···· end while</code></p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">while</span> 条件 <span class="token keyword">do</span>
+    <span class="token comment" spellcheck="true">--循环体</span>
+endwhile</code></pre>
+<p>5) 循环语句2 <code>repeat···· end repea</code></p>
+<pre class=" language-sql"><code class="language-sql">repeat
+    <span class="token comment" spellcheck="true">--循环体</span>
+until 循环条件  
+<span class="token keyword">end</span> repeat<span class="token punctuation">;</span></code></pre>
+<p>6) 循环语句3 <code>loop ·····endloop</code></p>
+<p><code>loop</code> 循环不需要初始条件，这点和 <code>while</code> 循环相似，同时和 <code>repeat</code>循环一样不需要结束条件,<code>leave</code> 语句的意义是离开循环。</p>
+<pre class=" language-sql"><code class="language-sql">mysql <span class="token operator">></span> <span class="token keyword">DELIMITER</span> <span class="token comment" spellcheck="true">//  </span>
+mysql <span class="token operator">></span> <span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> proc6 <span class="token punctuation">(</span><span class="token punctuation">)</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">begin</span> 
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">declare</span> v <span class="token keyword">int</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">set</span> v<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> LOOP_LABLE:loop  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">insert</span> <span class="token keyword">into</span> t <span class="token keyword">values</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">set</span> v<span class="token operator">=</span>v<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">if</span> v <span class="token operator">>=</span><span class="token number">5</span> <span class="token keyword">then</span> 
+     <span class="token operator">-</span><span class="token operator">></span> leave LOOP_LABLE<span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span> <span class="token keyword">if</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span> loop<span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token comment" spellcheck="true">//  </span>
+mysql <span class="token operator">></span> <span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p><code>LABLES</code> 标号：标号可以用在<code>begin</code> <code>repeat</code> <code>while</code> 或者 <code>loop</code> 语句前，语句标号只能在合法的语句前面使用。可以跳出循环，使运行指令达到复合语句的最后一步。</p>
+</blockquote>
+<p>7) 迭代</p>
+<p><code>ITERATE</code> 通过引用复合语句的标号，来从新开始复合语句：</p>
+<pre class=" language-sql"><code class="language-sql">mysql <span class="token operator">></span> <span class="token keyword">DELIMITER</span> <span class="token comment" spellcheck="true">//  </span>
+mysql <span class="token operator">></span> <span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> proc10 <span class="token punctuation">(</span><span class="token punctuation">)</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">begin</span> 
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">declare</span> v <span class="token keyword">int</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">set</span> v<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> LOOP_LABLE:loop  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">if</span> v<span class="token operator">=</span><span class="token number">3</span> <span class="token keyword">then</span>   
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">set</span> v<span class="token operator">=</span>v<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> ITERATE LOOP_LABLE<span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span> <span class="token keyword">if</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">insert</span> <span class="token keyword">into</span> t <span class="token keyword">values</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">set</span> v<span class="token operator">=</span>v<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">if</span> v<span class="token operator">>=</span><span class="token number">5</span> <span class="token keyword">then</span> 
+     <span class="token operator">-</span><span class="token operator">></span> leave LOOP_LABLE<span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span> <span class="token keyword">if</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span> loop<span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">end</span><span class="token punctuation">;</span>  
+     <span class="token operator">-</span><span class="token operator">></span> <span class="token comment" spellcheck="true">//  </span>
+mysql <span class="token operator">></span> <span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>参考文章：</p>
+<p><a href="https://www.cnblogs.com/geaozhang/p/6797357.html" target="_blank" rel="noopener">https://www.cnblogs.com/geaozhang/p/6797357.html</a></p>
+<p><a href="http://blog.sina.com.cn/s/blog_86fe5b440100wdyt.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_86fe5b440100wdyt.html</a></p>
+</blockquote>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>sql</category>
+      </categories>
+      <tags>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -821,6 +1736,57 @@ int compDec(const void *a, const void *b) {
       </tags>
   </entry>
   <entry>
+    <title>关系数据库之视图</title>
+    <url>/2020/02/10/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E8%A7%86%E5%9B%BE/</url>
+    <content><![CDATA[<center>Author：BIGOcean</center>
+
+<p>请问视图是什么？视图相关语句有哪些？视图在什么场景下使用？夺命三连</p>
+<a id="more"></a>
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>对于关系数据库来说，绕不开的一个概念便是『视图』，带着篇首的几个问题，我们来认真学习一下。</p>
+<h2 id="视图是什么"><a href="#视图是什么" class="headerlink" title="视图是什么"></a>视图是什么</h2><p>官方文档中如此描述视图：A view is a stored SELECT statement（视图是存储的 <code>SELECT</code> 语句）。我们需要注意，<strong>视图实质上是一组查询语句，是一张虚拟表（可视化的表）而非真正的表</strong>。它将单张表或者多张表中的某些字段或全部字段使用一些特定的查询组合成一张可见的表，如同一张真实的表一样。</p>
+<h2 id="视图相关语法"><a href="#视图相关语法" class="headerlink" title="视图相关语法"></a>视图相关语法</h2><h3 id="1-创建视图"><a href="#1-创建视图" class="headerlink" title="1. 创建视图"></a>1. 创建视图</h3><p>执行以下语句创建一个非常简单的视图，该视图执行 <code>SELECT</code> 语句，并将产品的名称和价格返回给用户。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> vw_Names  
+   <span class="token keyword">AS</span>  
+   <span class="token keyword">SELECT</span> ProductName<span class="token punctuation">,</span> Price <span class="token keyword">FROM</span> Products<span class="token punctuation">;</span>  
+GO</code></pre>
+<h3 id="2-删除视图"><a href="#2-删除视图" class="headerlink" title="2. 删除视图"></a>2. 删除视图</h3><p>使用 <code>DROP</code> 语句删除视图 <code>vw_Names</code>：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">VIEW</span> vw_Names<span class="token punctuation">;</span>  
+GO  </code></pre>
+<h3 id="3-查询视图"><a href="#3-查询视图" class="headerlink" title="3. 查询视图"></a>3. 查询视图</h3><p>如同查询表一样，可以做一些查询操作，比如：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> vw_Names</code></pre>
+<p>当然也可以添加一些条件：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> vw_Names <span class="token keyword">WHERE</span> ProductName<span class="token operator">=</span><span class="token string">'武汉热干面'</span></code></pre>
+<h3 id="4-更新视图"><a href="#4-更新视图" class="headerlink" title="4.更新视图"></a>4.更新视图</h3><p>使用 <code>SQL CREATE OR REPLACE VIEW</code> 语法来进行更新。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token operator">OR</span> REPLACE <span class="token keyword">VIEW</span> 视图名称 <span class="token keyword">AS</span>
+<span class="token keyword">SELECT</span> 字段名称<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> 表名
+<span class="token keyword">WHERE</span> 条件</code></pre>
+<p><strong>注意：此处的更新实质上是更新视图的查询语句，看到的效果便是展示的数据发生了变化</strong></p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>比如我们要在视图 <code>vw_Names</code> 中添加一个字段 <code>Counts</code>：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> vw_Names  
+   <span class="token keyword">AS</span>  
+   <span class="token keyword">SELECT</span> ProductName<span class="token punctuation">,</span> Price<span class="token punctuation">,</span> Counts <span class="token keyword">FROM</span> Products<span class="token punctuation">;</span>  
+GO</code></pre>
+<h2 id="视图适用场景"><a href="#视图适用场景" class="headerlink" title="视图适用场景"></a>视图适用场景</h2><ol>
+<li>因权限问题或者数据敏感，不能向外透露全部字段信息</li>
+<li>查询逻辑复杂，再与其他表进行关联使得语句更复杂，使用视图后，可简单的将其理解为一个变量</li>
+</ol>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>我们在使用视图的时候，相当于执行了视图中的查询语句。更直白的讲<strong>视图是实时更新的</strong>。</p>
+<blockquote>
+<p>每当用户查询视图时，数据库引擎通过使用 SQL 语句来重建数据。</p>
+</blockquote>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>sql</category>
+      </categories>
+      <tags>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C语言之字节序</title>
     <url>/2020/02/10/4.C%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E8%8A%82%E5%BA%8F/</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
@@ -866,6 +1832,55 @@ int compDec(const void *a, const void *b) {
       </categories>
       <tags>
         <tag>语言类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git仓库上传了个无法点开的空文件夹是什么鬼？</title>
+    <url>/2020/02/09/21.git%E4%BB%93%E5%BA%93%E4%B8%8A%E4%BC%A0%E4%BA%86%E4%B8%AA%E6%97%A0%E6%B3%95%E7%82%B9%E5%BC%80%E7%9A%84%E7%A9%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E6%98%AF%E4%BB%80%E4%B9%88%E9%AC%BC%EF%BC%9F/</url>
+    <content><![CDATA[<p>怪事年年有，今年也忒多了，在仓库上传到 GitHub 后，偶然在 GitHub 中瞄了一眼，我的天？这个图标不像文件夹啊？这个怎么点不开？git 上传正常啊？本地工作区和暂存区都是干净的了啊？</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h2><p>本地仓库提交后，<code>GitHub</code> 中某文件夹无法正常点击，内容无法显示。</p>
+<h2 id="二、原因分析"><a href="#二、原因分析" class="headerlink" title="二、原因分析"></a>二、原因分析</h2><p>经排查，定位到原因：之前仓库中包含了一个特殊的文件夹（此文件夹是另外一个 <code>git</code> 仓库），在执行下面语句时：</p>
+<pre class=" language-shell"><code class="language-shell">git add .</code></pre>
+<p>提示仓库中包含其他仓库，需要解决此问题：删除掉此文件夹中的 <code>.git</code> 配置目录，然后依次执行以下命令：</p>
+<pre class=" language-shell"><code class="language-shell">git add .
+git commit -m 'add the new file'
+git push</code></pre>
+<p>顺利推送仓库到远程，过程中并无报错。这个过程或许是导致问题的原因。</p>
+<h2 id="三、解决办法"><a href="#三、解决办法" class="headerlink" title="三、解决办法"></a>三、解决办法</h2><p>现在问题是本地工作区与暂存区干净如新，远程仓库有问题。该如何解决？这时用到了一个命令：</p>
+<pre class=" language-shell"><code class="language-shell">git rm --cached <dir_name></code></pre>
+<p>我们先来看一下手册：</p>
+<pre class=" language-shell"><code class="language-shell">usage: git rm [<options>] [--] <file>...
+
+    -n, --dry-run         dry run
+    -q, --quiet           do not list removed files
+    --cached              only remove from the index
+    -f, --force           override the up-to-date check
+    -r                    allow recursive removal
+    --ignore-unmatch      exit with a zero status even if nothing matched</code></pre>
+<p>可以看到 <code>--cached</code> 的作用：将文件仅仅从索引中移除，翻译成人能看懂的话便是 「之前已经提交，现在将此目录释放掉，恢复到工作区，未被追踪的状态，即 <code>git add .</code> 命令之前的状态」</p>
+<p>我们执行完此命令之后使用如下命令查看所有改变后的文件状态：</p>
+<pre class=" language-shell"><code class="language-shell">git status</code></pre>
+<p>发现出问题的目录已经变成了红色未被追踪的状态，此时将出问题的目录中所有包含 <code>git</code> 信息的文件和目录都删除，然后再依次执行命令：</p>
+<pre class=" language-shell"><code class="language-shell">git add .
+git commit -m 'add the new file'
+git push</code></pre>
+<p>去远程仓库中查看后发现问题解决。</p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>当出现未知问题致使远程仓库同预期结果不一致时，本地可以将问题目录恢复到未被追踪状态，核查完问题之后再次提交最新结果，操作步骤如下：</p>
+<p>1.删除缓存，释放目录，恢复到未被追踪状态：</p>
+<pre class=" language-shell"><code class="language-shell">git rm --cached <dir_name></code></pre>
+<p>2.依次执行如下操作再次提交：</p>
+<pre class=" language-shell"><code class="language-shell">git add .
+git commit -m 'Information you need to submit'
+git push</code></pre>
+<p>3.完美解决问题。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>网络类</tag>
       </tags>
   </entry>
   <entry>
@@ -1137,6 +2152,114 @@ int compDec(const void *a, const void *b) {
       </tags>
   </entry>
   <entry>
+    <title>elasticsearch中join类型数据如何进行父子文档查询</title>
+    <url>/2020/02/07/19.elasticsearch%E4%B8%ADjoin%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E7%88%B6%E5%AD%90%E6%96%87%E6%A1%A3%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<p>ES 中 join 类型数据如何根据父文档查询全部子文档？又如何根据子文档查询其父文档呢？</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="1-join-简介"><a href="#1-join-简介" class="headerlink" title="1.join 简介"></a>1.join 简介</h2><p>在 <code>ES</code> 中有一种特殊的数据类型『<code>join</code>』，被形象地称为父子文档。它是一种可以在同一索引中存放两种有关系数据的数据类型，类似于关系数据库中让两张表发生关系的<strong>外键 <code>FOREIGN KEY</code></strong> 。</p>
+<p>在官方文档中这样介绍：<code>join</code> 数据类型的字段是一个特殊字段，它可以在同一个索引的文档中创建 <code>父子关系</code> 。通过参数 <code>relations</code> 定义可能存在关系的一组文档，这个关系的参数由 <code>父名</code> 和 <code>子名</code> 构成。下方是原文档描述：</p>
+<p>The <code>join</code> datatype is a special field that creates parent/child relation within documents of the same index. The <code>relations</code> section defines a set of possible relations within the documents, each relation being a parent name and a child name. </p>
+<h2 id="2-定义"><a href="#2-定义" class="headerlink" title="2.定义"></a>2.定义</h2><p>我们需要在设置 <code>mapping</code> 时将其关系定义好，如下示例：</p>
+<pre class=" language-http"><code class="language-http">PUT 索引名称
+{
+  "mappings": {
+    "properties": {
+      "join类型的字段名称": { 
+        "type": "join",
+        "relations": {
+          "父文档标示字段名": "子文档标示字段名" 
+        }
+      }
+    }
+  }
+}</code></pre>
+<h3 id="2-1-父文档"><a href="#2-1-父文档" class="headerlink" title="2.1 父文档"></a>2.1 父文档</h3><p>构建父文档时可以通过如下方法：</p>
+<pre class=" language-http"><code class="language-http">PUT 索引名称/类型/文档id?refresh
+{
+  "text": "EthanYan",
+  ...        // 父文档中其他的字段与值
+  "join类型的字段名称": {
+    "name": "父文档标示字段名" 
+  }
+}</code></pre>
+<p>这种方式是为了便于理解，与下方子文档中构建方式对应。当你运用熟练后，有一种简便的构建方法：</p>
+<pre class=" language-http"><code class="language-http">PUT 索引名称/类型/文档id?refresh
+{
+  "text": "EthanYan",
+  ...        // 父文档中其他的字段与值
+  "join类型的字段名称": "父文档标示字段名" 
+}</code></pre>
+<h3 id="2-2-子文档"><a href="#2-2-子文档" class="headerlink" title="2.2 子文档"></a>2.2 子文档</h3><p>构建子文档时可以通过如下方法：</p>
+<pre class=" language-http"><code class="language-http">PUT 索引名称/类型/文档id?routing=父文档id&amp;refresh 
+{
+  "text": "xiaoyan",
+  ...        // 子文档中其他的字段与值
+  "join类型的字段名称": {
+    "name": "子文档标示字段名", 
+    "parent": "父文档id" 
+  }
+}</code></pre>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>构建子文档时与父文档有些许不同，以下几点需要特别注意：</p>
+<p>1.<code>url</code> 中可以看到有一个参数 <code>routing</code> ，<strong>此参数必须设置</strong>，因为我们需要保证父文档与子文档在同一分片中。其原文描述为：The routing value is mandatory because parent and child documents must be indexed on the same shard.</p>
+<p>2.我们可以看到子文档在 <code>join</code> 类型字段中除了参数 <code>name</code> 外，还多了一个参数 <code>parent</code> ，故名思义，此字段为了指明父文档的所在，其值填写为父文档的 <code>id</code></p>
+<h2 id="3-查询"><a href="#3-查询" class="headerlink" title="3.查询"></a>3.查询</h2><p>此字段类型当然是为了查询而存在，要不然没有灵魂。下面举例进行说明。索引名为 <code>sales_org</code></p>
+<p>有一个父文档为下方示例：</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"node_name_cn"</span><span class="token operator">:</span> <span class="token string">"川渝"</span><span class="token punctuation">,</span>
+  <span class="token property">"node_code"</span><span class="token operator">:</span> <span class="token string">"LP.IIB.RW.CTU"</span><span class="token punctuation">,</span>
+  <span class="token property">"node_type"</span><span class="token operator">:</span> <span class="token string">"办事处"</span><span class="token punctuation">,</span>
+  <span class="token property">"node_id_fqdn"</span><span class="token operator">:</span> <span class="token string">"SI/LP/LP.IIB.RW/LP.IIB.RW.CTU"</span><span class="token punctuation">,</span>
+  <span class="token property">"node_name_fqdn"</span><span class="token operator">:</span> <span class="token string">"SI/LP//川渝"</span><span class="token punctuation">,</span>
+  <span class="token property">"node_name_en"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"mgmt_territory"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"node_tree_level"</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  <span class="token property">"node_name_short"</span><span class="token operator">:</span> <span class="token string">"LP.IIB.RW.CTU"</span><span class="token punctuation">,</span>
+  <span class="token property">"node_info"</span><span class="token operator">:</span> <span class="token string">"node_parent"</span>
+<span class="token punctuation">}</span></code></pre>
+<p>一个子文档示例如下：</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>    
+  <span class="token property">"empl_id"</span><span class="token operator">:</span> <span class="token string">"*******"</span><span class="token punctuation">,</span>
+  <span class="token property">"email_addr"</span><span class="token operator">:</span> <span class="token string">"*****@fafa.com"</span><span class="token punctuation">,</span>
+  <span class="token property">"dept_id"</span><span class="token operator">:</span> <span class="token string">"LP.IIB.RW.CTU"</span><span class="token punctuation">,</span>
+  <span class="token property">"name_cn"</span><span class="token operator">:</span> <span class="token string">"Nie Cong"</span><span class="token punctuation">,</span>
+  <span class="token property">"node_info"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"parent"</span><span class="token operator">:</span> <span class="token string">"LP.IIB.RW.CTU"</span><span class="token punctuation">,</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"node_child"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>可以看到 <code>join</code> 类型字段名为 <code>node_info</code> ，父文档标示字段名为 <code>node_parent</code> ，子文档标示字段名为 <code>node_child</code> 。</p>
+<h3 id="3-1-基于父文档查询全部子文档"><a href="#3-1-基于父文档查询全部子文档" class="headerlink" title="3.1 基于父文档查询全部子文档"></a>3.1 基于父文档查询全部子文档</h3><pre class=" language-http"><code class="language-http">POST sales_org/_search
+{
+  "query": {
+    "has_parent": {
+      "parent_type": "node_parent",        // 填写父文档标示字段名
+      "query": {        // 填写查询条件，注意填写的查询条件是查询父文档，该查询条件是为定位到要基于的父文档
+        "match": {
+          "_id": "LP.IIB.RW.CTU"
+        }
+      }
+    }
+  }
+}</code></pre>
+<h3 id="3-2-基于子文档查询其父文档"><a href="#3-2-基于子文档查询其父文档" class="headerlink" title="3.2 基于子文档查询其父文档"></a>3.2 基于子文档查询其父文档</h3><pre class=" language-http"><code class="language-http">{
+  "query": {
+    "has_child": {
+      "type": "node_child",        // 填写子文档标示字段名
+      "query": {        // 填写查询条件，注意填写的查询条件是查询子文档，该查询条件是为定位到要基于的子文档
+        "match": {
+          "dept_id": "LP.IIB.RW.CTU"
+        }
+      }
+    }
+  }
+}</code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
     <title>计算机网络知识点总结</title>
     <url>/2020/02/02/11.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p><strong>《计算机网络》第五版 谢希仁</strong> 知识点大汇总</p>
@@ -1362,6 +2485,723 @@ search<span class="token punctuation">(</span><span class="token string">"小明
 ]]></content>
       <tags>
         <tag>算法类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CentOS这些情况你也遇到过</title>
+    <url>/2019/12/22/13.CentOS%E8%BF%99%E4%BA%9B%E6%83%85%E5%86%B5%E4%BD%A0%E4%B9%9F%E9%81%87%E5%88%B0%E8%BF%87/</url>
+    <content><![CDATA[<p>CentOS 虚拟机许久未用，忘记密码如何是好？删掉再来又岂能甘心？想安装某个命令，直接 yum install 就可以了吗？远程连接服务器报错该怎样操作？</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="1-CentOS-无法登陆情况下修改密码"><a href="#1-CentOS-无法登陆情况下修改密码" class="headerlink" title="1.CentOS 无法登陆情况下修改密码"></a>1.CentOS 无法登陆情况下修改密码</h2><p><strong>背景：</strong>虚拟机忘记 <code>root</code> 密码，不知如何登陆</p>
+<p><strong>环境：</strong><code>CentOS</code>，<code>root</code> 账户</p>
+<p><strong>操作：</strong></p>
+<p>1.开启虚拟机，在进入系统前选择项页面，按 <code>e</code> 键进入系统配置文件</p>
+<p>2.向下移动光标，找到 <code>Linux16</code> 开头，大概意思如下的一句话：</p>
+<pre class=" language-shell"><code class="language-shell">Linux16 /vmlinuz-3.10.0xxxxxx.x86_64 root=UUID=xxxxxxxx ro  crashkernel=auto rhgb quiet LANG=zh_CN.UTF-8 </code></pre>
+<p>3.在该行的最后加空格，输入 <code>init=/bin/sh</code></p>
+<p>4.接下来按 <code>Ctrl + x</code> 组合键进入单用户模式</p>
+<blockquote>
+<p>等待一会，会发现已经进入系统，只不过，命令行前缀变为类似 <code>sh-4.2#</code> 的效果</p>
+</blockquote>
+<p>5.输入如下命令：</p>
+<pre class=" language-shell"><code class="language-shell">mount -o remount,rw /</code></pre>
+<p>6.之后输入如下命令：</p>
+<pre class=" language-shell"><code class="language-shell">passwd</code></pre>
+<p>7.接下来就是修改 <code>root</code> 账号密码了</p>
+<blockquote>
+<p>重复输入一个不少于8位的密码（密码在输入时是不显示的，只需要正确输入并回车即可）</p>
+</blockquote>
+<p>8.出现 <code>successfully</code> 字样表示修改成功，但要生效还需继续操作</p>
+<p>9.输入如下命令：</p>
+<pre class=" language-shell"><code class="language-shell">touch /.autorelabel</code></pre>
+<p>10.操作完毕，还有一步：</p>
+<pre class=" language-shell"><code class="language-shell">exec /sbin/init</code></pre>
+<p>接下来就是等待系统重启（可能需要几分钟，需耐心等待，勿中途关机）</p>
+<h2 id="2-安装命令小技巧"><a href="#2-安装命令小技巧" class="headerlink" title="2.安装命令小技巧"></a>2.安装命令小技巧</h2><p>安装命令，大家一定会想到：</p>
+<pre class=" language-shell"><code class="language-shell">yum install xxx</code></pre>
+<p>但并非所有命令都是如此。有些则处于某工具包中，需要下载其基础环境，那该如何操作？</p>
+<p>只需执行：</p>
+<pre class=" language-shell"><code class="language-shell">yum search xxx</code></pre>
+<p>耐心等待几分钟，直到执行完毕。然后安装最后提示模块即可。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre class=" language-shell"><code class="language-shell">yum search killall</code></pre>
+<p>提示：</p>
+<pre class=" language-shell"><code class="language-shell">Loaded plugins: fastestmirror, security
+Loading mirror speeds from cached hostfile
+
+base: mirrors.163.com
+extras: mirrors.aliyun.com
+*> updates: mirrors.aliyun.com
+-----------------------------------Matched:killall-----------------------------------/
+psmisc.x86_64 : Utilities for managing processes on your system</code></pre>
+<blockquote>
+<p>可看到 <code>killall</code> 命令处于 <code>psmisc.x86_64</code> 中</p>
+</blockquote>
+<p>然后输入：</p>
+<pre class=" language-shell"><code class="language-shell">yum install psmisc.x86_64</code></pre>
+<h2 id="3-远程连接服务器"><a href="#3-远程连接服务器" class="headerlink" title="3.远程连接服务器"></a>3.远程连接服务器</h2><p><strong>背景：</strong>使用 <code>ssh</code> 连接服务器进行相关操作，报错</p>
+<p><strong>环境：</strong>本地 <code>MacOS</code>，服务器 <code>CentOS</code></p>
+<p><strong>操作：</strong></p>
+<p>1.使用命令进行远程连接，然后报错如下：</p>
+<pre class=" language-shell"><code class="language-shell">❱ ssh root@192.168.xx.xx
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:ZBm9L5432tibaN5+weK4h9NJzqrc76lvxOUkVvSLGac.
+Please contact your system administrator.
+Add correct host key in /Users/ethanyan/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /Users/ethanyan/.ssh/known_hosts:6
+ECDSA host key for 192.168.xx.xx has changed and you have requested strict checking.
+Host key verification failed.</code></pre>
+<p>2.使用如下命令进行解决：</p>
+<pre class=" language-shell"><code class="language-shell">ssh-keygen -R 你要访问的IP地址</code></pre>
+<p>3.最后再次使用命令进行连接发现连接成功：</p>
+<pre class=" language-shell"><code class="language-shell">ssh 用户@你要访问的ip地址</code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>crontab 执行python脚本不生效？（续）</title>
+    <url>/2019/11/17/%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[ <center>Author：BIGOcean</center> 
+Linux 设置定时任务，crontab 执行 python 脚本不生效的问题：
+<a id="more"></a>
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>尝试方法：</p>
+<p>1.给 python 脚本第一行添加如下代码：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/python</span></code></pre>
+<blockquote>
+<p>当然 python 解释器的路径要按照自己情况进行填写。</p>
+</blockquote>
+<p>2.如果 python 脚本报错，模块未找到等等，尝试如下方式：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'xxx&lt;第三方模块的路径>'</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>如果是虚拟环境，有可能此路径不同，可以通过下列命令查看：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> elasticsearch
+elasticsearch<span class="token punctuation">.</span>__file__</code></pre>
+</blockquote>
+<p>然后将路径复制到 <code>sys.path.append(&#39;&#39;)</code> 中的引号即可，如：</p>
+<pre class=" language-python"><code class="language-python">D<span class="token punctuation">:</span>\\E\\python_virtual\\fbl5n\\lib\\site<span class="token operator">-</span>packages</code></pre>
+<p>3.python 脚本中不涉及复杂的逻辑，简单的函数即函数调用即可，如果出现下列代码，请去掉：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span></code></pre>
+<p>它会将 crontab 在调用的时候搞晕。</p>
+<p>4.可以写一个 shell 脚本去调用 python 脚本，如下：</p>
+<pre class=" language-shell"><code class="language-shell">#!/usr/bin/bash
+cd /opt
+/usr/bin/python3 mail_reminder.py >> log.txt 2>&1</code></pre>
+<blockquote>
+<p>0 表示stdin标准输入<br>1 表示stdout标准输出<br>2 表示stderr标准错误<br>&amp; 表示等同于的意思<br>2&gt;&amp;1 表示2的输出重定向等同于1</p>
+</blockquote>
+<p>5.当报错编码问题时可以尝试使用如下方法：</p>
+<pre class=" language-shell"><code class="language-shell">#!/usr/bin/bash 
+cd /opt 
+PYTHONIOENCODING=utf-8 /usr/bin/python3 mail_reminder.py >> log.txt 2>&1</code></pre>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>Linux</tag>
+        <tag>crontab</tag>
+        <tag>定时任务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>bat脚本常用命令</title>
+    <url>/2019/11/14/12.bat%E8%84%9A%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>bat 脚本？如果不是从事微软开发相关工作的人员，是不是感觉很耳熟但是又好像不熟悉？还等什么，一睹为快</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>bat 脚本是 windows 上所用的脚本，我们经常使用的 cmd 一些命令就可以使用。也许你会说为什么不使用 powershell 脚本？因为古老的一些服务器上面没有安装 powershell 你信不信？比如 windows server 2003。</p>
+<p>很荣幸，我遇到了，没有什么办法，只能查阅相关资料迎难而上了！脚本其实很简单，下面做一个记录，供大家有需要时获取：</p>
+<h4 id="1-设置变量"><a href="#1-设置变量" class="headerlink" title="1.设置变量"></a>1.设置变量</h4><p>设置变量使用 <code>SET</code> 关键字，语法如下：</p>
+<pre class=" language-powershell"><code class="language-powershell"><span class="token function">SET</span> 变量名=变量值</code></pre>
+<blockquote>
+<p>1.<strong>变量名与变量值一定要紧挨等于号！！！</strong>否则报错到怀疑人生。</p>
+<p>2.变量值如果是个字符串，直接写内容，不需要加双引号。（是不是很方便）</p>
+</blockquote>
+<h4 id="2-使用变量"><a href="#2-使用变量" class="headerlink" title="2.使用变量"></a>2.使用变量</h4><p>使用变量时语法如下：</p>
+<pre class=" language-powershell"><code class="language-powershell"><span class="token operator">%</span>变量名<span class="token operator">%</span></code></pre>
+<h4 id="3-判断语句"><a href="#3-判断语句" class="headerlink" title="3.判断语句"></a>3.判断语句</h4><p>判断语句必不可少，if … else… 语法如下：</p>
+<pre class=" language-powershell"><code class="language-powershell"><span class="token keyword">if</span> 条件 <span class="token punctuation">(</span>
+    条件成立执行内容
+<span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token punctuation">(</span>
+    条件不成立执行内容
+<span class="token punctuation">)</span></code></pre>
+<h4 id="4-回显"><a href="#4-回显" class="headerlink" title="4.回显"></a>4.回显</h4><p>类似于 python 中的 print 函数，即将后方的内容打印输出：</p>
+<pre class=" language-powershell"><code class="language-powershell"><span class="token function">echo</span> 我就是要回显的内容</code></pre>
+<h4 id="5-创建文件夹"><a href="#5-创建文件夹" class="headerlink" title="5.创建文件夹"></a>5.创建文件夹</h4><p>创建目录你还在想 <code>mkdir</code> 的时候，windows 已经考虑简化了：</p>
+<pre class=" language-powershell"><code class="language-powershell">md 文件夹路径</code></pre>
+<blockquote>
+<p>之所以写文件夹路径，是因为可以创建嵌套目录啊！不需要任何参数，简单不简单？</p>
+</blockquote>
+<h4 id="6-输出内容到文件"><a href="#6-输出内容到文件" class="headerlink" title="6.输出内容到文件"></a>6.输出内容到文件</h4><p>大家如果熟悉 Linux 系统，那么对于重定向命令一定很熟悉了，bat 脚本完全一样，如果是创建一个文件，或者已有文件覆盖内容的话，可以使用 <code>&gt;</code> 命令；如果是要往加过里面追加内容的话，直接使用 <code>&gt;&gt;</code> 即可。示例如下：</p>
+<pre class=" language-shell"><code class="language-shell">echo test content > C:\test\test.txt</code></pre>
+<h4 id="7-关闭系统信息回显"><a href="#7-关闭系统信息回显" class="headerlink" title="7.关闭系统信息回显"></a>7.关闭系统信息回显</h4><p>我们在执行脚本的时候，系统会执行 N 多步可知，不可知的步骤，因此会输出大量的信息，如果只想看自己回显的信息呢？可以使用如下命令：</p>
+<pre class=" language-shell"><code class="language-shell">@echo off</code></pre>
+<blockquote>
+<p>需要再文件的开头书写</p>
+</blockquote>
+<h4 id="8-标题"><a href="#8-标题" class="headerlink" title="8.标题"></a>8.标题</h4><p>小黑窗口左上角的字该怎么改呢？看下方：</p>
+<pre class=" language-powershell"><code class="language-powershell">@title monitoring_log by EthanYan</code></pre>
+<h4 id="9-其他"><a href="#9-其他" class="headerlink" title="9.其他"></a>9.其他</h4><p>如果你看其他人写的脚本，也许会在文件开头看到这样一句：</p>
+<pre class=" language-shell"><code class="language-shell">mode con lines=5 cols=40</code></pre>
+<p>它是设置显示内容的小黑窗口大小的命令。lines 指的是高，cols 指宽度。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>微软</category>
+      </categories>
+      <tags>
+        <tag>脚本类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python 字符串前面的那些特殊字符</title>
+    <url>/2019/11/04/26.python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E9%9D%A2%E7%9A%84%E9%82%A3%E4%BA%9B%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/</url>
+    <content><![CDATA[<center>Author：BIGOcean</center>
+对于 Python 的字符串大家并不陌生，引号引用即为字符串。那么字符串前面经常加的一些特殊字母就让初学者懵逼了，今天我们就来详细讲一下 ......
+
+<a id="more"></a>
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="1-u"><a href="#1-u" class="headerlink" title="1.u"></a>1.u</h2><p>作为程序员，看到 <code>u</code> 字符，首先想到的便是 <code>Unicode</code> 这个单词。没错，它确实也代表此含义。目的是告知后面字符串采用 <code>Unicode</code> 编码格式，应用对象自然是容易出现问题的<strong>中文字符串</strong>。</p>
+<p>有时我们存储完成后，再次取用发现格式不一致，或者显示乱码等问题，使用 <code>u</code> 便很好解决了。</p>
+<h2 id="2-f"><a href="#2-f" class="headerlink" title="2.f"></a>2.f</h2><p>这个字符经常看到，不知你是否还注意到一个现象，那便是出现此字符的字符串，字符串中必定会有大括号。哈哈，忘记也没有关系，要不然我讲什么呢？</p>
+<p>此字符代表的是在后面字符串中可以使用大括号（大括号中可以使用 <code>python</code> 表达式）。如：</p>
+<pre class=" language-python"><code class="language-python">f<span class="token string">"testfile-{str(time.time()).replace('.','')}.txt"</span></code></pre>
+<p>输出结果为：</p>
+<pre class=" language-python"><code class="language-python">testfile<span class="token number">-15728489624240513.</span>txt</code></pre>
+<blockquote>
+<p>这样我们在字符串中就可以随心所欲的使用任何表达式，不再通过 <code>+</code> 拼接各种字符串了。</p>
+</blockquote>
+<h2 id="3-r"><a href="#3-r" class="headerlink" title="3.r"></a>3.r</h2><p><code>r</code> 这个字符是否更眼熟了？没错，在学习正则表达式时，大家都见过。此字符含义与其相同，代表将字符串中各种特殊符号进行转义，字符串中内容 <code>所见即所得</code> 。比如 ：</p>
+<pre class=" language-python"><code class="language-python">r<span class="token string">'你好：\n您的快递'</span></code></pre>
+<p>其中的 <code>\n</code> 不再表示换行符，而是反斜杠加字母 <code>\n</code></p>
+<h2 id="4-b"><a href="#4-b" class="headerlink" title="4.b"></a>4.b</h2><p>这个字符就更常见了，它表示 <code>bytes</code> 类型。它可以与字符串类型相互转换，使用 <code>encode</code> 与 <code>decode</code>。</p>
+<h3 id="bytes-gt-string"><a href="#bytes-gt-string" class="headerlink" title="bytes -&gt; string"></a>bytes -&gt; string</h3><pre class=" language-python"><code class="language-python">by <span class="token operator">=</span> b<span class="token string">'test'</span>
+by<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span></code></pre>
+<h3 id="string-gt-bytes"><a href="#string-gt-bytes" class="headerlink" title="string -&gt; bytes"></a>string -&gt; bytes</h3><pre class=" language-python"><code class="language-python">str <span class="token operator">=</span> <span class="token string">'test'</span>
+str<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span></code></pre>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>crontab定时执行python脚本不成功解决方案</title>
+    <url>/2019/10/31/14.crontab%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC%E4%B8%8D%E6%88%90%E5%8A%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<p>目前有一个需求是定时执行某个 python 脚本，但是在 Linux 上设置 crontab 后，不生效？手动执行生效？于是使用下面的方法执行即可：</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>大体思路为先写一个 <code>shell</code> 脚本，脚本中执行 <code>python</code> 文件，然后定时执行 <code>shell</code> 脚本即可。具体原因不明，正在探索中 …… 目前只提供一种解决方案。</p>
+<p>1.使用如下命令创建脚本：</p>
+<pre class=" language-shell"><code class="language-shell">vi start.sh</code></pre>
+<p>2.然后在 <code>start.sh</code> 脚本中结合本身情况输入内容，示例：</p>
+<pre class=" language-shell"><code class="language-shell">#!/usr/bin/bash
+cd /opt
+/usr/bin/python3 /opt/test_mail.py</code></pre>
+<p>3.然后使用如下命令，编辑定时任务：</p>
+<pre class=" language-shell"><code class="language-shell">crontab -e</code></pre>
+<p>4.假如设定每天 8 点执行脚本，设置如下：</p>
+<pre class=" language-shell"><code class="language-shell">0 8 * * * /opt/start.sh</code></pre>
+<p>5.保存定时任务，几分钟后自动生效。</p>
+<blockquote>
+<p><strong>注意</strong>：所有的路径都使用<strong>绝对路径</strong>，否则仍然无效。</p>
+</blockquote>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python导入导出pip环境中所有模块</title>
+    <url>/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/</url>
+    <content><![CDATA[ <center>Author：BIGOcean</center> 
+python 环境如何搭建？项目依赖模块如何安装？备份环境时如何将所有 pip 安装的模块导出？请看下文
+
+<a id="more"></a>
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>导出所有模块：</p>
+<pre class=" language-shell"><code class="language-shell">pip freeze >requirements.txt</code></pre>
+<p>导入所有模块：</p>
+<pre class=" language-shell"><code class="language-shell">pip install -r requirements.txt</code></pre>
+<blockquote>
+<p><strong>注意</strong>：执行此命令时<strong>需要联网</strong>，其原理还是依次对文件中每一个模块进行 <code>pip install</code></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo命令速查小册</title>
+    <url>/2019/10/27/23.hexo%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E5%B0%8F%E5%86%8C/</url>
+    <content><![CDATA[<p>最近都在搭建自己的博客，不断的调整显示效果，以及添加一些初始功能，总算大体框架完成，细枝末节还有待商榷。我的博客地址为: <a href="http://www.8868866.xyz/" target="_blank" rel="noopener">http://www.8868866.xyz/</a>  ，希望大家多多捧场 ~ 当然也希望大家多多关注公众号『大海的BLOG』</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>搭建博客的过程中使用到了框架 Node.js、HEXO 以及 GitHub 。</p>
+<p>下面就经常使用到的 hexo 的命令做一个总结，方便在使用过程中快速查阅。</p>
+<h4 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h4><pre class=" language-shell"><code class="language-shell">hexo n "article name"
+或者
+hexo new "article name"</code></pre>
+<h4 id="快速部署"><a href="#快速部署" class="headerlink" title="快速部署"></a>快速部署</h4><pre class=" language-shell"><code class="language-shell">hexo clean && hexo g && hexo d</code></pre>
+<p>其实上述为 3 个命令，为了节省时间，我经常联合使用。</p>
+<blockquote>
+<p>hexo clean 清除缓存</p>
+<p>hexo g 生成静态页面（generate）</p>
+<p>hexo d 部署（deploy）</p>
+</blockquote>
+<h4 id="本地效果预览"><a href="#本地效果预览" class="headerlink" title="本地效果预览"></a>本地效果预览</h4><pre class=" language-shell"><code class="language-shell">hexo s</code></pre>
+<blockquote>
+<p>s 为 server 的简写，因此你也可以写成 hexo server。hexo 的命令大多都是如此</p>
+</blockquote>
+<h4 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h4><p>首页会根据分页效果展示文章，如果不设置摘要，文章会拉长页面篇幅。</p>
+<p>我们只需要在文章摘要后添加一行内容即可：</p>
+<pre class=" language-shell"><code class="language-shell"><!--more--></code></pre>
+<h4 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h4><p>先执行：</p>
+<pre class=" language-shell"><code class="language-shell">hexo new page "tags"</code></pre>
+<p>再在目录 <code>source/tags/index.md</code> 中添加：</p>
+<pre class=" language-shell"><code class="language-shell">---
+title: tags
+date: 2019-05-27 13:47:40
+type: "tags"
+---</code></pre>
+<p>最后只需要在写文章时添加 <code>tags</code> 属性即可。</p>
+<p>如果只添加一个标签：</p>
+<pre class=" language-shell"><code class="language-shell">tags: test</code></pre>
+<p>多标签，文章开头添加：（yaml语法）</p>
+<pre class=" language-shell"><code class="language-shell">tags:
+- test1
+- test2
+- test3</code></pre>
+<h4 id="添加文章分类目录"><a href="#添加文章分类目录" class="headerlink" title="添加文章分类目录"></a>添加文章分类目录</h4><p>添加分类如同标签一样，只需要将 <code>tags</code> 换成 <code>categories</code> 即可，如：</p>
+<pre class=" language-shell"><code class="language-shell">hexo new page "categories"</code></pre>
+<p><strong>注意：</strong>如下形式，同篇文章添加多个目录和标签：</p>
+<pre class=" language-yml"><code class="language-yml">tags:
+- 算法
+- 数据结构
+categories:
+- 算法
+- 数据结构</code></pre>
+<p><strong>同篇文章添加多个目录和标签时，请将与其他文章共同的目录放置在前面，优先级高一些。</strong>比如，文章A归为目录算法和机器学习下，文章B归为目录算法和数据结构下。他们在划分目录时，需如下填写：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 文章A</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> 算法
+<span class="token punctuation">-</span> 机器学习
+
+<span class="token comment" spellcheck="true"># 文章B</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> 算法
+<span class="token punctuation">-</span> 数据结构</code></pre>
+<p>如果先写各自不同的目录，再写共同目录时，会在前端目录展示页面中出现重复目录。因为框架在创建目录时，会按如下形式创建表示目录的文件夹，以上述例子示范：</p>
+<pre class=" language-yaml"><code class="language-yaml">算法
+├── 机器学习
+└── 数据结构
+<span class="token comment" spellcheck="true"># 框架会先创建一个算法的文件夹，然后在算法文件夹下创建两个其他文件夹，这样避免目录重复</span></code></pre>
+<p>如果在目录填写时按如下情况：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 文章A</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> 机器学习
+<span class="token punctuation">-</span> 算法
+
+<span class="token comment" spellcheck="true"># 文章B</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> 数据结构
+<span class="token punctuation">-</span> 算法</code></pre>
+<p>框架在生成目录时：</p>
+<pre class=" language-yaml"><code class="language-yaml">机器学习
+└── 算法
+
+数据结构
+└── 算法
+<span class="token comment" spellcheck="true"># 框架会先生成每篇文章中各自不同的目录，然后在其下创建算法目录，造成重复</span></code></pre>
+<p>框架在生成目录时，会优先创建写在首位的目录，再创建写在后面为止的目录，所以在展示所有的目录时，会出现重复的两个 <code>算法</code> 目录。</p>
+<h4 id="文章中插入图片"><a href="#文章中插入图片" class="headerlink" title="文章中插入图片"></a>文章中插入图片</h4><p>如果在 Markdown 中直接插图，再转成静态页面时，路径会找不到，导致图片无法正常显示。解决办法有很多，我最喜欢的便是利用 GitHub 新建一个放置图片的仓库（当然很多人使用七牛云也很方便），然后在文章中使用插入连接的方式插入图片即可：</p>
+<pre class=" language-shell"><code class="language-shell">![](https://github.com/XXXXX/XXX.图片格式)</code></pre>
+<blockquote>
+<p>连接地址利用以下步骤获取：打开GitHub图片仓库后，看到 Download 按钮，右键复制链接</p>
+</blockquote>
+<h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4><p>大家首先需要去腾讯云或者阿里云购买一个域名，然后备案，再通过解析绑定个人博客地址。</p>
+<p>命令暂且总结到此，预知后事如何，敬听下回分解 ~</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Elasticsearch 中这些必备 API 你晓得嘛？</title>
+    <url>/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/</url>
+    <content><![CDATA[<p>众所周知，ES 中的 mapping 只能在索引建立初期进行创建，且建立之后不可更改。mapping 对应的字段会映射成指定类型，未定义字段则自动映射，一般为 text 类型。那么想更改索引名或者更改某字段的 mapping 时，是否就束手无策了呢？当然不是！！！官方提供了一个接口，供索引备份迁移操作使用，那便是 <strong>reindex</strong>。当旧索引与新索引在同一节点时，效率相当高，万条数据瞬间完成（<code>大约只需0.4s</code>）。数百万数据也只需几分钟即可完成 操作，是不是很溜呢？快来学习一下吧。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="1-索引备份迁移"><a href="#1-索引备份迁移" class="headerlink" title="1.索引备份迁移"></a>1.索引备份迁移</h2><p><strong>请求方式：POST</strong></p>
+<p><strong>请求 API <code>_reindex</code></strong></p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"source"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"index"</span><span class="token operator">:</span> <span class="token string">"要备份的索引名"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"dest"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"index"</span><span class="token operator">:</span> <span class="token string">"新建的索引名"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>如果新索引中有数据，且 id 与旧索引中重复，那么会进行覆盖操作。</p>
+</blockquote>
+<p>但是当数据量实在太大，高达几十 G 的时候，速度就会变得很慢，那是因为它底层还是利用了 scroll 操作。该如何进行<strong>优化</strong>呢？可以提升批量操作的文档数大小，如下：</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"source"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"index"</span><span class="token operator">:</span> <span class="token string">"要备份的索引名"</span><span class="token punctuation">,</span>
+    <span class="token property">"size"</span> <span class="token operator">:</span> <span class="token number">5000</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"dest"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"index"</span>  <span class="token operator">:</span> <span class="token string">"新建的索引名"</span><span class="token punctuation">,</span>
+    <span class="token property">"routing"</span><span class="token operator">:</span> <span class="token string">"=cat"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>批量操作大小是如何确定的呢？是根据文档数以及文档容量进行确定的。根据查阅资料得知，一个好的起点是<strong>每批处理数据 5-15 MB</strong>，这是个什么概念？</p>
+<blockquote>
+<p>1000 个 1kb 的文档大约 1MB；1000 个 100kb 的文档是 100MB。</p>
+</blockquote>
+<p>然后<strong>逐步增加每批处理数据容量</strong>，进行调优，直到最终性能无法再次提升。还有一个方法，那便是提升硬件，比如<strong>换固态</strong>，你懂得~</p>
+<p>还有一种方法提升写入效率，这是终极操作，那便是 <code>sliced</code>。<code>reindex</code> 支持 Sliced Scroll 操作。它的原理可以简单的理解为将每次的 Scroll 请求分解，分解后并行化请求，从而提升效率。方式为：</p>
+<pre class=" language-json"><code class="language-json">POST _reindex?slices=<span class="token number">5</span>&amp;refresh
+<span class="token punctuation">{</span>
+  <span class="token property">"source"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"index"</span><span class="token operator">:</span> <span class="token string">"要备份的索引名"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"dest"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"index"</span><span class="token operator">:</span> <span class="token string">"新建的索引名"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="2-删除索引中指定的数据"><a href="#2-删除索引中指定的数据" class="headerlink" title="2.删除索引中指定的数据"></a>2.删除索引中指定的数据</h2><p><strong>请求方式：POST</strong></p>
+<p><strong>请求 API <code>_delete_by_query</code></strong></p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"query"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"match"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">"字段名"</span><span class="token operator">:</span> <span class="token string">"字段值"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>方法便是先查出指定数据再删除。</p>
+</blockquote>
+<h2 id="3-设置副本数、分片、动态映射"><a href="#3-设置副本数、分片、动态映射" class="headerlink" title="3. 设置副本数、分片、动态映射"></a>3. 设置副本数、分片、动态映射</h2><p>设置这些指标项可在建立 mapping 时一同设置。</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"settings"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token property">"index"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+            // 刷新间隔
+            <span class="token property">"refresh_interval"</span><span class="token operator">:</span><span class="token string">"3s"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        // 副本数
+        <span class="token property">"number_of_replicas"</span><span class="token operator">:</span><span class="token string">"0"</span><span class="token punctuation">,</span>
+        // 切片（分布在每个节点上的切片）
+        <span class="token property">"number_of_shards"</span><span class="token operator">:</span><span class="token string">"1"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"mappings"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token property">"_doc"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+            // 自动映射为 keyword 类型而不是默认的text类型
+            <span class="token property">"dynamic_templates"</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">"string_fields"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                        <span class="token property">"match"</span><span class="token operator">:</span><span class="token string">"*"</span><span class="token punctuation">,</span>
+                        <span class="token property">"match_mapping_type"</span><span class="token operator">:</span><span class="token string">"string"</span><span class="token punctuation">,</span>
+                        <span class="token property">"mapping"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                            <span class="token property">"type"</span><span class="token operator">:</span><span class="token string">"keyword"</span><span class="token punctuation">,</span>
+                            <span class="token property">"norms"</span><span class="token operator">:</span><span class="token boolean">false</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            // 建立mapping
+            <span class="token property">"properties"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                <span class="token property">"mydate"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                    <span class="token property">"type"</span><span class="token operator">:</span><span class="token string">"date"</span><span class="token punctuation">,</span>
+                    <span class="token property">"format"</span><span class="token operator">:</span>"yyyy/MM/dd HH<span class="token operator">:</span>mm<span class="token operator">:</span>ss||date_time||strict_date_time"
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">"字段名"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                    <span class="token property">"type"</span><span class="token operator">:</span><span class="token string">"字段类型"</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Git 上传大文件</title>
+    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
+<h2 id="1-windows-平台安装-git-lfs"><a href="#1-windows-平台安装-git-lfs" class="headerlink" title="1.windows 平台安装 git-lfs"></a>1.windows 平台安装 git-lfs</h2><p>1.先打开网址：</p>
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//github.com/git-lfs/git-lfs/releases</code></pre>
+<p>2.然后点击最新版本的版本号，将页面拉取到最底部，下载安装：</p>
+<pre class=" language-shell"><code class="language-shell">Windows Installer</code></pre>
+<p>3.运行下载的 exe 文件：</p>
+<pre class=" language-shell"><code class="language-shell">windows installer</code></pre>
+<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>1.打开 <code>git bash</code>，首先输入下列命令开启 lfs 功能：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs install</code></pre>
+<p>2.然后使用如下命令进行大文件追踪，然后会生成文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs track '大文件名'
+# 追踪大文件test.tar.gz
+git lfs track 'test.tar.gz'</code></pre>
+<p>3.添加文件 <code>.gittributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git add .gitattributes</code></pre>
+<p>4.然后提交文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit .gitattributes file'</code></pre>
+<p>5.将文件 <code>.gitattributes</code> 推送到远程仓库：</p>
+<pre class=" language-shell"><code class="language-shell">git push -u origin master</code></pre>
+<p>6.添加大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git add test.tar.gz</code></pre>
+<p>7.提交大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit big file.'</code></pre>
+<p>8.直接推送大文件到远程：</p>
+<pre class=" language-shell"><code class="language-shell">git push</code></pre>
+<p>然后你就会发现大文件推送到远程的 github 仓库了。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>网络类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用 es 查询盘点</title>
+    <url>/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/</url>
+    <content><![CDATA[ <center>Author：BIGOcean</center> 
+熟悉了关系型数据库的结构概念以及查询，再去使用属于非关系型数据库的 Elasticsearch 时，简直是噩梦。第一道难关便是概念上的转换。索引？类型？文档？what？
+
+ <a id="more"></a> 
+
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<blockquote>
+<p>下面是概念上的对应，大家可以类比了解</p>
+</blockquote>
+<pre class=" language-shell"><code class="language-shell">Relational DB -> Databases -> Tables -> Rows -> Columns
+Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
+<p>熟悉了各种概念后，下一道难关便是增删改查，而最最常用的是<strong>查询</strong>！如同 SQL 一样，它有一套自己的查询语句，称为 DSL。所以，下面为大家总结一下常用的查询，然后你就可以像翻字典一样，用时瞄两眼了 ~ 嘿嘿，真他娘的是个天才 … </p>
+<h3 id="1-基础的不能再基础查询"><a href="#1-基础的不能再基础查询" class="headerlink" title="1.基础的不能再基础查询"></a>1.基础的不能再基础查询</h3><p><strong>查询所有的索引及容量：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cat/indices</code></pre>
+<blockquote>
+<p><code>GET</code> 代表请求方式；<code>_cat/indices</code> 代表查询部分。访问的 <code>url</code> 写全为：</p>
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">localhost:</span>9200/_cat/indices</code></pre>
+</blockquote>
+<p><strong>查询某一索引的映射结构：</strong></p>
+<pre class=" language-http"><code class="language-http">GET 索引名/_mapping</code></pre>
+<p><strong>查询所有的相同前缀索引：（如以 yan 开头）</strong></p>
+<pre class=" language-http"><code class="language-http">GET yan*/_search</code></pre>
+<p><strong>查询所有索引模板：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _template</code></pre>
+<p><strong>查询具体索引模板：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _template/模板名</code></pre>
+<p><strong>查询集群健康状态：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cluster/health</code></pre>
+<p><strong>查询所有节点：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cat/nodes</code></pre>
+<p><strong>查询索引及分片的分布：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cat/shards</code></pre>
+<p><strong>查询所有插件:</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cat/plugins</code></pre>
+<h3 id="2-有点难度的查询"><a href="#2-有点难度的查询" class="headerlink" title="2.有点难度的查询"></a>2.有点难度的查询</h3><p><strong>查询某个索引的全部数据：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}</code></pre>
+<blockquote>
+<p>当然你也可以直接写 URL 查询（默认返回 10 条文档）：</p>
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">localhost:</span>9200/索引名/_search?pretty</code></pre>
+<p>pretty参数是为了浏览器显示的美观一些。</p>
+</blockquote>
+<p><strong>根据某一字段精确查询：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "term": { "字段名" : "值" }
+  }
+}</code></pre>
+<p><strong>根据某一字段模糊匹配：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "match": { "字段名" : "值" }
+  }
+}</code></pre>
+<p><strong>根据某一字段值进行范围查找：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "range": {
+        # 字段名: 条件
+        "age":{ "gte" : 15 , "lte" : 25 }
+    }
+  }
+}</code></pre>
+<blockquote>
+<p>gte 是大于等于；lte 是小于等于</p>
+</blockquote>
+<p><strong>根据条件进行过滤查询：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "bool": {
+      "filter": {
+        "term":{"字段":"值"}
+      }
+    }
+  }
+}</code></pre>
+<p><strong>多条件”或”关系：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+    "query": {
+        "bool": {
+            "should": [{
+                "term": {
+                    "字段": "值"
+                }
+            }, {
+                "match": {
+                    "字段": "值"
+                }
+            }]
+        }
+    }
+}</code></pre>
+<p><strong>多条件”与”关系：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "bool": {
+      "must" : [{
+        "match" : {
+          "name" : "Ethanyan"
+        }
+      },{
+        "range":{
+        "age":{
+          "from" : 18 , "to" : 26
+        } 
+        }
+      }]
+    }
+  }
+}</code></pre>
+<p><strong>严格匹配：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "bool": {
+      "must" : {
+        "range" : {
+          "age" : { "from" : 18, "to" : 26 }
+        }
+      }
+    }
+  }
+}</code></pre>
+<p><strong>严格不匹配：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "bool": {
+      "must_not" : {
+        "term" : {
+          "name" : "Ethanyan"
+        }
+      }
+    }
+  }
+}</code></pre>
+<p><strong>复合查询：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+    "query": {
+        "bool": {
+            "should": [{
+                    "match": {
+                        "age": 18
+                    }
+                },  
+                {
+                    "match": {
+                        "age": 26
+                    }
+                }
+            ],
+            "filter": { 
+                "match": {  
+                    "name": "Ethanyan" 
+                }
+            }
+        }
+    }
+}</code></pre>
+<h3 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><p>1.索引名、模板名之类的名称不能出现字母大写</p>
+<p>2.在查询时，需要写 DSL 语句，所以需要携带请求体，那么为什么还是 get 请求？</p>
+<p>答：原则上 get 请求不能携带请求体，但凡事有例外，试验后确实可以，我也不晓得为什么。</p>
+]]></content>
+      <categories>
+        <category>elasticsearch</category>
+      </categories>
+      <tags>
+        <tag>elasticsearch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 彻底删除某个commit的方法</title>
+    <url>/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>如果因为一些原因，需要删除某个错误的  commit ，而且需要干净的操作，彻底让其消失，不留痕迹，该如何操作？</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<blockquote>
+<p>我向仓库提交了一个大文件，大约 300M，push 失败（因为 git 最大能提交 100M 文件），删除本地文件不行，尝试过修改配置文件，解除 git 只能提交小于 100M 文件的限制，但是未起作用。只能通过删除包含提交此文件的 commit 解决。</p>
+</blockquote>
+<p>废话少说，直奔主题。</p>
+<p>1.首先输入如下命令查看历史提交的 commit：</p>
+<pre class=" language-shell"><code class="language-shell">git log</code></pre>
+<blockquote>
+<p>重要的是<strong>记下</strong>要删除的 commit 的<strong>上一条</strong> commit 的 <strong>commit号</strong>。如下图，如果要删除箭头所指的 commit，需要记录红框中的 commit号：</p>
+</blockquote>
+<p><img src="https://github.com/EthanYan6/pic/raw/master/Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/gitlog.png" alt="gitlog"></p>
+<p>2.然后执行如下的命令：</p>
+<pre class=" language-shell"><code class="language-shell">git rebase -i commit号</code></pre>
+<p>会出现如下界面：</p>
+<p><img src="https://github.com/EthanYan6/pic/raw/master/Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/gitrebase.png" alt="gitrebase"></p>
+<p>3.然后将要删除的 commit号 的前缀 <code>pick</code> 改为 <code>drop</code>。</p>
+<p>4.然后可以通过如下命令再次查看是否已经删除：</p>
+<pre class=" language-shell"><code class="language-shell">git log</code></pre>
+<p>5.最后通过如下命令将现在的状态推送到远程仓库即可：</p>
+<pre class=" language-shell"><code class="language-shell">git push origin HEAD -force</code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>网络类</tag>
       </tags>
   </entry>
 </search>
