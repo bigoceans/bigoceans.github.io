@@ -1,6 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>编程类</title>
+    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%BC%96%E7%A8%8B%E7%B1%BB/</url>
+    <content><![CDATA[<p>  吾不能有名师指导，但求能精选出最好的书籍，从最好的书中学到东西，可有些许补偿。当然，最好能主动寻找良师益友和专业人士的指导。经典的书都有一个特点： 详尽得当，通俗又不失理论化，信息量非常大。</p>
+<pre><code>  计算机专业推荐书籍：
+
+
+
+
+  一、 思想类读物：
+
+  1. 《通灵芯片:计算机运作的简单原理》(美国) 丹尼尔·希利斯著， 以通俗易懂的方式阐述计算机的构造与原理；
+
+  2. 《逻辑的引擎》作者：（美）马丁·戴维斯著， 从十七世纪的莱布尼茨之梦起始，讲述计算机背后的逻辑原理及其主人公的故事，非常精彩！
+
+  3. 《编程珠玑》作者：（美）本特利（Bentley，J.）著， 看似简单的东西，也能挖掘出珍珠般的光彩。
+
+  4. 《Unix 编程艺术》 作者： Eric S. Raymond 。 阐述软件设计的原则与方法， 很有参考价值， 不过要读懂的话可能需要一定的功力。
+
+
+  二、 基础课程类读物：
+
+  0.  《计算机科学概论》(Computer Science An Overview 9th)（美）J.Glenn Brookshear 著， 关于计算机导引的上佳英文入门读物。
+
+  1.  《The C Programming Language》（第2版） 作者： （美）Brian W.Kernighan, Dennis M.Ritchie 著， C编程必读，简洁扼要；我就是通过这本书开始消除对“字符串”处理的恐惧感的。
+
+  2.  《操作系统：精髓与设计原理》(第五版)  作者：（美）William Stallings 著， 操作系统的推荐教程，阐述详尽得当。 
+
+  3.  《数据结构基础》（C语言版） 作者： 霍罗维兹 (Ellis Horowitz) ， 萨尼 (Sartaj Sahni) , 安德尔森-费里德 (Susan Anderson-Freed)  ，数据结构的推荐读物，建议读英文版。
+
+  4.  《算法分析与设计基础》作者  ：(美)莱维丁，算法入门的推荐读物，讲解清晰而不失深度。当需要轻松阅读理解其思想时读这本，当需要深入理解算法分析时，建议阅读《算法导论》，最好两本都有，相得益彰。   
+
+  5.  《数据库系统概念》(第5版) ， 作者： Abraham Silberschatz, Henry F.Korth, S.Sudarshan 著， 杨冬青，马秀莉， 唐世渭译。全面深入，详尽得当，通俗与理论并重，是为经典。
+
+  6.  《程序设计实践》（第2版） 作者： Brian W. Kernighan Rob Pike 著， 裘宗燕译。 或者读英文版（The practice of programming）更好。 教会初学者进行程序设计而不是简单编码的上佳读物，绝对推荐！
+
+  7。 《TCP/IP 详解》（协议） ：  不必多说。 看完倾理论性的《计算机网络》教材， 有必要阅读此书来加强加深理解，真正打好网络编程基础。
+
+
+
+
+  三、 技术类书籍
+
+  1. 《深入理解计算机系统》作者：（美）布赖恩特 （Bryant,R.E.） 等著， 以程序员的角度和全局的视角来审视计算机系统，涵盖从数据表示到程序运行、系统交互的各个方面，非常值得深读！   
+
+ 2. 《Writing solid code》作者： （美） Steve Maguire 著，想要写出bug-free程序的上佳读物之一。相应读物的还有《高质量程序设计艺术》(code quality: from a open source perspective) ， 《代码整洁之道》(Writing clean code)
+
+ 3. 《Thinking in Java》 作者：（美）Bruce Eckel 著，Java 语言编程的推荐教材。 《Effective Java》(Joshua Bloch著) 作为进阶书籍。
+
+ 4. 《设计模式——可复用面向对象软件的基础》作者：（美）“四人帮”，设计模式的必读书籍（亦可用于参考）。
+
+ 5. 《实现模式》 作者： Kent Beck ， 非常有益的面向对象编程经验谈。
+
+ 6. 《重构： 改善既有代码的设计》 作者：作者: Martin Fowler ， 作为面向对象编程的收藏书籍，随时可参阅。
+
+ 7. 《Test Driven Development: By Example》 作者： Kent Beck ;  测试驱动开发的优秀入门书籍
+
+ 8. 《MYSQL必知必会》 作者：(英)Ben Forta. 人民邮电出版社。薄薄的一百页左右， 快速上手和使用 mysql 数据库。
+
+ 9. 《正则表达式必知必会》 作者：(英)Ben Forta. 译者: 杨涛 / 王建桥 / 杨晓.  人民邮电出版社。 薄薄的一百页左右， 清晰的阐述， 适合正则表达式的快速了解和上手。
+
+ 10. 《Java TCP/IP socket 编程》 作者: (美)Kenneth L.Calvert, M.J. Donaboo著， 周恒民译。 非常好的 Java tcp/ip socket 入门读物， 详细地讲解了相关的知识点，有相应的实例为佐， 并且对底层、性能等方面也作了一定的阐述。
+
+ 11.《Ubuntu Linux 指南：基础篇》 作者:  Mark G.Sobell.  Linux 系统入门读物。
+
+ 12.《Perl 语言入门》(第五版)  作者： Randal L.schwartz 等著， 盛春等译。 Perl 入门的推荐教程。通俗易懂、详尽得当。
+
+ 13.《Java 编程风格》 作者： Alan Vermeulan 等著。 曹铁鸥译。 关于Java 编程的推荐风格。
+
+ 14.《精通正则表达式》 作者： Jeffrey E.F.Friedl 。 关于正则表达式的深入学习读物。  
+
+ 15.《Java Concurrency in Practice》作者： Brian Goetz 等。  Java 并发编程读物。
+
+ 16.《单元测试之道Java版：使用JUnit 》 作者： Andrew Hunt,David Thomas.  单元测试的入门读物。
+
+
+
+ 四、 软件开发的可选读物：
+
+ 1. 《软件工艺》作者：Pete McBreen.  从工艺角度论述软件开发，强调个人开发能力的修炼。最好读英文版， 顺便学学英语。
+
+ 2. 《人月神话》作者： Frederick P. Brooks, Jr . 作为软件工程领域的经典作品， 无需多说。
+
+ 3. 《黑客与画家》 作者： Paul Graham.  互联网已经发生了巨大的变化， 但书中观点依然很有启发性， 建议读一读。
+
+ 4. 《Coders at work --- Reflections on the Craft of Programming》作者： Peter Seibel .   顶级大师的访谈录， 听听他们的声音和工作经历，肯定会受益匪浅。
+
+ 5.  《设计原本》作者： Frederick P. Brooks, Jr.  著，  InfoQ中文站 / 王海鹏 / 高博 （译）， 关于软件设计、管理方面的优秀读物。
+
+ 6.  《程序员修炼之道：从小工到专家》作者： Andrew Hunt / David Thomas 。 关于软件开发方法的实践经验谈。
+
+ 7.  《时间管理：给系统管理员》作者： Thomas A.Limoncelli 。 关于时间管理方面的有益参考，短小而精，适用于所有的软件开发人员。
+
+
+ 五、其它
+
+ 1.   《云计算解码：技术架构和产业运营》 作者：  雷葆华，饶少阳等。 关于云计算方面的入门读物。
+
+ 2.   《简约至上： 交互式设计四策略》：  理论、方法、细节兼具， 值得一读。</code></pre>]]></content>
+      <tags>
+        <tag>悦读</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ACM大数定理题</title>
     <url>/2020/03/23/36.ACM%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E9%A2%98/</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
@@ -3231,46 +3334,6 @@ categories:
       </categories>
   </entry>
   <entry>
-    <title>Git 上传大文件</title>
-    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
-<h2 id="1-windows-平台安装-git-lfs"><a href="#1-windows-平台安装-git-lfs" class="headerlink" title="1.windows 平台安装 git-lfs"></a>1.windows 平台安装 git-lfs</h2><p>1.先打开网址：</p>
-<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//github.com/git-lfs/git-lfs/releases</code></pre>
-<p>2.然后点击最新版本的版本号，将页面拉取到最底部，下载安装：</p>
-<pre class=" language-shell"><code class="language-shell">Windows Installer</code></pre>
-<p>3.运行下载的 exe 文件：</p>
-<pre class=" language-shell"><code class="language-shell">windows installer</code></pre>
-<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>1.打开 <code>git bash</code>，首先输入下列命令开启 lfs 功能：</p>
-<pre class=" language-shell"><code class="language-shell">git lfs install</code></pre>
-<p>2.然后使用如下命令进行大文件追踪，然后会生成文件 <code>.gitattributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git lfs track '大文件名'
-# 追踪大文件test.tar.gz
-git lfs track 'test.tar.gz'</code></pre>
-<p>3.添加文件 <code>.gittributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git add .gitattributes</code></pre>
-<p>4.然后提交文件 <code>.gitattributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git commit -m 'submit .gitattributes file'</code></pre>
-<p>5.将文件 <code>.gitattributes</code> 推送到远程仓库：</p>
-<pre class=" language-shell"><code class="language-shell">git push -u origin master</code></pre>
-<p>6.添加大文件：</p>
-<pre class=" language-shell"><code class="language-shell">git add test.tar.gz</code></pre>
-<p>7.提交大文件：</p>
-<pre class=" language-shell"><code class="language-shell">git commit -m 'submit big file.'</code></pre>
-<p>8.直接推送大文件到远程：</p>
-<pre class=" language-shell"><code class="language-shell">git push</code></pre>
-<p>然后你就会发现大文件推送到远程的 github 仓库了。</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>网络类</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Elasticsearch 中这些必备 API 你晓得嘛？</title>
     <url>/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/</url>
     <content><![CDATA[<p>众所周知，ES 中的 mapping 只能在索引建立初期进行创建，且建立之后不可更改。mapping 对应的字段会映射成指定类型，未定义字段则自动映射，一般为 text 类型。那么想更改索引名或者更改某字段的 mapping 时，是否就束手无策了呢？当然不是！！！官方提供了一个接口，供索引备份迁移操作使用，那便是 <strong>reindex</strong>。当旧索引与新索引在同一节点时，效率相当高，万条数据瞬间完成（<code>大约只需0.4s</code>）。数百万数据也只需几分钟即可完成 操作，是不是很溜呢？快来学习一下吧。</p>
@@ -3371,6 +3434,46 @@ git lfs track 'test.tar.gz'</code></pre>
       <categories>
         <category>技术</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Git 上传大文件</title>
+    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
+<h2 id="1-windows-平台安装-git-lfs"><a href="#1-windows-平台安装-git-lfs" class="headerlink" title="1.windows 平台安装 git-lfs"></a>1.windows 平台安装 git-lfs</h2><p>1.先打开网址：</p>
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//github.com/git-lfs/git-lfs/releases</code></pre>
+<p>2.然后点击最新版本的版本号，将页面拉取到最底部，下载安装：</p>
+<pre class=" language-shell"><code class="language-shell">Windows Installer</code></pre>
+<p>3.运行下载的 exe 文件：</p>
+<pre class=" language-shell"><code class="language-shell">windows installer</code></pre>
+<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>1.打开 <code>git bash</code>，首先输入下列命令开启 lfs 功能：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs install</code></pre>
+<p>2.然后使用如下命令进行大文件追踪，然后会生成文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs track '大文件名'
+# 追踪大文件test.tar.gz
+git lfs track 'test.tar.gz'</code></pre>
+<p>3.添加文件 <code>.gittributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git add .gitattributes</code></pre>
+<p>4.然后提交文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit .gitattributes file'</code></pre>
+<p>5.将文件 <code>.gitattributes</code> 推送到远程仓库：</p>
+<pre class=" language-shell"><code class="language-shell">git push -u origin master</code></pre>
+<p>6.添加大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git add test.tar.gz</code></pre>
+<p>7.提交大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit big file.'</code></pre>
+<p>8.直接推送大文件到远程：</p>
+<pre class=" language-shell"><code class="language-shell">git push</code></pre>
+<p>然后你就会发现大文件推送到远程的 github 仓库了。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>网络类</tag>
+      </tags>
   </entry>
   <entry>
     <title>常用 es 查询盘点</title>

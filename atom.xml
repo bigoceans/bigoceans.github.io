@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-23T09:44:45.361Z</updated>
+  <updated>2020-03-23T10:33:50.986Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>编程类</title>
+    <link href="http://yoursite.com/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%BC%96%E7%A8%8B%E7%B1%BB/"/>
+    <id>http://yoursite.com/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%BC%96%E7%A8%8B%E7%B1%BB/</id>
+    <published>2020-03-23T10:26:58.000Z</published>
+    <updated>2020-03-23T10:33:50.986Z</updated>
+    
+    <content type="html"><![CDATA[<p>  吾不能有名师指导，但求能精选出最好的书籍，从最好的书中学到东西，可有些许补偿。当然，最好能主动寻找良师益友和专业人士的指导。经典的书都有一个特点： 详尽得当，通俗又不失理论化，信息量非常大。</p><pre><code>  计算机专业推荐书籍：  一、 思想类读物：  1. 《通灵芯片:计算机运作的简单原理》(美国) 丹尼尔·希利斯著， 以通俗易懂的方式阐述计算机的构造与原理；  2. 《逻辑的引擎》作者：（美）马丁·戴维斯著， 从十七世纪的莱布尼茨之梦起始，讲述计算机背后的逻辑原理及其主人公的故事，非常精彩！  3. 《编程珠玑》作者：（美）本特利（Bentley，J.）著， 看似简单的东西，也能挖掘出珍珠般的光彩。  4. 《Unix 编程艺术》 作者： Eric S. Raymond 。 阐述软件设计的原则与方法， 很有参考价值， 不过要读懂的话可能需要一定的功力。  二、 基础课程类读物：  0.  《计算机科学概论》(Computer Science An Overview 9th)（美）J.Glenn Brookshear 著， 关于计算机导引的上佳英文入门读物。  1.  《The C Programming Language》（第2版） 作者： （美）Brian W.Kernighan, Dennis M.Ritchie 著， C编程必读，简洁扼要；我就是通过这本书开始消除对“字符串”处理的恐惧感的。  2.  《操作系统：精髓与设计原理》(第五版)  作者：（美）William Stallings 著， 操作系统的推荐教程，阐述详尽得当。   3.  《数据结构基础》（C语言版） 作者： 霍罗维兹 (Ellis Horowitz) ， 萨尼 (Sartaj Sahni) , 安德尔森-费里德 (Susan Anderson-Freed)  ，数据结构的推荐读物，建议读英文版。  4.  《算法分析与设计基础》作者  ：(美)莱维丁，算法入门的推荐读物，讲解清晰而不失深度。当需要轻松阅读理解其思想时读这本，当需要深入理解算法分析时，建议阅读《算法导论》，最好两本都有，相得益彰。     5.  《数据库系统概念》(第5版) ， 作者： Abraham Silberschatz, Henry F.Korth, S.Sudarshan 著， 杨冬青，马秀莉， 唐世渭译。全面深入，详尽得当，通俗与理论并重，是为经典。  6.  《程序设计实践》（第2版） 作者： Brian W. Kernighan Rob Pike 著， 裘宗燕译。 或者读英文版（The practice of programming）更好。 教会初学者进行程序设计而不是简单编码的上佳读物，绝对推荐！  7。 《TCP/IP 详解》（协议） ：  不必多说。 看完倾理论性的《计算机网络》教材， 有必要阅读此书来加强加深理解，真正打好网络编程基础。  三、 技术类书籍  1. 《深入理解计算机系统》作者：（美）布赖恩特 （Bryant,R.E.） 等著， 以程序员的角度和全局的视角来审视计算机系统，涵盖从数据表示到程序运行、系统交互的各个方面，非常值得深读！    2. 《Writing solid code》作者： （美） Steve Maguire 著，想要写出bug-free程序的上佳读物之一。相应读物的还有《高质量程序设计艺术》(code quality: from a open source perspective) ， 《代码整洁之道》(Writing clean code) 3. 《Thinking in Java》 作者：（美）Bruce Eckel 著，Java 语言编程的推荐教材。 《Effective Java》(Joshua Bloch著) 作为进阶书籍。 4. 《设计模式——可复用面向对象软件的基础》作者：（美）“四人帮”，设计模式的必读书籍（亦可用于参考）。 5. 《实现模式》 作者： Kent Beck ， 非常有益的面向对象编程经验谈。 6. 《重构： 改善既有代码的设计》 作者：作者: Martin Fowler ， 作为面向对象编程的收藏书籍，随时可参阅。 7. 《Test Driven Development: By Example》 作者： Kent Beck ;  测试驱动开发的优秀入门书籍 8. 《MYSQL必知必会》 作者：(英)Ben Forta. 人民邮电出版社。薄薄的一百页左右， 快速上手和使用 mysql 数据库。 9. 《正则表达式必知必会》 作者：(英)Ben Forta. 译者: 杨涛 / 王建桥 / 杨晓.  人民邮电出版社。 薄薄的一百页左右， 清晰的阐述， 适合正则表达式的快速了解和上手。 10. 《Java TCP/IP socket 编程》 作者: (美)Kenneth L.Calvert, M.J. Donaboo著， 周恒民译。 非常好的 Java tcp/ip socket 入门读物， 详细地讲解了相关的知识点，有相应的实例为佐， 并且对底层、性能等方面也作了一定的阐述。 11.《Ubuntu Linux 指南：基础篇》 作者:  Mark G.Sobell.  Linux 系统入门读物。 12.《Perl 语言入门》(第五版)  作者： Randal L.schwartz 等著， 盛春等译。 Perl 入门的推荐教程。通俗易懂、详尽得当。 13.《Java 编程风格》 作者： Alan Vermeulan 等著。 曹铁鸥译。 关于Java 编程的推荐风格。 14.《精通正则表达式》 作者： Jeffrey E.F.Friedl 。 关于正则表达式的深入学习读物。   15.《Java Concurrency in Practice》作者： Brian Goetz 等。  Java 并发编程读物。 16.《单元测试之道Java版：使用JUnit 》 作者： Andrew Hunt,David Thomas.  单元测试的入门读物。 四、 软件开发的可选读物： 1. 《软件工艺》作者：Pete McBreen.  从工艺角度论述软件开发，强调个人开发能力的修炼。最好读英文版， 顺便学学英语。 2. 《人月神话》作者： Frederick P. Brooks, Jr . 作为软件工程领域的经典作品， 无需多说。 3. 《黑客与画家》 作者： Paul Graham.  互联网已经发生了巨大的变化， 但书中观点依然很有启发性， 建议读一读。 4. 《Coders at work --- Reflections on the Craft of Programming》作者： Peter Seibel .   顶级大师的访谈录， 听听他们的声音和工作经历，肯定会受益匪浅。 5.  《设计原本》作者： Frederick P. Brooks, Jr.  著，  InfoQ中文站 / 王海鹏 / 高博 （译）， 关于软件设计、管理方面的优秀读物。 6.  《程序员修炼之道：从小工到专家》作者： Andrew Hunt / David Thomas 。 关于软件开发方法的实践经验谈。 7.  《时间管理：给系统管理员》作者： Thomas A.Limoncelli 。 关于时间管理方面的有益参考，短小而精，适用于所有的软件开发人员。 五、其它 1.   《云计算解码：技术架构和产业运营》 作者：  雷葆华，饶少阳等。 关于云计算方面的入门读物。 2.   《简约至上： 交互式设计四策略》：  理论、方法、细节兼具， 值得一读。</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;  吾不能有名师指导，但求能精选出最好的书籍，从最好的书中学到东西，可有些许补偿。当然，最好能主动寻找良师益友和专业人士的指导。经典的书都有一个特点： 详尽得当，通俗又不失理论化，信息量非常大。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  计算机专业推荐书籍：
+
+
+
+
+  一、 思想
+      
+    
+    </summary>
+    
+    
+    
+      <category term="悦读" scheme="http://yoursite.com/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>ACM大数定理题</title>
@@ -434,29 +464,6 @@
     <summary type="html">
     
       关系数据库之视图
-    
-    </summary>
-    
-    
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="语言类" scheme="http://yoursite.com/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言之字节序</title>
-    <link href="http://yoursite.com/2020/02/10/4.C%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E8%8A%82%E5%BA%8F/"/>
-    <id>http://yoursite.com/2020/02/10/4.C%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E8%8A%82%E5%BA%8F/</id>
-    <published>2020-02-10T04:30:10.000Z</published>
-    <updated>2020-03-23T04:47:00.683Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><h2 id="字节序理解"><a href="#字节序理解" class="headerlink" title="字节序理解"></a>字节序理解</h2><p>字节序其实就是数据在内存中的存储方式，因为内存的地址用高低位之分，数据也有高低位，所以按照存放的顺序一般可分为大端字节序，和小段字节序。</p><p>生活中我们放东西的顺序也是不一样的，有的人习惯性的将自己的物品放在自己的左手边，有的人就习惯性的放在自己的右手边，那对于电脑来说，cpu的不同，内存存储多字节数据的存储方式也相应的不同。</p><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h2 id="主机字节序"><a href="#主机字节序" class="headerlink" title="主机字节序"></a>主机字节序</h2><p>不同类型CPU主机中，内存存储多字节整数的方法不同，称为主机字节序</p><p><strong>主机序列有两种</strong><br>小端序 ：数据的低字节存放在内存的低地址<br>大端序 ：数据的高字节存放在内存的低地址 </p><blockquote><p>一般 inter处理器的字节序为 小端序， 而 ARM 架构的处理器多为大端序</p></blockquote><h2 id="验证主机字节序"><a href="#验证主机字节序" class="headerlink" title="验证主机字节序"></a>验证主机字节序</h2><p>C语言<code>代码片</code></p><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span><span class="token comment" spellcheck="true">//定义一个共用体</span><span class="token keyword">union</span> Data<span class="token punctuation">{</span>    <span class="token keyword">int</span> a<span class="token punctuation">;</span>    <span class="token keyword">char</span> b<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">union</span> Data data<span class="token punctuation">;</span>    data<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">0x12345678</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//小端序</span>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">0x78</span> <span class="token operator">==</span> data<span class="token punctuation">.</span>b<span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"the little end sequence\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token comment" spellcheck="true">//大端序</span>    <span class="token keyword">else</span>    <span class="token punctuation">{</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"the big end sequence\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre><h2 id="编程结果"><a href="#编程结果" class="headerlink" title="编程结果"></a>编程结果</h2><p><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/4/1.png" alt="inter处理器"></p><p><strong>运行代码的电脑是inter处理器的，验证为小端序存储</strong></p><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>]]></content>
-    
-    <summary type="html">
-    
-      C语言学习
     
     </summary>
     

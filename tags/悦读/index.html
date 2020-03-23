@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">hexo命令速查小册 | BIGOcean&#39;BLOG</title>
+  <title itemprop="name">Tag: 悦读 | BIGOcean&#39;BLOG</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -415,228 +415,64 @@
   </div>
 </header>
 
-      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+      
 <div class="pattern-center-blank"></div>
-
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/23.png);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/23.png">
-    </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      hexo命令速查小册</h1>
-      <p class="entry-census">
-        <span>
-          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg">
-          </a>
-        </span>
-        <span>
-          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">BIGOcean</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2019-10-27<span class="bull">
-        ·</span>
-      <span id="busuanzi_value_page_pv"></span>次阅读</p>
-    </header>
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/banner/悦读.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
   </div>
-
+  <header class="pattern-header ">
+    <h1 class="cat-title">悦读</h1>
+  </header>
+</div>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <p>最近都在搭建自己的博客，不断的调整显示效果，以及添加一些初始功能，总算大体框架完成，细枝末节还有待商榷。我的博客地址为: <a href="http://www.8868866.xyz/" target="_blank" rel="noopener">http://www.8868866.xyz/</a>  ，希望大家多多捧场 ~ 当然也希望大家多多关注公众号『大海的BLOG』</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<p>搭建博客的过程中使用到了框架 Node.js、HEXO 以及 GitHub 。</p>
-<p>下面就经常使用到的 hexo 的命令做一个总结，方便在使用过程中快速查阅。</p>
-<h4 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h4><pre class=" language-shell"><code class="language-shell">hexo n "article name"
-或者
-hexo new "article name"</code></pre>
-<h4 id="快速部署"><a href="#快速部署" class="headerlink" title="快速部署"></a>快速部署</h4><pre class=" language-shell"><code class="language-shell">hexo clean && hexo g && hexo d</code></pre>
-<p>其实上述为 3 个命令，为了节省时间，我经常联合使用。</p>
-<blockquote>
-<p>hexo clean 清除缓存</p>
-<p>hexo g 生成静态页面（generate）</p>
-<p>hexo d 部署（deploy）</p>
-</blockquote>
-<h4 id="本地效果预览"><a href="#本地效果预览" class="headerlink" title="本地效果预览"></a>本地效果预览</h4><pre class=" language-shell"><code class="language-shell">hexo s</code></pre>
-<blockquote>
-<p>s 为 server 的简写，因此你也可以写成 hexo server。hexo 的命令大多都是如此</p>
-</blockquote>
-<h4 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h4><p>首页会根据分页效果展示文章，如果不设置摘要，文章会拉长页面篇幅。</p>
-<p>我们只需要在文章摘要后添加一行内容即可：</p>
-<pre class=" language-shell"><code class="language-shell"><!--more--></code></pre>
-<h4 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h4><p>先执行：</p>
-<pre class=" language-shell"><code class="language-shell">hexo new page "tags"</code></pre>
-<p>再在目录 <code>source/tags/index.md</code> 中添加：</p>
-<pre class=" language-shell"><code class="language-shell">---
-title: tags
-date: 2019-05-27 13:47:40
-type: "tags"
----</code></pre>
-<p>最后只需要在写文章时添加 <code>tags</code> 属性即可。</p>
-<p>如果只添加一个标签：</p>
-<pre class=" language-shell"><code class="language-shell">tags: test</code></pre>
-<p>多标签，文章开头添加：（yaml语法）</p>
-<pre class=" language-shell"><code class="language-shell">tags:
-- test1
-- test2
-- test3</code></pre>
-<h4 id="添加文章分类目录"><a href="#添加文章分类目录" class="headerlink" title="添加文章分类目录"></a>添加文章分类目录</h4><p>添加分类如同标签一样，只需要将 <code>tags</code> 换成 <code>categories</code> 即可，如：</p>
-<pre class=" language-shell"><code class="language-shell">hexo new page "categories"</code></pre>
-<p><strong>注意：</strong>如下形式，同篇文章添加多个目录和标签：</p>
-<pre class=" language-yml"><code class="language-yml">tags:
-- 算法
-- 数据结构
-categories:
-- 算法
-- 数据结构</code></pre>
-<p><strong>同篇文章添加多个目录和标签时，请将与其他文章共同的目录放置在前面，优先级高一些。</strong>比如，文章A归为目录算法和机器学习下，文章B归为目录算法和数据结构下。他们在划分目录时，需如下填写：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 文章A</span>
-<span class="token key atrule">categories</span><span class="token punctuation">:</span>
-<span class="token punctuation">-</span> 算法
-<span class="token punctuation">-</span> 机器学习
-
-<span class="token comment" spellcheck="true"># 文章B</span>
-<span class="token key atrule">categories</span><span class="token punctuation">:</span>
-<span class="token punctuation">-</span> 算法
-<span class="token punctuation">-</span> 数据结构</code></pre>
-<p>如果先写各自不同的目录，再写共同目录时，会在前端目录展示页面中出现重复目录。因为框架在创建目录时，会按如下形式创建表示目录的文件夹，以上述例子示范：</p>
-<pre class=" language-yaml"><code class="language-yaml">算法
-├── 机器学习
-└── 数据结构
-<span class="token comment" spellcheck="true"># 框架会先创建一个算法的文件夹，然后在算法文件夹下创建两个其他文件夹，这样避免目录重复</span></code></pre>
-<p>如果在目录填写时按如下情况：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 文章A</span>
-<span class="token key atrule">categories</span><span class="token punctuation">:</span>
-<span class="token punctuation">-</span> 机器学习
-<span class="token punctuation">-</span> 算法
-
-<span class="token comment" spellcheck="true"># 文章B</span>
-<span class="token key atrule">categories</span><span class="token punctuation">:</span>
-<span class="token punctuation">-</span> 数据结构
-<span class="token punctuation">-</span> 算法</code></pre>
-<p>框架在生成目录时：</p>
-<pre class=" language-yaml"><code class="language-yaml">机器学习
-└── 算法
-
-数据结构
-└── 算法
-<span class="token comment" spellcheck="true"># 框架会先生成每篇文章中各自不同的目录，然后在其下创建算法目录，造成重复</span></code></pre>
-<p>框架在生成目录时，会优先创建写在首位的目录，再创建写在后面为止的目录，所以在展示所有的目录时，会出现重复的两个 <code>算法</code> 目录。</p>
-<h4 id="文章中插入图片"><a href="#文章中插入图片" class="headerlink" title="文章中插入图片"></a>文章中插入图片</h4><p>如果在 Markdown 中直接插图，再转成静态页面时，路径会找不到，导致图片无法正常显示。解决办法有很多，我最喜欢的便是利用 GitHub 新建一个放置图片的仓库（当然很多人使用七牛云也很方便），然后在文章中使用插入连接的方式插入图片即可：</p>
-<pre class=" language-shell"><code class="language-shell">![](https://github.com/XXXXX/XXX.图片格式)</code></pre>
-<blockquote>
-<p>连接地址利用以下步骤获取：打开GitHub图片仓库后，看到 Download 按钮，右键复制链接</p>
-</blockquote>
-<h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4><p>大家首先需要去腾讯云或者阿里云购买一个域名，然后备案，再通过解析绑定个人博客地址。</p>
-<p>命令暂且总结到此，预知后事如何，敬听下回分解 ~</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-
-        </div>
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/alipay.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/wechat.png"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                python导入导出pip环境中所有模块</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/18.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/18.png">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                Elasticsearch 中这些必备 API 你晓得嘛？</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-      </section>
       
-<div id="vcomments"></div>
-<script>
-  window.onload = function(){
-      var valine = new Valine();
-      valine.init({
-        el: '#vcomments',
-        appId: "hEvISJNEVpYHJM50anGRr26y-gzGzoHsz",
-        appKey: "Tlg7cokSVVOikjKN7DK5XUWr",
-        path: window.location.pathname,
-        placeholder: "你是我一生只会遇见一次的惊喜 ..."
-      })
-  }
-</script>
-
-
-      <section class="author-profile">
-        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" itemprop="image" alt="BIGOcean" height="70" width="70"></a>
-          <div class="meta">
-            <span class="title">Author</span>
-            <h3 itemprop="name">
-            <a href="https://bigocean1.gitee.io/" target="_blank" itemprop="url" rel="author noopener">BIGOcean</a>
-            </h3>
-          </div>
+  <!-- 首页默认取最最新文章集 -->
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%BC%96%E7%A8%8B%E7%B1%BB/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
         </div>
-        <hr>
-        <p><i class="iconfont icon-write"></i>学习中...</p>
-      </section>
-    </main><!-- #main -->
-  </div><!-- #primary -->
+        <img width="150" height="150" src="" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%BC%96%E7%A8%8B%E7%B1%BB/">
+    编程类</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2020-3-23</div>
+    <p>
+    </p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%BC%96%E7%A8%8B%E7%B1%BB/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+
+
+      <div class="clearer">
+      </div>
+    </main>
+    <!--  -->
+    
+  </div>
 </div>
-
-
-
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
