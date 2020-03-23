@@ -419,6 +419,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      python的这些小知识你注意到了吗？</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">BIGOcean</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-10<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -426,19 +450,8 @@
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-          <header class="entry-header">
-            <h1 class="entry-title">python的这些小知识你注意到了吗？</h1>
-            <p class="entry-census">&nbsp;·&nbsp;2020-3-10&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
-        
         <div class="entry-content">
-          <center>Author：BIGOcean</center>
-
-<p>本文将对一些小知识进行汇总，这些知识也许你用了 <code>python</code> 很久，但仍然没注意到。</p>
-<a id="more"></a>
-
+          <p>本文将对一些小知识进行汇总，这些知识也许你用了 <code>python</code> 很久，但仍然没注意到。</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-操作文件的-x-模式"><a href="#1-操作文件的-x-模式" class="headerlink" title="1.操作文件的 x 模式"></a>1.操作文件的 x 模式</h2><p>对文件进行操作的 <code>opend</code> 函数大家都很熟悉，但是你注意到它还有一种模式为 <code>x</code> 吗？</p>
 <p>今天闲的无聊，翻了翻 <code>python</code> 的文档（电脑保存的 <code>python</code> 文档为3.8.2版本），然后发现：不光有 <code>a</code> 、<code>w</code>、<code>b</code> 、<code>r</code> 、<code>+</code> 模式，竟然还有一种模式为 <code>x</code>，下面讲一下吧。</p>
@@ -606,16 +619,16 @@ noname
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" itemprop="image" alt="BIGOcean" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author"></a>
+            <a href="https://bigocean1.gitee.io/" target="_blank" itemprop="url" rel="author noopener">BIGOcean</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i></p>
+        <p><i class="iconfont icon-write"></i>学习中...</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->
@@ -628,7 +641,7 @@ noname
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -640,10 +653,10 @@ noname
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            // PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',

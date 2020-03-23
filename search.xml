@@ -873,11 +873,7 @@ Migrations for 'polls':
   <entry>
     <title>python的这些小知识你注意到了吗？</title>
     <url>/2020/03/10/25.python%E7%9A%84%E8%BF%99%E4%BA%9B%E5%B0%8F%E7%9F%A5%E8%AF%86%E4%BD%A0%E6%B3%A8%E6%84%8F%E5%88%B0%E4%BA%86%E5%90%97%EF%BC%9F/</url>
-    <content><![CDATA[<center>Author：BIGOcean</center>
-
-<p>本文将对一些小知识进行汇总，这些知识也许你用了 <code>python</code> 很久，但仍然没注意到。</p>
-<a id="more"></a>
-
+    <content><![CDATA[<p>本文将对一些小知识进行汇总，这些知识也许你用了 <code>python</code> 很久，但仍然没注意到。</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-操作文件的-x-模式"><a href="#1-操作文件的-x-模式" class="headerlink" title="1.操作文件的 x 模式"></a>1.操作文件的 x 模式</h2><p>对文件进行操作的 <code>opend</code> 函数大家都很熟悉，但是你注意到它还有一种模式为 <code>x</code> 吗？</p>
 <p>今天闲的无聊，翻了翻 <code>python</code> 的文档（电脑保存的 <code>python</code> 文档为3.8.2版本），然后发现：不光有 <code>a</code> 、<code>w</code>、<code>b</code> 、<code>r</code> 、<code>+</code> 模式，竟然还有一种模式为 <code>x</code>，下面讲一下吧。</p>
@@ -965,10 +961,10 @@ noname
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
-        <category>python</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
@@ -2567,12 +2563,9 @@ Host key verification failed.</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>crontab 执行python脚本不生效？（续）</title>
-    <url>/2019/11/17/%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[ <center>Author：BIGOcean</center> 
-Linux 设置定时任务，crontab 执行 python 脚本不生效的问题：
-<a id="more"></a>
-
+    <title>crontab执行python脚本不成功解决方案？（续）</title>
+    <url>/2019/11/17/27.%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<p>Linux 设置定时任务，crontab 执行 python 脚本不生效的问题：</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>尝试方法：</p>
 <p>1.给 python 脚本第一行添加如下代码：</p>
@@ -2604,15 +2597,13 @@ cd /opt
 <pre class=" language-shell"><code class="language-shell">#!/usr/bin/bash 
 cd /opt 
 PYTHONIOENCODING=utf-8 /usr/bin/python3 mail_reminder.py >> log.txt 2>&1</code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>python</tag>
-        <tag>Linux</tag>
-        <tag>crontab</tag>
-        <tag>定时任务</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
@@ -2667,11 +2658,7 @@ PYTHONIOENCODING=utf-8 /usr/bin/python3 mail_reminder.py >> log.txt 2>&1</code><
   <entry>
     <title>python 字符串前面的那些特殊字符</title>
     <url>/2019/11/04/26.python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E9%9D%A2%E7%9A%84%E9%82%A3%E4%BA%9B%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/</url>
-    <content><![CDATA[<center>Author：BIGOcean</center>
-对于 Python 的字符串大家并不陌生，引号引用即为字符串。那么字符串前面经常加的一些特殊字母就让初学者懵逼了，今天我们就来详细讲一下 ......
-
-<a id="more"></a>
-
+    <content><![CDATA[<p>对于 Python 的字符串大家并不陌生，引号引用即为字符串。那么字符串前面经常加的一些特殊字母就让初学者懵逼了，今天我们就来详细讲一下 ……</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-u"><a href="#1-u" class="headerlink" title="1.u"></a>1.u</h2><p>作为程序员，看到 <code>u</code> 字符，首先想到的便是 <code>Unicode</code> 这个单词。没错，它确实也代表此含义。目的是告知后面字符串采用 <code>Unicode</code> 编码格式，应用对象自然是容易出现问题的<strong>中文字符串</strong>。</p>
 <p>有时我们存储完成后，再次取用发现格式不一致，或者显示乱码等问题，使用 <code>u</code> 便很好解决了。</p>
@@ -2691,49 +2678,19 @@ PYTHONIOENCODING=utf-8 /usr/bin/python3 mail_reminder.py >> log.txt 2>&1</code><
 by<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span></code></pre>
 <h3 id="string-gt-bytes"><a href="#string-gt-bytes" class="headerlink" title="string -&gt; bytes"></a>string -&gt; bytes</h3><pre class=" language-python"><code class="language-python">str <span class="token operator">=</span> <span class="token string">'test'</span>
 str<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span></code></pre>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>字符串</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>crontab定时执行python脚本不成功解决方案</title>
-    <url>/2019/10/31/14.crontab%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC%E4%B8%8D%E6%88%90%E5%8A%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<p>目前有一个需求是定时执行某个 python 脚本，但是在 Linux 上设置 crontab 后，不生效？手动执行生效？于是使用下面的方法执行即可：</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<p>大体思路为先写一个 <code>shell</code> 脚本，脚本中执行 <code>python</code> 文件，然后定时执行 <code>shell</code> 脚本即可。具体原因不明，正在探索中 …… 目前只提供一种解决方案。</p>
-<p>1.使用如下命令创建脚本：</p>
-<pre class=" language-shell"><code class="language-shell">vi start.sh</code></pre>
-<p>2.然后在 <code>start.sh</code> 脚本中结合本身情况输入内容，示例：</p>
-<pre class=" language-shell"><code class="language-shell">#!/usr/bin/bash
-cd /opt
-/usr/bin/python3 /opt/test_mail.py</code></pre>
-<p>3.然后使用如下命令，编辑定时任务：</p>
-<pre class=" language-shell"><code class="language-shell">crontab -e</code></pre>
-<p>4.假如设定每天 8 点执行脚本，设置如下：</p>
-<pre class=" language-shell"><code class="language-shell">0 8 * * * /opt/start.sh</code></pre>
-<p>5.保存定时任务，几分钟后自动生效。</p>
-<blockquote>
-<p><strong>注意</strong>：所有的路径都使用<strong>绝对路径</strong>，否则仍然无效。</p>
-</blockquote>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
         <category>技术</category>
       </categories>
+      <tags>
+        <tag>语言类</tag>
+      </tags>
   </entry>
   <entry>
     <title>python导入导出pip环境中所有模块</title>
     <url>/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/</url>
-    <content><![CDATA[ <center>Author：BIGOcean</center> 
-python 环境如何搭建？项目依赖模块如何安装？备份环境时如何将所有 pip 安装的模块导出？请看下文
-
-<a id="more"></a>
-
+    <content><![CDATA[<p>python 环境如何搭建？项目依赖模块如何安装？备份环境时如何将所有 pip 安装的模块导出？请看下文</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>导出所有模块：</p>
 <pre class=" language-shell"><code class="language-shell">pip freeze >requirements.txt</code></pre>
@@ -2742,12 +2699,13 @@ python 环境如何搭建？项目依赖模块如何安装？备份环境时如�
 <blockquote>
 <p><strong>注意</strong>：执行此命令时<strong>需要联网</strong>，其原理还是依次对文件中每一个模块进行 <code>pip install</code></p>
 </blockquote>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
-        <category>python</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
