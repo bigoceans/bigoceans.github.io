@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">BIGOcean&#39;BLOG</title>
+  <title itemprop="name">C语言编写贪吃蛇游戏 | BIGOcean&#39;BLOG</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -415,445 +415,545 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 0px;"></div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/7.jpg);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/7.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      C语言编写贪吃蛇游戏</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">BIGOcean</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-21<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
-  
-  <div class="notice" style="margin-top:60px">
-    <i class="iconfont icon-notification">
-    </i>
-    <div class="notice-content">欢迎来到大海的博客</div>
-  </div>
-  
-  <div class="top-feature-row">
-  <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;">
-  <i class="fa fa-anchor" aria-hidden="true">
-  </i>
-  开始</h1>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="http://8r0suy.coding-pages.com" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/startdash/sakura.png">
-        </div>
-        <div class="info">
-          <h3>爱心树</h3>
-          <p>一个秘密的地方</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://www.52pojie.cn/home.php?mod=space&amp;uid=1334862&amp;do=wall&amp;from=space" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/startdash/bilibili.jpg">
-        </div>
-        <div class="info">
-          <h3>52pojie论坛</h3>
-          <p>博主的论坛主页</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://blog.csdn.net/weixin_44772207" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/startdash/wangshiwu.jpg">
-        </div>
-        <div class="info">
-          <h3>大海的CSDN</h3>
-          <p>技术服务</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-</div>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;">
-      <i class="fa fa-envira" aria-hidden="true"></i>
-      文章</h1>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><strong>你问我为什么要用c写贪吃蛇游戏？一切都要从那次作业讲起。。。</strong></p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h3 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h3><blockquote>
+<p>大一上半年，C程序设计老师布置了一个程序设计作业，于是诞生了这篇代码。</p>
+</blockquote>
+<h3 id="IDE："><a href="#IDE：" class="headerlink" title="IDE："></a>IDE：</h3><blockquote>
+<p>VisualStudio2017社区版</p>
+</blockquote>
+<h3 id="字符集："><a href="#字符集：" class="headerlink" title="字符集："></a>字符集：</h3><blockquote>
+<p>使用多字节字符集</p>
+</blockquote>
+<h3 id="辅助工具："><a href="#辅助工具：" class="headerlink" title="辅助工具："></a>辅助工具：</h3><blockquote>
+<p>EasyX图形库2018春分版</p>
+</blockquote>
+<h3 id="PS："><a href="#PS：" class="headerlink" title="PS："></a>PS：</h3><p>   <strong>1、因为当时想得高分就以为搞点花里胡哨的就不错（哈哈最后混了个优，乐死我了），所以我编写了账号注册、登录系统、调用了多媒体接口以登录游戏时播放背景音乐、高分榜系统以及附带的升序降序排行函数：</strong></p>
+<p>​            ①账号注册、登录系统、高分榜系统的数据全部分别保存在默认添加创建的Users.dat,scores.dat里，所以要借鉴的朋友需要手动在IDE里添加这两个文件（对应名称可以自己改，但一定要对应到代码里，否则会fp指针调用文件出错）；</p>
+<p>​          ②关于背景音乐：我添加的背景音乐的资源就不放到帖子上了（名字叫silver city，好听，哈哈哈），所以要借鉴源码的朋友需要自己了解一下“如何添加MP3格式的音乐到代码”的问题，然后对代码第328行进行改写;</p>
+<p>​    <strong>2、操作问题：因为我喜欢玩FPS游戏，所以定义的上下左右是wsad（小写，一定要把输入法切换为小写英文状态，否则蛇死亡），所以不习惯的朋友可以重新定义为键盘方向键（需要了解一下键盘虚拟键值，然后改对应的switch语句，代码量应该还是挺大的）。</strong></p>
+<p>​    <strong>3、EasyX图形库：（这段是复制我设计报告的23333333）在我决定用EasyX库的图形函数来绘制地图之前，对于这个模块的编写有很多问题：譬如单用gotoxy()函数实现绘制地图的话，一片黑白，惨不忍睹；而且也会成几何倍的增加代码量：尤其是for循环语句和printf语句会多不胜数。从而就会导致不仅开发人员降低对于代码的可读性，而且从头至尾的黑白界面无疑会劝退很多玩家，降低可玩性。在我用EasyX来绘制地图后，测试的过程只能用两个字来形容：真香！EasyX的一个moveto()配合一个for循环代替了多不胜数的gotoxy()函数和for循环。这不仅大大缩减了代码量，而且图形编程的优点“多彩化”也得以体现。在调试过程中我对for循环进行了优化：一个进行边界的上下绘制，另一个负责左右的绘制，实现了不仅减少了代码量而且没有破坏不影响可读性的前提。</strong></p>
+<p>​    <strong>4、应程序设计老师要求，基本上能达到每个功能、每个函数甚至每一句都有一条注释。。。（想想都要吐了）</strong></p>
+<hr>
+<p><strong>放代码吧：</strong></p>
+<pre class=" language-c++"><code class="language-c++">#include <stdio.h>                        //C语言标准输入输出头文件
+#include <graphics.h>                // easyx图形库头文件
+#include <conio.h>                        //获取数据头文件（getch()和kbhit()）
+#include <windows.h>                //使用其中的Sleep函数控制循环的时间，system("cls")函数来清屏
+#include <stdlib.h>                        //调用了srand()随机函数
+#include <time.h>                        //使用当前时钟做随机种子
+#include <mmsystem.h>                //多媒体设备接口头文件
+#pragma comment (lib,"winmm.lib")
+
+//首先进行一堆宏定义
+
+//定义地图大小
+#define frame_height 30 
+#define frame_width 30
+//定义操作键，小写的wasd控制上左下右
+#define UP 'w' 
+#define DOWN 's'
+#define LEFT 'a'
+#define RIGHT 'd'
+//控制台的点是单位点，不考虑大小，我们用的easyx绘制像素点为了将单位点在图形界面上放大为一个正方形，系数转换×16可以把一个单位点放大成正方形。16可以是任意数，相应的会放大或缩小所有的像素点。
+#define SIZE 16
+
+#define N 4
+
+//声明fp是指针，用来指向FILE类型的对象。
+FILE *fp;
+
+int i, j, k, m, n, s[N];
+
+char s1[4], s2[4];
+//蛇的初始方向
+char ch = UP;
+//定义一个全局变量，来判断蛇是否成长，成长则速度加快。grow值也相应增加。
+int grow = 0;
+
+
+
+//食物的坐标
+struct Food {
+        int x;
+        int y;
+}food;
+
+//蛇的信息：snake[0]是蛇头，len为蛇的长度，speed蛇的速度
+struct Snake {
+        int x[50];
+        int y[50];
+        int len;
+        int speed;
+}snake;
+
+//用于储存用户账号密码
+typedef struct The_users
+{
+        char id[11]; //账号
+        char pwd[20];//密码
+}users;
+users a, b;//新建结构体成员变量,用来登陆与注册
+
+
+//此处声明变量
+
+void init_map(void);
+void update_food(void);
+void move_snake(void);
+int is_alive(void);
+void get_speed(void);
+void gotoxy(int x, int y);
+void redraw_map(void);
+void menu();
+void registers();
+void Login();
+//void Create_File();
+void score();
+int compInc(const void *a, const void *b);
+int compDec(const void *a, const void *b);
+
+
+//主函数位置
+int main()
+{
+        initgraph(640, 480);        //创建绘图窗口，长640.
+        menu();                                        //调用菜单函数
+        score();                                //调用得分函数
+        return 0;
+}
+
+
+//再次绘制地图（根据宏定义中的宽和高）
+void redraw_map(void)
+{
+        for (j = 0; j < frame_width; j++)                        //该for循环用于绘制地图的上下边界，根据width宽来从左往右、先上后下依次绘制。
+        {
+                moveto(j*SIZE, 0);                                                //将画笔移动到(j*SIZE,0)的位置开始进行下面的绘图，另外(j*SIZE)是将单位点放大SIZE（16）倍
+                setfillcolor(BLUE);                                                //定义上边界为蓝色
+                fillrectangle(j*SIZE, 0, j*SIZE + SIZE, SIZE);        //绘制矩形
+                moveto(j*SIZE, (frame_height - 1)*SIZE);//再次移动画笔
+                setfillcolor(BLUE);                                                //定义下边界为蓝色
+                fillrectangle(j*SIZE, (frame_height - 1)*SIZE, j*SIZE + SIZE, (frame_height - 1)*SIZE + SIZE);//绘制矩形
+        }
+        for (i = 1; i < frame_height - 1; i++)//次循环绘制地图左右剩余的28个矩形方块,先左后右，从上至下！
+        {
+                moveto(0, i*SIZE);                                //画笔移动到(0,i*SIZE)
+                setfillcolor(BLUE);                                //定义左边界为蓝色
+                fillrectangle(0, i*SIZE, 0 + SIZE, i*SIZE + SIZE);
+                moveto((frame_width - 1)*SIZE, i*SIZE);//再次移动画笔
+                setfillcolor(BLUE);                                        //定义右边界为蓝色
+                fillrectangle((frame_width - 1)*SIZE, i*SIZE, (frame_width - 1)*SIZE + SIZE, i*SIZE + SIZE); //绘制矩形
+        }
+}
+
+//然后初始化地图内容
+void init_map(void)
+{
+        //初始化食物
+        srand((unsigned int)time(NULL));//用srand函数集结合time.h头文件中的time来生成随机数
+        food.x = rand() % (frame_height - 2) + 1;//在1~（frameheight-2）之间随机生成一个食物的横坐标
+        food.y = rand() % (frame_width - 2) + 1;//在1~（framewidth -2）之间随机生成一个食物的纵坐标
+        moveto(food.y*SIZE, food.x*SIZE);                //将画笔移动到该随机坐标
+        setfillcolor(RED);                                                //定义食物为红色
+        fillcircle(food.y *SIZE + SIZE / 2, food.x*SIZE + SIZE / 2, SIZE / 2);                //定义食物形状为以(food.y *SIZE + SIZE / 2, food.x*SIZE + SIZE / 2)为圆心，SIZE/2为半径的圆形
+
+        //初始化蛇
+        snake.x[0] = (frame_height) / 2;//初始化蛇头横坐标位置
+        snake.y[0] = (frame_width) / 2;//初始化蛇头纵坐标位置
+        moveto(snake.y[0] * SIZE, snake.x[0] * SIZE);//画笔移动到蛇头坐标
+        setfillcolor(GREEN);                        //定义蛇的初始颜色为绿色
+        fillcircle(snake.y[0] * SIZE + SIZE / 2, snake.x[0] * SIZE + SIZE / 2, SIZE / 2);//画蛇
+        snake.len = 3;                                                //初始化蛇的节数为3节
+        snake.speed = 200;                                        //初始化蛇的速度
+        for (k = 1; k < snake.len; k++)                //用for循环画出蛇剩余的节数
+        {
+                snake.x[k] = snake.x[k - 1] + 1;
+                snake.y[k] = snake.y[k - 1];
+                moveto(snake.y[k] * SIZE, snake.x[k] * SIZE);
+                setfillcolor(GREEN);
+                fillcircle(snake.y[k] * SIZE + SIZE / 2, snake.x[k] * SIZE + SIZE / 2, SIZE / 2);
+        }
+}
+
+//生成食物
+void update_food()
+{
+        if (snake.x[0] == food.x&&snake.y[0] == food.y)//首先保证每次随机的食物不能刚好随机到蛇头所在坐标
+        {
+                food.x = rand() % (frame_height - 2) + 1;
+                food.y = rand() % (frame_width - 2) + 1;
+                for (k = 1; k < snake.len; k++)
+                {
+                        if (snake.x[k] == food.x&&snake.y[k] == food.y)//判断蛇头坐标等于随机食物的坐标 即：吃到食物
+                        {
+                                food.x = rand() % (frame_height - 2) + 1;//再次随机生成食物
+                                food.y = rand() % (frame_width - 2) + 1;
+                        }
+                }
+                moveto(food.y*SIZE, food.x*SIZE);//移动画笔到随机食物的坐标
+                setfillcolor(RED);                                //定义食物颜色为红色
+                fillcircle(food.y*SIZE + SIZE / 2, food.x*SIZE + SIZE / 2, SIZE / 2);                //定义食物为圆形
+                snake.len++;                                        //蛇的长度加一
+                grow = 1;                                                //给全局变量grow赋值1
+        }
+}
+
+//蛇的移动
+void move_snake()
+{
+        if (_kbhit())//kbhit判断键盘输入的虚拟键值
+                ch = _getch();//将方向键值表现为对应的方向
+        if (!grow)//此时grow值若为零则执行if语句，不为零则不执行
+        {
+                moveto(snake.y[snake.len - 1] * SIZE, snake.x[snake.len - 1] * SIZE);
+                setfillcolor(BLACK);
+                solidrectangle(snake.y[snake.len - 1] * SIZE, snake.x[snake.len - 1] * SIZE, snake.y[snake.len - 1] * SIZE + SIZE, snake.x[snake.len - 1] * SIZE + SIZE);
+        }
+        for (k = snake.len - 1; k > 0; k--)
+        {
+                snake.x[k] = snake.x[k - 1];
+                snake.y[k] = snake.y[k - 1];
+        }
+        switch (ch)
+        {
+        case UP:  snake.x[0]--; break;
+        case DOWN: snake.x[0]++; break;
+        case LEFT:  snake.y[0]--; break;
+        case RIGHT:  snake.y[0]++; break;
+        default:  break;                                        //其他按键直接导致死亡
+        }
+        moveto(snake.y[0] * SIZE, snake.x[0] * SIZE);
+        setfillcolor(GREEN);
+        fillcircle(snake.y[0] * SIZE + SIZE / 2, snake.x[0] * SIZE + SIZE / 2, SIZE / 2);
+        grow = 0;
+}
+
+//判断是否存活
+int is_alive(void)
+{
+        if (snake.x[0] == 0 || snake.x[0] == frame_height - 1 || snake.y[0] == frame_width - 1 || snake.y[0] == 0)//判断是否撞墙
+                return 0;                //死
+        for (k = 1; k < snake.len; k++)
+                if (snake.x[k] == snake.x[0] && snake.y[k] == snake.y[0])//判断蛇头是否撞到蛇的身体
+                        return 0;        //死
+        return 1;                        //活
+}
+
+//通过节数来提升速度
+void get_speed(void)
+{
+        if (snake.len <= 6)
+                snake.speed = 200;
+        else if (snake.len <= 10)
+                snake.speed = 100;
+        else if (snake.len <= 20)
+                snake.speed = 50;
+        else if (snake.len <= 30)
+                snake.speed = 30;
+        else snake.speed = 20;
+}
+
+//移动光标
+void gotoxy(int x, int y)
+{
+        HANDLE hout;
+        COORD cor;
+        hout = GetStdHandle(STD_OUTPUT_HANDLE);
+        cor.X = y;
+        cor.Y = x;
+        SetConsoleCursorPosition(hout, cor);
+}
+
+//进入界面
+void menu()
+{
+        InputBox(s1, 4, "输入数字以选择目的：\n1.开始游戏\n2.高分榜\n3.退出游戏\n游戏说明：wasd控制上左下右(小写)", "疯狂的蛇——海制作", NULL, 0, 0, false);
+        int x, y[3];
+        sscanf_s(s1, "%d", &x);//将用户输入转化为数字
+        if (x == 1)
+        {
+                InputBox(s2, 4, "输入数字以选择目的：\n1.注册账号\n2.登陆游戏", "疯狂的蛇——海制作");
+                sscanf_s(s2, "%d", &x);
+                if (x == 1) {
+                        registers();
+                        Login();
+                }
+                else if (x == 2) {
+                        Login();
+                }
+                init_map(); //初始化地图
+                while (1)
+                {
+                        update_food();
+                        get_speed();
+                        move_snake();
+                        redraw_map();
+                        Sleep(snake.speed);
+                        if (!(is_alive()))
+                                break;
+                }
+                closegraph();                                                //关闭游戏窗口
+                printf("哈哈小辣鸡，游戏结束!\n");
+                printf("你的得分：%d", snake.len - 3);//得分=(蛇死亡前节数len)-(蛇的初始节数3)
+                _getch();
+        }
+        else if (x == 2)
+        {
+                closegraph();                                                //关闭游戏窗口
+                printf("                    排行榜\n");
+                fopen_s(&fp, "scores.dat", "r");
+                for (x = 0; x < N - 1; x++) {
+                        fscanf_s(fp, "%d", &y[x]);
+                        printf("%d\n", y[x]);
+                }
+                fclose(fp);
+                _getch();
+
+        }
+        else//输入3或其他除了1、2任意键均退出游戏
+        {
+                closegraph();
+        }
+}
+
+//注册系统
+void registers()
+{
+        fopen_s(&fp, "Users.dat", "r");
+        fscanf_s(fp, "%s%s", b.id, sizeof(b.id), b.pwd, sizeof(b.pwd));
+        InputBox(a.id, 11, "请输入你的账号：", "疯狂的蛇——海制作");
+        while (1)
+        {
+                if (strcmp(a.id, b.id) != 0)//如果两串字符串不相等
+                {
+                        if (!feof(fp))//如果未至文件末尾,它的工作原理是，站在光标所在位置，向后看看还有没有字符。如果有，返回0；如果没有，返回非0。它并不会读取相关信息，只是查看光标后是否还有内容。
+                        {
+                                fscanf_s(fp, "%s%s", b.id, sizeof(b.id), b.pwd, sizeof(b.pwd));
+                        }
+                        else break;
+                }
+                else
+                {
+                        outtextxy(220, 200, "此用户名已被注册");
+                        fclose(fp);
+                        _getch();
+                        exit(0);
+                }
+        }
+        fclose(fp);
+        InputBox(a.pwd, 10, "请输入你的密码：", "疯狂的蛇——海制作");
+        fopen_s(&fp, "Users.dat", "a");
+        fprintf_s(fp, "%s %s\n", a.id, a.pwd);
+        outtextxy(220, 200, "奥利给！恭喜你！账号注册成功！");
+        fclose(fp);
+}
+
+//登陆账号密码，登录时播放bgm嘿嘿sao起来
+void Login()
+{
+        mciSendString("open SC.mp3 alias BIGOcean", 0, 0, 0);
+        mciSendString("play BIGOcean repeat", 0, 0, 0);
+        fopen_s(&fp, "Users.dat", "r");
+        fscanf_s(fp, "%s%s", b.id, sizeof(b.id), b.pwd, sizeof(b.pwd));
+        InputBox(a.id, 11, "请输入账号", "疯狂的蛇——海制作");
+        while (1)
+        {
+                if (strcmp(a.id, b.id) == 0) break;//如果找到了这个用户名
+                else
+                {
+                        if (!feof(fp))//如果文件未读完
+                                fscanf_s(fp, "%s%s", b.id, sizeof(b.id), b.pwd, sizeof(b.pwd));
+                        else
+                        {
+                                outtextxy(220, 200, "此用户名不存在!");
+                                fclose(fp);
+                                _getch();
+                                exit(0);
+                        }
+                }
+        }
+        InputBox(a.pwd, 20, "请输入密码", "疯狂的蛇——海制作");
+        if (strcmp(a.pwd, b.pwd) == 0)//如果密码匹配
+        {
+                fclose(fp);
+                outtextxy(250, 200, "登陆成功！奥利给！");
+                initgraph(640, 480);
+        }
+        else
+        {
+                outtextxy(220, 200, "STFU!密码不正确");
+                _getch();
+                exit(0);
+        }
+}
+
+//分数系统
+void score()
+{
+        fopen_s(&fp, "scores.dat", "r");
+        for (n = 0; n < N - 1; n++)
+        {
+                fscanf_s(fp, "%d", &m);
+                s[n] = m;
+        }
+        s[N - 1] = snake.len - 3;
+        qsort(s, N, sizeof(s[0]), compDec);
+        fclose(fp);
+        fopen_s(&fp, "scores.dat", "w");
+        for (n = 0; n < N - 1; n++)
+        {
+                fprintf_s(fp, "%d\n", s[n]);
+        }
+        fclose(fp);
+}
+
+//分数的排序
+//升序排序
+int compInc(const void *a, const void *b)
+{
+        return *(int *)a - *(int *)b;
+}
+//降序排序
+int compDec(const void *a, const void *b) {
+        return *(int *)b - *(int *)a;
+}</code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/alipay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/wechat.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/1.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/1.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                重装系统&amp;激活系统</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/03/21/8.%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E9%87%8F-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/8.jpeg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/8.jpeg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                算法分析量--时间复杂度</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "hEvISJNEVpYHJM50anGRr26y-gzGzoHsz",
+        appKey: "Tlg7cokSVVOikjKN7DK5XUWr",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-  <div class="post-thumb">
-    <a href="/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/2.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-23 12:03</div>
-      <a href="/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/" class="post-title">
-        <h3>PICNIC-V.2.0.0_一款给天空加滤镜的APP</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E5%AE%89%E5%8D%93/">安卓</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>一款能给天空加滤镜的APP</p>
-        <div class="post-bottom">
-          <a href="/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" itemprop="image" alt="BIGOcean" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://bigocean1.gitee.io/" target="_blank" itemprop="url" rel="author noopener">BIGOcean</a>
+            </h3>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/23/model/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-23 12:03</div>
-      <a href="/2020/03/23/model/" class="post-title">
-        <h3>model</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2020/03/23/model/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/1.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-21 16:03</div>
-      <a href="/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/" class="post-title">
-        <h3>重装系统&amp;激活系统</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E5%BE%AE%E8%BD%AF/">微软</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>如何重装系统并激活系统</p>
-        <div class="post-bottom">
-          <a href="/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/21/7.C%E8%AF%AD%E8%A8%80%E7%BC%96%E5%86%99%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/7.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-21 01:03</div>
-      <a href="/2020/03/21/7.C%E8%AF%AD%E8%A8%80%E7%BC%96%E5%86%99%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/" class="post-title">
-        <h3>C语言编写贪吃蛇游戏</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>C语言编写贪吃蛇游戏</p>
-        <div class="post-bottom">
-          <a href="/2020/03/21/7.C%E8%AF%AD%E8%A8%80%E7%BC%96%E5%86%99%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/21/8.%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E9%87%8F-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/8.jpeg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-21 00:03</div>
-      <a href="/2020/03/21/8.%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E9%87%8F-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="post-title">
-        <h3>算法分析量--时间复杂度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-            <a href="/tags/%E7%AE%97%E6%B3%95%E7%B1%BB/">算法类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>算法分析量--时间复杂度</p>
-        <div class="post-bottom">
-          <a href="/2020/03/21/8.%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E9%87%8F-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/15/6.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%8E%92%E5%BA%8F/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/6.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-15 09:02</div>
-      <a href="/2020/02/15/6.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%8E%92%E5%BA%8F/" class="post-title">
-        <h3>数据结构与算法之排序</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-            <a href="/tags/%E7%AE%97%E6%B3%95%E7%B1%BB/">算法类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>C语言排序算法</p>
-        <div class="post-bottom">
-          <a href="/2020/02/15/6.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%8E%92%E5%BA%8F/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/12/5.%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/5.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-12 10:02</div>
-      <a href="/2020/02/12/5.%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE/" class="post-title">
-        <h3>单片机开发板引脚图</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>C语言学习</p>
-        <div class="post-bottom">
-          <a href="/2020/02/12/5.%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/10/4.C%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E8%8A%82%E5%BA%8F/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/4.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-10 12:02</div>
-      <a href="/2020/02/10/4.C%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E8%8A%82%E5%BA%8F/" class="post-title">
-        <h3>C语言之字节序</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>C语言学习</p>
-        <div class="post-bottom">
-          <a href="/2020/02/10/4.C%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E8%8A%82%E5%BA%8F/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/09/3.c%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/3.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-9 15:02</div>
-      <a href="/2020/02/09/3.c%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="post-title">
-        <h3>C语言之字符串处理</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>C语言中字符串的学习</p>
-        <div class="post-bottom">
-          <a href="/2020/02/09/3.c%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-
-
-    </main>
-      <!-- 首页默认取最最新文章集 -->
-    <!--  -->
-  </div>
-  
+        <hr>
+        <p><i class="iconfont icon-write"></i>学习中...</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">
