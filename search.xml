@@ -2688,6 +2688,36 @@ str<span class="token punctuation">.</span>encode<span class="token punctuation"
       </tags>
   </entry>
   <entry>
+    <title>crontab定时执行python脚本不成功解决方案</title>
+    <url>/2019/10/31/14.crontab%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC%E4%B8%8D%E6%88%90%E5%8A%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<p>目前有一个需求是定时执行某个 python 脚本，但是在 Linux 上设置 crontab 后，不生效？手动执行生效？于是使用下面的方法执行即可：</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>大体思路为先写一个 <code>shell</code> 脚本，脚本中执行 <code>python</code> 文件，然后定时执行 <code>shell</code> 脚本即可。具体原因不明，正在探索中 …… 目前只提供一种解决方案。</p>
+<p>1.使用如下命令创建脚本：</p>
+<pre class=" language-shell"><code class="language-shell">vi start.sh</code></pre>
+<p>2.然后在 <code>start.sh</code> 脚本中结合本身情况输入内容，示例：</p>
+<pre class=" language-shell"><code class="language-shell">#!/usr/bin/bash
+cd /opt
+/usr/bin/python3 /opt/test_mail.py</code></pre>
+<p>3.然后使用如下命令，编辑定时任务：</p>
+<pre class=" language-shell"><code class="language-shell">crontab -e</code></pre>
+<p>4.假如设定每天 8 点执行脚本，设置如下：</p>
+<pre class=" language-shell"><code class="language-shell">0 8 * * * /opt/start.sh</code></pre>
+<p>5.保存定时任务，几分钟后自动生效。</p>
+<blockquote>
+<p><strong>注意</strong>：所有的路径都使用<strong>绝对路径</strong>，否则仍然无效。</p>
+</blockquote>
+<p><a href="www.baidu.com">crontab执行python脚本不成功解决方案？（续）</a></p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>语言类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python导入导出pip环境中所有模块</title>
     <url>/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/</url>
     <content><![CDATA[<p>python 环境如何搭建？项目依赖模块如何安装？备份环境时如何将所有 pip 安装的模块导出？请看下文</p>
