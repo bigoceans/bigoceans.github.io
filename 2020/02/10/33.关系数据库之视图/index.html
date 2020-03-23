@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: elasticsearch | BIGOcean&#39;BLOG</title>
+  <title itemprop="name">关系数据库之视图 | BIGOcean&#39;BLOG</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -415,64 +415,177 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="elasticsearch.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/32.jpg);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/32.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      关系数据库之视图</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">BIGOcean</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-2-10<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">elasticsearch</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>请问视图是什么？视图相关语句有哪些？视图在什么场景下使用？夺命三连</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>对于关系数据库来说，绕不开的一个概念便是『视图』，带着篇首的几个问题，我们来认真学习一下。</p>
+<h2 id="视图是什么"><a href="#视图是什么" class="headerlink" title="视图是什么"></a>视图是什么</h2><p>官方文档中如此描述视图：A view is a stored SELECT statement（视图是存储的 <code>SELECT</code> 语句）。我们需要注意，<strong>视图实质上是一组查询语句，是一张虚拟表（可视化的表）而非真正的表</strong>。它将单张表或者多张表中的某些字段或全部字段使用一些特定的查询组合成一张可见的表，如同一张真实的表一样。</p>
+<h2 id="视图相关语法"><a href="#视图相关语法" class="headerlink" title="视图相关语法"></a>视图相关语法</h2><h3 id="1-创建视图"><a href="#1-创建视图" class="headerlink" title="1. 创建视图"></a>1. 创建视图</h3><p>执行以下语句创建一个非常简单的视图，该视图执行 <code>SELECT</code> 语句，并将产品的名称和价格返回给用户。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> vw_Names  
+   <span class="token keyword">AS</span>  
+   <span class="token keyword">SELECT</span> ProductName<span class="token punctuation">,</span> Price <span class="token keyword">FROM</span> Products<span class="token punctuation">;</span>  
+GO</code></pre>
+<h3 id="2-删除视图"><a href="#2-删除视图" class="headerlink" title="2. 删除视图"></a>2. 删除视图</h3><p>使用 <code>DROP</code> 语句删除视图 <code>vw_Names</code>：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">VIEW</span> vw_Names<span class="token punctuation">;</span>  
+GO  </code></pre>
+<h3 id="3-查询视图"><a href="#3-查询视图" class="headerlink" title="3. 查询视图"></a>3. 查询视图</h3><p>如同查询表一样，可以做一些查询操作，比如：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> vw_Names</code></pre>
+<p>当然也可以添加一些条件：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> vw_Names <span class="token keyword">WHERE</span> ProductName<span class="token operator">=</span><span class="token string">'武汉热干面'</span></code></pre>
+<h3 id="4-更新视图"><a href="#4-更新视图" class="headerlink" title="4.更新视图"></a>4.更新视图</h3><p>使用 <code>SQL CREATE OR REPLACE VIEW</code> 语法来进行更新。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token operator">OR</span> REPLACE <span class="token keyword">VIEW</span> 视图名称 <span class="token keyword">AS</span>
+<span class="token keyword">SELECT</span> 字段名称<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> 表名
+<span class="token keyword">WHERE</span> 条件</code></pre>
+<p><strong>注意：此处的更新实质上是更新视图的查询语句，看到的效果便是展示的数据发生了变化</strong></p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>比如我们要在视图 <code>vw_Names</code> 中添加一个字段 <code>Counts</code>：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> vw_Names  
+   <span class="token keyword">AS</span>  
+   <span class="token keyword">SELECT</span> ProductName<span class="token punctuation">,</span> Price<span class="token punctuation">,</span> Counts <span class="token keyword">FROM</span> Products<span class="token punctuation">;</span>  
+GO</code></pre>
+<h2 id="视图适用场景"><a href="#视图适用场景" class="headerlink" title="视图适用场景"></a>视图适用场景</h2><ol>
+<li>因权限问题或者数据敏感，不能向外透露全部字段信息</li>
+<li>查询逻辑复杂，再与其他表进行关联使得语句更复杂，使用视图后，可简单的将其理解为一个变量</li>
+</ol>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>我们在使用视图的时候，相当于执行了视图中的查询语句。更直白的讲<strong>视图是实时更新的</strong>。</p>
+<blockquote>
+<p>每当用户查询视图时，数据库引擎通过使用 SQL 语句来重建数据。</p>
+</blockquote>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+
         </div>
-        <img width="150" height="150" src="" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
-    常用 es 查询盘点</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-10-25</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/alipay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/wechat.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/02/12/5.%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/5.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/5.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                单片机开发板引脚图</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/02/10/4.C%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E8%8A%82%E5%BA%8F/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/4.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/4.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                C语言之字节序</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "hEvISJNEVpYHJM50anGRr26y-gzGzoHsz",
+        appKey: "Tlg7cokSVVOikjKN7DK5XUWr",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" itemprop="image" alt="BIGOcean" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://bigocean1.gitee.io/" target="_blank" itemprop="url" rel="author noopener">BIGOcean</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>学习中...</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

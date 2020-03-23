@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Category: elasticsearch | BIGOcean&#39;BLOG</title>
+  <title itemprop="name">常用 es 查询盘点 | BIGOcean&#39;BLOG</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -415,105 +415,311 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="elasticsearch.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/18.png);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/18.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      常用 es 查询盘点</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">BIGOcean</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-10-25<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">elasticsearch.zh</h1>
-    <span class="cat-des">
-      <p>elasticsearch.en</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>熟悉了关系型数据库的结构概念以及查询，再去使用属于非关系型数据库的 Elasticsearch 时，简直是噩梦。第一道难关便是概念上的转换。索引？类型？文档？what？</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<blockquote>
+<p>下面是概念上的对应，大家可以类比了解</p>
+</blockquote>
+<pre class=" language-shell"><code class="language-shell">Relational DB -> Databases -> Tables -> Rows -> Columns
+Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
+<p>熟悉了各种概念后，下一道难关便是增删改查，而最最常用的是<strong>查询</strong>！如同 SQL 一样，它有一套自己的查询语句，称为 DSL。所以，下面为大家总结一下常用的查询，然后你就可以像翻字典一样，用时瞄两眼了 ~ 嘿嘿，真他娘的是个天才 … </p>
+<h3 id="1-基础的不能再基础查询"><a href="#1-基础的不能再基础查询" class="headerlink" title="1.基础的不能再基础查询"></a>1.基础的不能再基础查询</h3><p><strong>查询所有的索引及容量：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cat/indices</code></pre>
+<blockquote>
+<p><code>GET</code> 代表请求方式；<code>_cat/indices</code> 代表查询部分。访问的 <code>url</code> 写全为：</p>
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">localhost:</span>9200/_cat/indices</code></pre>
+</blockquote>
+<p><strong>查询某一索引的映射结构：</strong></p>
+<pre class=" language-http"><code class="language-http">GET 索引名/_mapping</code></pre>
+<p><strong>查询所有的相同前缀索引：（如以 yan 开头）</strong></p>
+<pre class=" language-http"><code class="language-http">GET yan*/_search</code></pre>
+<p><strong>查询所有索引模板：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _template</code></pre>
+<p><strong>查询具体索引模板：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _template/模板名</code></pre>
+<p><strong>查询集群健康状态：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cluster/health</code></pre>
+<p><strong>查询所有节点：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cat/nodes</code></pre>
+<p><strong>查询索引及分片的分布：</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cat/shards</code></pre>
+<p><strong>查询所有插件:</strong></p>
+<pre class=" language-http"><code class="language-http">GET _cat/plugins</code></pre>
+<h3 id="2-有点难度的查询"><a href="#2-有点难度的查询" class="headerlink" title="2.有点难度的查询"></a>2.有点难度的查询</h3><p><strong>查询某个索引的全部数据：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}</code></pre>
+<blockquote>
+<p>当然你也可以直接写 URL 查询（默认返回 10 条文档）：</p>
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">localhost:</span>9200/索引名/_search?pretty</code></pre>
+<p>pretty参数是为了浏览器显示的美观一些。</p>
+</blockquote>
+<p><strong>根据某一字段精确查询：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "term": { "字段名" : "值" }
+  }
+}</code></pre>
+<p><strong>根据某一字段模糊匹配：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "match": { "字段名" : "值" }
+  }
+}</code></pre>
+<p><strong>根据某一字段值进行范围查找：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "range": {
+        # 字段名: 条件
+        "age":{ "gte" : 15 , "lte" : 25 }
+    }
+  }
+}</code></pre>
+<blockquote>
+<p>gte 是大于等于；lte 是小于等于</p>
+</blockquote>
+<p><strong>根据条件进行过滤查询：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "bool": {
+      "filter": {
+        "term":{"字段":"值"}
+      }
+    }
+  }
+}</code></pre>
+<p><strong>多条件”或”关系：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+    "query": {
+        "bool": {
+            "should": [{
+                "term": {
+                    "字段": "值"
+                }
+            }, {
+                "match": {
+                    "字段": "值"
+                }
+            }]
+        }
+    }
+}</code></pre>
+<p><strong>多条件”与”关系：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "bool": {
+      "must" : [{
+        "match" : {
+          "name" : "Ethanyan"
+        }
+      },{
+        "range":{
+        "age":{
+          "from" : 18 , "to" : 26
+        } 
+        }
+      }]
+    }
+  }
+}</code></pre>
+<p><strong>严格匹配：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "bool": {
+      "must" : {
+        "range" : {
+          "age" : { "from" : 18, "to" : 26 }
+        }
+      }
+    }
+  }
+}</code></pre>
+<p><strong>严格不匹配：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+  "query": {
+    "bool": {
+      "must_not" : {
+        "term" : {
+          "name" : "Ethanyan"
+        }
+      }
+    }
+  }
+}</code></pre>
+<p><strong>复合查询：</strong></p>
+<pre class=" language-http"><code class="language-http">GET /index/type/_search
+{
+    "query": {
+        "bool": {
+            "should": [{
+                    "match": {
+                        "age": 18
+                    }
+                },  
+                {
+                    "match": {
+                        "age": 26
+                    }
+                }
+            ],
+            "filter": { 
+                "match": {  
+                    "name": "Ethanyan" 
+                }
+            }
+        }
+    }
+}</code></pre>
+<h3 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><p>1.索引名、模板名之类的名称不能出现字母大写</p>
+<p>2.在查询时，需要写 DSL 语句，所以需要携带请求体，那么为什么还是 get 请求？</p>
+<p>答：原则上 get 请求不能携带请求体，但凡事有例外，试验后确实可以，我也不晓得为什么。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+
         </div>
-        <img width="150" height="150" src="" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
-    常用 es 查询盘点</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-10-25</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/alipay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/wechat.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Git 上传大文件</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Git 彻底删除某个commit的方法</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "hEvISJNEVpYHJM50anGRr26y-gzGzoHsz",
+        appKey: "Tlg7cokSVVOikjKN7DK5XUWr",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" itemprop="image" alt="BIGOcean" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://bigocean1.gitee.io/" target="_blank" itemprop="url" rel="author noopener">BIGOcean</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>学习中...</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
-    常用 es 查询盘点</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-10-25</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

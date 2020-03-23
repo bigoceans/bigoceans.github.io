@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>model</title>
-    <url>/2020/03/23/model/</url>
-    <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-]]></content>
-  </entry>
-  <entry>
     <title>PICNIC-V.2.0.0_一款给天空加滤镜的APP</title>
     <url>/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/</url>
     <content><![CDATA[<p>虽然我是一个不拍照片的直男，但当我第一次透过picnic看我头顶的天空时，我就决定把它留在我的手机里！（大概也有近两年时间了）</p>
@@ -590,17 +583,13 @@ int compDec(const void *a, const void *b) {
   </entry>
   <entry>
     <title>多线程如何获取结果</title>
-    <url>/2020/03/18/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C/</url>
-    <content><![CDATA[<center>Author：BIGOcean</center>
-
-<p>多线程如何获取结果？</p>
-<a id="more"></a>
-
+    <url>/2020/03/18/29.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C/</url>
+    <content><![CDATA[<p>多线程如何获取结果？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-场景"><a href="#1-场景" class="headerlink" title="1.场景"></a>1.场景</h2><p>大家一般都会开启多线程去处理任务，如果需要获取线程处理结果怎么办？</p>
 <p>有人会说『全局变量』，但是又会引出共享全局变量后资源竞争导致数据错误的问题。只能通过添加互斥锁进行解决，互斥锁又不能发挥多线程的优势，很是头大。</p>
 <p>那么该如何解决呢？</p>
-<h2 id="2-解决办法"><a href="#2-解决办法" class="headerlink" title="2.解决办法"></a>2.解决办法</h2><p>老哥教我可以自定义一个类解决：</p>
+<h2 id="2-解决办法"><a href="#2-解决办法" class="headerlink" title="2.解决办法"></a>2.解决办法</h2><p>可以自定义一个类解决：</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> threading
 
 
@@ -621,20 +610,16 @@ int compDec(const void *a, const void *b) {
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
-        <category>python</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
     <title>复用Django应用，使其可以通过pip安装</title>
-    <url>/2020/03/13/%E5%A4%8D%E7%94%A8Django%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87pip%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<center>Author：BIGOcean</center>
-
-<p>想自己打包一个应用，可以像其他模块一样通过 <code>pip install</code> 安装吗？在 <code>Django</code> 项目中，一个应用如果通过此方式随用随安装是不是很帅气？快来看一下如何操作吧！</p>
-<a id="more"></a>
-
+    <url>/2020/03/13/31.%E5%A4%8D%E7%94%A8Django%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87pip%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>想自己打包一个应用，可以像其他模块一样通过 <code>pip install</code> 安装吗？在 <code>Django</code> 项目中，一个应用如果通过此方式随用随安装是不是很帅气？快来看一下如何操作吧！</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="1-前提"><a href="#1-前提" class="headerlink" title="1.前提"></a>1.前提</h1><h2 id="1-1应用规范"><a href="#1-1应用规范" class="headerlink" title="1.1应用规范"></a>1.1应用规范</h2><p>为了方便打包，你的应用应该解耦合，并且所有文件都规范放置。其中需要注意：按照 <code>Django3.0</code> 官方文档描述，每个应用中的模板文件 <code>templates</code> 应与主项目中通用模板文件 <code>templates</code> 分离，最主要目的是为了创建可复用应用。</p>
 <blockquote>
@@ -813,11 +798,8 @@ recursive-include docs *</code></pre>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
-        <category>django</category>
+        <category>技术</category>
       </categories>
-      <tags>
-        <tag>django</tag>
-      </tags>
   </entry>
   <entry>
     <title>Django迁移数据库报错解决</title>
@@ -1155,12 +1137,8 @@ hello world</code></pre>
   </entry>
   <entry>
     <title>分享一份全国行政区划sql数据库表</title>
-    <url>/2020/03/04/%E5%88%86%E4%BA%AB%E4%B8%80%E4%BB%BD%E5%85%A8%E5%9B%BD%E8%A1%8C%E6%94%BF%E5%8C%BA%E5%88%92sql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8/</url>
-    <content><![CDATA[<center>Author：BIGOcean</center>
-
-<p>还在为寻找全国行政区划的数据而烦恼吗？还在因为一个 <code>Excel</code> 表格无法确定信息是否全面而惆怅吗？快来看看为你准备好的东西吧！</p>
-<a id="more"></a>
-
+    <url>/2020/03/04/30.%E5%88%86%E4%BA%AB%E4%B8%80%E4%BB%BD%E5%85%A8%E5%9B%BD%E8%A1%8C%E6%94%BF%E5%8C%BA%E5%88%92sql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8/</url>
+    <content><![CDATA[<p>还在为寻找全国行政区划的数据而烦恼吗？还在因为一个 <code>Excel</code> 表格无法确定信息是否全面而惆怅吗？快来看看为你准备好的东西吧！</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>在软件开发的过程中，最基础最重要但是又最不容易寻找的一份数据便是「全国行政区划信息」。为了解决大家的烦恼，此处提供一份 <code>sql</code> 数据库文件，直接导入即可使用，省时省力，快来实践一下吧。</p>
 <h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p>关系数据库（本人使用的数据库为 <code>MySQL8.0.19</code>）</p>
@@ -1184,11 +1162,8 @@ hello world</code></pre>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
-        <category>sql</category>
+        <category>随想</category>
       </categories>
-      <tags>
-        <tag>sql</tag>
-      </tags>
   </entry>
   <entry>
     <title>一起来看看火爆的手机号码一键登录</title>
@@ -1229,12 +1204,8 @@ hello world</code></pre>
   </entry>
   <entry>
     <title>关系数据库之存储过程</title>
-    <url>/2020/02/25/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<center>Editor：BIGOcean</center>
-
-<p>很多人在上学期间，也许并未学习过关系数据库中「存储过程」的相关内容，那今天就来学习一下吧。</p>
-<a id="more"></a>
-
+    <url>/2020/02/25/32.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<p>很多人在上学期间，也许并未学习过关系数据库中「存储过程」的相关内容，那今天就来学习一下吧。</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>无论是 <code>MySQL</code> 还是 <code>SQL Server</code> 数据库，最新版本都已支持『存储过程』。但是为了通用性，本文章以 <code>MySQL</code> 为例。</p>
 <blockquote>
@@ -1530,10 +1501,10 @@ mysql <span class="token operator">></span> <span class="token keyword">DELIMITE
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
-        <category>sql</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>sql</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
@@ -1733,12 +1704,8 @@ mysql <span class="token operator">></span> <span class="token keyword">DELIMITE
   </entry>
   <entry>
     <title>关系数据库之视图</title>
-    <url>/2020/02/10/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E8%A7%86%E5%9B%BE/</url>
-    <content><![CDATA[<center>Author：BIGOcean</center>
-
-<p>请问视图是什么？视图相关语句有哪些？视图在什么场景下使用？夺命三连</p>
-<a id="more"></a>
-
+    <url>/2020/02/10/33.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E8%A7%86%E5%9B%BE/</url>
+    <content><![CDATA[<p>请问视图是什么？视图相关语句有哪些？视图在什么场景下使用？夺命三连</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>对于关系数据库来说，绕不开的一个概念便是『视图』，带着篇首的几个问题，我们来认真学习一下。</p>
 <h2 id="视图是什么"><a href="#视图是什么" class="headerlink" title="视图是什么"></a>视图是什么</h2><p>官方文档中如此描述视图：A view is a stored SELECT statement（视图是存储的 <code>SELECT</code> 语句）。我们需要注意，<strong>视图实质上是一组查询语句，是一张虚拟表（可视化的表）而非真正的表</strong>。它将单张表或者多张表中的某些字段或全部字段使用一些特定的查询组合成一张可见的表，如同一张真实的表一样。</p>
@@ -1776,10 +1743,10 @@ GO</code></pre>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
-        <category>sql</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>sql</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
@@ -2707,7 +2674,7 @@ cd /opt
 <blockquote>
 <p><strong>注意</strong>：所有的路径都使用<strong>绝对路径</strong>，否则仍然无效。</p>
 </blockquote>
-<p><a href="www.baidu.com">crontab执行python脚本不成功解决方案？（续）</a></p>
+<p><a href="https://bigocean1.gitee.io/2019/11/17/27.%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/" target="_blank" rel="noopener">crontab执行python脚本不成功解决方案？（续）</a></p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
@@ -2977,12 +2944,8 @@ git lfs track 'test.tar.gz'</code></pre>
   </entry>
   <entry>
     <title>常用 es 查询盘点</title>
-    <url>/2019/10/25/%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/</url>
-    <content><![CDATA[ <center>Author：BIGOcean</center> 
-熟悉了关系型数据库的结构概念以及查询，再去使用属于非关系型数据库的 Elasticsearch 时，简直是噩梦。第一道难关便是概念上的转换。索引？类型？文档？what？
-
- <a id="more"></a> 
-
+    <url>/2019/10/25/28.%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/</url>
+    <content><![CDATA[<p>熟悉了关系型数据库的结构概念以及查询，再去使用属于非关系型数据库的 Elasticsearch 时，简直是噩梦。第一道难关便是概念上的转换。索引？类型？文档？what？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <blockquote>
 <p>下面是概念上的对应，大家可以类比了解</p>
@@ -3151,13 +3114,11 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
 <h3 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><p>1.索引名、模板名之类的名称不能出现字母大写</p>
 <p>2.在查询时，需要写 DSL 语句，所以需要携带请求体，那么为什么还是 get 请求？</p>
 <p>答：原则上 get 请求不能携带请求体，但凡事有例外，试验后确实可以，我也不晓得为什么。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
-        <category>elasticsearch</category>
+        <category>技术</category>
       </categories>
-      <tags>
-        <tag>elasticsearch</tag>
-      </tags>
   </entry>
   <entry>
     <title>Git 彻底删除某个commit的方法</title>

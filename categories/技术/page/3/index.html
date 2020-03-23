@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">分享一份全国行政区划sql数据库表 | BIGOcean&#39;BLOG</title>
+  <title itemprop="name">Category: 技术 | BIGOcean&#39;BLOG</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -415,150 +415,374 @@
   </div>
 </header>
 
-      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+      
 <div class="pattern-center-blank"></div>
-
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/banner/technology.jpeg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+  </div>
+  <header class="pattern-header ">
+    <h1 class="cat-title">技术</h1>
+    <span class="cat-des">
+      <p>Technology</p>
+    </span>
+  </header>
+</div>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-          <header class="entry-header">
-            <h1 class="entry-title">分享一份全国行政区划sql数据库表</h1>
-            <p class="entry-census">&nbsp;·&nbsp;2020-3-4&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
-        
-        <div class="entry-content">
-          <center>Author：BIGOcean</center>
-
-<p>还在为寻找全国行政区划的数据而烦恼吗？还在因为一个 <code>Excel</code> 表格无法确定信息是否全面而惆怅吗？快来看看为你准备好的东西吧！</p>
-<a id="more"></a>
-
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>在软件开发的过程中，最基础最重要但是又最不容易寻找的一份数据便是「全国行政区划信息」。为了解决大家的烦恼，此处提供一份 <code>sql</code> 数据库文件，直接导入即可使用，省时省力，快来实践一下吧。</p>
-<h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p>关系数据库（本人使用的数据库为 <code>MySQL8.0.19</code>）</p>
-<h2 id="2-文件"><a href="#2-文件" class="headerlink" title="2.文件"></a>2.文件</h2><p>数据库文件为 <code>AREAS.sql</code>，数据条数为 3487 ，十分全面的涵盖了全国的省市县等信息。</p>
-<blockquote>
-<p> 此文件包括建表以及准备的数据</p>
-</blockquote>
-<p><strong>获取方式：</strong>关注公众号「全栈技术精选」，后台回复关键字「全国行政区划信息」即可获取。</p>
-<h2 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h2><p>1) 先将获取到的文件 <code>AREAS.sql</code> 放到任意目录下（比如目录 <code>sqlfile</code> ），然后进入此目录：</p>
-<pre class=" language-shell"><code class="language-shell">cd sqlfile</code></pre>
-<p>2) 先进入数据库（以 <code>mysql</code> 为例）：</p>
-<pre class=" language-shell"><code class="language-shell">mysql -u root -p</code></pre>
-<p>3) 创建数据库：</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> area<span class="token punctuation">;</span></code></pre>
-<p>4) 使用此数据库：</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">use</span> area<span class="token punctuation">;</span></code></pre>
-<p>5) 导入行政区划数据表：</p>
-<pre class=" language-sql"><code class="language-sql">source AREAS<span class="token punctuation">.</span>sql<span class="token punctuation">;</span></code></pre>
-<h3 id="3-1-注意"><a href="#3-1-注意" class="headerlink" title="3.1 注意"></a>3.1 注意</h3><p>1) 获取到的数据库文件 <code>AREAS.sql</code> 为表结构以及表数据，因此需要先有一个数据库（此数据库可以新建或者使用已存在的数据库）</p>
-<p>2) 导入数据库文件时，如果没有执行刚开始切换到 <code>AREAS.sql</code> 文件所在目录的步骤，可以通过写文件的绝对路径方式解决</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-
-        </div>
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/alipay.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/wechat.png"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2020/03/06/16.docker%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/XhDP3ElqtIm9w2C.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2020/03/23/XhDP3ElqtIm9w2C.png">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                docker容器数据持久化</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2020/03/03/9.%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%9C%8B%E7%9C%8B%E7%81%AB%E7%88%86%E7%9A%84%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81%E4%B8%80%E9%94%AE%E7%99%BB%E5%BD%95/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/9.webp.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/9.webp.jpg">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                一起来看看火爆的手机号码一键登录</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-      </section>
       
-<div id="vcomments"></div>
-<script>
-  window.onload = function(){
-      var valine = new Valine();
-      valine.init({
-        el: '#vcomments',
-        appId: "hEvISJNEVpYHJM50anGRr26y-gzGzoHsz",
-        appKey: "Tlg7cokSVVOikjKN7DK5XUWr",
-        path: window.location.pathname,
-        placeholder: "你是我一生只会遇见一次的惊喜 ..."
-      })
-  }
-</script>
-
-
-      <section class="author-profile">
-        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
-          <div class="meta">
-            <span class="title">Author</span>
-            <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author"></a>
-            </h3>
-          </div>
+  <!-- 首页默认取最最新文章集 -->
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
         </div>
-        <hr>
-        <p><i class="iconfont icon-write"></i></p>
-      </section>
-    </main><!-- #main -->
-  </div><!-- #primary -->
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/">
+    python导入导出pip环境中所有模块</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-28</div>
+    <p>
+    python导入导出pip环境中所有模块</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/18.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/">
+    Elasticsearch 中这些必备 API 你晓得嘛？</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-25</div>
+    <p>
+    Elasticsearch 中这些必备 API 你晓得嘛？</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/">
+    Git 上传大文件</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-25</div>
+    <p>
+    Git 上传大文件</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/25/28.%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/18.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/25/28.%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
+    常用 es 查询盘点</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-25</div>
+    <p>
+    常用 es 查询盘点</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/25/28.%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/">
+    Git 彻底删除某个commit的方法</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-25</div>
+    <p>
+    Git 彻底删除某个commit的方法</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+
+
+      <div class="clearer">
+      </div>
+    </main>
+    <!-- 
+      <nav class="navigator">
+        
+        <a class="extend prev" rel="prev" href="/categories/%E6%8A%80%E6%9C%AF/page/2/">Prev</a><a class="page-number" href="/categories/%E6%8A%80%E6%9C%AF/">1</a><a class="page-number" href="/categories/%E6%8A%80%E6%9C%AF/page/2/">2</a><span class="page-number current">3</span>
+      </nav>
+     -->
+    
+  </div>
 </div>
 
+<!-- 
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/">
+    python导入导出pip环境中所有模块</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-28</div>
+    <p>
+    python导入导出pip环境中所有模块</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/18.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/">
+    Elasticsearch 中这些必备 API 你晓得嘛？</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-25</div>
+    <p>
+    Elasticsearch 中这些必备 API 你晓得嘛？</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/">
+    Git 上传大文件</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-25</div>
+    <p>
+    Git 上传大文件</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/25/28.%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/18.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/25/28.%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
+    常用 es 查询盘点</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-25</div>
+    <p>
+    常用 es 查询盘点</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/25/28.%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
+        </div>
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/">
+    Git 彻底删除某个commit的方法</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-10-25</div>
+    <p>
+    Git 彻底删除某个commit的方法</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
 
-
+ -->
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

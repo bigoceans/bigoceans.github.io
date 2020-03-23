@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">常用 es 查询盘点 | BIGOcean&#39;BLOG</title>
+  <title itemprop="name">分享一份全国行政区划sql数据库表 | BIGOcean&#39;BLOG</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -419,6 +419,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/30.png);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/30.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      分享一份全国行政区划sql数据库表</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">BIGOcean</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-4<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -426,187 +450,29 @@
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-          <header class="entry-header">
-            <h1 class="entry-title">常用 es 查询盘点</h1>
-            <p class="entry-census">&nbsp;·&nbsp;2019-10-25&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
-        
         <div class="entry-content">
-           <center>Author：BIGOcean</center> 
-熟悉了关系型数据库的结构概念以及查询，再去使用属于非关系型数据库的 Elasticsearch 时，简直是噩梦。第一道难关便是概念上的转换。索引？类型？文档？what？
-
- <a id="more"></a> 
-
+          <p>还在为寻找全国行政区划的数据而烦恼吗？还在因为一个 <code>Excel</code> 表格无法确定信息是否全面而惆怅吗？快来看看为你准备好的东西吧！</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>在软件开发的过程中，最基础最重要但是又最不容易寻找的一份数据便是「全国行政区划信息」。为了解决大家的烦恼，此处提供一份 <code>sql</code> 数据库文件，直接导入即可使用，省时省力，快来实践一下吧。</p>
+<h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p>关系数据库（本人使用的数据库为 <code>MySQL8.0.19</code>）</p>
+<h2 id="2-文件"><a href="#2-文件" class="headerlink" title="2.文件"></a>2.文件</h2><p>数据库文件为 <code>AREAS.sql</code>，数据条数为 3487 ，十分全面的涵盖了全国的省市县等信息。</p>
 <blockquote>
-<p>下面是概念上的对应，大家可以类比了解</p>
+<p> 此文件包括建表以及准备的数据</p>
 </blockquote>
-<pre class=" language-shell"><code class="language-shell">Relational DB -> Databases -> Tables -> Rows -> Columns
-Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
-<p>熟悉了各种概念后，下一道难关便是增删改查，而最最常用的是<strong>查询</strong>！如同 SQL 一样，它有一套自己的查询语句，称为 DSL。所以，下面为大家总结一下常用的查询，然后你就可以像翻字典一样，用时瞄两眼了 ~ 嘿嘿，真他娘的是个天才 … </p>
-<h3 id="1-基础的不能再基础查询"><a href="#1-基础的不能再基础查询" class="headerlink" title="1.基础的不能再基础查询"></a>1.基础的不能再基础查询</h3><p><strong>查询所有的索引及容量：</strong></p>
-<pre class=" language-http"><code class="language-http">GET _cat/indices</code></pre>
-<blockquote>
-<p><code>GET</code> 代表请求方式；<code>_cat/indices</code> 代表查询部分。访问的 <code>url</code> 写全为：</p>
-<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">localhost:</span>9200/_cat/indices</code></pre>
-</blockquote>
-<p><strong>查询某一索引的映射结构：</strong></p>
-<pre class=" language-http"><code class="language-http">GET 索引名/_mapping</code></pre>
-<p><strong>查询所有的相同前缀索引：（如以 yan 开头）</strong></p>
-<pre class=" language-http"><code class="language-http">GET yan*/_search</code></pre>
-<p><strong>查询所有索引模板：</strong></p>
-<pre class=" language-http"><code class="language-http">GET _template</code></pre>
-<p><strong>查询具体索引模板：</strong></p>
-<pre class=" language-http"><code class="language-http">GET _template/模板名</code></pre>
-<p><strong>查询集群健康状态：</strong></p>
-<pre class=" language-http"><code class="language-http">GET _cluster/health</code></pre>
-<p><strong>查询所有节点：</strong></p>
-<pre class=" language-http"><code class="language-http">GET _cat/nodes</code></pre>
-<p><strong>查询索引及分片的分布：</strong></p>
-<pre class=" language-http"><code class="language-http">GET _cat/shards</code></pre>
-<p><strong>查询所有插件:</strong></p>
-<pre class=" language-http"><code class="language-http">GET _cat/plugins</code></pre>
-<h3 id="2-有点难度的查询"><a href="#2-有点难度的查询" class="headerlink" title="2.有点难度的查询"></a>2.有点难度的查询</h3><p><strong>查询某个索引的全部数据：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-  "query": {
-    "match_all": {}
-  }
-}</code></pre>
-<blockquote>
-<p>当然你也可以直接写 URL 查询（默认返回 10 条文档）：</p>
-<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">localhost:</span>9200/索引名/_search?pretty</code></pre>
-<p>pretty参数是为了浏览器显示的美观一些。</p>
-</blockquote>
-<p><strong>根据某一字段精确查询：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-  "query": {
-    "term": { "字段名" : "值" }
-  }
-}</code></pre>
-<p><strong>根据某一字段模糊匹配：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-  "query": {
-    "match": { "字段名" : "值" }
-  }
-}</code></pre>
-<p><strong>根据某一字段值进行范围查找：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-  "query": {
-    "range": {
-        # 字段名: 条件
-        "age":{ "gte" : 15 , "lte" : 25 }
-    }
-  }
-}</code></pre>
-<blockquote>
-<p>gte 是大于等于；lte 是小于等于</p>
-</blockquote>
-<p><strong>根据条件进行过滤查询：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-  "query": {
-    "bool": {
-      "filter": {
-        "term":{"字段":"值"}
-      }
-    }
-  }
-}</code></pre>
-<p><strong>多条件”或”关系：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-    "query": {
-        "bool": {
-            "should": [{
-                "term": {
-                    "字段": "值"
-                }
-            }, {
-                "match": {
-                    "字段": "值"
-                }
-            }]
-        }
-    }
-}</code></pre>
-<p><strong>多条件”与”关系：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-  "query": {
-    "bool": {
-      "must" : [{
-        "match" : {
-          "name" : "Ethanyan"
-        }
-      },{
-        "range":{
-        "age":{
-          "from" : 18 , "to" : 26
-        } 
-        }
-      }]
-    }
-  }
-}</code></pre>
-<p><strong>严格匹配：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-  "query": {
-    "bool": {
-      "must" : {
-        "range" : {
-          "age" : { "from" : 18, "to" : 26 }
-        }
-      }
-    }
-  }
-}</code></pre>
-<p><strong>严格不匹配：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-  "query": {
-    "bool": {
-      "must_not" : {
-        "term" : {
-          "name" : "Ethanyan"
-        }
-      }
-    }
-  }
-}</code></pre>
-<p><strong>复合查询：</strong></p>
-<pre class=" language-http"><code class="language-http">GET /index/type/_search
-{
-    "query": {
-        "bool": {
-            "should": [{
-                    "match": {
-                        "age": 18
-                    }
-                },  
-                {
-                    "match": {
-                        "age": 26
-                    }
-                }
-            ],
-            "filter": { 
-                "match": {  
-                    "name": "Ethanyan" 
-                }
-            }
-        }
-    }
-}</code></pre>
-<h3 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a>3.注意事项</h3><p>1.索引名、模板名之类的名称不能出现字母大写</p>
-<p>2.在查询时，需要写 DSL 语句，所以需要携带请求体，那么为什么还是 get 请求？</p>
-<p>答：原则上 get 请求不能携带请求体，但凡事有例外，试验后确实可以，我也不晓得为什么。</p>
+<p><strong>获取方式：</strong>关注公众号「全栈技术精选」，后台回复关键字「全国行政区划信息」即可获取。</p>
+<h2 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h2><p>1) 先将获取到的文件 <code>AREAS.sql</code> 放到任意目录下（比如目录 <code>sqlfile</code> ），然后进入此目录：</p>
+<pre class=" language-shell"><code class="language-shell">cd sqlfile</code></pre>
+<p>2) 先进入数据库（以 <code>mysql</code> 为例）：</p>
+<pre class=" language-shell"><code class="language-shell">mysql -u root -p</code></pre>
+<p>3) 创建数据库：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> area<span class="token punctuation">;</span></code></pre>
+<p>4) 使用此数据库：</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">use</span> area<span class="token punctuation">;</span></code></pre>
+<p>5) 导入行政区划数据表：</p>
+<pre class=" language-sql"><code class="language-sql">source AREAS<span class="token punctuation">.</span>sql<span class="token punctuation">;</span></code></pre>
+<h3 id="3-1-注意"><a href="#3-1-注意" class="headerlink" title="3.1 注意"></a>3.1 注意</h3><p>1) 获取到的数据库文件 <code>AREAS.sql</code> 为表结构以及表数据，因此需要先有一个数据库（此数据库可以新建或者使用已存在的数据库）</p>
+<p>2) 导入数据库文件时，如果没有执行刚开始切换到 <code>AREAS.sql</code> 文件所在目录的步骤，可以通过写文件的绝对路径方式解决</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 
         </div>
         <!-- .entry-content -->
@@ -638,15 +504,15 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/" rel="prev">
+            <a href="/2020/03/06/16.docker%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/XhDP3ElqtIm9w2C.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2020/03/23/XhDP3ElqtIm9w2C.png">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                Git 上传大文件</h3>
+                docker容器数据持久化</h3>
                 <hr>
               </div>
             </a>
@@ -656,15 +522,15 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
           
             <div class="post-nepre half next">
           
-            <a href="/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/" rel="next">
+            <a href="/2020/03/03/9.%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%9C%8B%E7%9C%8B%E7%81%AB%E7%88%86%E7%9A%84%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81%E4%B8%80%E9%94%AE%E7%99%BB%E5%BD%95/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/20.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/9.webp.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/9.webp.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                Git 彻底删除某个commit的方法</h3>
+                一起来看看火爆的手机号码一键登录</h3>
                 <hr>
               </div>
             </a>
@@ -689,16 +555,16 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" itemprop="image" alt="BIGOcean" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author"></a>
+            <a href="https://bigocean1.gitee.io/" target="_blank" itemprop="url" rel="author noopener">BIGOcean</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i></p>
+        <p><i class="iconfont icon-write"></i>学习中...</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->
