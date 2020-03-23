@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">BIGOcean&#39;BLOG</title>
+  <title itemprop="name">PHP编写解决主页被劫持的dos脚本 | BIGOcean&#39;BLOG</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -415,493 +415,313 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 0px;"></div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2020/03/23/BUwaAn4r16smWN3.png);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/BUwaAn4r16smWN3.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      PHP编写解决主页被劫持的dos脚本</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">
+            <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">BIGOcean</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-23<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
-  
-  <div class="notice" style="margin-top:60px">
-    <i class="iconfont icon-notification">
-    </i>
-    <div class="notice-content">欢迎来到大海的博客</div>
-  </div>
-  
-  <div class="top-feature-row">
-  <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;">
-  <i class="fa fa-anchor" aria-hidden="true">
-  </i>
-  开始</h1>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="http://8r0suy.coding-pages.com" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/startdash/sakura.png">
-        </div>
-        <div class="info">
-          <h3>爱心树</h3>
-          <p>一个秘密的地方</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://www.52pojie.cn/home.php?mod=space&amp;uid=1334862&amp;do=wall&amp;from=space" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/startdash/bilibili.jpg">
-        </div>
-        <div class="info">
-          <h3>52pojie论坛</h3>
-          <p>博主的论坛主页</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://blog.csdn.net/weixin_44772207" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/startdash/wangshiwu.jpg">
-        </div>
-        <div class="info">
-          <h3>大海的CSDN</h3>
-          <p>技术服务</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-</div>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;">
-      <i class="fa fa-envira" aria-hidden="true"></i>
-      文章</h1>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p><strong>1、编写语言：PHP<br>2、使用范围：浏览器主页被其他主页劫持<br>3、使用方法：复制代码→新建文档、保存→右键重命名→更改后缀名为bat→右键以管理员身份运行</strong></p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">echo</span> off
+
+
+<span class="token punctuation">:</span>begin
+cls
+<span class="token keyword">Echo</span> <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token keyword">Echo</span> I   <span class="token number">1</span> 判断病毒文件和注册表      I
+<span class="token keyword">Echo</span> I   <span class="token number">2</span> ie首页相关                I
+<span class="token keyword">Echo</span> I   <span class="token number">3</span> 修复ie首页                I
+<span class="token keyword">Echo</span> I   <span class="token number">4</span> 打开浏览器配置目录        I
+<span class="token keyword">Echo</span> <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+Set <span class="token operator">/</span>P <span class="token keyword">var</span><span class="token operator">=</span>
+<span class="token keyword">If</span> not <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">""</span> <span class="token punctuation">(</span>
+  <span class="token keyword">If</span> <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">"1"</span>  <span class="token keyword">goto</span> 判断
+  <span class="token keyword">If</span> <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">"2"</span>  <span class="token keyword">goto</span> ie首页
+  <span class="token keyword">If</span> <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">"3"</span>  <span class="token keyword">goto</span> 修复ie首页
+  <span class="token keyword">If</span> <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">"4"</span>  <span class="token keyword">goto</span> 打开浏览器配置目录
+<span class="token punctuation">)</span>
+
+<span class="token keyword">goto</span> <span class="token punctuation">:</span>begin
+
+<span class="token punctuation">:</span>判断
+<span class="token keyword">echo</span> 判断病毒文件和注册表等
+<span class="token keyword">if</span> exist <span class="token string">"%ProgramFiles%\Common Files\System\safemonn64.dll"</span> <span class="token keyword">echo</span> safemonn64<span class="token punctuation">.</span>dll safemonn64<span class="token punctuation">.</span>dll  存在
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">AppPatch<span class="token punctuation">\</span>MexLayout</span><span class="token punctuation">.</span>dll <span class="token keyword">echo</span> MexLayout<span class="token punctuation">.</span>dll  存在
+
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>usb4399</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> usb4399<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\usb4399"</span>
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>usb4399</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> usb4399<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\usb4399"</span>
+
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>fhdisbfasu</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> fhdisbfasu<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\fhdisbfasu"</span>
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>FDSOIvdaosifid</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> FDSOIvdaosifid<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FDSOIvdaosifid"</span>
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>PGFltMgr</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> PGFltMgr<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PGFltMgr"</span>
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>mssafel</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> mssafel<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mssafel"</span>
+
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">System32<span class="token punctuation">\</span>GroupPolicy<span class="token punctuation">\</span>Machine<span class="token punctuation">\</span>Registry</span><span class="token punctuation">.</span>pol <span class="token keyword">echo</span> Registry<span class="token punctuation">.</span>pol  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome"</span> <span class="token operator">/</span>v DefaultSearchProviderSearchURL
+
+
+dir  <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>usb</span><span class="token operator">*</span><span class="token punctuation">.</span>sys
+
+dir  <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>hp</span><span class="token operator">*</span><span class="token punctuation">.</span>sys
+
+
+<span class="token keyword">if</span> exist <span class="token operator">%</span>appdata<span class="token operator">%</span>\<span class="token package">pcmaster</span> <span class="token keyword">echo</span> 软媒魔方  存在
+reg query <span class="token constant">HKEY_CURRENT_USER</span>\<span class="token package">Software<span class="token punctuation">\</span>RuanMei</span>
+<span class="token keyword">echo</span> <span class="token constant">UC</span>浏览器推广id
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Wow6432Node\UCBrowserPID"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\UCBrowserPID"</span>
+<span class="token keyword">echo</span> <span class="token constant">UC</span>浏览器配置文件
+<span class="token keyword">if</span> exist <span class="token string">"C:\Program Files (x86)\UCBrowser\Application\Share\Custom.dat"</span> <span class="token keyword">echo</span> Custom<span class="token punctuation">.</span>dat  存在
+<span class="token keyword">if</span> exist <span class="token string">"C:\Program Files (x86)\UCBrowser\Application\Share\Config.dat"</span> <span class="token keyword">echo</span> Config<span class="token punctuation">.</span>dat  存在
+<span class="token keyword">goto</span> exit
+
+<span class="token punctuation">:</span>ie首页
+<span class="token keyword">echo</span> ie首页其他
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg query <span class="token string">"HKEY_CLASSES_ROOT\CLSID\{871C5380-42A0-1069-A2EA-08002B30309D}\shell\OpenHomePage\Command"</span>
+
+<span class="token keyword">echo</span> Windows10 禁止修改首页<span class="token punctuation">(</span>如果内包含内容<span class="token punctuation">)</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Main\SecondaryStartPages"</span>
+<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token constant">HKEY_CLASSES_ROOT</span>\<span class="token package">Local</span> Settings\<span class="token package">Software<span class="token punctuation">\</span>Microsoft<span class="token punctuation">\</span>Windows<span class="token punctuation">\</span>CurrentVersion<span class="token punctuation">\</span>AppContainer<span class="token punctuation">\</span>Storage<span class="token punctuation">\</span>microsoft</span><span class="token punctuation">.</span>microsoftedge_8wekyb3d8bbwe\<span class="token package">Children<span class="token punctuation">\</span>001<span class="token punctuation">\</span>Internet</span> Explorer<span class="token punctuation">]</span>
+
+<span class="token keyword">echo</span> 禁用更改主页设置 正常值“HomePage”的<span class="token constant">DWORD</span>值，值为“<span class="token number">00000000</span>”
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span> <span class="token operator">/</span>v <span class="token string">"HomePage"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span> <span class="token operator">/</span>v <span class="token string">"HomePage"</span>
+
+<span class="token keyword">echo</span> ie首页修改后无法保存
+reg query <span class="token string">"HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"First Home Page"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"First Home Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+
+<span class="token keyword">echo</span> Windows10中查看到的现象
+reg query "<span class="token constant">HKEY_CURRENT_USER</span>\<span class="token package">SOFTWARE<span class="token punctuation">\</span>Policies<span class="token punctuation">\</span>Microsoft<span class="token punctuation">\</span>Internet</span> Explorer\<span class="token package">Main</span>
+
+<span class="token keyword">echo</span> 继续查看其他<span class="token constant">IE</span>配置路径
+pause
+<span class="token package">echo</span> 其他<span class="token constant">IE</span>配置路径
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span>
+<span class="token keyword">goto</span> exit
+
+<span class="token punctuation">:</span>修复ie首页
+<span class="token keyword">echo</span> 修复禁用更改主页设置
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"HomePage"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"HomePage"</span>
+<span class="token keyword">echo</span> 修复ie首页修改后无法保存
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"First Home Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+<span class="token punctuation">:</span><span class="token punctuation">:</span>edge homepage
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\EUPP"</span> <span class="token operator">/</span>f
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Protected - It is a violation of Windows Policy to modify. See aka.ms/browserpolicy"</span> <span class="token operator">/</span>f
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Protected - It is a violation of Windows Policy to modify. See aka.ms/browserpolicy"</span> <span class="token operator">/</span>f
+
+
+<span class="token keyword">goto</span> exit
+
+<span class="token punctuation">:</span>打开浏览器配置目录
+<span class="token keyword">echo</span> 打开浏览器配置目录
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles"</span> explorer <span class="token string">"%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles"</span>
+    <span class="token punctuation">:</span><span class="token punctuation">:</span> 该目录删除后并不影响配置 <span class="token operator">></span> <span class="token operator">%</span><span class="token constant">USERPROFILE</span><span class="token operator">%</span>\<span class="token package">AppData<span class="token punctuation">\</span>Local<span class="token punctuation">\</span>Mozilla</span>
+    <span class="token punctuation">:</span><span class="token punctuation">:</span>\<span class="token package">xxxxxxxx</span><span class="token punctuation">.</span><span class="token keyword">default</span>\<span class="token package">prefs</span><span class="token punctuation">.</span>js
+    <span class="token punctuation">:</span><span class="token punctuation">:</span>\<span class="token package">xxxxxxxx</span><span class="token punctuation">.</span><span class="token keyword">default</span>\<span class="token package">user</span><span class="token punctuation">.</span>js
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\Google\Chrome"</span>              explorer <span class="token string">"%USERPROFILE%\AppData\Local\Google\Chrome"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Roaming\360se6"</span>                   explorer <span class="token string">"%USERPROFILE%\AppData\Roaming\360se6"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\360Chrome\Chrome"</span>           explorer <span class="token string">"%USERPROFILE%\AppData\Local\360Chrome\Chrome"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Roaming\SogouExplorer"</span>            explorer <span class="token string">"%USERPROFILE%\AppData\Roaming\SogouExplorer"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\2345Explorer"</span>               explorer <span class="token string">"%USERPROFILE%\AppData\Local\2345Explorer"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\Tencent\QQBrowser"</span>          explorer <span class="token string">"%USERPROFILE%\AppData\Local\Tencent\QQBrowser"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\UCBrowser"</span>                  explorer <span class="token string">"%USERPROFILE%\AppData\Local\UCBrowser"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%ProgramFiles%\Internet Explorer"</span>                       explorer <span class="token string">"%ProgramFiles%\Internet Explorer"</span>
+<span class="token keyword">goto</span> exit
+
+<span class="token punctuation">:</span>exit
+pause
+<span class="token package">goto</span> <span class="token punctuation">:</span>begin</code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/alipay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/wechat.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/03/23/36.ACM%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E9%A2%98/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/36.webp.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/36.webp.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                ACM大数定理题</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/03/23/34.C-%E8%AF%A6%E8%A7%A3Pow%E5%87%BD%E6%95%B0/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/35.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/35.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                C++详解Pow函数</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "hEvISJNEVpYHJM50anGRr26y-gzGzoHsz",
+        appKey: "Tlg7cokSVVOikjKN7DK5XUWr",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-  <div class="post-thumb">
-    <a href="/2020/03/23/36.ACM%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E9%A2%98/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/36.webp.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-23 17:03</div>
-      <a href="/2020/03/23/36.ACM%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E9%A2%98/" class="post-title">
-        <h3>ACM大数定理题</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E9%9A%8F%E6%83%B3/">随想</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>ACM大数定理题，C++和Java两种答法</p>
-        <div class="post-bottom">
-          <a href="/2020/03/23/36.ACM%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E9%A2%98/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" itemprop="image" alt="BIGOcean" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://bigocean1.gitee.io/" target="_blank" itemprop="url" rel="author noopener">BIGOcean</a>
+            </h3>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/23/35.%E8%A7%A3%E5%86%B3%E4%B8%BB%E9%A1%B5%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84dos%E8%84%9A%E6%9C%AC/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/BUwaAn4r16smWN3.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-23 17:03</div>
-      <a href="/2020/03/23/35.%E8%A7%A3%E5%86%B3%E4%B8%BB%E9%A1%B5%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84dos%E8%84%9A%E6%9C%AC/" class="post-title">
-        <h3>PHP编写解决主页被劫持的dos脚本</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%84%9A%E6%9C%AC%E7%B1%BB/">脚本类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/%E9%9A%8F%E6%83%B3/">随想</a>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/%E9%9A%8F%E6%83%B3/%E5%BE%AE%E8%BD%AF/">微软</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>解决主页被劫持的dos脚本</p>
-        <div class="post-bottom">
-          <a href="/2020/03/23/35.%E8%A7%A3%E5%86%B3%E4%B8%BB%E9%A1%B5%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84dos%E8%84%9A%E6%9C%AC/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/23/34.C-%E8%AF%A6%E8%A7%A3Pow%E5%87%BD%E6%95%B0/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/35.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-23 17:03</div>
-      <a href="/2020/03/23/34.C-%E8%AF%A6%E8%A7%A3Pow%E5%87%BD%E6%95%B0/" class="post-title">
-        <h3>C++详解Pow函数</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E9%9A%8F%E6%83%B3/">随想</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>C++详解Pow函数</p>
-        <div class="post-bottom">
-          <a href="/2020/03/23/34.C-%E8%AF%A6%E8%A7%A3Pow%E5%87%BD%E6%95%B0/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/2.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-23 12:03</div>
-      <a href="/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/" class="post-title">
-        <h3>PICNIC-V.2.0.0_一款给天空加滤镜的APP</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E5%AE%89%E5%8D%93/">安卓</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>一款能给天空加滤镜的APP</p>
-        <div class="post-bottom">
-          <a href="/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/1.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-21 16:03</div>
-      <a href="/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/" class="post-title">
-        <h3>重装系统&amp;激活系统</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E5%BE%AE%E8%BD%AF/">微软</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>如何重装系统并激活系统</p>
-        <div class="post-bottom">
-          <a href="/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/21/7.C%E8%AF%AD%E8%A8%80%E7%BC%96%E5%86%99%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/7.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-21 01:03</div>
-      <a href="/2020/03/21/7.C%E8%AF%AD%E8%A8%80%E7%BC%96%E5%86%99%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/" class="post-title">
-        <h3>C语言编写贪吃蛇游戏</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>C语言编写贪吃蛇游戏</p>
-        <div class="post-bottom">
-          <a href="/2020/03/21/7.C%E8%AF%AD%E8%A8%80%E7%BC%96%E5%86%99%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/21/8.%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E9%87%8F-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/8.jpeg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-21 00:03</div>
-      <a href="/2020/03/21/8.%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E9%87%8F-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="post-title">
-        <h3>算法分析量--时间复杂度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E7%AE%97%E6%B3%95%E7%B1%BB/">算法类<em>·</em></a>
-          
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>算法分析量--时间复杂度</p>
-        <div class="post-bottom">
-          <a href="/2020/03/21/8.%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E9%87%8F-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/18/29.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-18 20:03</div>
-      <a href="/2020/03/18/29.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C/" class="post-title">
-        <h3>多线程如何获取结果</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/">语言类<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>多线程如何获取结果？</p>
-        <div class="post-bottom">
-          <a href="/2020/03/18/29.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/13/31.%E5%A4%8D%E7%94%A8Django%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87pip%E5%AE%89%E8%A3%85/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/uqzUMCG6dahjBbx.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-13 19:03</div>
-      <a href="/2020/03/13/31.%E5%A4%8D%E7%94%A8Django%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87pip%E5%AE%89%E8%A3%85/" class="post-title">
-        <h3>复用Django应用，使其可以通过pip安装</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>Django迁移数据库报错解决</p>
-        <div class="post-bottom">
-          <a href="/2020/03/13/31.%E5%A4%8D%E7%94%A8Django%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87pip%E5%AE%89%E8%A3%85/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/03/12/15.Django%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/uqzUMCG6dahjBbx.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-12 20:03</div>
-      <a href="/2020/03/12/15.Django%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/" class="post-title">
-        <h3>Django迁移数据库报错解决</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>Django迁移数据库报错解决</p>
-        <div class="post-bottom">
-          <a href="/2020/03/12/15.Django%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-
-
-    </main>
-      <!-- 首页默认取最最新文章集 -->
-    <!-- 
-      <nav class="navigator">
-        
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
-      </nav>
-     -->
-  </div>
-  
-    <div id="pagination"><a href="/page/2/" class="">Previous</a></div>
-  
+        <hr>
+        <p><i class="iconfont icon-write"></i>学习中...</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

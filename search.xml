@@ -133,6 +133,192 @@ cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuati
       </categories>
   </entry>
   <entry>
+    <title>PHP编写解决主页被劫持的dos脚本</title>
+    <url>/2020/03/23/35.%E8%A7%A3%E5%86%B3%E4%B8%BB%E9%A1%B5%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84dos%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p><strong>1、编写语言：PHP<br>2、使用范围：浏览器主页被其他主页劫持<br>3、使用方法：复制代码→新建文档、保存→右键重命名→更改后缀名为bat→右键以管理员身份运行</strong></p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">echo</span> off
+
+
+<span class="token punctuation">:</span>begin
+cls
+<span class="token keyword">Echo</span> <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token keyword">Echo</span> I   <span class="token number">1</span> 判断病毒文件和注册表      I
+<span class="token keyword">Echo</span> I   <span class="token number">2</span> ie首页相关                I
+<span class="token keyword">Echo</span> I   <span class="token number">3</span> 修复ie首页                I
+<span class="token keyword">Echo</span> I   <span class="token number">4</span> 打开浏览器配置目录        I
+<span class="token keyword">Echo</span> <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+Set <span class="token operator">/</span>P <span class="token keyword">var</span><span class="token operator">=</span>
+<span class="token keyword">If</span> not <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">""</span> <span class="token punctuation">(</span>
+  <span class="token keyword">If</span> <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">"1"</span>  <span class="token keyword">goto</span> 判断
+  <span class="token keyword">If</span> <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">"2"</span>  <span class="token keyword">goto</span> ie首页
+  <span class="token keyword">If</span> <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">"3"</span>  <span class="token keyword">goto</span> 修复ie首页
+  <span class="token keyword">If</span> <span class="token string">"%var%"</span><span class="token operator">==</span><span class="token string">"4"</span>  <span class="token keyword">goto</span> 打开浏览器配置目录
+<span class="token punctuation">)</span>
+
+<span class="token keyword">goto</span> <span class="token punctuation">:</span>begin
+
+<span class="token punctuation">:</span>判断
+<span class="token keyword">echo</span> 判断病毒文件和注册表等
+<span class="token keyword">if</span> exist <span class="token string">"%ProgramFiles%\Common Files\System\safemonn64.dll"</span> <span class="token keyword">echo</span> safemonn64<span class="token punctuation">.</span>dll safemonn64<span class="token punctuation">.</span>dll  存在
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">AppPatch<span class="token punctuation">\</span>MexLayout</span><span class="token punctuation">.</span>dll <span class="token keyword">echo</span> MexLayout<span class="token punctuation">.</span>dll  存在
+
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>usb4399</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> usb4399<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\usb4399"</span>
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>usb4399</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> usb4399<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\usb4399"</span>
+
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>fhdisbfasu</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> fhdisbfasu<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\fhdisbfasu"</span>
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>FDSOIvdaosifid</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> FDSOIvdaosifid<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FDSOIvdaosifid"</span>
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>PGFltMgr</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> PGFltMgr<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PGFltMgr"</span>
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>mssafel</span><span class="token punctuation">.</span>sys <span class="token keyword">echo</span> mssafel<span class="token punctuation">.</span>sys  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mssafel"</span>
+
+<span class="token keyword">if</span> exist <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">System32<span class="token punctuation">\</span>GroupPolicy<span class="token punctuation">\</span>Machine<span class="token punctuation">\</span>Registry</span><span class="token punctuation">.</span>pol <span class="token keyword">echo</span> Registry<span class="token punctuation">.</span>pol  存在
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome"</span> <span class="token operator">/</span>v DefaultSearchProviderSearchURL
+
+
+dir  <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>usb</span><span class="token operator">*</span><span class="token punctuation">.</span>sys
+
+dir  <span class="token operator">%</span>windir<span class="token operator">%</span>\<span class="token package">system32<span class="token punctuation">\</span>DRIVERS<span class="token punctuation">\</span>hp</span><span class="token operator">*</span><span class="token punctuation">.</span>sys
+
+
+<span class="token keyword">if</span> exist <span class="token operator">%</span>appdata<span class="token operator">%</span>\<span class="token package">pcmaster</span> <span class="token keyword">echo</span> 软媒魔方  存在
+reg query <span class="token constant">HKEY_CURRENT_USER</span>\<span class="token package">Software<span class="token punctuation">\</span>RuanMei</span>
+<span class="token keyword">echo</span> <span class="token constant">UC</span>浏览器推广id
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Wow6432Node\UCBrowserPID"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\UCBrowserPID"</span>
+<span class="token keyword">echo</span> <span class="token constant">UC</span>浏览器配置文件
+<span class="token keyword">if</span> exist <span class="token string">"C:\Program Files (x86)\UCBrowser\Application\Share\Custom.dat"</span> <span class="token keyword">echo</span> Custom<span class="token punctuation">.</span>dat  存在
+<span class="token keyword">if</span> exist <span class="token string">"C:\Program Files (x86)\UCBrowser\Application\Share\Config.dat"</span> <span class="token keyword">echo</span> Config<span class="token punctuation">.</span>dat  存在
+<span class="token keyword">goto</span> exit
+
+<span class="token punctuation">:</span>ie首页
+<span class="token keyword">echo</span> ie首页其他
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg query <span class="token string">"HKEY_CLASSES_ROOT\CLSID\{871C5380-42A0-1069-A2EA-08002B30309D}\shell\OpenHomePage\Command"</span>
+
+<span class="token keyword">echo</span> Windows10 禁止修改首页<span class="token punctuation">(</span>如果内包含内容<span class="token punctuation">)</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Main\SecondaryStartPages"</span>
+<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token constant">HKEY_CLASSES_ROOT</span>\<span class="token package">Local</span> Settings\<span class="token package">Software<span class="token punctuation">\</span>Microsoft<span class="token punctuation">\</span>Windows<span class="token punctuation">\</span>CurrentVersion<span class="token punctuation">\</span>AppContainer<span class="token punctuation">\</span>Storage<span class="token punctuation">\</span>microsoft</span><span class="token punctuation">.</span>microsoftedge_8wekyb3d8bbwe\<span class="token package">Children<span class="token punctuation">\</span>001<span class="token punctuation">\</span>Internet</span> Explorer<span class="token punctuation">]</span>
+
+<span class="token keyword">echo</span> 禁用更改主页设置 正常值“HomePage”的<span class="token constant">DWORD</span>值，值为“<span class="token number">00000000</span>”
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span> <span class="token operator">/</span>v <span class="token string">"HomePage"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span> <span class="token operator">/</span>v <span class="token string">"HomePage"</span>
+
+<span class="token keyword">echo</span> ie首页修改后无法保存
+reg query <span class="token string">"HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"First Home Page"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"First Home Page"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+
+<span class="token keyword">echo</span> Windows10中查看到的现象
+reg query "<span class="token constant">HKEY_CURRENT_USER</span>\<span class="token package">SOFTWARE<span class="token punctuation">\</span>Policies<span class="token punctuation">\</span>Microsoft<span class="token punctuation">\</span>Internet</span> Explorer\<span class="token package">Main</span>
+
+<span class="token keyword">echo</span> 继续查看其他<span class="token constant">IE</span>配置路径
+pause
+<span class="token package">echo</span> 其他<span class="token constant">IE</span>配置路径
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span>
+reg query <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main"</span>
+reg query <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span>
+<span class="token keyword">goto</span> exit
+
+<span class="token punctuation">:</span>修复ie首页
+<span class="token keyword">echo</span> 修复禁用更改主页设置
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"HomePage"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Control Panel"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"HomePage"</span>
+<span class="token keyword">echo</span> 修复ie首页修改后无法保存
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"First Home Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Main"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Start Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Bar"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Search Page"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Page_URL"</span>
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN"</span> <span class="token operator">/</span>f <span class="token operator">/</span>v <span class="token string">"Default_Search_URL"</span>
+
+<span class="token punctuation">:</span><span class="token punctuation">:</span>edge homepage
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\EUPP"</span> <span class="token operator">/</span>f
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Protected - It is a violation of Windows Policy to modify. See aka.ms/browserpolicy"</span> <span class="token operator">/</span>f
+reg <span class="token constant">DELETE</span> <span class="token string">"HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\Protected - It is a violation of Windows Policy to modify. See aka.ms/browserpolicy"</span> <span class="token operator">/</span>f
+
+
+<span class="token keyword">goto</span> exit
+
+<span class="token punctuation">:</span>打开浏览器配置目录
+<span class="token keyword">echo</span> 打开浏览器配置目录
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles"</span> explorer <span class="token string">"%USERPROFILE%\AppData\Roaming\Mozilla\Firefox\Profiles"</span>
+    <span class="token punctuation">:</span><span class="token punctuation">:</span> 该目录删除后并不影响配置 <span class="token operator">></span> <span class="token operator">%</span><span class="token constant">USERPROFILE</span><span class="token operator">%</span>\<span class="token package">AppData<span class="token punctuation">\</span>Local<span class="token punctuation">\</span>Mozilla</span>
+    <span class="token punctuation">:</span><span class="token punctuation">:</span>\<span class="token package">xxxxxxxx</span><span class="token punctuation">.</span><span class="token keyword">default</span>\<span class="token package">prefs</span><span class="token punctuation">.</span>js
+    <span class="token punctuation">:</span><span class="token punctuation">:</span>\<span class="token package">xxxxxxxx</span><span class="token punctuation">.</span><span class="token keyword">default</span>\<span class="token package">user</span><span class="token punctuation">.</span>js
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\Google\Chrome"</span>              explorer <span class="token string">"%USERPROFILE%\AppData\Local\Google\Chrome"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Roaming\360se6"</span>                   explorer <span class="token string">"%USERPROFILE%\AppData\Roaming\360se6"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\360Chrome\Chrome"</span>           explorer <span class="token string">"%USERPROFILE%\AppData\Local\360Chrome\Chrome"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Roaming\SogouExplorer"</span>            explorer <span class="token string">"%USERPROFILE%\AppData\Roaming\SogouExplorer"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\2345Explorer"</span>               explorer <span class="token string">"%USERPROFILE%\AppData\Local\2345Explorer"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\Tencent\QQBrowser"</span>          explorer <span class="token string">"%USERPROFILE%\AppData\Local\Tencent\QQBrowser"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%USERPROFILE%\AppData\Local\UCBrowser"</span>                  explorer <span class="token string">"%USERPROFILE%\AppData\Local\UCBrowser"</span>
+<span class="token keyword">if</span> exist <span class="token string">"%ProgramFiles%\Internet Explorer"</span>                       explorer <span class="token string">"%ProgramFiles%\Internet Explorer"</span>
+<span class="token keyword">goto</span> exit
+
+<span class="token punctuation">:</span>exit
+pause
+<span class="token package">goto</span> <span class="token punctuation">:</span>begin</code></pre>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>随想</category>
+        <category>微软</category>
+      </categories>
+      <tags>
+        <tag>脚本类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++详解Pow函数</title>
     <url>/2020/03/23/34.C-%E8%AF%A6%E8%A7%A3Pow%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
