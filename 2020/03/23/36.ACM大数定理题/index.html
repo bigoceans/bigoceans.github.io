@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">python的这些小知识你注意到了吗？ | BIGOcean&#39;BLOG</title>
+  <title itemprop="name">ACM大数定理题 | BIGOcean&#39;BLOG</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -421,11 +421,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/36.webp.jpg);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/36.webp.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      python的这些小知识你注意到了吗？</h1>
+      ACM大数定理题</h1>
       <p class="entry-census">
         <span>
           <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">
@@ -437,7 +437,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2020-3-10<span class="bull">
+        2020-3-23<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -451,91 +451,129 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>本文将对一些小知识进行汇总，这些知识也许你用了 <code>python</code> 很久，但仍然没注意到。</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<h2 id="1-操作文件的-x-模式"><a href="#1-操作文件的-x-模式" class="headerlink" title="1.操作文件的 x 模式"></a>1.操作文件的 x 模式</h2><p>对文件进行操作的 <code>opend</code> 函数大家都很熟悉，但是你注意到它还有一种模式为 <code>x</code> 吗？</p>
-<p>今天闲的无聊，翻了翻 <code>python</code> 的文档（电脑保存的 <code>python</code> 文档为3.8.2版本），然后发现：不光有 <code>a</code> 、<code>w</code>、<code>b</code> 、<code>r</code> 、<code>+</code> 模式，竟然还有一种模式为 <code>x</code>，下面讲一下吧。</p>
-<p>官方文档称：在 3.3 版本中，增加了 <code>x</code> 模式，它表示创建一个文件，如果文件已经存在，会报错 <code>FileExistsError</code> 。还需要注意一点，在 3.3 版本以后，曾经的 <code>IOError</code> 被别名为 <code>OSError</code>。</p>
-<h2 id="2-协程库-asyncio"><a href="#2-协程库-asyncio" class="headerlink" title="2.协程库 asyncio"></a>2.协程库 asyncio</h2><p>之前常用第三方库 <code>greentlet</code> 和 <code>gevent</code> 来创建协程，后来在 3.4 版本后，<code>python</code> 自身引入了一个协程库 <code>asyncio</code> 。它用来实现异步 <code>I/O</code>。下面看一下示例代码： </p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> asyncio
-
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main_one</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'hello ...'</span><span class="token punctuation">)</span>
-    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'... main_one!'</span><span class="token punctuation">)</span>
-
-<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main_two</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'hello ...'</span><span class="token punctuation">)</span>
-    <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'... main_two!'</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 创建 task 列表。ensure_future() 函数会返回 task 对象</span>
-tasks <span class="token operator">=</span> <span class="token punctuation">[</span>asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>main_one<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>main_two<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-<span class="token comment" spellcheck="true"># 使用 get_event_loop() 方法创建一个事件循环</span>
-loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 多个任务（即 task 列表）使用 wait() 方法执行</span>
-<span class="token comment" spellcheck="true"># 然后再调用 run_until_complete() 函数将协程注册到事件循环中</span>
-loop<span class="token punctuation">.</span>run_until_complete<span class="token punctuation">(</span>asyncio<span class="token punctuation">.</span>wait<span class="token punctuation">(</span>tasks<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<p>结果为：</p>
-<pre class=" language-python"><code class="language-python">hello <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-hello <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> main_one!
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> main_two!</code></pre>
-<h2 id="3-装饰器-wraps"><a href="#3-装饰器-wraps" class="headerlink" title="3.装饰器 wraps"></a>3.装饰器 wraps</h2><p>模块 <code>functools</code> 中的 <code>wraps</code> ，会让使用了装饰器的函数伪装的更像原函数，也就是将原函数的属性赋值给使用了装饰器后的原函数。这句话可能比较难理解，我们先来回顾一下什么是装饰器？<strong>装饰器就是在不改变现有函数基础上，为函数增加功能的一个函数，它使用闭包来实现。闭包的规则为在函数内部定义了一个函数，内部函数使用了外部函数的变量，外部函数返回了内部函数的引用。</strong>有一点需要注意：虽然被装饰器装饰的函数仍然可以使用原名称调用，但是其实质上指向了装饰器的内函数。通过以下示例进行说明：</p>
-<p>1) 先来一个普通的装饰器使用示例</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 定义一个装饰器</span>
-<span class="token keyword">def</span> <span class="token function">eg_decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwds<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'我是装饰器啊...'</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwds<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> wrapper
-
-<span class="token comment" spellcheck="true"># 使用定义的装饰器装饰函数</span>
-@eg_decorator
-<span class="token keyword">def</span> <span class="token function">noname</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'我是示例函数噻...'</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 调用函数</span>
-noname<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 打印函数的 __name__ 属性</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>noname<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
-
-<span class="token triple-quoted-string string">"""
-结果是：
-我是装饰器啊...
-我是示例函数噻...
-wrapper
-"""</span></code></pre>
-<p>可以看到函数 <code>noname()</code> 的属性 <code>__name__</code> 的值为 <code>wrapper</code> ，即函数 <code>noname()</code> 指向的是装饰器的内函数。</p>
-<p>2) 接下来请出今天的主角 <code>wraps</code>：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps  <span class="token comment" spellcheck="true"># &lt;-- 导入模块</span>
-
-<span class="token comment" spellcheck="true"># 定义一个装饰器</span>
-<span class="token keyword">def</span> <span class="token function">eg_decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    @wraps<span class="token punctuation">(</span>func<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># &lt;-- 使用装饰器</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwds<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'我是装饰器啊...'</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwds<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> wrapper
-
-<span class="token comment" spellcheck="true"># 使用定义的装饰器装饰函数</span>
-@eg_decorator
-<span class="token keyword">def</span> <span class="token function">noname</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'我是示例函数噻...'</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 调用函数</span>
-noname<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 打印函数的 __name__ 属性</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>noname<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
-
-<span class="token triple-quoted-string string">"""
-结果是：
-我是装饰器啊...
-我是示例函数噻...
-noname
-"""</span></code></pre>
-<p>可以看到 <code>__name__</code> 属性的值被修改为函数 <code>noname</code> 自己。</p>
-<p>也许大家会问这有什么用？很久很久以前，在一个 <code>Flask</code> 项目中曾经出现过一个 <code>bug</code> ：给视图函数添加了自定义的装饰器之后（该装饰器会验证用户是否登录），再用 <code>@app.route(&quot;/index&quot;)</code> 绑定路径，会报错「你添加路径的视图函数已经绑定了其他路径」。这是因为路径会绑定自定义装饰器的内函数，之前其他视图绑定的其实并不是视图本身，而是自定义装饰器的内函数，这次实质上也去绑定内函数，所以会报错。通过查看底层代码是因为 <code>Flask</code> 的路由地址根据属性 <code>__name__</code> 绑定视图名称。</p>
+          <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>Problem Description:</p>
+<p>I have a very simple problem for you. Given two integers A and B, your job is to calculate the sum of A + B. </p>
+<p>Input:</p>
+<p>The first line of the input contains an integer T(1&lt;=T&lt;=20) which means the number of test cases.<br>Then T lines follow, each line consists of two positive integers, A and B. Notice that the integers<br>are very large, that means you should not process them by using 32-bit integer. You may assume<br>the length of each integer will not exceed 1000. </p>
+<p>Output:</p>
+<p>For each test case, you should output two lines. The first line is “Case #:”, # means the number of<br>the test case. The second line is the an equation “A + B = Sum”, Sum means the result of A + B.<br>Note there are some spaces int the equation. Output a blank line between two test cases. </p>
+<p>Sample Input:</p>
+<p>2<br>1 2<br>112233445566778899 998877665544332211 </p>
+<p>Sample Output:</p>
+<p>Case 1: </p>
+<p>1 + 2 = 3 </p>
+<p>Case 2: </p>
+<p>112233445566778899 + 998877665544332211 = 1111111111111111110 </p>
+<p>两种答法：<br>①:</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stack></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;strstream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
+usingnamespace std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">int</span> num<span class="token punctuation">;</span>
+cin<span class="token operator">>></span>num<span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">int</span> a<span class="token punctuation">,</span>psize<span class="token punctuation">,</span>qsize<span class="token punctuation">,</span>n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
+stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>zp<span class="token punctuation">;</span>
+stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>zq<span class="token punctuation">;</span>
+stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>z<span class="token punctuation">;</span>
+string p<span class="token punctuation">,</span>q<span class="token punctuation">;</span>
+cin<span class="token operator">>></span>p<span class="token operator">>></span>q<span class="token punctuation">;</span>
+<span class="token keyword">char</span><span class="token operator">*</span>w<span class="token operator">=</span><span class="token operator">&amp;</span>p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span><span class="token operator">*</span>e<span class="token operator">=</span><span class="token operator">&amp;</span>q<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+psize<span class="token operator">=</span><span class="token function">strlen</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+qsize<span class="token operator">=</span><span class="token function">strlen</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>psize<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>
+zp<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">48</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>qsize<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>
+zq<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">(</span>q<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">48</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token operator">!</span>zp<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span><span class="token operator">!</span>zq<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>zp<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>zq<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+m<span class="token operator">=</span>zp<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>zq<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>n<span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token operator">>=</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+z<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>m<span class="token number">-10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">{</span>
+z<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+n<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>zp<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span>zq<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span>n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
+z<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>zp<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token operator">!</span>zp<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>zp<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+m<span class="token operator">=</span>zp<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>n<span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token operator">>=</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+z<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>m<span class="token number">-10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">{</span>
+z<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+n<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>zq<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token operator">!</span>zq<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>zq<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+m<span class="token operator">=</span>n<span class="token operator">+</span>zq<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token operator">>=</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+z<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>m<span class="token number">-10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">{</span>
+z<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+n<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+cout<span class="token operator">&lt;&lt;</span><span class="token string">"Case "</span><span class="token operator">&lt;&lt;</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token string">":"</span> <span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+cout<span class="token operator">&lt;&lt;</span>p<span class="token operator">&lt;&lt;</span><span class="token string">" + "</span><span class="token operator">&lt;&lt;</span>q<span class="token operator">&lt;&lt;</span><span class="token string">" = "</span> <span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token operator">!</span>z<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>z<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+cout<span class="token operator">&lt;&lt;</span>z<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">!=</span>num<span class="token number">-1</span><span class="token punctuation">)</span>
+cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>②：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>math<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> 
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+        Scanner sc<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Scanner</span> <span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> t<span class="token operator">=</span>sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>t<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">!=</span><span class="token number">1</span><span class="token punctuation">)</span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            BigInteger a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
+            a<span class="token operator">=</span>sc<span class="token punctuation">.</span><span class="token function">nextBigInteger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            b<span class="token operator">=</span>sc<span class="token punctuation">.</span><span class="token function">nextBigInteger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Case "</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">":"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token operator">+</span><span class="token string">" + "</span><span class="token operator">+</span>b<span class="token operator">+</span><span class="token string">" = "</span><span class="token operator">+</span>a<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 
         </div>
@@ -565,36 +603,19 @@ noname
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2020/03/12/15.Django%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/uqzUMCG6dahjBbx.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2020/03/23/uqzUMCG6dahjBbx.jpg">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                Django迁移数据库报错解决</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2020/03/07/17.docker%E5%AE%B9%E5%99%A8%E7%BD%91%E6%A1%A5%E8%BF%9E%E6%8E%A5/" rel="next">
+            <a href="/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/XhDP3ElqtIm9w2C.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2020/03/23/XhDP3ElqtIm9w2C.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/2.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/2.png">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                docker容器网桥连接</h3>
+                PICNIC-V.2.0.0_一款给天空加滤镜的APP</h3>
                 <hr>
               </div>
             </a>
