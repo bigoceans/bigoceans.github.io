@@ -50,7 +50,7 @@
   /*End of Initial Variables*/
   </script>
   <script type="text/javascript">
-  var bg = "https://i.loli.net/2020/04/04/OfPcmDBSXg5UpMj.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-j5jxj5_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-dgzj9o_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-5wjk33_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-39gogv_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-dgzj9o_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/sleep-walking-4k-ur-3840x2160.jpg,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/retro-80s-ride-wg-3840x2160.jpg".split(",");
+  var bg = "https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-j5jxj5_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-dgzj9o_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-5wjk33_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-39gogv_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/wallhaven-dgzj9o_3840x2160.png,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/sleep-walking-4k-ur-3840x2160.jpg,https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/retro-80s-ride-wg-3840x2160.jpg".split(",");
   var bgindex = Math.floor(Math.random()*bg.length);
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
@@ -1201,6 +1201,11 @@ $(document).ready(function() {
 
 <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/love.js"></script>
-
 <!-- 2d看板板娘 -->
+
 <script src="/live2d-widget/autoload.js"></script>
+# 线条背景
+{% if theme.canvas_nest %}
+<script type="text/javascript"
+color="241,158,194" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+{% endif %}
