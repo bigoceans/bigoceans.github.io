@@ -4287,16 +4287,6 @@ bot_ui_ini()
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>links</title>
-    <url>/links/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>comment</title>
     <url>/comment/index.html</url>
     <content><![CDATA[
@@ -4331,13 +4321,23 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
+    <title>donate</title>
+    <url>/donate/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>rss</title>
     <url>/rss/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>links</title>
+    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
