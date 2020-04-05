@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>蓝桥杯-最大子阵</title>
-    <url>/2020/04/01/model/</url>
+    <url>/2020/04/01/42.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9C%80%E5%A4%A7%E5%AD%90%E9%98%B5/</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><strong>给定一个nxm的矩阵A，求A中的一个非空子矩阵，使这个子矩阵中的元素和最大。<br>其中，A的子矩阵指在A中行和列均连续的一块。<br>输入格式<br>输入的第一行包含两个整数n, m，分别表示矩阵A的行数和列数。<br>接下来n行，每行m个整数，表示矩阵A。<br>输出格式<br>输出一行，包含一个整数，表示A中最大的子矩阵中的元素和。</strong></p>
 <h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><pre><code>3 3
@@ -76,6 +76,9 @@ int main(){
 }</code></pre>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
       <tags>
         <tag>语言类</tag>
       </tags>
@@ -112,6 +115,9 @@ int main(){
 }</code></pre>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
       <tags>
         <tag>语言类</tag>
       </tags>
@@ -137,6 +143,9 @@ int main(){
 }</code></pre>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
       <tags>
         <tag>语言类</tag>
       </tags>
@@ -179,6 +188,9 @@ int main(){
 }</code></pre>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
       <tags>
         <tag>语言类</tag>
       </tags>
@@ -219,6 +231,9 @@ int main()
     printf(&quot;%d\n&quot;,ans);
 }</code></pre><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
+      <categories>
+        <category>随想</category>
+      </categories>
       <tags>
         <tag>语言类</tag>
       </tags>
@@ -4249,6 +4264,11 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>bangumi</title>
+    <url>/bangumi/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index.html</url>
     <content><![CDATA[
@@ -4282,8 +4302,8 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>bangumi</title>
-    <url>/bangumi/index.html</url>
+    <title>donate</title>
+    <url>/donate/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -4319,11 +4339,6 @@ bot_ui_ini()
   id="4934609313"
   mutex="true"><br></meting-js></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>links</title>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.8868866.xyz/"/>
-  <updated>2020-04-01T06:31:29.414Z</updated>
+  <updated>2020-04-05T06:09:14.671Z</updated>
   <id>https://www.8868866.xyz/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>蓝桥杯-最大子阵</title>
-    <link href="https://www.8868866.xyz/2020/04/01/model/"/>
-    <id>https://www.8868866.xyz/2020/04/01/model/</id>
+    <link href="https://www.8868866.xyz/2020/04/01/42.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9C%80%E5%A4%A7%E5%AD%90%E9%98%B5/"/>
+    <id>https://www.8868866.xyz/2020/04/01/42.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9C%80%E5%A4%A7%E5%AD%90%E9%98%B5/</id>
     <published>2020-04-01T01:59:49.000Z</published>
-    <updated>2020-04-01T06:31:29.414Z</updated>
+    <updated>2020-04-05T06:09:14.671Z</updated>
     
     <content type="html"><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><strong>给定一个nxm的矩阵A，求A中的一个非空子矩阵，使这个子矩阵中的元素和最大。<br>其中，A的子矩阵指在A中行和列均连续的一块。<br>输入格式<br>输入的第一行包含两个整数n, m，分别表示矩阵A的行数和列数。<br>接下来n行，每行m个整数，表示矩阵A。<br>输出格式<br>输出一行，包含一个整数，表示A中最大的子矩阵中的元素和。</strong></p><h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><pre><code>3 3-1 -4 33 4 -1-5 -2 8</code></pre><h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p><code>10</code></p><h2 id="样例说明"><a href="#样例说明" class="headerlink" title="样例说明"></a>样例说明</h2><p><strong>取最后一列，和为10。<br>数据规模和约定<br>对于50%的数据，1&lt;=n, m&lt;=50；<br>对于100%的数据，1&lt;=n, m&lt;=500，A中每个元素的绝对值不超过5000。</strong></p><hr><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p><strong>这题我是用动态规划求解，如下图，假设最大子矩阵的结果为从第r行到k行、从第i列到j列的子矩阵，如下所示(ari表示a[r][i],假设数组下标从1开始)：</strong></p><pre><code>| a11 …… a1i ……a1j ……a1n || a21 …… a2i ……a2j ……a2n ||  ......................|| ...................... || ar1 …… ari ……arj ……arn ||  ......................|| ...................... || ak1 …… aki ……akj ……akn ||  ......................|| an1 …… ani ……anj ……ann |</code></pre><p><strong>那么我们将从第r行到第k行的每一行中相同列的加起来，可以得到一个一维数组如下：<br><code>(ar1+……+ak1, ar2+……+ak2, ……,arn+……+akn)</code>，那么从中我们就可以把一个求子矩阵 的问题转换成一个求最大子段和 的问题，从中求出解。那么问题又来了，什么是最大子段和？怎么求最大子段和？<br>首先，我们看一个问题：</strong></p><p><code>给定n个整数（可能为负数）组成的序列a[1],a[2],a[3],…,a[n],求该序列如a[i]+a[i+1]+…+a[j]的子段和的最大值</code><br><strong>比如当（a1,a2,a3,a4,a4,a6）=(-1,11,-1,13,-5,-2)时，最大子段和就为23。</strong></p><h2 id="用动态算法求解"><a href="#用动态算法求解" class="headerlink" title="用动态算法求解:"></a>用动态算法求解:</h2><p>**<code>b[j]=max{a[i]+a[j]},1&lt;=i&lt;=j</code>,且<code>1&lt;=j&lt;=n</code>,则所求的最大子段和为max b[j]，1&lt;=j&lt;=n。<br>由b[j]的定义可易知，当<code>b[j-1]&gt;0时b[j]=b[j-1]+a[j]</code>，否则<code>b[j]=a[j]</code>。故b[j]的动态规划递归式为:<br><code>b[j]=max(b[j-1]+a[j],a[j])，1&lt;=j&lt;=n</code>。</p><h2 id="最大子段和算法"><a href="#最大子段和算法" class="headerlink" title="最大子段和算法"></a>最大子段和算法</h2><pre class=" language-C"><code class="language-C">int getMaxArray(int a[],int n){//求最大子段和    int max=a[0],temp=0;    for (int i=0;i<n;i++) {        if (temp>0) {            temp+=a[i];        }else {            temp=a[i];        }        max=max>temp?max:temp;    }    return  max;}</code></pre><hr><h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><pre class=" language-C"><code class="language-C">#include "stdio.h"#include<string.h>int dp[100];int getMaxArray(int a[],int n){//求最大子段和    int max=a[0],temp=0;    for (int i=0;i<n;i++) {        if (temp>0) {            temp+=a[i];        }else {            temp=a[i];        }        max=max>temp?max:temp;    }    return  max;}int main(){    int n,m;    scanf("%d%d",&n,&m);    int a[n][m];    for(int i=0;i<n;i++){        for (int j=0;j<m;j++) {            scanf("%d",&a[i][j]);        }    }    int res=a[0][0],tmp;    for (int i=0;i<n;i++) {        memset(dp, 0, sizeof(dp));//将dp数组置为0        for (int j = i; j < n; ++j) {            for (int k = 0; k < m; ++k) {                dp[k] += a[j][k];            }            tmp = getMaxArray(dp, n);            res = res > tmp ? res : tmp;        }    }    printf("%d\n", res);}</code></pre><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>]]></content>
     
@@ -31,6 +31,8 @@
     
     </summary>
     
+    
+      <category term="随想" scheme="https://www.8868866.xyz/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
       <category term="语言类" scheme="https://www.8868866.xyz/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/"/>
@@ -42,7 +44,7 @@
     <link href="https://www.8868866.xyz/2020/04/01/41.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%E9%97%AE%E9%A2%98/"/>
     <id>https://www.8868866.xyz/2020/04/01/41.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%E9%97%AE%E9%A2%98/</id>
     <published>2020-04-01T01:42:49.000Z</published>
-    <updated>2020-04-01T06:31:06.452Z</updated>
+    <updated>2020-04-05T06:08:56.563Z</updated>
     
     <content type="html"><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><p><strong>四平方和定理，又称为拉格朗日定理：<br>每个正整数都可以表示为至多4个正整数的平方和。<br>如果把0包括进去，就正好可以表示为4个数的平方和。</strong></p><p><strong>比如：<br>5 = 0^2 + 0^2 + 1^2 + 2^2<br>7 = 1^2 + 1^2 + 1^2 + 2^2 **<br>**<br>对于一个给定的正整数，可能存在多种平方和的表示法。<br>要求你对4个数排序：<br>0 &lt;= a &lt;= b &lt;= c &lt;= d<br>并对所有的可能表示法按 a,b,c,d 为联合主键升序排列，最后输出第一个表示法<br>程序输入为一个正整数N (N&lt;5000000)<br>要求输出4个非负整数，按从小到大排序，中间用空格分开<br>例如，输入：<br>5<br>则程序应该输出：<br>0 0 1 2<br>再例如，输入：<br>12<br>则程序应该输出：<br>0 2 2 2<br>再例如，输入：<br>773535<br>则程序应该输出：<br>1 1 267 838<br>资源约定：<br>峰值内存消耗 &lt; 256M<br>CPU消耗 &lt; 3000ms<br>请严格按要求输出，不要画蛇添足地打印类似：“请您输入…” 的多余内容。<br>所有代码放在同一个源文件中，调试通过后，拷贝提交该源码。<br>注意: main函数需要返回0<br>注意: 只使用ANSI C/ANSI C++ 标准，不要调用依赖于编译环境或操作系统的特殊函数。<br>注意: 所有依赖的函数必须明确地在源文件中 #include， 不能通过工程设置而省略常用头文件。<br>提交时，注意选择所期望的编译器类型。</strong></p><h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p><strong>这题我是暴力输出的，用四个循环，我先前用四个循环是从小加到大，但是超时了。我发现，输入的数越大，输出的前两个数是比较小的，但是后面两个数比较大，于是我把后面两个循环变成从大减到小，于是accept了</strong></p><h1 id="实现代码-C"><a href="#实现代码-C" class="headerlink" title="实现代码(C)"></a>实现代码(C)</h1><pre class=" language-C"><code class="language-C">#include<stdio.h>#include<math.h>void solve(long n){    int a[4];    for (a[0]=0; a[0]<sqrt(n); a[0]++) {        for (a[1]=a[0];a[1]<sqrt(n) ; a[1]++) {            for (a[2]=sqrt(n-a[1]*a[1]-a[0]*a[0]); a[2]>=a[1]; a[2]--) {                for (a[3]=sqrt(n-a[1]*a[1]-a[2]*a[2]-a[0]*a[0])+1; a[3]>=a[2]; a[3]--) {//其实这里加1不加1都一样                    if (a[0]*a[0]+a[1]*a[1]+a[2]*a[2]+a[3]*a[3]==n) {                        printf("%d %d %d %d\n",a[0],a[1],a[2],a[3]);                        return ;                    }                }            }        }    }}int main(){    long n;    scanf("%ld",&n);    solve(n);    return 0;}</code></pre><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>]]></content>
     
@@ -52,6 +54,8 @@
     
     </summary>
     
+    
+      <category term="随想" scheme="https://www.8868866.xyz/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
       <category term="语言类" scheme="https://www.8868866.xyz/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/"/>
@@ -63,7 +67,7 @@
     <link href="https://www.8868866.xyz/2020/04/01/40.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E7%94%9F%E6%97%A5%E8%9C%A1%E7%83%9B/"/>
     <id>https://www.8868866.xyz/2020/04/01/40.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E7%94%9F%E6%97%A5%E8%9C%A1%E7%83%9B/</id>
     <published>2020-04-01T01:30:49.000Z</published>
-    <updated>2020-04-01T06:10:16.011Z</updated>
+    <updated>2020-04-05T06:08:44.960Z</updated>
     
     <content type="html"><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><strong>生日蜡烛<br>SB.从某年开始每年都举办一次生日party，并且每次都要吹熄与年龄相同根数的蜡烛。<br>现在算起来，他一共吹熄了236根蜡烛。<br>请问，他从多少岁开始过生日party的？<br>请填写他开始过生日party的年龄数。<br>注意：你提交的应该是一个整数，不要填写任何多余的内容或说明性文字。</strong></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p><strong>这题比较容易，方法是用两个for循环实现，第一个循环从i=1开始，第二个循环可以从j=i开始，内存循环sum+=j;而如果sum不等于236的话，在外层循环中将sum置为0就可以了</strong></p><h1 id="实现代码-c"><a href="#实现代码-c" class="headerlink" title="实现代码(c)"></a>实现代码(c)</h1><pre class=" language-C"><code class="language-C">#include<stdio.h>int main(){    int i,sum = 0,j;    for (i=1; i<=100;i++) {        for(j=i;j<=100;j++){            sum+=j;            if (sum==236) {                printf("%d",i);            }        }        sum=0;    }}</code></pre><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>]]></content>
     
@@ -73,6 +77,8 @@
     
     </summary>
     
+    
+      <category term="随想" scheme="https://www.8868866.xyz/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
       <category term="语言类" scheme="https://www.8868866.xyz/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/"/>
@@ -84,7 +90,7 @@
     <link href="https://www.8868866.xyz/2020/04/01/39.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E4%B8%89%E7%BE%8A%E7%8C%AE%E7%91%9E/"/>
     <id>https://www.8868866.xyz/2020/04/01/39.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E4%B8%89%E7%BE%8A%E7%8C%AE%E7%91%9E/</id>
     <published>2020-04-01T01:20:49.000Z</published>
-    <updated>2020-04-01T06:07:09.599Z</updated>
+    <updated>2020-04-05T06:08:39.480Z</updated>
     
     <content type="html"><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><strong>观察下面的加法算式：</strong></p><pre><code>      祥 瑞 生 辉   +  三 羊 献 瑞----------------    三 羊 生 瑞 气</code></pre><p><strong>其中，相同的汉字代表相同的数字，不同的汉字代表不同的数字，‘三’和‘祥’不能为 0。请你计算出“三羊献瑞”所代表的 4 位数是什么。（答案唯一）<br>注意：你提交的应该是一个整数，不要填写任何多余的内容或说明性文字，行末不要换行。</strong></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p><strong>这题我是用暴力法求解的</strong></p><h1 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h1><pre class=" language-C"><code class="language-C">#include<stdio.h>int main(){    int x,r,s,h,san,yan,xian,qi,sum1,sum2,sum3;    for (x=1; x<=9;x++) {        for (r=0; r<=9; r++) {            for (s=0; s<=9; s++) {                for (h=0; h<=9; h++) {                    for (san=1; san<=9; san++) {                        for (yan=0; yan<=9; yan++) {                            for (xian=0; xian<=9; xian++) {                                for (qi=0; qi<=9; qi++) {                                    sum1=x*1000+r*100+s*10+h;                                    sum2=san*1000+yan*100+xian*10+r;                                    sum3=san*10000+yan*1000+s*100+r*10+qi;                                    if (sum1+sum2==sum3 && x!=r && x!=s && x!=h && x!=san && x!=yan && x!=xian && x!=qi && r!=s && r!=h && r!=san && r!=h && r!=san && r!=yan && r!=xian && r!=qi &&s!=h && s!=san && s!=yan && s!=xian && s!=qi &&h!=san &&h!=yan &&h!=xian && h!=qi &&san!=yan &&san!=qi&& yan!=xian && yan!=qi &&xian!=qi) {                                                                        printf("%d+%d=%d\n",sum1,sum2,sum3);                                    }                                }                            }                        }                    }                }            }        }    }}</code></pre><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>]]></content>
     
@@ -94,6 +100,8 @@
     
     </summary>
     
+    
+      <category term="随想" scheme="https://www.8868866.xyz/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
       <category term="语言类" scheme="https://www.8868866.xyz/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/"/>
@@ -105,7 +113,7 @@
     <link href="https://www.8868866.xyz/2020/04/01/38.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9D%8E%E7%99%BD%E5%96%9D%E9%85%92/"/>
     <id>https://www.8868866.xyz/2020/04/01/38.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9D%8E%E7%99%BD%E5%96%9D%E9%85%92/</id>
     <published>2020-04-01T00:50:49.000Z</published>
-    <updated>2020-04-01T06:37:18.936Z</updated>
+    <updated>2020-04-05T06:08:30.993Z</updated>
     
     <content type="html"><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><strong>话说大诗人李白，一生好饮。幸好他从不开车。<br>一天，他提着酒壶，从家里出来，酒壶中有酒两斗。他边走边唱：<br>无事街上走，提壶去打酒。<br>逢店加一倍，遇花喝一斗。<br>这一路上，他一共遇到店 5 次，遇到花 10 次，已知最后一次遇到的是花，他正好把酒喝光了。请你计算李白遇到店和花的次序，有多少种可能的方案。</strong></p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p><strong>我们已知遇店 5 次，遇花 10 次，并且最后一次遇到花，正好把酒喝光。那么我们可以把店作为二进制中的 1，把花作为二进制中的 0，因为已经确定最后一次遇到的是花，所以我们需要判断枚举的结果是否刚好有 5个 1 和 9个 0。那么我们就枚举出 14 位二进制的所有可能并加以判断即可，判断思路为判断二进制是否有 9 个 0，5个 1，并且最终酒刚好剩 1 斗</strong></p><h1 id="实现代码-C"><a href="#实现代码-C" class="headerlink" title="实现代码(C)"></a>实现代码(C)</h1><pre><code>#include&lt;stdio.h&gt;int main(){    int ans=0;//方案数    for (int i=0; i&lt;(1&lt;&lt;14); i++)     {        int dian=0;//表示遇到店的次数        int hua=0;//表示遇到话的次数        int num=2;//初始酒壶有两斗        for (int j=0;j&lt;14 ;j++)         {            if (i&amp;(1&lt;&lt;j)) //这里判断二进制i从右数第j+1为是否为1            {                dian++;//遇到店，次数加1                num*=2;//加一倍            }            else            {                hua++;//遇到花，次数加1                num-=1;//喝一斗            }        }        if (dian==5&amp;&amp;hua==9&amp;&amp;num==1)         {            ++ans;//记录方法数        }    }    printf(&quot;%d\n&quot;,ans);}</code></pre><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>]]></content>
     
@@ -115,6 +123,8 @@
     
     </summary>
     
+    
+      <category term="随想" scheme="https://www.8868866.xyz/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
       <category term="语言类" scheme="https://www.8868866.xyz/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/"/>
