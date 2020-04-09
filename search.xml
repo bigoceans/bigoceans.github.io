@@ -241,7 +241,7 @@ int main()
   <entry>
     <title>优化第一步___各种驱动问题</title>
     <url>/2020/03/26/37.%E4%BC%98%E5%8C%96%E7%AC%AC%E4%B8%80%E6%AD%A5___%E5%90%84%E7%A7%8D%E9%A9%B1%E5%8A%A8%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>上一篇文章我给大家讲述了如何更纯净更安全的<a href="https://www.8868866.xyz/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/">重装系统&amp;激活系统</a>，那么接下来的系列文章将会教大家如何去优化你自己的电脑。首先我们从基本的驱动开始说起。</p>
+    <content><![CDATA[<p>上一篇文章我给大家讲述了如何更纯净更安全的<a href="https://www.8868866.xyz/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">重装系统&amp;激活系统</a>，那么接下来的系列文章将会教大家如何去优化你自己的电脑。首先我们从基本的驱动开始说起。</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h3 id="首先说说什么是驱动？"><a href="#首先说说什么是驱动？" class="headerlink" title="首先说说什么是驱动？"></a>首先说说什么是驱动？</h3><p><strong>关于驱动你应该知道的：</strong></p>
 <blockquote>
@@ -3784,7 +3784,7 @@ cd /opt
 <blockquote>
 <p><strong>注意</strong>：所有的路径都使用<strong>绝对路径</strong>，否则仍然无效。</p>
 </blockquote>
-<p><a href="https://bigocean1.gitee.io/2019/11/17/27.%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/" target="_blank" rel="noopener">crontab执行python脚本不成功解决方案？（续）</a></p>
+<p><a href="https://bigocean1.gitee.io/2019/11/17/27.%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/">crontab执行python脚本不成功解决方案？（续）</a></p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 ]]></content>
       <categories>
@@ -3818,7 +3818,7 @@ cd /opt
   <entry>
     <title>hexo命令速查小册</title>
     <url>/2019/10/27/23.hexo%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E5%B0%8F%E5%86%8C/</url>
-    <content><![CDATA[<p>最近都在搭建自己的博客，不断的调整显示效果，以及添加一些初始功能，总算大体框架完成，细枝末节还有待商榷。我的博客地址为: <a href="http://www.8868866.xyz/">http://www.8868866.xyz/</a>  ，希望大家多多捧场 ~ 当然也希望大家多多关注公众号『大海的BLOG』</p>
+    <content><![CDATA[<p>最近都在搭建自己的博客，不断的调整显示效果，以及添加一些初始功能，总算大体框架完成，细枝末节还有待商榷。我的博客地址为: <a href="http://www.8868866.xyz/" target="_blank" rel="noopener">http://www.8868866.xyz/</a>  ，希望大家多多捧场 ~ 当然也希望大家多多关注公众号『大海的BLOG』</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>搭建博客的过程中使用到了框架 Node.js、HEXO 以及 GitHub 。</p>
 <p>下面就经常使用到的 hexo 的命令做一个总结，方便在使用过程中快速查阅。</p>
@@ -3909,6 +3909,46 @@ categories:
       <categories>
         <category>随想</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Git 上传大文件</title>
+    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
+<h2 id="1-windows-平台安装-git-lfs"><a href="#1-windows-平台安装-git-lfs" class="headerlink" title="1.windows 平台安装 git-lfs"></a>1.windows 平台安装 git-lfs</h2><p>1.先打开网址：</p>
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//github.com/git-lfs/git-lfs/releases</code></pre>
+<p>2.然后点击最新版本的版本号，将页面拉取到最底部，下载安装：</p>
+<pre class=" language-shell"><code class="language-shell">Windows Installer</code></pre>
+<p>3.运行下载的 exe 文件：</p>
+<pre class=" language-shell"><code class="language-shell">windows installer</code></pre>
+<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>1.打开 <code>git bash</code>，首先输入下列命令开启 lfs 功能：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs install</code></pre>
+<p>2.然后使用如下命令进行大文件追踪，然后会生成文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs track '大文件名'
+# 追踪大文件test.tar.gz
+git lfs track 'test.tar.gz'</code></pre>
+<p>3.添加文件 <code>.gittributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git add .gitattributes</code></pre>
+<p>4.然后提交文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit .gitattributes file'</code></pre>
+<p>5.将文件 <code>.gitattributes</code> 推送到远程仓库：</p>
+<pre class=" language-shell"><code class="language-shell">git push -u origin master</code></pre>
+<p>6.添加大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git add test.tar.gz</code></pre>
+<p>7.提交大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit big file.'</code></pre>
+<p>8.直接推送大文件到远程：</p>
+<pre class=" language-shell"><code class="language-shell">git push</code></pre>
+<p>然后你就会发现大文件推送到远程的 github 仓库了。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>网络类</tag>
+      </tags>
   </entry>
   <entry>
     <title>Elasticsearch 中这些必备 API 你晓得嘛？</title>
@@ -4011,46 +4051,6 @@ categories:
       <categories>
         <category>技术</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Git 上传大文件</title>
-    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
-<h2 id="1-windows-平台安装-git-lfs"><a href="#1-windows-平台安装-git-lfs" class="headerlink" title="1.windows 平台安装 git-lfs"></a>1.windows 平台安装 git-lfs</h2><p>1.先打开网址：</p>
-<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//github.com/git-lfs/git-lfs/releases</code></pre>
-<p>2.然后点击最新版本的版本号，将页面拉取到最底部，下载安装：</p>
-<pre class=" language-shell"><code class="language-shell">Windows Installer</code></pre>
-<p>3.运行下载的 exe 文件：</p>
-<pre class=" language-shell"><code class="language-shell">windows installer</code></pre>
-<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>1.打开 <code>git bash</code>，首先输入下列命令开启 lfs 功能：</p>
-<pre class=" language-shell"><code class="language-shell">git lfs install</code></pre>
-<p>2.然后使用如下命令进行大文件追踪，然后会生成文件 <code>.gitattributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git lfs track '大文件名'
-# 追踪大文件test.tar.gz
-git lfs track 'test.tar.gz'</code></pre>
-<p>3.添加文件 <code>.gittributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git add .gitattributes</code></pre>
-<p>4.然后提交文件 <code>.gitattributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git commit -m 'submit .gitattributes file'</code></pre>
-<p>5.将文件 <code>.gitattributes</code> 推送到远程仓库：</p>
-<pre class=" language-shell"><code class="language-shell">git push -u origin master</code></pre>
-<p>6.添加大文件：</p>
-<pre class=" language-shell"><code class="language-shell">git add test.tar.gz</code></pre>
-<p>7.提交大文件：</p>
-<pre class=" language-shell"><code class="language-shell">git commit -m 'submit big file.'</code></pre>
-<p>8.直接推送大文件到远程：</p>
-<pre class=" language-shell"><code class="language-shell">git push</code></pre>
-<p>然后你就会发现大文件推送到远程的 github 仓库了。</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>网络类</tag>
-      </tags>
   </entry>
   <entry>
     <title>常用 es 查询盘点</title>
@@ -4297,19 +4297,8 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>music</title>
-    <url>/music/index.html</url>
-    <content><![CDATA[
-<p><meting-js
-  server="netease"
-  type="playlist"
-  id="4934609313"
-  mutex="true"><br></meting-js></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
+    <title>bangumi</title>
+    <url>/bangumi/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -4336,8 +4325,24 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>rss</title>
-    <url>/rss/index.html</url>
+    <title>donate</title>
+    <url>/donate/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>music</title>
+    <url>/music/index.html</url>
+    <content><![CDATA[
+<p><meting-js
+  server="netease"
+  type="playlist"
+  id="4934609313"
+  mutex="true"><br></meting-js></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>links</title>
+    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -4346,13 +4351,8 @@ bot_ui_ini()
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>bangumi</title>
-    <url>/bangumi/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>links</title>
-    <url>/links/index.html</url>
+    <title>rss</title>
+    <url>/rss/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
