@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>蓝桥杯-最大子阵</title>
-    <url>/2020/04/01/42.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9C%80%E5%A4%A7%E5%AD%90%E9%98%B5/</url>
+    <url>/42.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9C%80%E5%A4%A7%E5%AD%90%E9%98%B5.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><strong>给定一个nxm的矩阵A，求A中的一个非空子矩阵，使这个子矩阵中的元素和最大。<br>其中，A的子矩阵指在A中行和列均连续的一块。<br>输入格式<br>输入的第一行包含两个整数n, m，分别表示矩阵A的行数和列数。<br>接下来n行，每行m个整数，表示矩阵A。<br>输出格式<br>输出一行，包含一个整数，表示A中最大的子矩阵中的元素和。</strong></p>
 <h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><pre><code>3 3
@@ -85,7 +85,7 @@ int main(){
   </entry>
   <entry>
     <title>蓝桥杯-四平方和问题</title>
-    <url>/2020/04/01/41.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%E9%97%AE%E9%A2%98/</url>
+    <url>/41.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%E9%97%AE%E9%A2%98.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><p><strong>四平方和定理，又称为拉格朗日定理：<br>每个正整数都可以表示为至多4个正整数的平方和。<br>如果把0包括进去，就正好可以表示为4个数的平方和。</strong></p>
 <p><strong>比如：<br>5 = 0^2 + 0^2 + 1^2 + 2^2<br>7 = 1^2 + 1^2 + 1^2 + 2^2 **<br>**<br>对于一个给定的正整数，可能存在多种平方和的表示法。<br>要求你对4个数排序：<br>0 &lt;= a &lt;= b &lt;= c &lt;= d<br>并对所有的可能表示法按 a,b,c,d 为联合主键升序排列，最后输出第一个表示法<br>程序输入为一个正整数N (N&lt;5000000)<br>要求输出4个非负整数，按从小到大排序，中间用空格分开<br>例如，输入：<br>5<br>则程序应该输出：<br>0 0 1 2<br>再例如，输入：<br>12<br>则程序应该输出：<br>0 2 2 2<br>再例如，输入：<br>773535<br>则程序应该输出：<br>1 1 267 838<br>资源约定：<br>峰值内存消耗 &lt; 256M<br>CPU消耗 &lt; 3000ms<br>请严格按要求输出，不要画蛇添足地打印类似：“请您输入…” 的多余内容。<br>所有代码放在同一个源文件中，调试通过后，拷贝提交该源码。<br>注意: main函数需要返回0<br>注意: 只使用ANSI C/ANSI C++ 标准，不要调用依赖于编译环境或操作系统的特殊函数。<br>注意: 所有依赖的函数必须明确地在源文件中 #include， 不能通过工程设置而省略常用头文件。<br>提交时，注意选择所期望的编译器类型。</strong></p>
@@ -124,7 +124,7 @@ int main(){
   </entry>
   <entry>
     <title>蓝桥杯-生日蜡烛</title>
-    <url>/2020/04/01/40.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E7%94%9F%E6%97%A5%E8%9C%A1%E7%83%9B/</url>
+    <url>/40.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E7%94%9F%E6%97%A5%E8%9C%A1%E7%83%9B.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><strong>生日蜡烛<br>SB.从某年开始每年都举办一次生日party，并且每次都要吹熄与年龄相同根数的蜡烛。<br>现在算起来，他一共吹熄了236根蜡烛。<br>请问，他从多少岁开始过生日party的？<br>请填写他开始过生日party的年龄数。<br>注意：你提交的应该是一个整数，不要填写任何多余的内容或说明性文字。</strong></p>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p><strong>这题比较容易，方法是用两个for循环实现，第一个循环从i=1开始，第二个循环可以从j=i开始，内存循环sum+=j;而如果sum不等于236的话，在外层循环中将sum置为0就可以了</strong></p>
@@ -152,7 +152,7 @@ int main(){
   </entry>
   <entry>
     <title>蓝桥杯-三羊献瑞</title>
-    <url>/2020/04/01/39.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E4%B8%89%E7%BE%8A%E7%8C%AE%E7%91%9E/</url>
+    <url>/39.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E4%B8%89%E7%BE%8A%E7%8C%AE%E7%91%9E.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><strong>观察下面的加法算式：</strong></p>
 <pre><code>      祥 瑞 生 辉
@@ -197,7 +197,7 @@ int main(){
   </entry>
   <entry>
     <title>蓝桥杯-李白喝酒</title>
-    <url>/2020/04/01/38.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9D%8E%E7%99%BD%E5%96%9D%E9%85%92/</url>
+    <url>/38.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9D%8E%E7%99%BD%E5%96%9D%E9%85%92.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><strong>话说大诗人李白，一生好饮。幸好他从不开车。<br>一天，他提着酒壶，从家里出来，酒壶中有酒两斗。他边走边唱：<br>无事街上走，提壶去打酒。<br>逢店加一倍，遇花喝一斗。<br>这一路上，他一共遇到店 5 次，遇到花 10 次，已知最后一次遇到的是花，他正好把酒喝光了。请你计算李白遇到店和花的次序，有多少种可能的方案。</strong></p>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p><strong>我们已知遇店 5 次，遇花 10 次，并且最后一次遇到花，正好把酒喝光。那么我们可以把店作为二进制中的 1，把花作为二进制中的 0，因为已经确定最后一次遇到的是花，所以我们需要判断枚举的结果是否刚好有 5个 1 和 9个 0。那么我们就枚举出 14 位二进制的所有可能并加以判断即可，判断思路为判断二进制是否有 9 个 0，5个 1，并且最终酒刚好剩 1 斗</strong></p>
@@ -240,7 +240,7 @@ int main()
   </entry>
   <entry>
     <title>优化第一步___各种驱动问题</title>
-    <url>/2020/03/26/37.%E4%BC%98%E5%8C%96%E7%AC%AC%E4%B8%80%E6%AD%A5___%E5%90%84%E7%A7%8D%E9%A9%B1%E5%8A%A8%E9%97%AE%E9%A2%98/</url>
+    <url>/37.%E4%BC%98%E5%8C%96%E7%AC%AC%E4%B8%80%E6%AD%A5___%E5%90%84%E7%A7%8D%E9%A9%B1%E5%8A%A8%E9%97%AE%E9%A2%98.html</url>
     <content><![CDATA[<p>上一篇文章我给大家讲述了如何更纯净更安全的<a href="https://www.8868866.xyz/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/">重装系统&amp;激活系统</a>，那么接下来的系列文章将会教大家如何去优化你自己的电脑。首先我们从基本的驱动开始说起。</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h3 id="首先说说什么是驱动？"><a href="#首先说说什么是驱动？" class="headerlink" title="首先说说什么是驱动？"></a>首先说说什么是驱动？</h3><p><strong>关于驱动你应该知道的：</strong></p>
@@ -271,7 +271,7 @@ int main()
   </entry>
   <entry>
     <title>科普经典</title>
-    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%A7%91%E6%99%AE%E7%BB%8F%E5%85%B8/</url>
+    <url>/%E6%82%A6%E8%AF%BB/%E7%A7%91%E6%99%AE%E7%BB%8F%E5%85%B8.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>30部必读的科普经典</p>
 <pre><code>《几何原本》
@@ -312,7 +312,7 @@ int main()
   </entry>
   <entry>
     <title>谋略经典</title>
-    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E8%B0%8B%E7%95%A5%E7%BB%8F%E5%85%B8/</url>
+    <url>/%E6%82%A6%E8%AF%BB/%E8%B0%8B%E7%95%A5%E7%BB%8F%E5%85%B8.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>20部必读的谋略经典</p>
 <pre><code>第1部 《道德经》
@@ -343,7 +343,7 @@ int main()
   </entry>
   <entry>
     <title>心理励志经典</title>
-    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E5%BF%83%E7%90%86%E5%8A%B1%E5%BF%97%E7%BB%8F%E5%85%B8/</url>
+    <url>/%E6%82%A6%E8%AF%BB/%E5%BF%83%E7%90%86%E5%8A%B1%E5%BF%97%E7%BB%8F%E5%85%B8.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>20部必读的心理励志经典</p>
 <pre><code>第1部　《富兰克林》
@@ -374,7 +374,7 @@ int main()
   </entry>
   <entry>
     <title>名人传记经典</title>
-    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E5%90%8D%E4%BA%BA%E4%BC%A0%E8%AE%B0%E7%BB%8F%E5%85%B8/</url>
+    <url>/%E6%82%A6%E8%AF%BB/%E5%90%8D%E4%BA%BA%E4%BC%A0%E8%AE%B0%E7%BB%8F%E5%85%B8.html</url>
     <content><![CDATA[<p>个人很中意：鲁迅</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>30部必读的名人传记经典</p>
@@ -416,7 +416,7 @@ int main()
   </entry>
   <entry>
     <title>修身处世经典</title>
-    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E4%BF%AE%E8%BA%AB%E5%A4%84%E4%B8%96%E7%BB%8F%E5%85%B8/</url>
+    <url>/%E6%82%A6%E8%AF%BB/%E4%BF%AE%E8%BA%AB%E5%A4%84%E4%B8%96%E7%BB%8F%E5%85%B8.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>20部必读的修身处世经典</p>
 <pre><code>
@@ -448,7 +448,7 @@ int main()
   </entry>
   <entry>
     <title>管理学经典</title>
-    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%AE%A1%E7%90%86%E5%AD%A6%E7%BB%8F%E5%85%B8/</url>
+    <url>/%E6%82%A6%E8%AF%BB/%E7%AE%A1%E7%90%86%E5%AD%A6%E7%BB%8F%E5%85%B8.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>30部必读的管理学经典</p>
 <pre><code>第1部 《科学管理原理》 弗雷德里克·温斯洛·泰罗(美国1856—1915)
@@ -489,7 +489,7 @@ int main()
   </entry>
   <entry>
     <title>投资学经典</title>
-    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E6%8A%95%E8%B5%84%E5%AD%A6%E7%BB%8F%E5%85%B8/</url>
+    <url>/%E6%82%A6%E8%AF%BB/%E6%8A%95%E8%B5%84%E5%AD%A6%E7%BB%8F%E5%85%B8.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>30部必读的投资学经典</p>
 <pre><code>第1部 《聪明的投资者》 本杰明·格雷厄姆(美国1894—1976)
@@ -530,7 +530,7 @@ int main()
   </entry>
   <entry>
     <title>经济学经典</title>
-    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%BB%8F%E5%85%B8/</url>
+    <url>/%E6%82%A6%E8%AF%BB/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%BB%8F%E5%85%B8.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>30部必读的经济学经典</p>
 <pre><code>第1部 《经济表》 弗朗斯瓦·魁奈(法国1694—1774)
@@ -571,7 +571,7 @@ int main()
   </entry>
   <entry>
     <title>编程类</title>
-    <url>/2020/03/23/%E6%82%A6%E8%AF%BB/%E7%BC%96%E7%A8%8B%E7%B1%BB/</url>
+    <url>/%E6%82%A6%E8%AF%BB/%E7%BC%96%E7%A8%8B%E7%B1%BB.html</url>
     <content><![CDATA[<p>经典的书都有一个特点： 详尽得当，通俗又不失理论化，信息量非常大。</p>
 <p> <strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <pre><code>  计算机专业推荐书籍：
@@ -678,7 +678,7 @@ int main()
   </entry>
   <entry>
     <title>ACM大数定理题</title>
-    <url>/2020/03/23/36.ACM%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E9%A2%98/</url>
+    <url>/36.ACM%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E9%A2%98.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>Problem Description:</p>
 <p>I have a very simple problem for you. Given two integers A and B, your job is to calculate the sum of A + B. </p>
@@ -810,7 +810,7 @@ cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuati
   </entry>
   <entry>
     <title>PHP编写解决主页被劫持的dos脚本</title>
-    <url>/2020/03/23/35.%E8%A7%A3%E5%86%B3%E4%B8%BB%E9%A1%B5%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84dos%E8%84%9A%E6%9C%AC/</url>
+    <url>/35.%E8%A7%A3%E5%86%B3%E4%B8%BB%E9%A1%B5%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84dos%E8%84%9A%E6%9C%AC.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p><strong>1、编写语言：PHP<br>2、使用范围：浏览器主页被其他主页劫持<br>3、使用方法：复制代码→新建文档、保存→右键重命名→更改后缀名为bat→右键以管理员身份运行</strong></p>
 <pre class=" language-php"><code class="language-php"><span class="token keyword">echo</span> off
@@ -996,7 +996,7 @@ pause
   </entry>
   <entry>
     <title>C++详解Pow函数</title>
-    <url>/2020/03/23/34.C-%E8%AF%A6%E8%A7%A3Pow%E5%87%BD%E6%95%B0/</url>
+    <url>/34.C-%E8%AF%A6%E8%A7%A3Pow%E5%87%BD%E6%95%B0.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p><strong>这是一道求水仙花数的变形体：<br>描述：水仙花一朵x元，问有n元最多能买多少符合水仙花数朵水仙花？<br>输入：两个整数n（100&lt;=n&lt;=999）,x（1&lt;=x&lt;=n）。<br>输出：输出符合要求的数，没有就输出-1。<br>说明：水仙花数：一个三位数其各位数字的立方和等于这个三位数。<br>例1：<br>输入：452 2<br>输出：153<br>例2：<br>输入：999 1<br>输出：407</strong></p>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
@@ -1108,7 +1108,7 @@ pause
   </entry>
   <entry>
     <title>PICNIC-V.2.0.0_一款给天空加滤镜的APP</title>
-    <url>/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/</url>
+    <url>/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP.html</url>
     <content><![CDATA[<p>虽然我是一个不拍照片的直男，但当我第一次透过picnic看我头顶的天空时，我就决定把它留在我的手机里！（大概也有近两年时间了）</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <blockquote>
@@ -1134,7 +1134,7 @@ pause
   </entry>
   <entry>
     <title>重装系统&amp;激活系统</title>
-    <url>/2020/03/21/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&amp;%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F/</url>
+    <url>/1.%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F&amp;%E6%BF%80%E6%B4%BB%E7%B3%BB%E7%BB%9F.html</url>
     <content><![CDATA[<p>对于刚刚DIY好一台电脑或者对于目前所用windows系统版本不太满意的人来说，下载一个官方、纯净的系统镜像是至关重要的！下面就来看看如何实现这些操作吧。（所有操作均以Win10为例）</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h3 id="首先说说为什么官方的系统受人推崇吧"><a href="#首先说说为什么官方的系统受人推崇吧" class="headerlink" title="首先说说为什么官方的系统受人推崇吧:"></a>首先说说为什么官方的系统受人推崇吧:</h3><p><strong>首先说说第三方系统镜像：</strong></p>
@@ -1240,7 +1240,7 @@ pause
   </entry>
   <entry>
     <title>C语言编写贪吃蛇游戏</title>
-    <url>/2020/03/21/7.C%E8%AF%AD%E8%A8%80%E7%BC%96%E5%86%99%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/</url>
+    <url>/7.C%E8%AF%AD%E8%A8%80%E7%BC%96%E5%86%99%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F.html</url>
     <content><![CDATA[<p><strong>你问我为什么要用c写贪吃蛇游戏？一切都要从那次作业讲起。。。</strong></p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h3 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h3><blockquote>
@@ -1656,7 +1656,7 @@ int compDec(const void *a, const void *b) {
   </entry>
   <entry>
     <title>算法分析量--时间复杂度</title>
-    <url>/2020/03/21/8.%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E9%87%8F-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</url>
+    <url>/8.%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E9%87%8F-%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>文章创造背景：我们知道时间复杂度是学习算法的基石，但还是有很多朋友对这个概念不很理解，那么我们就来聊聊它如何“刻画”出一个算法的运行损耗的时间量。</p>
 <blockquote>
@@ -1693,7 +1693,7 @@ int compDec(const void *a, const void *b) {
   </entry>
   <entry>
     <title>多线程如何获取结果</title>
-    <url>/2020/03/18/29.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C/</url>
+    <url>/29.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C.html</url>
     <content><![CDATA[<p>多线程如何获取结果？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-场景"><a href="#1-场景" class="headerlink" title="1.场景"></a>1.场景</h2><p>大家一般都会开启多线程去处理任务，如果需要获取线程处理结果怎么办？</p>
@@ -1728,7 +1728,7 @@ int compDec(const void *a, const void *b) {
   </entry>
   <entry>
     <title>复用Django应用，使其可以通过pip安装</title>
-    <url>/2020/03/13/31.%E5%A4%8D%E7%94%A8Django%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87pip%E5%AE%89%E8%A3%85/</url>
+    <url>/31.%E5%A4%8D%E7%94%A8Django%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87pip%E5%AE%89%E8%A3%85.html</url>
     <content><![CDATA[<p>想自己打包一个应用，可以像其他模块一样通过 <code>pip install</code> 安装吗？在 <code>Django</code> 项目中，一个应用如果通过此方式随用随安装是不是很帅气？快来看一下如何操作吧！</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="1-前提"><a href="#1-前提" class="headerlink" title="1.前提"></a>1.前提</h1><h2 id="1-1应用规范"><a href="#1-1应用规范" class="headerlink" title="1.1应用规范"></a>1.1应用规范</h2><p>为了方便打包，你的应用应该解耦合，并且所有文件都规范放置。其中需要注意：按照 <code>Django3.0</code> 官方文档描述，每个应用中的模板文件 <code>templates</code> 应与主项目中通用模板文件 <code>templates</code> 分离，最主要目的是为了创建可复用应用。</p>
@@ -1913,7 +1913,7 @@ recursive-include docs *</code></pre>
   </entry>
   <entry>
     <title>Django迁移数据库报错解决</title>
-    <url>/2020/03/12/15.Django%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/</url>
+    <url>/15.Django%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3.html</url>
     <content><![CDATA[<p><code>Django</code> 最新版本创建应用后，迁移数据库报错怎么办？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p><code>Django3.0.2</code>：</p>
@@ -1964,7 +1964,7 @@ Migrations for 'polls':
   </entry>
   <entry>
     <title>python的这些小知识你注意到了吗？</title>
-    <url>/2020/03/10/25.python%E7%9A%84%E8%BF%99%E4%BA%9B%E5%B0%8F%E7%9F%A5%E8%AF%86%E4%BD%A0%E6%B3%A8%E6%84%8F%E5%88%B0%E4%BA%86%E5%90%97%EF%BC%9F/</url>
+    <url>/25.python%E7%9A%84%E8%BF%99%E4%BA%9B%E5%B0%8F%E7%9F%A5%E8%AF%86%E4%BD%A0%E6%B3%A8%E6%84%8F%E5%88%B0%E4%BA%86%E5%90%97%EF%BC%9F.html</url>
     <content><![CDATA[<p>本文将对一些小知识进行汇总，这些知识也许你用了 <code>python</code> 很久，但仍然没注意到。</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-操作文件的-x-模式"><a href="#1-操作文件的-x-模式" class="headerlink" title="1.操作文件的 x 模式"></a>1.操作文件的 x 模式</h2><p>对文件进行操作的 <code>opend</code> 函数大家都很熟悉，但是你注意到它还有一种模式为 <code>x</code> 吗？</p>
@@ -2061,7 +2061,7 @@ noname
   </entry>
   <entry>
     <title>docker容器网桥连接</title>
-    <url>/2020/03/07/17.docker%E5%AE%B9%E5%99%A8%E7%BD%91%E6%A1%A5%E8%BF%9E%E6%8E%A5/</url>
+    <url>/17.docker%E5%AE%B9%E5%99%A8%E7%BD%91%E6%A1%A5%E8%BF%9E%E6%8E%A5.html</url>
     <content><![CDATA[<p>容器之间如何互相通讯？具体的命令有哪些？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="网桥"><a href="#网桥" class="headerlink" title="网桥"></a>网桥</h1><p>网桥可以简单的理解为「局域网」，使加入网桥的容器之间可以互相通讯、暴露全部链接，同时与外界又保证了相对隔离的运行环境。</p>
@@ -2089,7 +2089,7 @@ noname
   </entry>
   <entry>
     <title>docker容器数据持久化</title>
-    <url>/2020/03/06/16.docker%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</url>
+    <url>/16.docker%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96.html</url>
     <content><![CDATA[<p><code>docker</code> 容器内的数据是独立于镜像之外的，那么如何将其持久化到宿主机呢？答案便是利用「数据卷」，那什么又是「数据卷」呢？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h1><p><strong>数据卷其实就是一个目录或者一个文件</strong>，该目录（或文件）可以存在于宿主机上。将此目录（或文件）映射到容器中，便可以持久化容器内的数据到宿主机。如果目录不存在于宿主机上，而是存在于一个容器内部，那么此容器便可以被称为「<strong>数据卷容器</strong>」</p>
@@ -2247,7 +2247,7 @@ hello world</code></pre>
   </entry>
   <entry>
     <title>分享一份全国行政区划sql数据库表</title>
-    <url>/2020/03/04/30.%E5%88%86%E4%BA%AB%E4%B8%80%E4%BB%BD%E5%85%A8%E5%9B%BD%E8%A1%8C%E6%94%BF%E5%8C%BA%E5%88%92sql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8/</url>
+    <url>/30.%E5%88%86%E4%BA%AB%E4%B8%80%E4%BB%BD%E5%85%A8%E5%9B%BD%E8%A1%8C%E6%94%BF%E5%8C%BA%E5%88%92sql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8.html</url>
     <content><![CDATA[<p>还在为寻找全国行政区划的数据而烦恼吗？还在因为一个 <code>Excel</code> 表格无法确定信息是否全面而惆怅吗？快来看看为你准备好的东西吧！</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>在软件开发的过程中，最基础最重要但是又最不容易寻找的一份数据便是「全国行政区划信息」。为了解决大家的烦恼，此处提供一份 <code>sql</code> 数据库文件，直接导入即可使用，省时省力，快来实践一下吧。</p>
@@ -2277,7 +2277,7 @@ hello world</code></pre>
   </entry>
   <entry>
     <title>一起来看看火爆的手机号码一键登录</title>
-    <url>/2020/03/03/9.%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%9C%8B%E7%9C%8B%E7%81%AB%E7%88%86%E7%9A%84%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81%E4%B8%80%E9%94%AE%E7%99%BB%E5%BD%95/</url>
+    <url>/9.%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%9C%8B%E7%9C%8B%E7%81%AB%E7%88%86%E7%9A%84%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81%E4%B8%80%E9%94%AE%E7%99%BB%E5%BD%95.html</url>
     <content><![CDATA[<p>不知你是否发现：大批手机 <code>app</code> 登录页面，突然之间变成了一键登录。之前大火的 <code>通过手机号码获取短信验证码</code> 登录模式正悄悄退去。这神奇的操作是如何实现的呢？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1.背景"></a>1.背景</h2><p>之前所有的登录页面千篇一律为「手机号」「验证码」（暂且忽略账号密码以及第三方登录模式），这是因为想要验证「你就是你」，在手机号实名认证的时代，通过向号主本人发送验证码来验证登录是较为稳妥的方式，事实证明也的确如此。但是受网络延迟以及操作繁琐等影响，对于用户留存以及用户新增有着不小的挑战。</p>
@@ -2314,7 +2314,7 @@ hello world</code></pre>
   </entry>
   <entry>
     <title>关系数据库之存储过程</title>
-    <url>/2020/02/25/32.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</url>
+    <url>/32.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.html</url>
     <content><![CDATA[<p>很多人在上学期间，也许并未学习过关系数据库中「存储过程」的相关内容，那今天就来学习一下吧。</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>无论是 <code>MySQL</code> 还是 <code>SQL Server</code> 数据库，最新版本都已支持『存储过程』。但是为了通用性，本文章以 <code>MySQL</code> 为例。</p>
@@ -2619,7 +2619,7 @@ mysql <span class="token operator">></span> <span class="token keyword">DELIMITE
   </entry>
   <entry>
     <title>数据结构与算法之排序</title>
-    <url>/2020/02/15/6.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%8E%92%E5%BA%8F/</url>
+    <url>/6.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%8E%92%E5%BA%8F.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><strong>排序的归纳以及时间复杂度表</strong><br><img src="https://i.loli.net/2020/03/23/7KQYAkbX4RwBgml.png" alt="排序时间复杂度"></p>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p><strong>冒泡排序是一个比较简单的排序，它是一次比较相邻两个元素的值，如何顺序错误就交换两个数的位置，一直到没有交换的数为止，排序结束。</strong></p>
@@ -2796,7 +2796,7 @@ mysql <span class="token operator">></span> <span class="token keyword">DELIMITE
   </entry>
   <entry>
     <title>单片机开发板引脚图</title>
-    <url>/2020/02/12/5.%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE/</url>
+    <url>/5.%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%9B%BE.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="Arduino-开发板引脚图"><a href="#Arduino-开发板引脚图" class="headerlink" title="Arduino 开发板引脚图"></a>Arduino 开发板引脚图</h2><p><img src="https://i.loli.net/2020/03/23/RtHcZmr7dW5ljJ1.png" alt="1"><br><img src="https://i.loli.net/2020/03/23/YTt1iCPKv9AxVLr.png" alt="2"></p>
 <p><img src="https://i.loli.net/2020/03/23/XnrG3CcTbEVhYPJ.png" alt="3"><br><img src="https://i.loli.net/2020/03/23/qjebOdw6RU9vaiL.png" alt="4"></p>
@@ -2814,7 +2814,7 @@ mysql <span class="token operator">></span> <span class="token keyword">DELIMITE
   </entry>
   <entry>
     <title>关系数据库之视图</title>
-    <url>/2020/02/10/33.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E8%A7%86%E5%9B%BE/</url>
+    <url>/33.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B9%8B%E8%A7%86%E5%9B%BE.html</url>
     <content><![CDATA[<p>请问视图是什么？视图相关语句有哪些？视图在什么场景下使用？夺命三连</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>对于关系数据库来说，绕不开的一个概念便是『视图』，带着篇首的几个问题，我们来认真学习一下。</p>
@@ -2861,7 +2861,7 @@ GO</code></pre>
   </entry>
   <entry>
     <title>C语言之字节序</title>
-    <url>/2020/02/10/4.C%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E8%8A%82%E5%BA%8F/</url>
+    <url>/4.C%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E8%8A%82%E5%BA%8F.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="字节序理解"><a href="#字节序理解" class="headerlink" title="字节序理解"></a>字节序理解</h2><p>字节序其实就是数据在内存中的存储方式，因为内存的地址用高低位之分，数据也有高低位，所以按照存放的顺序一般可分为大端字节序，和小段字节序。</p>
 <p>生活中我们放东西的顺序也是不一样的，有的人习惯性的将自己的物品放在自己的左手边，有的人就习惯性的放在自己的右手边，那对于电脑来说，cpu的不同，内存存储多字节数据的存储方式也相应的不同。</p>
@@ -2909,7 +2909,7 @@ GO</code></pre>
   </entry>
   <entry>
     <title>git仓库上传了个无法点开的空文件夹是什么鬼？</title>
-    <url>/2020/02/09/21.git%E4%BB%93%E5%BA%93%E4%B8%8A%E4%BC%A0%E4%BA%86%E4%B8%AA%E6%97%A0%E6%B3%95%E7%82%B9%E5%BC%80%E7%9A%84%E7%A9%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E6%98%AF%E4%BB%80%E4%B9%88%E9%AC%BC%EF%BC%9F/</url>
+    <url>/21.git%E4%BB%93%E5%BA%93%E4%B8%8A%E4%BC%A0%E4%BA%86%E4%B8%AA%E6%97%A0%E6%B3%95%E7%82%B9%E5%BC%80%E7%9A%84%E7%A9%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E6%98%AF%E4%BB%80%E4%B9%88%E9%AC%BC%EF%BC%9F.html</url>
     <content><![CDATA[<p>怪事年年有，今年也忒多了，在仓库上传到 GitHub 后，偶然在 GitHub 中瞄了一眼，我的天？这个图标不像文件夹啊？这个怎么点不开？git 上传正常啊？本地工作区和暂存区都是干净的了啊？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h2><p>本地仓库提交后，<code>GitHub</code> 中某文件夹无法正常点击，内容无法显示。</p>
@@ -2958,7 +2958,7 @@ git push</code></pre>
   </entry>
   <entry>
     <title>C语言之字符串处理</title>
-    <url>/2020/02/09/3.c%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
+    <url>/3.c%E8%AF%AD%E8%A8%80%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0.html</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h1 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><ul>
 <li>在c语言的学习过程中，我们会学习很多字符串处理函数，入strlen，strcpy，strcmp等等,使用也特别简单，只需要调用库函数就行。</li>
@@ -3226,7 +3226,7 @@ git push</code></pre>
   </entry>
   <entry>
     <title>elasticsearch中join类型数据如何进行父子文档查询</title>
-    <url>/2020/02/07/19.elasticsearch%E4%B8%ADjoin%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E7%88%B6%E5%AD%90%E6%96%87%E6%A1%A3%E6%9F%A5%E8%AF%A2/</url>
+    <url>/19.elasticsearch%E4%B8%ADjoin%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E7%88%B6%E5%AD%90%E6%96%87%E6%A1%A3%E6%9F%A5%E8%AF%A2.html</url>
     <content><![CDATA[<p>ES 中 join 类型数据如何根据父文档查询全部子文档？又如何根据子文档查询其父文档呢？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-join-简介"><a href="#1-join-简介" class="headerlink" title="1.join 简介"></a>1.join 简介</h2><p>在 <code>ES</code> 中有一种特殊的数据类型『<code>join</code>』，被形象地称为父子文档。它是一种可以在同一索引中存放两种有关系数据的数据类型，类似于关系数据库中让两张表发生关系的<strong>外键 <code>FOREIGN KEY</code></strong> 。</p>
@@ -3334,7 +3334,7 @@ git push</code></pre>
   </entry>
   <entry>
     <title>计算机网络知识点总结</title>
-    <url>/2020/02/02/11.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</url>
+    <url>/11.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93.html</url>
     <content><![CDATA[<p><strong>《计算机网络》第五版 谢希仁</strong> 知识点大汇总</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-OSI、TCP-IP、五层协议的体系结构以及各层协议"><a href="#1-OSI、TCP-IP、五层协议的体系结构以及各层协议" class="headerlink" title="1.OSI、TCP/IP、五层协议的体系结构以及各层协议"></a>1.OSI、TCP/IP、五层协议的体系结构以及各层协议</h2><p><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/11/1.png" alt="1"></p>
@@ -3486,7 +3486,7 @@ C（以110开头）192～223 0～255 0～255 /  24     1～254               /  
   </entry>
   <entry>
     <title>图</title>
-    <url>/2020/01/27/10.%E5%9B%BE/</url>
+    <url>/10.%E5%9B%BE.html</url>
     <content><![CDATA[<p>此图非彼图，今天来学习一种十分重要，在生活中也经常使用的数据结构「图」</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="一、图"><a href="#一、图" class="headerlink" title="一、图"></a>一、图</h2><p>图就是由一些点与边组成，点之间是边，边两头有点，类似于我们所画的思维导图。根据点之间连接的边是否有具体指向区分为『有向图』和『无向图』。</p>
@@ -3562,7 +3562,7 @@ search<span class="token punctuation">(</span><span class="token string">"小明
   </entry>
   <entry>
     <title>CentOS这些情况你也遇到过</title>
-    <url>/2019/12/22/13.CentOS%E8%BF%99%E4%BA%9B%E6%83%85%E5%86%B5%E4%BD%A0%E4%B9%9F%E9%81%87%E5%88%B0%E8%BF%87/</url>
+    <url>/13.CentOS%E8%BF%99%E4%BA%9B%E6%83%85%E5%86%B5%E4%BD%A0%E4%B9%9F%E9%81%87%E5%88%B0%E8%BF%87.html</url>
     <content><![CDATA[<p>CentOS 虚拟机许久未用，忘记密码如何是好？删掉再来又岂能甘心？想安装某个命令，直接 yum install 就可以了吗？远程连接服务器报错该怎样操作？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-CentOS-无法登陆情况下修改密码"><a href="#1-CentOS-无法登陆情况下修改密码" class="headerlink" title="1.CentOS 无法登陆情况下修改密码"></a>1.CentOS 无法登陆情况下修改密码</h2><p><strong>背景：</strong>虚拟机忘记 <code>root</code> 密码，不知如何登陆</p>
@@ -3641,7 +3641,7 @@ Host key verification failed.</code></pre>
   </entry>
   <entry>
     <title>crontab执行python脚本不成功解决方案？（续）</title>
-    <url>/2019/11/17/27.%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/</url>
+    <url>/27.%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC.html</url>
     <content><![CDATA[<p>Linux 设置定时任务，crontab 执行 python 脚本不生效的问题：</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>尝试方法：</p>
@@ -3685,7 +3685,7 @@ PYTHONIOENCODING=utf-8 /usr/bin/python3 mail_reminder.py >> log.txt 2>&1</code><
   </entry>
   <entry>
     <title>bat脚本常用命令</title>
-    <url>/2019/11/14/12.bat%E8%84%9A%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <url>/12.bat%E8%84%9A%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</url>
     <content><![CDATA[<p>bat 脚本？如果不是从事微软开发相关工作的人员，是不是感觉很耳熟但是又好像不熟悉？还等什么，一睹为快</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>bat 脚本是 windows 上所用的脚本，我们经常使用的 cmd 一些命令就可以使用。也许你会说为什么不使用 powershell 脚本？因为古老的一些服务器上面没有安装 powershell 你信不信？比如 windows server 2003。</p>
@@ -3734,7 +3734,7 @@ PYTHONIOENCODING=utf-8 /usr/bin/python3 mail_reminder.py >> log.txt 2>&1</code><
   </entry>
   <entry>
     <title>python 字符串前面的那些特殊字符</title>
-    <url>/2019/11/04/26.python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E9%9D%A2%E7%9A%84%E9%82%A3%E4%BA%9B%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/</url>
+    <url>/26.python%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E9%9D%A2%E7%9A%84%E9%82%A3%E4%BA%9B%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6.html</url>
     <content><![CDATA[<p>对于 Python 的字符串大家并不陌生，引号引用即为字符串。那么字符串前面经常加的一些特殊字母就让初学者懵逼了，今天我们就来详细讲一下 ……</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-u"><a href="#1-u" class="headerlink" title="1.u"></a>1.u</h2><p>作为程序员，看到 <code>u</code> 字符，首先想到的便是 <code>Unicode</code> 这个单词。没错，它确实也代表此含义。目的是告知后面字符串采用 <code>Unicode</code> 编码格式，应用对象自然是容易出现问题的<strong>中文字符串</strong>。</p>
@@ -3766,7 +3766,7 @@ str<span class="token punctuation">.</span>encode<span class="token punctuation"
   </entry>
   <entry>
     <title>crontab定时执行python脚本不成功解决方案</title>
-    <url>/2019/10/31/14.crontab%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC%E4%B8%8D%E6%88%90%E5%8A%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <url>/14.crontab%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8Cpython%E8%84%9A%E6%9C%AC%E4%B8%8D%E6%88%90%E5%8A%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html</url>
     <content><![CDATA[<p>目前有一个需求是定时执行某个 python 脚本，但是在 Linux 上设置 crontab 后，不生效？手动执行生效？于是使用下面的方法执行即可：</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>大体思路为先写一个 <code>shell</code> 脚本，脚本中执行 <code>python</code> 文件，然后定时执行 <code>shell</code> 脚本即可。具体原因不明，正在探索中 …… 目前只提供一种解决方案。</p>
@@ -3796,7 +3796,7 @@ cd /opt
   </entry>
   <entry>
     <title>python导入导出pip环境中所有模块</title>
-    <url>/2019/10/28/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97/</url>
+    <url>/24.python%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BApip%E7%8E%AF%E5%A2%83%E4%B8%AD%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97.html</url>
     <content><![CDATA[<p>python 环境如何搭建？项目依赖模块如何安装？备份环境时如何将所有 pip 安装的模块导出？请看下文</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>导出所有模块：</p>
@@ -3817,7 +3817,7 @@ cd /opt
   </entry>
   <entry>
     <title>hexo命令速查小册</title>
-    <url>/2019/10/27/23.hexo%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E5%B0%8F%E5%86%8C/</url>
+    <url>/23.hexo%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E5%B0%8F%E5%86%8C.html</url>
     <content><![CDATA[<p>最近都在搭建自己的博客，不断的调整显示效果，以及添加一些初始功能，总算大体框架完成，细枝末节还有待商榷。我的博客地址为: <a href="http://www.8868866.xyz/">http://www.8868866.xyz/</a>  ，希望大家多多捧场 ~ 当然也希望大家多多关注公众号『大海的BLOG』</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>搭建博客的过程中使用到了框架 Node.js、HEXO 以及 GitHub 。</p>
@@ -3912,7 +3912,7 @@ categories:
   </entry>
   <entry>
     <title>Elasticsearch 中这些必备 API 你晓得嘛？</title>
-    <url>/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/</url>
+    <url>/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F.html</url>
     <content><![CDATA[<p>众所周知，ES 中的 mapping 只能在索引建立初期进行创建，且建立之后不可更改。mapping 对应的字段会映射成指定类型，未定义字段则自动映射，一般为 text 类型。那么想更改索引名或者更改某字段的 mapping 时，是否就束手无策了呢？当然不是！！！官方提供了一个接口，供索引备份迁移操作使用，那便是 <strong>reindex</strong>。当旧索引与新索引在同一节点时，效率相当高，万条数据瞬间完成（<code>大约只需0.4s</code>）。数百万数据也只需几分钟即可完成 操作，是不是很溜呢？快来学习一下吧。</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <h2 id="1-索引备份迁移"><a href="#1-索引备份迁移" class="headerlink" title="1.索引备份迁移"></a>1.索引备份迁移</h2><p><strong>请求方式：POST</strong></p>
@@ -4014,7 +4014,7 @@ categories:
   </entry>
   <entry>
     <title>Git 上传大文件</title>
-    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
+    <url>/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6.html</url>
     <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
@@ -4054,7 +4054,7 @@ git lfs track 'test.tar.gz'</code></pre>
   </entry>
   <entry>
     <title>常用 es 查询盘点</title>
-    <url>/2019/10/25/28.%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9/</url>
+    <url>/28.%E5%B8%B8%E7%94%A8-es-%E6%9F%A5%E8%AF%A2%E7%9B%98%E7%82%B9.html</url>
     <content><![CDATA[<p>熟悉了关系型数据库的结构概念以及查询，再去使用属于非关系型数据库的 Elasticsearch 时，简直是噩梦。第一道难关便是概念上的转换。索引？类型？文档？what？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <blockquote>
@@ -4232,7 +4232,7 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
   </entry>
   <entry>
     <title>Git 彻底删除某个commit的方法</title>
-    <url>/2019/10/25/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <url>/22.Git-%E5%BD%BB%E5%BA%95%E5%88%A0%E9%99%A4%E6%9F%90%E4%B8%AAcommit%E7%9A%84%E6%96%B9%E6%B3%95.html</url>
     <content><![CDATA[<p>如果因为一些原因，需要删除某个错误的  commit ，而且需要干净的操作，彻底让其消失，不留痕迹，该如何操作？</p>
 <p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
 <blockquote>
@@ -4262,39 +4262,6 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
       <tags>
         <tag>网络类</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[
-<!-- 因为vue和botui更新导至bug,现将对话移至js下的botui中配置 -->
-<div class="entry-content">
-  <div class="moe-mashiro" style="text-align:center; font-size: 50px; margin-bottom: 20px;">[关于大海]</div>
-  <div id="hello-mashiro" class="popcontainer" style="min-height: 300px; padding: 2px 6px 4px; background-color: rgba(242, 242, 242, 0.5); border-radius: 10px;">
-    <center>
-    <p>
-    </p>
-    <h4>
-    与&nbsp;<ruby>
-    大海&nbsp;<rp>
-    （</rp>
-    <rt>
-    陌生人，你</rt>
-    <rp>
-    ）</rp>
-    </ruby>
-    对话中...</h4>
-    <p>
-    </p>
-    </center>
-    <bot-ui></botui>
-  </div>
-</div>
-<script src="/js/botui.js"></script>
-<script>
-bot_ui_ini()
-</script>
-]]></content>
   </entry>
   <entry>
     <title>comment</title>
@@ -4330,6 +4297,49 @@ bot_ui_ini()
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[
+<!-- 因为vue和botui更新导至bug,现将对话移至js下的botui中配置 -->
+<div class="entry-content">
+  <div class="moe-mashiro" style="text-align:center; font-size: 50px; margin-bottom: 20px;">[关于大海]</div>
+  <div id="hello-mashiro" class="popcontainer" style="min-height: 300px; padding: 2px 6px 4px; background-color: rgba(242, 242, 242, 0.5); border-radius: 10px;">
+    <center>
+    <p>
+    </p>
+    <h4>
+    与&nbsp;<ruby>
+    大海&nbsp;<rp>
+    （</rp>
+    <rt>
+    陌生人，你</rt>
+    <rp>
+    ）</rp>
+    </ruby>
+    对话中...</h4>
+    <p>
+    </p>
+    </center>
+    <bot-ui></botui>
+  </div>
+</div>
+<script src="/js/botui.js"></script>
+<script>
+bot_ui_ini()
+</script>
+]]></content>
+  </entry>
+  <entry>
+    <title>donate</title>
+    <url>/donate/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>rss</title>
+    <url>/rss/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>music</title>
     <url>/music/index.html</url>
     <content><![CDATA[
@@ -4343,16 +4353,6 @@ bot_ui_ini()
   <entry>
     <title>tags</title>
     <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>rss</title>
-    <url>/rss/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
