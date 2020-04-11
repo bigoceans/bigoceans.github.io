@@ -1,0 +1,31 @@
+#hexo robots.txt
+User-agent: *
+
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /categories/技术/
+Allow: /categories/安卓/
+Allow: /categories/微软/
+Allow: /categories/Win趣/
+Allow: /categories/随想/
+Allow: /categories/转载/
+Allow: /tags/
+Allow: /bangumi/
+Allow: /tags/悦读/
+Allow: /music/
+Allow: /comment/
+Allow: /links/
+Allow: /donate/
+Allow: /about/
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: https://www.8868866.xyz/search.xml
+Sitemap: https://www.8868866.xyz/sitemap.xml
+Sitemap: https://www.8868866.xyz/baidusitemap.xml
