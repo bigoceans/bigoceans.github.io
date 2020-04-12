@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>XML-解析失败原因初步分析</title>
+    <url>/2020/04/13/43.XML-%E8%A7%A3%E6%9E%90%E5%A4%B1%E8%B4%A5/</url>
+    <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<h1 id="首先放出有问题的代码"><a href="#首先放出有问题的代码" class="headerlink" title="首先放出有问题的代码"></a>首先放出有问题的代码</h1><blockquote>
+<p>之所以直入主题是因为肝完了事情，急需入睡。hiahia</p>
+</blockquote>
+<pre class=" language-html"><code class="language-html">hiboard:updateUrl="https://xxx.com/xxx/api/book/xxx?xx=negative&amp;p3=1704xxx3"</code></pre>
+<h1 id="查阅资料的收获"><a href="#查阅资料的收获" class="headerlink" title="查阅资料的收获"></a>查阅资料的收获</h1><h2 id="amp-在XML里是要被转义的，不然会导致解析失败。"><a href="#amp-在XML里是要被转义的，不然会导致解析失败。" class="headerlink" title="&amp; 在XML里是要被转义的，不然会导致解析失败。"></a>&amp; 在XML里是要被转义的，不然会导致解析失败。</h2><pre><code>同理的还有：
+&amp;lt; &lt; 小于号 
+&amp;gt; &gt; 大于号 
+&amp;amp; &amp; 和 
+&amp;apos; &#39; 单引号 
+&amp;quot; &quot; 双引号</code></pre><h1 id="修改后的代码"><a href="#修改后的代码" class="headerlink" title="修改后的代码"></a>修改后的代码</h1><pre class=" language-html"><code class="language-html">hiboard:updateUrl="https://xxx.com/xxx/api/book/xxx?xx=negative<span class="token entity" title="&amp;">&amp;amp;</span>p3=1704xxx3"</code></pre>
+<p><strong>成功</strong>，吸取的经验就是：不要在WordPress /repo里改代码，一切还是在IDE里边修改好，有什么问题都能够给出提示。为了找问题出哪里真的是肝的一批。。。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>蓝桥杯-最大子阵</title>
     <url>/2020/04/01/42.%E8%93%9D%E6%A1%A5%E6%9D%AF-%E6%9C%80%E5%A4%A7%E5%AD%90%E9%98%B5/</url>
     <content><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
@@ -4297,25 +4319,9 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>bangumi</title>
-    <url>/bangumi/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>donate</title>
     <url>/donate/index.html</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>music</title>
-    <url>/music/index.html</url>
-    <content><![CDATA[
-<p><meting-js
-  server="netease"
-  type="playlist"
-  id="4934609313"
-  mutex="true"><br></meting-js></p>
-]]></content>
   </entry>
   <entry>
     <title>comment</title>
@@ -4344,6 +4350,22 @@ bot_ui_ini()
     <title>links</title>
     <url>/links/index.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>bangumi</title>
+    <url>/bangumi/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>music</title>
+    <url>/music/index.html</url>
+    <content><![CDATA[
+<p><meting-js
+  server="netease"
+  type="playlist"
+  id="4934609313"
+  mutex="true"><br></meting-js></p>
+]]></content>
   </entry>
   <entry>
     <title>tags</title>
