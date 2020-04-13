@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">复用Django应用，使其可以通过pip安装 | BIGOcean&#39;BLOG</title>
+  <title itemprop="name">links | BIGOcean&#39;BLOG</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -429,284 +429,130 @@
   </div>
 </header>
 
-      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
-<div class="pattern-center-blank"></div>
-
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://i.loli.net/2020/03/23/uqzUMCG6dahjBbx.jpg);" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/uqzUMCG6dahjBbx.jpg">
-    </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      复用Django应用，使其可以通过pip安装</h1>
-      <p class="entry-census">
-        <span>
-          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">
-            <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg">
-          </a>
-        </span>
-        <span>
-          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener">BIGOcean</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2020-3-13<span class="bull">
-        ·</span>
-      <span id="busuanzi_value_page_pv"></span>次阅读</p>
-    </header>
+      <div class="pattern-center-blank">
+</div>
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/banner/友人帐.jpg" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/banner/友人帐.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
   </div>
-
+  <header class="pattern-header ">
+    <h1 class="entry-title">
+    友人帐</h1>
+  </header>
+</div>
 <div id="content" class="site-content">
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <p>想自己打包一个应用，可以像其他模块一样通过 <code>pip install</code> 安装吗？在 <code>Django</code> 项目中，一个应用如果通过此方式随用随安装是不是很帅气？快来看一下如何操作吧！</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<h1 id="1-前提"><a href="#1-前提" class="headerlink" title="1.前提"></a>1.前提</h1><h2 id="1-1应用规范"><a href="#1-1应用规范" class="headerlink" title="1.1应用规范"></a>1.1应用规范</h2><p>为了方便打包，你的应用应该解耦合，并且所有文件都规范放置。其中需要注意：按照 <code>Django3.0</code> 官方文档描述，每个应用中的模板文件 <code>templates</code> 应与主项目中通用模板文件 <code>templates</code> 分离，最主要目的是为了创建可复用应用。</p>
-<blockquote>
-<p>官方文档原文：Just like the static files, we could have all our templates together, in one big templates directory, and it would work perfectly well. However, templates that belong to a particular application should be placed in that application’s template directory.</p>
-</blockquote>
-<p><strong>保证应用所需文件全部包含在应用目录中</strong>即可开始操作。</p>
-<h2 id="1-2-环境"><a href="#1-2-环境" class="headerlink" title="1.2 环境"></a>1.2 环境</h2><p>安装模块：</p>
-<pre class=" language-shell"><code class="language-shell"> pip install setuptools 
- pip install wheel</code></pre>
-<h1 id="2-操作"><a href="#2-操作" class="headerlink" title="2.操作"></a>2.操作</h1><h2 id="2-1-准备文件"><a href="#2-1-准备文件" class="headerlink" title="2.1 准备文件"></a>2.1 准备文件</h2><p>比如我要打包应用 <code>polls</code> ：</p>
-<pre class=" language-shell"><code class="language-shell">polls
-├── __init__.py
-├── __pycache__
-│   ├── __init__.cpython-37.pyc
-│   ├── admin.cpython-37.pyc
-│   ├── apps.cpython-37.pyc
-│   ├── models.cpython-37.pyc
-│   ├── tests.cpython-37.pyc
-│   ├── urls.cpython-37.pyc
-│   ├── views.cpython-37.pyc
-│   └── views_bak.cpython-37.pyc
-├── admin.py
-├── apps.py
-├── migrations
-│   ├── 0001_initial.py
-│   ├── __init__.py
-│   └── __pycache__
-│       ├── 0001_initial.cpython-37.pyc
-│       └── __init__.cpython-37.pyc
-├── models.py
-├── static
-│   └── polls
-│       ├── images
-│       │   └── 1574779118421.jpg
-│       └── style.css
-├── templates
-│   └── polls
-│       ├── details.html
-│       ├── index.html
-│       └── results.html
-├── tests.py
-├── urls.py
-├── views.py
-└── views_bak.py # 视图备份文件</code></pre>
-<h3 id="2-1-1-步骤"><a href="#2-1-1-步骤" class="headerlink" title="2.1.1 步骤"></a>2.1.1 步骤</h3><h4 id="2-1-1-1-创建总目录"><a href="#2-1-1-1-创建总目录" class="headerlink" title="2.1.1.1 创建总目录"></a>2.1.1.1 创建总目录</h4><p>1) 创建总目录，比如创建目录 <code>django-polls</code></p>
-<p>2) 然后将应用 <code>polls</code> 移入上方总目录，此时它的目录结构应该是：</p>
-<pre class=" language-shell"><code class="language-shell">django-polls/polls</code></pre>
-<h4 id="2-1-1-2-创建说明文档"><a href="#2-1-1-2-创建说明文档" class="headerlink" title="2.1.1.2 创建说明文档"></a>2.1.1.2 创建说明文档</h4><p>创建说明文档 <code>django-polls/README.rst</code></p>
-<pre class=" language-txt"><code class="language-txt">=====
-Polls
-=====
-
-Polls is a Django app to conduct Web-based polls. For each question,
-visitors can choose between a fixed number of answers.
-
-Detailed documentation is in the "docs" directory.
-
-Quick start
------------
-
-1. Add "polls" to your INSTALLED_APPS setting like this::
-
-    INSTALLED_APPS = [
-        ...
-        'polls',
-    ]
-
-2. Include the polls URLconf in your project urls.py like this::
-
-    path('polls/', include('polls.urls')),
-
-3. Run ``python manage.py migrate`` to create the polls models.
-
-4. Start the development server and visit http://127.0.0.1:8000/admin/
-   to create a poll (you'll need the Admin app enabled).
-
-5. Visit http://127.0.0.1:8000/polls/ to participate in the poll.</code></pre>
-<h4 id="2-1-1-3-创建授权协议文件"><a href="#2-1-1-3-创建授权协议文件" class="headerlink" title="2.1.1.3 创建授权协议文件"></a>2.1.1.3 创建授权协议文件</h4><p>创建一个 <code>django-polls/LICENSE</code> 文件</p>
-<pre class=" language-txt"><code class="language-txt">Copyright (c) 2018 The Python Packaging Authority
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</code></pre>
-<blockquote>
-<p>协议文件自己可以从网上寻找生成方式</p>
-</blockquote>
-<h4 id="2-1-1-4-创建安装文件"><a href="#2-1-1-4-创建安装文件" class="headerlink" title="2.1.1.4 创建安装文件"></a>2.1.1.4 创建安装文件</h4><p>1) 创建文件 <code>django-polls/setup.cfg</code> （此文件为模块的配置信息，比如作者的姓名、联系方式等）</p>
-<pre class=" language-txt"><code class="language-txt">[metadata]
-name = django-polls
-version = 0.1
-description = A Django app to conduct Web-based polls.
-long_description = file: README.rst
-url = https://www.pythonnote.cn
-author = Ethan Yan
-author_email = yanyuliang6@163.com
-license = MIT  # Example license
-classifiers =
-    Environment :: Web Environment
-    Framework :: Django
-    Framework :: Django :: X.Y  # Replace "X.Y" as appropriate
-    Intended Audience :: Developers
-    License :: OSI Approved :: BSD License
-    Operating System :: OS Independent
-    Programming Language :: Python
-    Programming Language :: Python :: 3
-    Programming Language :: Python :: 3 :: Only
-    Programming Language :: Python :: 3.6
-    Programming Language :: Python :: 3.7
-    Programming Language :: Python :: 3.8
-    Topic :: Internet :: WWW/HTTP
-    Topic :: Internet :: WWW/HTTP :: Dynamic Content
-
-[options]
-include_package_data = true
-packages = find:</code></pre>
-<p>2) 创建文件 <code>django-polls/setup.py</code> （此文件是为了构建和安装应用）</p>
-<pre class=" language-txt"><code class="language-txt">from setuptools import setup
-
-setup()</code></pre>
-<h4 id="2-1-1-5-创建引用文件"><a href="#2-1-1-5-创建引用文件" class="headerlink" title="2.1.1.5 创建引用文件"></a>2.1.1.5 创建引用文件</h4><p>默认包中只包含 <code>Python</code> 模块和包。为了包含额外文件，我们需要创建一个名为 <code>MANIFEST.in</code> 的文件。为了包含模板、<code>README.rst</code> 和我们的 <code>LICENSE</code> 文件，创建文件 <code>django-polls/MANIFEST.in</code> 包含以下内容：</p>
-<pre class=" language-shell"><code class="language-shell">include LICENSE
-include README.rst
-recursive-include polls/static *
-recursive-include polls/templates *
-recursive-include docs *</code></pre>
-<blockquote>
-<p><code>docs</code> 目录为文档存放目录，可有可无，视情况而定。如果需要引入其他文件，按照格式在上述文件中补充即可。</p>
-</blockquote>
-<p>最终的目录结构如下：</p>
-<pre class=" language-shell"><code class="language-shell">django-polls
-├── LICENSE
-├── MANIFEST.in
-├── README.rst
-├── doc
-├── polls
-├── setup.cfg
-└── setup.py</code></pre>
-<h2 id="2-2-打包"><a href="#2-2-打包" class="headerlink" title="2.2 打包"></a>2.2 打包</h2><p>接下来快看一下如何打包吧！</p>
-<p>1) 进入总目录 <code>django-polls</code> 中</p>
-<p>2) 执行如下命令：</p>
-<pre class=" language-shell"><code class="language-shell">python setup.py sdist bdist_wheel</code></pre>
-<p>3) 最终的模块在如下位置：</p>
-<pre class=" language-shell"><code class="language-shell">dist
-├── django-polls-0.1.tar.gz
-└── django_polls-0.1-py3-none-any.whl</code></pre>
-<p><code>django-polls-0.1.tar.gz</code> 即打包好的应用。</p>
-<h2 id="2-3-安装使用"><a href="#2-3-安装使用" class="headerlink" title="2.3 安装使用"></a>2.3 安装使用</h2><p>在应用包所在目录执行如下命令即可安装：</p>
-<pre class=" language-shell"><code class="language-shell">python -m pip install django-polls-0.1.tar.gz </code></pre>
-<p>安装后如何在 <code>Django</code> 项目中使用呢？</p>
-<p>1) 在 <code>settings</code> 文件中添加如下应用：</p>
-<pre class=" language-shell"><code class="language-shell">INSTALLED_APPS = [
-        ...
-        'polls',
-    ]</code></pre>
-<p>2) 在 <code>urls</code> 文件中添加如下代码：</p>
-<pre class=" language-shell"><code class="language-shell">path('polls/', include('polls.urls')),</code></pre>
-<p>3) 迁移数据库文件，创建 <code>models</code>：</p>
-<pre class=" language-shell"><code class="language-shell">python manage.py migrate</code></pre>
-<p>然后即可使用。如果想要使用我打包好的应用体验一把，可以在微信公众号「全栈技术精选」后台回复关键字「polls应用包」获取模块。</p>
-<h2 id="2-4-卸载"><a href="#2-4-卸载" class="headerlink" title="2.4 卸载"></a>2.4 卸载</h2><p>卸载：</p>
-<pre class=" language-shell"><code class="language-shell">python -m pip uninstall django-polls</code></pre>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-
-        </div>
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/alipay.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/wechat.png"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2020/03/18/29.%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/post/24.png">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                多线程如何获取结果</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2020/03/12/15.Django%E8%BF%81%E7%A7%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://i.loli.net/2020/03/23/uqzUMCG6dahjBbx.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://i.loli.net/2020/03/23/uqzUMCG6dahjBbx.jpg">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                Django迁移数据库报错解决</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-      </section>
+  <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
+    <p>
+    欢迎交换友链 ꉂ(ˊᗜˋ)</p>
+    <p>
+      请留言告诉我你的：<br>
+      1、名字<br>
+      2、一句话介绍（熟人我会亲自帮写的）<br>
+      3、主页地址<br>
+    4、头像（HTTPS*，可在评论区上传）</p>
+    <p>
+      For Example：<br>
+      ★ Name: BIGOcean<br>
+      ★ Bio: 好少年光芒万丈<br>
+      ★ URL: https://www.8868866.xyz<br>
+      ★ Avatar: <a href="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" target="_blank" rel="nofollow">
       
+      获取嵌入代码</a>
+    </p>
+    <p style="font-size: 13px">
+    ※ 为保证友链质量，新申请的友链将经过筛选，请在收到我的回复邮件后再于贵站添加本站链接。原则上过去已添加友链不会轻易删除，如遇死链、改变网站用途（友链主要针对的是同类的博客），将单独移至“阵亡将士”分类中，下次清理时未整改的将移除；如遇盗版、破解、网页植入挖矿脚本、极低质量内容、单方面移除本站链接，将直接移除，恕不另行通知。</p>
+    
+      <div class="links">
+        
+          <h3 class="link-title"><span class="fake-title">1. 个人项目</span></h3>
+          
+            <div class="link-description">< (￣︶￣)></div>
+          
+          <ul class="link-items fontSmooth">
+            
+              <li class="link-item">
+                <a class="link-item-inner effect-apollo" href="https://ry16494086.icoc.bz/" title="高中" target="_blank" rel="friend">
+                  <img class="lazyload" onerror="imgError(this,1)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/1.jpg" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/1.jpg">
+                  <span class="sitename">
+                  同学录</span>
+                  <div class="linkdes">
+                  高中</div>
+                </a>
+              </li>
+            
+              <li class="link-item">
+                <a class="link-item-inner effect-apollo" href="https://66qxqw.coding-pages.com/" title="近百个小游戏的集合" target="_blank" rel="friend">
+                  <img class="lazyload" onerror="imgError(this,1)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/2.png" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/2.png">
+                  <span class="sitename">
+                  小游戏</span>
+                  <div class="linkdes">
+                  近百个小游戏的集合</div>
+                </a>
+              </li>
+            
+              <li class="link-item">
+                <a class="link-item-inner effect-apollo" href="https://66qxqw.coding-pages.com/" title="将VIP音乐格式的音乐放进来转换成mp3格式吧" target="_blank" rel="friend">
+                  <img class="lazyload" onerror="imgError(this,1)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/3.png" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/3.png">
+                  <span class="sitename">
+                  音乐解锁</span>
+                  <div class="linkdes">
+                  将VIP音乐格式的音乐放进来转换成mp3格式吧</div>
+                </a>
+              </li>
+            
+              <li class="link-item">
+                <a class="link-item-inner effect-apollo" href="https://uh2ys4.coding-pages.com/" title="内含各种有价值的网站！快来瞧瞧吧？！" target="_blank" rel="friend">
+                  <img class="lazyload" onerror="imgError(this,1)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/4.jpg" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/4.jpg">
+                  <span class="sitename">
+                  最牛导航</span>
+                  <div class="linkdes">
+                  内含各种有价值的网站！快来瞧瞧吧？！</div>
+                </a>
+              </li>
+            
+              <li class="link-item">
+                <a class="link-item-inner effect-apollo" href="https://avarlx.coding-pages.com/" title="高速CDN免费图床！还等什么？！" target="_blank" rel="friend">
+                  <img class="lazyload" onerror="imgError(this,1)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/5.jpg" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/link/5.jpg">
+                  <span class="sitename">
+                  CDN图床</span>
+                  <div class="linkdes">
+                  高速CDN免费图床！还等什么？！</div>
+                </a>
+              </li>
+            
+          </ul>
+        
+          <h3 class="link-title"><span class="fake-title">2. < (￣@￣)></span></h3>
+          
+            <div class="link-description">欢迎交换友链 ꉂ(ˊᗜˋ)</div>
+          
+          <ul class="link-items fontSmooth">
+            
+              <li class="link-item">
+                <a class="link-item-inner effect-apollo" href="https://shino.cc/fgvf" title="待交换" target="_blank" rel="friend">
+                  <img class="lazyload" onerror="imgError(this,1)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cloud.moezx.cc/Picture/svg/landscape/fields.svg" src="https://cloud.moezx.cc/Picture/svg/landscape/fields.svg">
+                  <span class="sitename">
+                  待交换</span>
+                  <div class="linkdes">
+                  待交换</div>
+                </a>
+              </li>
+            
+              <li class="link-item">
+                <a class="link-item-inner effect-apollo" href="https://shino.cc/fgvf" title="待交换" target="_blank" rel="friend">
+                  <img class="lazyload" onerror="imgError(this,1)" src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cloud.moezx.cc/Picture/svg/landscape/fields.svg" src="https://cloud.moezx.cc/Picture/svg/landscape/fields.svg">
+                  <span class="sitename">
+                  待交换</span>
+                  <div class="linkdes">
+                  待交换</div>
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    
+    
 <div id="vcomments"></div>
 <script>
   window.onload = function(){
@@ -722,25 +568,67 @@ recursive-include docs *</code></pre>
 </script>
 
 
-      <section class="author-profile">
-        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="https://bigocean1.gitee.io/" target="_blank" rel="noopener" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" itemprop="image" alt="BIGOcean" height="70" width="70"></a>
-          <div class="meta">
-            <span class="title">Author</span>
-            <h3 itemprop="name">
-            <a href="https://bigocean1.gitee.io/" target="_blank" itemprop="url" rel="author noopener">BIGOcean</a>
-            </h3>
-          </div>
-        </div>
-        <hr>
-        <p><i class="iconfont icon-write"></i>学习中...</p>
-      </section>
-    </main><!-- #main -->
-  </div><!-- #primary -->
+    <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+    <footer class="post-footer">
+      <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+      <div class="post-tags">
+      </div>
+      <div class="post-share">
+        <div class="social-share sharehidden share-component"></div>
+        <i class="iconfont show-share icon-forward"></i>
+      </div>
+    </footer><!-- .entry-footer -->
+  </article>
+  <section class="author-profile">
+    <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/bigoceans/cdn/img/custom/avatar.jpg" itemprop="image" alt="hojun" height="70" width="70"></a>
+      <div class="meta">
+        <span class="title">Author</span>
+        <h3 itemprop="name">
+        <a href="https://bigoceans.github.io" target="_blank" itemprop="url" rel="author noopener">BIGOcean</a>
+        </h3>
+      </div>
+    </div>
+    <hr>
+    <p><i class="iconfont icon-write"></i>面朝大海，春暖花开！</p>
+  </section>
+<!--   <div class="have-toc">
+  </div>
+  <div class="toc-container" style="height: 4886.5px;">
+    <div class="toc">
+      <ol class="toc-list ">
+        <li class="toc-list-item">
+          <a href="#toc-head-1" class="toc-link node-name--H3  is-active-link">
+          1. 个人项目</a>
+        </li>
+        <li class="toc-list-item">
+          <a href="#toc-head-2" class="toc-link node-name--H3 ">
+          2. 私人服务</a>
+        </li>
+        <li class="toc-list-item">
+          <a href="#toc-head-3" class="toc-link node-name--H3 ">
+          3. 后宫佳丽</a>
+        </li>
+        <li class="toc-list-item">
+          <a href="#toc-head-4" class="toc-link node-name--H3 ">
+          4. 小伙伴们</a>
+        </li>
+        <li class="toc-list-item">
+          <a href="#toc-head-5" class="toc-link node-name--H3 ">
+          5. 阵亡将士</a>
+        </li>
+        <li class="toc-list-item">
+          <a href="#toc-head-6" class="toc-link node-name--H3 ">
+          6. 大佬博客</a>
+        </li>
+        <li class="toc-list-item">
+          <a href="#toc-head-7" class="toc-link node-name--H3 ">
+          7. 特别链接</a>
+        </li>
+      </ol>
+    </div>
+  </div> -->
 </div>
-
-
-
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
