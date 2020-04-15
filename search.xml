@@ -4286,6 +4286,16 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>donate</title>
+    <url>/donate/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>bangumi</title>
+    <url>/bangumi/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index.html</url>
     <content><![CDATA[
@@ -4319,14 +4329,15 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>bangumi</title>
-    <url>/bangumi/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>music</title>
+    <url>/music/index.html</url>
+    <content><![CDATA[
+<p><meting-js
+  server="netease"
+  type="playlist"
+  id="4934609313"
+  mutex="true"><br></meting-js></p>
+]]></content>
   </entry>
   <entry>
     <title>comment</title>
@@ -4352,22 +4363,6 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>music</title>
-    <url>/music/index.html</url>
-    <content><![CDATA[
-<p><meting-js
-  server="netease"
-  type="playlist"
-  id="4934609313"
-  mutex="true"><br></meting-js></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>links</title>
-    <url>/links/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>rss</title>
     <url>/rss/index.html</url>
     <content><![CDATA[]]></content>
@@ -4375,6 +4370,11 @@ bot_ui_ini()
   <entry>
     <title>tags</title>
     <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>links</title>
+    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
