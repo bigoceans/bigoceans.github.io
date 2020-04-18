@@ -1182,7 +1182,7 @@ pause
 <p>MSDN,我告诉你：全部采用ed2k开头的链接进行下载，包含SHA1校验信息。而且ed2k下载链接可以使用迅雷、百度网盘等工具进行下载，如果条件允许，下载速度较官方的MCT下载工具相比有显著提升。另外和微软官网的相比，这里的收录相对更全，也更方便查找下载不同的版本。</p>
 </blockquote>
 <center>冗长的系统选择页面</center>
-![冗长的系统选择页面](https://i.loli.net/2020/03/21/DCZoOUcTlq6RQBX.gif)
+<a href="https://i.loli.net/2020/03/21/DCZoOUcTlq6RQBX.gif" target="_blank" rel="noopener" data-fancybox="images" data-caption="冗长的系统选择页面"><img src="https://i.loli.net/2020/03/21/DCZoOUcTlq6RQBX.gif" /></a>
 
 <p><strong>写给对系统安全格外重视的朋友</strong></p>
 <blockquote>
@@ -1211,7 +1211,7 @@ pause
 </blockquote>
 <h3 id="开始重装系统-以Win10为例"><a href="#开始重装系统-以Win10为例" class="headerlink" title="开始重装系统(以Win10为例)"></a>开始重装系统(以Win10为例)</h3><p><strong>首先你需要知道你的电脑进入”选择启动项选择”页面的快捷键是什么,或者是进入BIOS系统的快捷键是什么</strong></p>
 <center>其他品牌也可以试试比较大众的启动项选择快捷键</center>
-![各品牌台式机主板笔记本启动项](https://i.loli.net/2020/03/21/IU4vSlsDKrhjBzy.png)
+<a href="https://i.loli.net/2020/03/21/IU4vSlsDKrhjBzy.png" target="_blank" rel="noopener" data-fancybox="images" data-caption="各品牌台式机主板笔记本启动项"><img src="https://i.loli.net/2020/03/21/IU4vSlsDKrhjBzy.png" /></a>
 
 <p><strong>插入U盘，在按下电源键的瞬间请用最快手速狂戳对应电脑/主板的快捷键，比如大众一点的按键<code>F12/Delete</code></strong></p>
 <blockquote>
@@ -1234,7 +1234,7 @@ pause
 <p><strong>如今：</strong>到后来国外某知名论坛传出win10数字权利工具–HWIDGEN</p>
 </blockquote>
 <center>win10数字权利工具--HWIDGEN</center>
-![win10数字权利工具--HWIDGEN](https://i.loli.net/2020/03/21/61ejxSHT9IMGvyF.png)
+<a href="https://i.loli.net/2020/03/21/61ejxSHT9IMGvyF.png" target="_blank" rel="noopener" data-fancybox="images" data-caption="win10数字权利工具--HWIDGEN"><img src="https://i.loli.net/2020/03/21/61ejxSHT9IMGvyF.png" /></a>
 
 <blockquote>
 <p>在HWID出现之后，数字权利激活Windows10并不是难事了，只需要进行简单的点击操作就可以得到一个数字权利激活成功的Windows系统。<br><strong>科普：</strong>数字权利，是针对Windows10系统而言的一种激活方式。全称“使用数字许可证激活” 使用数字权利激活和普通激活方式有什么区别呢？十分重要的一点就是数字权利激活后支持重装，即在重装系统之后可以自动激活系统，保持正版！当然前提条件就是重装系统的时候需要保持和获取数字权利的系统版本保持一致并且需要确保没有更换硬件！<strong>可以简单的认为数字权利激活是永久激活！</strong>区别于kms激活，数字权利是永久的，无需90天循环和kms服务器，风险系数更小。<br><strong>HWID支持的版本：</strong>除Windows10 LTSC 2019 和Windows10 server系列系统外，换句话说：适用于大多数Windows10系统，例如win10家庭版、专业版、ltsb2016等等……</p>
@@ -1709,8 +1709,8 @@ int compDec(const void *a, const void *b) {
         <category>技术</category>
       </categories>
       <tags>
-        <tag>语言类</tag>
         <tag>算法类</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
@@ -2812,8 +2812,8 @@ mysql <span class="token operator">></span> <span class="token keyword">DELIMITE
         <category>技术</category>
       </categories>
       <tags>
-        <tag>语言类</tag>
         <tag>算法类</tag>
+        <tag>语言类</tag>
       </tags>
   </entry>
   <entry>
@@ -3933,46 +3933,6 @@ categories:
       </categories>
   </entry>
   <entry>
-    <title>Git 上传大文件</title>
-    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
-<h2 id="1-windows-平台安装-git-lfs"><a href="#1-windows-平台安装-git-lfs" class="headerlink" title="1.windows 平台安装 git-lfs"></a>1.windows 平台安装 git-lfs</h2><p>1.先打开网址：</p>
-<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//github.com/git-lfs/git-lfs/releases</code></pre>
-<p>2.然后点击最新版本的版本号，将页面拉取到最底部，下载安装：</p>
-<pre class=" language-shell"><code class="language-shell">Windows Installer</code></pre>
-<p>3.运行下载的 exe 文件：</p>
-<pre class=" language-shell"><code class="language-shell">windows installer</code></pre>
-<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>1.打开 <code>git bash</code>，首先输入下列命令开启 lfs 功能：</p>
-<pre class=" language-shell"><code class="language-shell">git lfs install</code></pre>
-<p>2.然后使用如下命令进行大文件追踪，然后会生成文件 <code>.gitattributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git lfs track '大文件名'
-# 追踪大文件test.tar.gz
-git lfs track 'test.tar.gz'</code></pre>
-<p>3.添加文件 <code>.gittributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git add .gitattributes</code></pre>
-<p>4.然后提交文件 <code>.gitattributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git commit -m 'submit .gitattributes file'</code></pre>
-<p>5.将文件 <code>.gitattributes</code> 推送到远程仓库：</p>
-<pre class=" language-shell"><code class="language-shell">git push -u origin master</code></pre>
-<p>6.添加大文件：</p>
-<pre class=" language-shell"><code class="language-shell">git add test.tar.gz</code></pre>
-<p>7.提交大文件：</p>
-<pre class=" language-shell"><code class="language-shell">git commit -m 'submit big file.'</code></pre>
-<p>8.直接推送大文件到远程：</p>
-<pre class=" language-shell"><code class="language-shell">git push</code></pre>
-<p>然后你就会发现大文件推送到远程的 github 仓库了。</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>网络类</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Elasticsearch 中这些必备 API 你晓得嘛？</title>
     <url>/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/</url>
     <content><![CDATA[<p>众所周知，ES 中的 mapping 只能在索引建立初期进行创建，且建立之后不可更改。mapping 对应的字段会映射成指定类型，未定义字段则自动映射，一般为 text 类型。那么想更改索引名或者更改某字段的 mapping 时，是否就束手无策了呢？当然不是！！！官方提供了一个接口，供索引备份迁移操作使用，那便是 <strong>reindex</strong>。当旧索引与新索引在同一节点时，效率相当高，万条数据瞬间完成（<code>大约只需0.4s</code>）。数百万数据也只需几分钟即可完成 操作，是不是很溜呢？快来学习一下吧。</p>
@@ -4073,6 +4033,46 @@ git lfs track 'test.tar.gz'</code></pre>
       <categories>
         <category>技术</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Git 上传大文件</title>
+    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
+<h2 id="1-windows-平台安装-git-lfs"><a href="#1-windows-平台安装-git-lfs" class="headerlink" title="1.windows 平台安装 git-lfs"></a>1.windows 平台安装 git-lfs</h2><p>1.先打开网址：</p>
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//github.com/git-lfs/git-lfs/releases</code></pre>
+<p>2.然后点击最新版本的版本号，将页面拉取到最底部，下载安装：</p>
+<pre class=" language-shell"><code class="language-shell">Windows Installer</code></pre>
+<p>3.运行下载的 exe 文件：</p>
+<pre class=" language-shell"><code class="language-shell">windows installer</code></pre>
+<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>1.打开 <code>git bash</code>，首先输入下列命令开启 lfs 功能：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs install</code></pre>
+<p>2.然后使用如下命令进行大文件追踪，然后会生成文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs track '大文件名'
+# 追踪大文件test.tar.gz
+git lfs track 'test.tar.gz'</code></pre>
+<p>3.添加文件 <code>.gittributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git add .gitattributes</code></pre>
+<p>4.然后提交文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit .gitattributes file'</code></pre>
+<p>5.将文件 <code>.gitattributes</code> 推送到远程仓库：</p>
+<pre class=" language-shell"><code class="language-shell">git push -u origin master</code></pre>
+<p>6.添加大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git add test.tar.gz</code></pre>
+<p>7.提交大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit big file.'</code></pre>
+<p>8.直接推送大文件到远程：</p>
+<pre class=" language-shell"><code class="language-shell">git push</code></pre>
+<p>然后你就会发现大文件推送到远程的 github 仓库了。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>网络类</tag>
+      </tags>
   </entry>
   <entry>
     <title>常用 es 查询盘点</title>
@@ -4324,6 +4324,16 @@ bot_ui_ini()
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>donate</title>
+    <url>/donate/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>links</title>
+    <url>/links/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>comment</title>
     <url>/comment/index.html</url>
     <content><![CDATA[
@@ -4347,16 +4357,6 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>links</title>
-    <url>/links/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>music</title>
     <url>/music/index.html</url>
     <content><![CDATA[
@@ -4368,13 +4368,13 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
+    <title>rss</title>
+    <url>/rss/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>rss</title>
-    <url>/rss/index.html</url>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
