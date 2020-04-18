@@ -1709,8 +1709,8 @@ int compDec(const void *a, const void *b) {
         <category>技术</category>
       </categories>
       <tags>
-        <tag>算法类</tag>
         <tag>语言类</tag>
+        <tag>算法类</tag>
       </tags>
   </entry>
   <entry>
@@ -2812,8 +2812,8 @@ mysql <span class="token operator">></span> <span class="token keyword">DELIMITE
         <category>技术</category>
       </categories>
       <tags>
-        <tag>算法类</tag>
         <tag>语言类</tag>
+        <tag>算法类</tag>
       </tags>
   </entry>
   <entry>
@@ -4319,6 +4319,11 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
+    <title>bangumi</title>
+    <url>/bangumi/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>comment</title>
     <url>/comment/index.html</url>
     <content><![CDATA[
@@ -4342,13 +4347,13 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>bangumi</title>
-    <url>/bangumi/index.html</url>
+    <title>links</title>
+    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>links</title>
-    <url>/links/index.html</url>
+    <title>donate</title>
+    <url>/donate/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -4363,18 +4368,13 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>rss</title>
     <url>/rss/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
