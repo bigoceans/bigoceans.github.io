@@ -4319,6 +4319,11 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
+    <title>links</title>
+    <url>/links/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>bangumi</title>
     <url>/bangumi/index.html</url>
     <content><![CDATA[]]></content>
@@ -4326,11 +4331,6 @@ bot_ui_ini()
   <entry>
     <title>donate</title>
     <url>/donate/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>links</title>
-    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
