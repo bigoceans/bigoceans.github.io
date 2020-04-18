@@ -3933,6 +3933,46 @@ categories:
       </categories>
   </entry>
   <entry>
+    <title>Git 上传大文件</title>
+    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+<p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
+<h2 id="1-windows-平台安装-git-lfs"><a href="#1-windows-平台安装-git-lfs" class="headerlink" title="1.windows 平台安装 git-lfs"></a>1.windows 平台安装 git-lfs</h2><p>1.先打开网址：</p>
+<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//github.com/git-lfs/git-lfs/releases</code></pre>
+<p>2.然后点击最新版本的版本号，将页面拉取到最底部，下载安装：</p>
+<pre class=" language-shell"><code class="language-shell">Windows Installer</code></pre>
+<p>3.运行下载的 exe 文件：</p>
+<pre class=" language-shell"><code class="language-shell">windows installer</code></pre>
+<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>1.打开 <code>git bash</code>，首先输入下列命令开启 lfs 功能：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs install</code></pre>
+<p>2.然后使用如下命令进行大文件追踪，然后会生成文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git lfs track '大文件名'
+# 追踪大文件test.tar.gz
+git lfs track 'test.tar.gz'</code></pre>
+<p>3.添加文件 <code>.gittributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git add .gitattributes</code></pre>
+<p>4.然后提交文件 <code>.gitattributes</code>：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit .gitattributes file'</code></pre>
+<p>5.将文件 <code>.gitattributes</code> 推送到远程仓库：</p>
+<pre class=" language-shell"><code class="language-shell">git push -u origin master</code></pre>
+<p>6.添加大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git add test.tar.gz</code></pre>
+<p>7.提交大文件：</p>
+<pre class=" language-shell"><code class="language-shell">git commit -m 'submit big file.'</code></pre>
+<p>8.直接推送大文件到远程：</p>
+<pre class=" language-shell"><code class="language-shell">git push</code></pre>
+<p>然后你就会发现大文件推送到远程的 github 仓库了。</p>
+<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>网络类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Elasticsearch 中这些必备 API 你晓得嘛？</title>
     <url>/2019/10/25/18.Elasticsearch%20%E4%B8%AD%E8%BF%99%E4%BA%9B%E5%BF%85%E5%A4%87%20API%20%E4%BD%A0%E6%99%93%E5%BE%97%E5%98%9B%EF%BC%9F/</url>
     <content><![CDATA[<p>众所周知，ES 中的 mapping 只能在索引建立初期进行创建，且建立之后不可更改。mapping 对应的字段会映射成指定类型，未定义字段则自动映射，一般为 text 类型。那么想更改索引名或者更改某字段的 mapping 时，是否就束手无策了呢？当然不是！！！官方提供了一个接口，供索引备份迁移操作使用，那便是 <strong>reindex</strong>。当旧索引与新索引在同一节点时，效率相当高，万条数据瞬间完成（<code>大约只需0.4s</code>）。数百万数据也只需几分钟即可完成 操作，是不是很溜呢？快来学习一下吧。</p>
@@ -4033,46 +4073,6 @@ categories:
       <categories>
         <category>技术</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Git 上传大文件</title>
-    <url>/2019/10/25/20.Git%20%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>我们知道 github 上面限制每次推送的文件不能超过 100M，否则报错失败，那么非要推送大文件呢？有没有什么解决办法呢？答案当然是肯定的。这就用到了 <code>Git LFS</code> 。</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-<p>因为只试验了 windows 平台，本文以此为例。其他系统可上网搜如何下载安装对应版本的 <code>git-lfs</code>。</p>
-<h2 id="1-windows-平台安装-git-lfs"><a href="#1-windows-平台安装-git-lfs" class="headerlink" title="1.windows 平台安装 git-lfs"></a>1.windows 平台安装 git-lfs</h2><p>1.先打开网址：</p>
-<pre class=" language-http"><code class="language-http"><span class="token header-name keyword">https:</span>//github.com/git-lfs/git-lfs/releases</code></pre>
-<p>2.然后点击最新版本的版本号，将页面拉取到最底部，下载安装：</p>
-<pre class=" language-shell"><code class="language-shell">Windows Installer</code></pre>
-<p>3.运行下载的 exe 文件：</p>
-<pre class=" language-shell"><code class="language-shell">windows installer</code></pre>
-<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>1.打开 <code>git bash</code>，首先输入下列命令开启 lfs 功能：</p>
-<pre class=" language-shell"><code class="language-shell">git lfs install</code></pre>
-<p>2.然后使用如下命令进行大文件追踪，然后会生成文件 <code>.gitattributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git lfs track '大文件名'
-# 追踪大文件test.tar.gz
-git lfs track 'test.tar.gz'</code></pre>
-<p>3.添加文件 <code>.gittributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git add .gitattributes</code></pre>
-<p>4.然后提交文件 <code>.gitattributes</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git commit -m 'submit .gitattributes file'</code></pre>
-<p>5.将文件 <code>.gitattributes</code> 推送到远程仓库：</p>
-<pre class=" language-shell"><code class="language-shell">git push -u origin master</code></pre>
-<p>6.添加大文件：</p>
-<pre class=" language-shell"><code class="language-shell">git add test.tar.gz</code></pre>
-<p>7.提交大文件：</p>
-<pre class=" language-shell"><code class="language-shell">git commit -m 'submit big file.'</code></pre>
-<p>8.直接推送大文件到远程：</p>
-<pre class=" language-shell"><code class="language-shell">git push</code></pre>
-<p>然后你就会发现大文件推送到远程的 github 仓库了。</p>
-<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>网络类</tag>
-      </tags>
   </entry>
   <entry>
     <title>常用 es 查询盘点</title>
@@ -4286,6 +4286,29 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>comment</title>
+    <url>/comment/index.html</url>
+    <content><![CDATA[
+<div class="entry-content">
+  <div class="poem-wrap">
+    <div class="poem-border poem-left">
+    </div>
+    <div class="poem-border poem-right">
+    </div>
+    <h1>
+    念两句诗</h1>
+    <p id="poem">
+    故人何不返，春华复应晚。</p>
+    <p id="info">
+    【南北朝】柳恽《江南曲》</p>
+  </div>
+</div>
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index.html</url>
     <content><![CDATA[
@@ -4319,32 +4342,14 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>bangumi</title>
-    <url>/bangumi/index.html</url>
+    <title>donate</title>
+    <url>/donate/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>comment</title>
-    <url>/comment/index.html</url>
-    <content><![CDATA[
-<div class="entry-content">
-  <div class="poem-wrap">
-    <div class="poem-border poem-left">
-    </div>
-    <div class="poem-border poem-right">
-    </div>
-    <h1>
-    念两句诗</h1>
-    <p id="poem">
-    故人何不返，春华复应晚。</p>
-    <p id="info">
-    【南北朝】柳恽《江南曲》</p>
-  </div>
-</div>
-
-
-
-]]></content>
+    <title>bangumi</title>
+    <url>/bangumi/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>music</title>
@@ -4358,18 +4363,13 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>links</title>
-    <url>/links/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>rss</title>
     <url>/rss/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>links</title>
+    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
