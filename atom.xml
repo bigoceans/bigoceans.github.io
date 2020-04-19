@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.8868866.xyz/"/>
-  <updated>2020-04-19T18:36:52.650Z</updated>
+  <updated>2020-04-19T18:40:08.720Z</updated>
   <id>https://www.8868866.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.8868866.xyz/2020/04/17/44.%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     <id>https://www.8868866.xyz/2020/04/17/44.%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</id>
     <published>2020-04-17T09:56:51.000Z</published>
-    <updated>2020-04-19T18:36:52.650Z</updated>
+    <updated>2020-04-19T18:40:08.720Z</updated>
     
     <content type="html"><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><blockquote><p>V2Ray客户端使用不很方便，因为没有自带 GUI 配置界面。V2RayN 则是 windows平台一个对新手比较友好的 V2Ray GUI 客户端。</p></blockquote><h1 id="下载v2ray-core"><a href="#下载v2ray-core" class="headerlink" title="下载v2ray core"></a>下载v2ray core</h1><p><strong><a href="https://github.com/v2ray/v2ray-core/releases/latest" target="_blank" rel="noopener">下载</a><br>选择 v2ray-windows-64.zip 下载，如果你的系统是 32 位的那就选择 v2ray-windows-32.zip。<br>下载完成，解压。</strong></p><h1 id="下载-v2RayN"><a href="#下载-v2RayN" class="headerlink" title="下载 v2RayN"></a>下载 v2RayN</h1><p><strong><a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank" rel="noopener">下载</a><br>右键选择以管理员身份运行 V2RayN.exe</strong></p><h1 id="GFWList"><a href="#GFWList" class="headerlink" title="GFWList"></a>GFWList</h1><p><strong><a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank" rel="noopener">地址</a></strong></p><h1 id="点击主界面的服务器，添加VMess服务器，导入配置文件，并选择从剪贴板导入URL，所有的参数会自动填写完成。"><a href="#点击主界面的服务器，添加VMess服务器，导入配置文件，并选择从剪贴板导入URL，所有的参数会自动填写完成。" class="headerlink" title="点击主界面的服务器，添加VMess服务器，导入配置文件，并选择从剪贴板导入URL，所有的参数会自动填写完成。"></a>点击主界面的服务器，添加VMess服务器，导入配置文件，并选择从剪贴板导入URL，所有的参数会自动填写完成。</h1><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><blockquote><p>免责声明<br>本站提供的一切软件、教程和内容信息仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。本站信息来自网络，版权争议与本站无关。您必须在下载后的24个小时之内，从您的电脑或手机中彻底删除上述内容。如果您喜欢该程序，请支持正版，购买注册，得到更好的正版服务。如有侵权请邮件与我们<strong><a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=E3F6dHxwdnJ9IlNlemM9YmI9cHx_" target="_blank" rel="noopener">联系</a></strong>。敬请谅解！</p></blockquote>]]></content>
     
@@ -32,10 +32,10 @@
     </summary>
     
     
-      <category term="网络类" scheme="https://www.8868866.xyz/categories/%E7%BD%91%E7%BB%9C%E7%B1%BB/"/>
+      <category term="技术" scheme="https://www.8868866.xyz/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="技术" scheme="https://www.8868866.xyz/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="网络类" scheme="https://www.8868866.xyz/tags/%E7%BD%91%E7%BB%9C%E7%B1%BB/"/>
     
   </entry>
   
@@ -44,7 +44,7 @@
     <link href="https://www.8868866.xyz/2020/04/13/43.XML-%E8%A7%A3%E6%9E%90%E5%A4%B1%E8%B4%A5/"/>
     <id>https://www.8868866.xyz/2020/04/13/43.XML-%E8%A7%A3%E6%9E%90%E5%A4%B1%E8%B4%A5/</id>
     <published>2020-04-12T16:36:51.000Z</published>
-    <updated>2020-04-12T16:37:19.410Z</updated>
+    <updated>2020-04-19T18:39:48.424Z</updated>
     
     <content type="html"><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><h1 id="首先放出有问题的代码"><a href="#首先放出有问题的代码" class="headerlink" title="首先放出有问题的代码"></a>首先放出有问题的代码</h1><blockquote><p>之所以直入主题是因为肝完了事情，急需入睡。hiahia</p></blockquote><pre class=" language-html"><code class="language-html">hiboard:updateUrl="https://xxx.com/xxx/api/book/xxx?xx=negative&amp;p3=1704xxx3"</code></pre><h1 id="查阅资料的收获"><a href="#查阅资料的收获" class="headerlink" title="查阅资料的收获"></a>查阅资料的收获</h1><h2 id="amp-在XML里是要被转义的，不然会导致解析失败。"><a href="#amp-在XML里是要被转义的，不然会导致解析失败。" class="headerlink" title="&amp; 在XML里是要被转义的，不然会导致解析失败。"></a>&amp; 在XML里是要被转义的，不然会导致解析失败。</h2><pre><code>同理的还有：&amp;lt; &lt; 小于号 &amp;gt; &gt; 大于号 &amp;amp; &amp; 和 &amp;apos; &#39; 单引号 &amp;quot; &quot; 双引号</code></pre><h1 id="修改后的代码"><a href="#修改后的代码" class="headerlink" title="修改后的代码"></a>修改后的代码</h1><pre class=" language-html"><code class="language-html">hiboard:updateUrl="https://xxx.com/xxx/api/book/xxx?xx=negative<span class="token entity" title="&amp;">&amp;amp;</span>p3=1704xxx3"</code></pre><p><strong>成功</strong>，吸取的经验就是：不要在WordPress /repo里改代码，一切还是在IDE里边修改好，有什么问题都能够给出提示。为了找问题出哪里真的是肝的一批。。。</p><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p>]]></content>
     
@@ -55,10 +55,12 @@
     </summary>
     
     
+      <category term="技术" scheme="https://www.8868866.xyz/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="技术" scheme="https://www.8868866.xyz/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="随想" scheme="https://www.8868866.xyz/categories/%E6%8A%80%E6%9C%AF/%E9%9A%8F%E6%83%B3/"/>
     
-      <category term="随想" scheme="https://www.8868866.xyz/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="语言类" scheme="https://www.8868866.xyz/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/"/>
     
   </entry>
   
