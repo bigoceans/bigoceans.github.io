@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.8868866.xyz/"/>
-  <updated>2020-04-12T16:37:19.410Z</updated>
+  <updated>2020-04-19T17:47:37.687Z</updated>
   <id>https://www.8868866.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科学上网</title>
+    <link href="https://www.8868866.xyz/2020/04/17/44.%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    <id>https://www.8868866.xyz/2020/04/17/44.%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</id>
+    <published>2020-04-17T09:56:51.000Z</published>
+    <updated>2020-04-19T17:47:37.687Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><blockquote><p>V2Ray客户端使用不很方便，因为没有自带 GUI 配置界面。V2RayN 则是 windows平台一个对新手比较友好的 V2Ray GUI 客户端。</p></blockquote><p>下载v2ray core<br>下载地址：<a href="https://github.com/v2ray/v2ray-core/releases/latest" target="_blank" rel="noopener">https://github.com/v2ray/v2ray-core/releases/latest</a></p><p>选择 v2ray-windows-64.zip 下载，如果你的系统是 32 位的那就选择 v2ray-windows-32.zip。<br>下载完成，解压。</p><p>下载 v2RayN<br>下载链接： <a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank" rel="noopener">https://github.com/2dust/v2rayN/releases/latest</a></p><p>右键选择以管理员身份运行 V2RayN.exe</p><p>GFWList地址：<br><a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a></p><p>点击主界面的服务器，添加VMess服务器，导入配置文件，并选择从剪贴板导入URL，所有的参数会自动填写完成。</p><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><blockquote><p>免责声明<br>本站提供的一切软件、教程和内容信息仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。本站信息来自网络，版权争议与本站无关。您必须在下载后的24个小时之内，从您的电脑或手机中彻底删除上述内容。如果您喜欢该程序，请支持正版，购买注册，得到更好的正版服务。如有侵权请邮件与我们<strong><a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=E3F6dHxwdnJ9IlNlemM9YmI9cHx_" target="_blank" rel="noopener">联系</a></strong>。敬请谅解！</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      V2RayN
+    
+    </summary>
+    
+    
+      <category term="网络类" scheme="https://www.8868866.xyz/categories/%E7%BD%91%E7%BB%9C%E7%B1%BB/"/>
+    
+    
+      <category term="技术" scheme="https://www.8868866.xyz/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>XML-解析失败原因初步分析</title>
@@ -510,27 +533,6 @@
     
     
       <category term="语言类" scheme="https://www.8868866.xyz/tags/%E8%AF%AD%E8%A8%80%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PICNIC-V.2.0.0_一款给天空加滤镜的APP</title>
-    <link href="https://www.8868866.xyz/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/"/>
-    <id>https://www.8868866.xyz/2020/03/23/2.PICNIC-V.2.0.0_%E4%B8%80%E6%AC%BE%E7%BB%99%E5%A4%A9%E7%A9%BA%E5%8A%A0%E6%BB%A4%E9%95%9C%E7%9A%84APP/</id>
-    <published>2020-03-23T04:02:16.000Z</published>
-    <updated>2020-04-15T08:05:23.629Z</updated>
-    
-    <content type="html"><![CDATA[<p>虽然我是一个不拍照片的直男，但当我第一次透过picnic看我头顶的天空时，我就决定把它留在我的手机里！（大概也有近两年时间了）</p><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><blockquote><h2 id="由于该博客最近搭建，所以只好将我其他平台的作品搬运过来，一些图片上有版权水印也请见谅哈"><a href="#由于该博客最近搭建，所以只好将我其他平台的作品搬运过来，一些图片上有版权水印也请见谅哈" class="headerlink" title="由于该博客最近搭建，所以只好将我其他平台的作品搬运过来，一些图片上有版权水印也请见谅哈"></a>由于该博客最近搭建，所以只好将我其他平台的作品搬运过来，一些图片上有版权水印也请见谅哈</h2></blockquote><h3 id="软件介绍："><a href="#软件介绍：" class="headerlink" title="软件介绍："></a><strong>软件介绍：</strong></h3><p><strong>PICNIC：是一款给天空加上各色滤镜的APP</strong><br><strong>优点：给天空加绝美的滤镜！无广告！打开即用！</strong><br><strong>版本号：v.2.0.0</strong><br><strong>测试机版本号：安卓8.0</strong><br><strong>效果：（不会拍照，这是随手一拍。。。不过按我技术随手和正经拍都一个样）</strong></p><p><img src="https://attach.52pojie.cn/forum/202003/01/233623t428df0qyb82dw22.png" alt="效果图1"></p><p><img src="https://attach.52pojie.cn/forum/202003/01/233626d74fqwcvnpiffonw.png" alt="效果图2"></p><p><strong><center>（左1为原图，另外三个仅仅做测试，不代表picnic的天空滤镜数量）</center>&gt;</strong></p><p><strong>软件运行图：</strong><br><strong>无广告加载界面，直接进入主界面。</strong><br><strong>无复杂功能碍眼，设置、相册、拍照已足矣。</strong></p><p><img src="https://attach.52pojie.cn/forum/202003/01/233628vix4vo8v2dioxdny.png" alt="效果图3"></p><p><strong>主功能很简单（效果真的很好！）就不一一介绍了，一键傻瓜式操作就能拍的漂漂亮亮的天空！</strong><br><strong>下面进入设置界面！</strong><br><strong>我们可以选择是否保留软件的水印、静音拍照、保留位置、取消软件消息通知（但我从来没印象收到过picnic的软件通知。。）</strong></p><p><img src="https://attach.52pojie.cn/forum/202003/01/233630v0pxlcx6cwcvmimx.png" alt="效果图4"></p><p><strong>总之，我是极力推这样的良心软件！</strong></p><p><strong>觉得有意思的朋友快快下载吧~</strong></p><p><strong>下载链接：</strong><br><strong>蓝奏云：</strong><a href="https://www.lanzous.com/i9txiih" target="_blank" rel="noopener">https://www.lanzous.com/i9txiih</a></p><p><strong>百毒云：</strong><br><strong>链接：</strong> <a href="https://pan.baidu.com/s/1u9saCy-0xq1Vv6xUAQMTTA" target="_blank" rel="noopener">https://pan.baidu.com/s/1u9saCy-0xq1Vv6xUAQMTTA</a> <strong>提取码：<code>kgly</code></strong><br><strong>蓝奏云二维码下载：</strong></p><p><img src="https://attach.52pojie.cn/forum/202003/01/233621x6jpr216i6mnpi0j.png" alt="二维码下载"></p><p><strong><em>更多精彩文章请关注公众号『大海的BLOG』</em></strong></p><blockquote><p>免责声明<br>本站提供的一切软件、教程和内容信息仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。本站信息来自网络，版权争议与本站无关。您必须在下载后的24个小时之内，从您的电脑或手机中彻底删除上述内容。如果您喜欢该程序，请支持正版，购买注册，得到更好的正版服务。如有侵权请邮件与我们<strong><a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=E3F6dHxwdnJ9IlNlemM9YmI9cHx_" target="_blank" rel="noopener">联系</a></strong>。敬请谅解！</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      一款能给天空加滤镜的APP
-    
-    </summary>
-    
-    
-      <category term="安卓" scheme="https://www.8868866.xyz/categories/%E5%AE%89%E5%8D%93/"/>
-    
     
   </entry>
   
