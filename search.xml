@@ -4311,6 +4311,11 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>bangumi</title>
+    <url>/bangumi/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>comment</title>
     <url>/comment/index.html</url>
     <content><![CDATA[
@@ -4336,6 +4341,11 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
   <entry>
     <title>donate</title>
     <url>/donate/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>links</title>
+    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -4372,8 +4382,8 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>bangumi</title>
-    <url>/bangumi/index.html</url>
+    <title>rss</title>
+    <url>/rss/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -4388,18 +4398,8 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>rss</title>
-    <url>/rss/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>tags</title>
     <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>links</title>
-    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
