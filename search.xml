@@ -4382,6 +4382,16 @@ bot_ui_ini()
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>rss</title>
+    <url>/rss/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>music</title>
     <url>/music/index.html</url>
     <content><![CDATA[
@@ -4391,15 +4401,5 @@ bot_ui_ini()
   id="4934609313"
   mutex="true"><br></meting-js></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>rss</title>
-    <url>/rss/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
