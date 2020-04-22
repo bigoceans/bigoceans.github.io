@@ -4311,6 +4311,29 @@ Elasticsearch -> Indices   -> Types  -> Documents -> Fields</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>comment</title>
+    <url>/comment/index.html</url>
+    <content><![CDATA[
+<div class="entry-content">
+  <div class="poem-wrap">
+    <div class="poem-border poem-left">
+    </div>
+    <div class="poem-border poem-right">
+    </div>
+    <h1>
+    念两句诗</h1>
+    <p id="poem">
+    故人何不返，春华复应晚。</p>
+    <p id="info">
+    【南北朝】柳恽《江南曲》</p>
+  </div>
+</div>
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index.html</url>
     <content><![CDATA[
@@ -4344,32 +4367,14 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
-    <title>bangumi</title>
-    <url>/bangumi/index.html</url>
+    <title>donate</title>
+    <url>/donate/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>comment</title>
-    <url>/comment/index.html</url>
-    <content><![CDATA[
-<div class="entry-content">
-  <div class="poem-wrap">
-    <div class="poem-border poem-left">
-    </div>
-    <div class="poem-border poem-right">
-    </div>
-    <h1>
-    念两句诗</h1>
-    <p id="poem">
-    故人何不返，春华复应晚。</p>
-    <p id="info">
-    【南北朝】柳恽《江南曲》</p>
-  </div>
-</div>
-
-
-
-]]></content>
+    <title>bangumi</title>
+    <url>/bangumi/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>links</title>
@@ -4381,16 +4386,19 @@ bot_ui_ini()
     <url>/music/index.html</url>
     <content><![CDATA[
 <p><meting-js
-  server="netease"
+  server="tencent"
   type="playlist"
-  id="4934609313"
-  mutex="true"><br></meting-js></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
-    <content><![CDATA[]]></content>
+  id="6970849799"
+  mutex="true"
+  theme="#f7acbc"
+  fixed="false" 
+  mini="false"
+  autoplay="false"
+  loop="all"
+  order="list"
+  preload="none"
+  volume="0.7"><br></meting-js></p>
+<h1 id="ㄟ-▔-▔-ㄏ"><a href="#ㄟ-▔-▔-ㄏ" class="headerlink" title="ㄟ( ▔, ▔ )ㄏ"></a><center>ㄟ( ▔, ▔ )ㄏ</center></h1><h1 id="部分歌曲由于版权原因无法在线播放还请见谅"><a href="#部分歌曲由于版权原因无法在线播放还请见谅" class="headerlink" title="部分歌曲由于版权原因无法在线播放还请见谅"></a><center>部分歌曲由于版权原因无法在线播放还请见谅</center></h1>]]></content>
   </entry>
   <entry>
     <title>rss</title>
