@@ -4460,16 +4460,6 @@ bot_ui_ini()
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>rss</title>
-    <url>/rss/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>music</title>
     <url>/music/index.html</url>
     <content><![CDATA[<form action="https://www.baidu.com/baidu" method="get" target="_blank"> 
@@ -4492,5 +4482,15 @@ bot_ui_ini()
   preload="none"
   volume="0.7"><br></meting-js></p>
 <h1 id="ㄟ-▔-▔-ㄏ"><a href="#ㄟ-▔-▔-ㄏ" class="headerlink" title="ㄟ( ▔, ▔ )ㄏ"></a><center>ㄟ( ▔, ▔ )ㄏ</center></h1><h1 id="部分歌曲由于版权原因无法在线播放还请见谅"><a href="#部分歌曲由于版权原因无法在线播放还请见谅" class="headerlink" title="部分歌曲由于版权原因无法在线播放还请见谅"></a><center>部分歌曲由于版权原因无法在线播放还请见谅</center></h1>]]></content>
+  </entry>
+  <entry>
+    <title>rss</title>
+    <url>/rss/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
