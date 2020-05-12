@@ -4422,6 +4422,11 @@ bot_ui_ini()
 ]]></content>
   </entry>
   <entry>
+    <title>donate</title>
+    <url>/donate/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>bangumi</title>
     <url>/bangumi/index.html</url>
     <content><![CDATA[]]></content>
@@ -4448,11 +4453,6 @@ bot_ui_ini()
 
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>donate</title>
-    <url>/donate/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>links</title>
@@ -4484,13 +4484,13 @@ bot_ui_ini()
 <h1 id="ㄟ-▔-▔-ㄏ"><a href="#ㄟ-▔-▔-ㄏ" class="headerlink" title="ㄟ( ▔, ▔ )ㄏ"></a><center>ㄟ( ▔, ▔ )ㄏ</center></h1><h1 id="部分歌曲由于版权原因无法在线播放还请见谅"><a href="#部分歌曲由于版权原因无法在线播放还请见谅" class="headerlink" title="部分歌曲由于版权原因无法在线播放还请见谅"></a><center>部分歌曲由于版权原因无法在线播放还请见谅</center></h1>]]></content>
   </entry>
   <entry>
-    <title>rss</title>
-    <url>/rss/index.html</url>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
+    <title>rss</title>
+    <url>/rss/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
